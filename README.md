@@ -1,3 +1,5 @@
+**Ubicación:** Quantify-Core · **Nivel 0 — raíz del repositorio**
+
 <h1 align="center">Quantify Core V2.0</h1>
 
 <div align="center">
@@ -47,6 +49,10 @@ La base de trabajo del equipo está en el **[mapa de documentación](docs/README
 | Trabajar con agentes o enviar cambios | [AGENTS.md](AGENTS.md), [contribución](CONTRIBUTING.md) y [Git Flow](docs/guias/git-flow.md). |
 
 Los diagramas y secciones desplegables de los README ayudan a recorrer estas guías en GitHub. Su estado distingue el producto previsto del prototipo académico y de las partes verificadas.
+
+## Identidad local — QUANCORE-17
+
+[Documentación de Keycloak](infrastructure/keycloak/README.md): configuración, instalación, operación, pruebas y diez evidencias con pies de imagen. La integración OAuth completa de las aplicaciones y API sigue pendiente.
 
 ## Contenido
 

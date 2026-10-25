@@ -1,8 +1,14 @@
+**Ubicación:** [Quantify-Core](../../README.md) → [docs](../README.md) → seguridad · **Nivel 2**
+
 # Seguridad y privacidad
 
 > **Estado: requisitos de diseño; controles pendientes de implementación y verificación.** Esta guía define el mínimo técnico para RF-01, RF-02, RF-09 y RF-10. No certifica cumplimiento normativo ni autoriza recopilar datos reales.
 
 Consultar [amenazas y controles](amenazas.md), [API](../api/README.md), [ciclo de vida de datos](../datos-ia/calidad-ciclo-vida.md) y [decisiones pendientes](../arquitectura/decisiones-pendientes.md).
+
+## Laboratorio de identidad documentado
+
+QUANCORE-17 incorpora una [guía única de Keycloak con configuración, pruebas y evidencias](../../infrastructure/keycloak/README.md). No sustituye los controles de diseño siguientes: siguen pendientes la integración OAuth del producto, autorización de API y decisión D-02. Las cuentas se aprovisionan fuera del export y sus contraseñas no se versionan.
 
 ## Identidad y sesiones
 

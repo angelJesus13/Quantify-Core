@@ -1,8 +1,14 @@
+**Ubicación:** [Quantify-Core](../README.md) → docs · **Nivel 1**
+
 # Documentación para desarrollar Quantify Core
 
 Mapa de referencia para que el equipo y sus agentes implementen el mismo producto con contratos, reglas y diseño coherentes. Empezar por [incorporación](guias/incorporacion.md), [contribución](../CONTRIBUTING.md) y el README del componente que se modificará.
 
 **Estado:** base de desarrollo y contratos propuestos. El prototipo académico es ejecutable; los clientes y servicios del producto siguen pendientes de implementación. Cada módulo debe actualizar su estado y aportar evidencia cuando cambie esta situación.
+
+## Identidad local (QUANCORE-17)
+
+[Guía única de Keycloak](../infrastructure/keycloak/README.md): configuración, operación, pruebas y diez evidencias descritas al pie. Export auditado e importable; la integración final de clientes y backend sigue pendiente.
 
 ## Carpetas por tipo de documento
 
