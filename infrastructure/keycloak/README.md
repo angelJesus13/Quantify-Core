@@ -11,3 +11,5 @@ node scripts/check-keycloak.mjs
 El export no implementa clientes web/Flutter ni protección de API. La configuración HTTP, el callback web con comodín limitado a localhost y `fullScopeAllowed` son exclusivos del laboratorio y requieren revisión antes de producción. Los clientes internos de Keycloak conservan sus valores de origen: por ejemplo `admin-cli` tiene direct grants; la prohibición comprobada corresponde a los dos clientes QUANTIFY.
 
 El original se preservó localmente en `.git/quancore-17-private/realm-export.original.json`, fuera del índice. No publicar ese respaldo ni añadir exports nuevos sin auditarlos.
+
+Consulta la [guía de configuración y operación](../../docs/keycloak/README.md) para iniciar el laboratorio, crear cuentas sin guardar sus contraseñas y revisar los pendientes de integración.
