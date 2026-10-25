@@ -1,3 +1,5 @@
+**Ubicación:** Quantify-Core · **Nivel 0 — raíz del repositorio**
+
 <h1 align="center">Quantify Core V2.0</h1>
 
 <div align="center">
@@ -50,9 +52,7 @@ Los diagramas y secciones desplegables de los README ayudan a recorrer estas gu�
 
 ## Identidad local — QUANCORE-17
 
-Disponible: [realm Keycloak auditado](infrastructure/keycloak/README.md), [guía de configuración y operación](docs/keycloak/README.md), [pruebas y evidencias](docs/keycloak/pruebas.md) y [checklist de Jira/PR](docs/keycloak/cierre-quancore-17.md). Incluye configuración local importable; las cuentas se aprovisionan sin contraseñas en Git. La integración OAuth de las aplicaciones y API sigue pendiente.
-
-Las diez capturas originales están al final, en el [glosario de evidencias de Keycloak](#glosario-de-evidencias-de-keycloak), con una descripción debajo de cada imagen.
+[Documentación de Keycloak](infrastructure/keycloak/README.md): configuración, instalación, operación, pruebas y diez evidencias con pies de imagen. La integración OAuth completa de las aplicaciones y API sigue pendiente.
 
 ## Contenido
 
@@ -76,7 +76,6 @@ Las diez capturas originales están al final, en el [glosario de evidencias de K
 - [Identidad visual](#identidad-visual)
 - [Equipo e información académica](#equipo-e-información-académica)
 - [Decisiones pendientes](#decisiones-pendientes)
-- [Glosario de evidencias de Keycloak](#glosario-de-evidencias-de-keycloak)
 
 ## Descripción
 
@@ -614,71 +613,3 @@ Quantify Core V2.0 se encuentra en fase de definición y desarrollo académico. 
   <strong>Quantify Core V2.0</strong><br />
   Construido con disciplina, evidencia y respeto por los datos de las personas.
 </p>
-
-## Glosario de evidencias de Keycloak
-
-Capturas originales compartidas por el usuario para QUANCORE-17. Cada figura conserva la imagen sin editar y presenta su descripción al pie. Documentan estados históricos del laboratorio: las pantallas de Evaluate simulan claims y no prueban el flujo OAuth completo de web, móvil y backend.
-
-Consultar el [índice de originales y hashes](docs/evidencias/keycloak/README.md) y las [pruebas, límites y pendientes](docs/keycloak/pruebas.md).
-
-### Figura K-01 — Estado inicial del repositorio
-
-![Estado inicial del repositorio](docs/evidencias/keycloak/01-repo-inicial.png)
-
-*Figura K-01. Export sin seguimiento en main; captura histórica, no estado final de la entrega.*
-
-### Figura K-02 — Evaluación móvil del administrador
-
-![Evaluación móvil del administrador](docs/evidencias/keycloak/02-mobile-admin-evaluate.png)
-
-*Figura K-02. Evaluate móvil: admin.prueba, azp quantify-mobile y rol admin. Aviso de administrador temporal visible.*
-
-La simulación muestra `admin` entre los roles de producto; la figura K-08 muestra `admin` y `user` asignados en otro momento. La diferencia sigue pendiente de aclaración.
-
-### Figura K-03 — Evaluación móvil del usuario
-
-![Evaluación móvil del usuario](docs/evidencias/keycloak/03-mobile-user-evaluate.png)
-
-*Figura K-03. Evaluate móvil: usuario.prueba, azp quantify-mobile y rol user.*
-
-### Figura K-04 — Mappers efectivos del cliente web
-
-![Mappers efectivos del cliente web](docs/evidencias/keycloak/04-web-mappers.png)
-
-*Figura K-04. Mappers efectivos del cliente web; incluye realm roles. No muestra roles resultantes del usuario.*
-
-### Figura K-05 — Evaluación del cliente web
-
-![Evaluación del cliente web](docs/evidencias/keycloak/05-web-evaluate.png)
-
-*Figura K-05. Evaluate del cliente web con usuario.prueba. No muestra el resultado JSON de roles.*
-
-### Figura K-06 — Portal de cuentas del administrador
-
-![Portal de cuentas del administrador](docs/evidencias/keycloak/06-portal-admin.png)
-
-*Figura K-06. Portal de cuentas autenticado con nombre Admin Prueba. No muestra username.*
-
-### Figura K-07 — Portal de cuentas del usuario
-
-![Portal de cuentas del usuario](docs/evidencias/keycloak/07-portal-user.png)
-
-*Figura K-07. Portal de cuentas autenticado con usuario.prueba y perfil sintético.*
-
-### Figura K-08 — Roles guardados del administrador
-
-![Roles guardados del administrador](docs/evidencias/keycloak/08-admin-roles-guardados.png)
-
-*Figura K-08. Asignación guardada: admin.prueba tiene admin y user en ese momento.*
-
-### Figura K-09 — Selección del rol administrador
-
-![Selección del rol administrador](docs/evidencias/keycloak/09-asignar-admin.png)
-
-*Figura K-09. Selección del rol admin para admin.prueba; selección sola no demuestra guardado.*
-
-### Figura K-10 — Selección del rol usuario
-
-![Selección del rol usuario](docs/evidencias/keycloak/10-asignar-user.png)
-
-*Figura K-10. Selección del rol user para usuario.prueba; selección sola no demuestra guardado.*
