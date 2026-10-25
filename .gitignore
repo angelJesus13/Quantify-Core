@@ -1,0 +1,6 @@
+# Datos privados de identidad y configuración local
+/realm-export.json
+/infrastructure/keycloak/private/
+.env
+.env.*
+!.env.example
