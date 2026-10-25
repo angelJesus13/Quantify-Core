@@ -4,6 +4,26 @@ Guía local de **QUANCORE-17**, vinculada a [RF-01](../requerimientos/catalogo.m
 
 **Alcance:** configuración del proveedor de identidad y documentación de pruebas de laboratorio. El export auditado existe en [infrastructure/keycloak](../../infrastructure/keycloak/README.md). Las [capturas y pruebas](pruebas.md) acreditan únicamente lo indicado para cada evidencia. El login OAuth completo de React/Flutter y la validación de tokens en NestJS siguen pendientes; las cuentas del portal de Keycloak no son una implementación de las aplicaciones del producto. La decisión web SPA/BFF D-02 continúa abierta.
 
+### Capturas del laboratorio de Keycloak
+
+Capturas originales que el usuario compartió en el chat. Muestran sesiones históricas del portal de cuentas y simulaciones de roles; no acreditan integración OAuth completa de web, móvil y backend. [Ver las diez capturas y su contexto](../evidencias/keycloak/README.md).
+
+**Portal de cuentas: usuario.prueba.** Sesión autenticada con el username visible.
+
+![Portal de cuentas de Keycloak con usuario.prueba autenticado](../evidencias/keycloak/07-portal-user.png)
+
+**Portal de cuentas: Admin Prueba.** Sesión autenticada con ese nombre; esta captura no muestra el username.
+
+![Portal de cuentas de Keycloak con nombre Admin Prueba](../evidencias/keycloak/06-portal-admin.png)
+
+**Evaluación móvil: usuario.prueba.** La salida simulada de `quantify-mobile` incluye `user` en `realm_access.roles`.
+
+![Evaluate de quantify-mobile para usuario.prueba con rol user](../evidencias/keycloak/03-mobile-user-evaluate.png)
+
+**Evaluación móvil: admin.prueba.** La salida simulada incluye `admin`. Otra captura histórica muestra asignación de `admin` y `user`: la diferencia queda pendiente de aclaración. Los resultados de roles del cliente web aún no están entre las capturas recuperadas.
+
+![Evaluate de quantify-mobile para admin.prueba con rol admin](../evidencias/keycloak/02-mobile-admin-evaluate.png)
+
 ## Configuración auditada
 
 | Parámetro | quantify-web | quantify-mobile |

@@ -4,6 +4,10 @@ Mapa de referencia para que el equipo y sus agentes implementen el mismo product
 
 **Estado:** base de desarrollo y contratos propuestos. El prototipo académico es ejecutable; los clientes y servicios del producto siguen pendientes de implementación. Cada módulo debe actualizar su estado y aportar evidencia cuando cambie esta situación.
 
+## Identidad local (QUANCORE-17)
+
+[Guía de Keycloak](keycloak/README.md) · [Pruebas y límites](keycloak/pruebas.md) · [Diez capturas originales](evidencias/keycloak/README.md) · [Checklist de aceptación y PR](keycloak/cierre-quancore-17.md). Export auditado e importable; no acredita la integración final de clientes y backend.
+
 ## Carpetas por tipo de documento
 
 | Carpeta | Contenido y referencia |

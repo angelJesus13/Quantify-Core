@@ -2,7 +2,7 @@
 
 Esta carpeta establece cómo se preparará, ejecutará, observará y publicará la plataforma. Su objetivo es que desarrolladores y agentes compartan las mismas reglas y puedan reproducir un entorno sin depender de instrucciones particulares de otro integrante.
 
-**Estado actual:** base documental. Aquí solo existen estos README; todavía no hay Dockerfiles, archivos de Compose, manifiestos de despliegue ni tableros operativos. Las tecnologías del [README principal](../README.md) siguen siendo propuestas hasta que se validen y registren sus decisiones. Los requisitos siguientes guían la implementación futura; no acreditan que ya exista.
+**Estado actual:** base documental y [export local de Keycloak auditado](keycloak/README.md) para QUANCORE-17, con importación aislada verificada. Todavía no hay Dockerfiles, archivos de Compose, manifiestos de despliegue ni tableros operativos. La [guía de Keycloak](../docs/keycloak/README.md) detalla comandos, cuentas y límites; no acredita integración final del producto. Las tecnologías del [README principal](../README.md) siguen siendo propuestas hasta que se validen y registren sus decisiones. Los requisitos siguientes guían la implementación futura; no acreditan que ya exista.
 
 ## Responsabilidad de cada carpeta
 
@@ -17,6 +17,7 @@ flowchart LR
 
 | Carpeta | Qué se hará | Qué debe entregar |
 |---|---|---|
+| [keycloak](keycloak/README.md) | Configurar identidad local con realm y clientes públicos. | Export auditado, guía de operación, cuentas sin credenciales versionadas y evidencia de laboratorio. |
 | [docker](docker/README.md) | Preparar imágenes y dependencias para desarrollo y pruebas reproducibles. | Configuración de contenedores, requisitos de la máquina, variables, puertos, persistencia y pasos verificados. |
 | [deployment](deployment/README.md) | Preparar la publicación y recuperación de los componentes en los ambientes elegidos. | Configuración por ambiente, identificación de versiones, migraciones, verificación y reversión. |
 | [observability](observability/README.md) | Definir cómo detectar y diagnosticar fallos técnicos. | Convenciones de métricas, logs y trazas; configuración, tableros y alertas con instrucciones de atención. |
@@ -62,7 +63,7 @@ No introducir stacks alternativos, otro motor de datos o una plataforma de orque
 - **Identificadores:** nombres nuevos de archivos y recursos en minúsculas con guiones, salvo convenciones propias de la herramienta, como `Dockerfile`. Usar `api`, `analytics`, `workers` y `web` como identificadores lógicos de esos componentes y documentar su correspondencia en cada plataforma.
 - **Configuración:** variables propias en `UPPER_SNAKE_CASE`; respetar los nombres oficiales de dependencias. Validar valores requeridos al arrancar y emitir errores que no revelen secretos. Compartir configuración común y hacer explícitas las diferencias por ambiente.
 - **Versiones:** registrar versiones compatibles de herramientas, imágenes y dependencias; evitar referencias flotantes como única identificación de una entrega. Los cambios de versión deben explicar compatibilidad y validación.
-- **Datos y secretos:** usar datos sintéticos en desarrollo y pruebas. Las credenciales se suministran fuera de Git. Antes de crear archivos locales con secretos, incorporar y verificar las exclusiones de Git y del contexto de construcción; actualmente el repositorio no tiene `.gitignore`.
+- **Datos y secretos:** usar datos sintéticos en desarrollo y pruebas. Las credenciales se suministran fuera de Git. Antes de crear archivos locales con secretos, incorporar y verificar las exclusiones de Git y del contexto de construcción; el `.gitignore` ahora excluye `.env`, exports sueltos en raíz y archivos privados de Keycloak. Una exclusión no reemplaza auditar el contenido antes de confirmar.
 - **Contratos:** la infraestructura no redefine roles, eventos, campos de API ni migraciones. Consumir la definición del módulo responsable y coordinar cualquier cambio de compatibilidad.
 - **Diseño:** las interfaces propias y visualizaciones del producto siguen los tokens compartidos y sus criterios de accesibilidad. Los tableros técnicos mantienen nombres, unidades y significados consistentes; no crean otra paleta de producto ni comunican estados solo mediante color.
 - **Cambios comprobables:** mantener juntos configuración, documentación y evidencia de validación. Ningún comando se presentará como operativo hasta que existan sus archivos y se haya probado en el entorno indicado.

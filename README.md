@@ -48,6 +48,30 @@ La base de trabajo del equipo está en el **[mapa de documentación](docs/README
 
 Los diagramas y secciones desplegables de los README ayudan a recorrer estas guías en GitHub. Su estado distingue el producto previsto del prototipo académico y de las partes verificadas.
 
+## Identidad local — QUANCORE-17
+
+Disponible: [realm Keycloak auditado](infrastructure/keycloak/README.md), [guía de configuración y operación](docs/keycloak/README.md), [pruebas y evidencias](docs/keycloak/pruebas.md) y [checklist de Jira/PR](docs/keycloak/cierre-quancore-17.md). Incluye configuración local importable; las cuentas se aprovisionan sin contraseñas en Git. La integración OAuth de las aplicaciones y API sigue pendiente.
+
+### Capturas del laboratorio de Keycloak
+
+Capturas originales que el usuario compartió en el chat. Muestran sesiones históricas del portal de cuentas y simulaciones de roles; no acreditan integración OAuth completa de web, móvil y backend. [Ver las diez capturas y su contexto](docs/evidencias/keycloak/README.md).
+
+**Portal de cuentas: usuario.prueba.** Sesión autenticada con el username visible.
+
+![Portal de cuentas de Keycloak con usuario.prueba autenticado](docs/evidencias/keycloak/07-portal-user.png)
+
+**Portal de cuentas: Admin Prueba.** Sesión autenticada con ese nombre; esta captura no muestra el username.
+
+![Portal de cuentas de Keycloak con nombre Admin Prueba](docs/evidencias/keycloak/06-portal-admin.png)
+
+**Evaluación móvil: usuario.prueba.** La salida simulada de `quantify-mobile` incluye `user` en `realm_access.roles`.
+
+![Evaluate de quantify-mobile para usuario.prueba con rol user](docs/evidencias/keycloak/03-mobile-user-evaluate.png)
+
+**Evaluación móvil: admin.prueba.** La salida simulada incluye `admin`. Otra captura histórica muestra asignación de `admin` y `user`: la diferencia queda pendiente de aclaración. Los resultados de roles del cliente web aún no están entre las capturas recuperadas.
+
+![Evaluate de quantify-mobile para admin.prueba con rol admin](docs/evidencias/keycloak/02-mobile-admin-evaluate.png)
+
 ## Contenido
 
 - [Documentación para desarrollar](#documentación-para-desarrollar)

@@ -4,6 +4,10 @@
 
 Consultar [amenazas y controles](amenazas.md), [API](../api/README.md), [ciclo de vida de datos](../datos-ia/calidad-ciclo-vida.md) y [decisiones pendientes](../arquitectura/decisiones-pendientes.md).
 
+## Laboratorio de identidad documentado
+
+QUANCORE-17 incorpora un [realm local auditado y guía](../keycloak/README.md), con [pruebas y evidencia acotadas](../keycloak/pruebas.md). No sustituye los controles de diseño siguientes: siguen pendientes la integración OAuth del producto, autorización de API y decisión D-02. Las cuentas se aprovisionan fuera del export y sus contraseñas no se versionan.
+
 ## Identidad y sesiones
 
 Keycloak es dueño del registro, autenticación, recuperación de credenciales, sesiones y federación opcional. Los clientes usan **OpenID Connect Authorization Code con PKCE S256**. No crear endpoints de contraseña propia, un JWT adicional ni un formulario que envíe la contraseña a NestJS. La identidad interna se enlaza mediante `(issuer, subject)`; el correo no es una clave de autorización.
