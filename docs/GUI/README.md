@@ -1,5 +1,28 @@
 # GUI · Interfaz gráfica
 
+## Estudio visual V2.0 · QUANCORE-26
+
+[Abrir galería de revisión](index.html) · [Matriz de pantallas y estados](matriz-pantallas.md) · [Manual visual](../diseno/manual-visual.html) · [Validación](VALIDACION.md).
+
+Esta entrega propone ocho vistas en tres niveles: sketches conceptuales, wireframes en grises y mockups claros/oscuros. Incluye Hoy en móvil y escritorio; administración en escritorio. Son 34 láminas SVG exportables, con datos sintéticos y anotaciones de requisitos. La galería permite comparar niveles, temas y recorridos; los botones dibujados no ejecutan operaciones de producto.
+
+[![Mockup de Hoy en escritorio, tema claro](mockups/hoy-escritorio-light.svg)](index.html)
+
+### Organización de los entregables
+
+| Ubicación | Contenido |
+|---|---|
+| `sketches/` | Ocho redibujos conceptuales con referencia a IDs de la demo |
+| `wireframes/` | Ocho composiciones estructurales en grises |
+| `mockups/` | Dieciséis vistas claras/oscuras y dos variantes de Hoy en escritorio |
+| [pantallas.json](pantallas.json) | Inventario, requisitos, referencia histórica y variantes |
+| [generar-prototipos.py](generar-prototipos.py) | Fuente reproducible de las láminas y recursos visuales |
+| [preview.json](../../packages/design-tokens/preview.json) | Tokens propuestos solo para revisión; paleta existente |
+
+Abrir `index.html` directamente en un navegador o servir la raíz del repositorio con `python -m http.server 8765` y visitar `http://localhost:8765/docs/GUI/`. No requiere instalación de dependencias. Para regenerar, ejecutar `python docs/GUI/generar-prototipos.py` desde la raíz, con Python 3. La galería usa solo archivos locales, sin fuentes de red ni almacenamiento de usuario.
+
+La Práctica 07 sigue intacta y separada; sus screenshots y reglas históricas no se trasladan como identidad o autorización de producto. Estas nuevas láminas materializan propuestas, no cierran las decisiones de D-10 ni acreditan implementación React/Flutter.
+
 Esta carpeta reúne la referencia para las pantallas y estados visuales de Quantify Core. **Estado:** existe un [prototipo académico navegable](../practica-07/README.md); los clientes React y Flutter del producto todavía no están implementados. El [sistema de diseño V2.0](../diseno/sistema-diseno.md) y los [tokens](../../packages/design-tokens/README.md) son la referencia de producto.
 
 ```mermaid

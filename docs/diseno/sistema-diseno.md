@@ -12,6 +12,8 @@
 
 ## Base visual
 
+El [manual visual 0.1](manual-visual.md) y sus [láminas](manual-visual.html) materializan las propuestas de esta guía; la [galería GUI](../GUI/index.html) muestra su aplicación clara/oscura. Los [tokens preview](../../packages/design-tokens/preview.json) son fuente de generación de esas láminas, sin constituir un paquete de producto aprobado.
+
 Consultar los [tokens](../../packages/design-tokens/README.md) antes de elegir un color. Usar nombres por propósito (`color.action.primary`, `color.text.primary`) y no copiar HEX en cada componente. Una variante de tema necesita contrastes comprobados para texto, iconos, bordes interactivos, foco y estados.
 
 Propuesta para validar con pantallas reales, **pendiente de aprobación**:

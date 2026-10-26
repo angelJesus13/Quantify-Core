@@ -27,6 +27,8 @@ Estas carpetas organizan la lectura solicitada. Los requisitos, reglas y contrat
 
 ## Entregables interactivos en vivo (GitHub Pages)
 
+**En revisión de rama:** [Estudio de interfaz y prototipos](GUI/index.html) y [manual visual](diseno/manual-visual.html). Disponibles como archivos locales en esta entrega; no se afirma publicación en GitHub Pages. [Evidencia de validación](GUI/VALIDACION.md).
+
 - [Portal principal](https://angeljesus13.github.io/Quantify-Core/)
 - [Práctica 04 — Business Model Canvas Interactivo](https://angeljesus13.github.io/Quantify-Core/docs/Practica04/business-model-canvas.html)
 - [Práctica 05 — Diagrama de Roles de Usuario Interactivo](https://angeljesus13.github.io/Quantify-Core/docs/Practica05/diagrama-roles-quantify.html)

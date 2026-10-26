@@ -1,6 +1,12 @@
 # Tokens de diseño
 
-**Estado: contrato visual documental; todavía no hay paquete, generador ni archivos de tokens ejecutables.** La identidad del [README principal](../../README.md) es la referencia de color para Quantify Core V2.0. Este documento propone nombres semánticos y registra decisiones necesarias antes de distribuir valores a React o Flutter.
+**Estado: contrato visual documental con tokens de revisión; todavía no hay paquete distribuido a clientes.** La identidad del [README principal](../../README.md) es la referencia de color para Quantify Core V2.0. Este documento propone nombres semánticos y registra decisiones necesarias antes de distribuir valores a React o Flutter.
+
+## Tokens materializados para los prototipos
+
+[preview.json](preview.json) conserva la paleta canónica y propone roles claros/oscuros, familia del sistema, espaciado y geometría. Su estado es `propuesto-solo-prototipos`. El [generador de láminas](../../docs/GUI/generar-prototipos.py) produce SVG y CSS desde esa única fuente con `python docs/GUI/generar-prototipos.py` (Python 3, sin dependencias).
+
+Este adaptador es solo de revisión, no se importa en React/Flutter ni autoriza decisiones pendientes de D-10. La sintaxis y API del futuro paquete siguen abiertas. Las medidas, procedencia y restricciones están en el [manual visual](../../docs/diseno/manual-visual.md); la [validación](../../docs/GUI/VALIDACION.md) registra contrastes y límites.
 
 ## Paleta base canónica
 

@@ -1,5 +1,11 @@
 # Diseño de experiencia e interfaz
 
+## Manual visual y prototipos de revisión
+
+[Manual visual navegable](manual-visual.html) · [Especificación y procedencia](manual-visual.md) · [Galería GUI](../GUI/index.html) · [Matriz de pantallas](../GUI/matriz-pantallas.md).
+
+La entrega 0.1 del 26/10/2026 materializa paleta, tipografía, iconografía, imágenes e identidad en láminas exportables. Mantiene los logos heredados y distingue el isologo propuesto para fondo oscuro. Las decisiones nuevas continúan sujetas a revisión; los colores proceden de la identidad V2.0 existente. Ver [validación y límites](../GUI/VALIDACION.md).
+
 **Estado: base documental para desarrollo; no certifica pantallas de producto implementadas.** Esta guía conecta los recorridos académicos con las reglas, contratos y componentes que deberán usar web, móvil y, en su alcance aprobado, Wear OS.
 
 | Necesidad | Documento |
