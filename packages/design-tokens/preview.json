@@ -1,0 +1,19 @@
+{
+  "status": "propuesto-solo-prototipos",
+  "version": "0.1.0-preview",
+  "font": "Segoe UI, Arial, sans-serif",
+  "colors": {
+    "laserBlue": "#275BC0", "skyLaser": "#4A7DE8", "deepCobalt": "#183D87",
+    "obsidian": "#0B0F17", "midnight": "#161F2E", "steel": "#283548",
+    "gray": "#8A99AD", "mist": "#F4F7FD", "white": "#FFFFFF",
+    "emerald": "#10B981", "amber": "#F59E0B", "crimson": "#EF4444", "cyan": "#0EA5E9"
+  },
+  "themes": {
+    "light": {"canvas":"mist", "surface":"white", "text":"obsidian", "muted":"steel", "line":"steel", "action":"laserBlue", "onAction":"white", "focus":"deepCobalt"},
+    "dark": {"canvas":"obsidian", "surface":"midnight", "text":"white", "muted":"gray", "line":"gray", "action":"laserBlue", "onAction":"white", "focus":"skyLaser"}
+  },
+  "space": [4,8,12,16,24,32,48],
+  "radius": {"control":8, "card":16},
+  "fontSize": {"caption":14, "body":16, "section":20, "title":28, "display":40},
+  "target": 48
+}

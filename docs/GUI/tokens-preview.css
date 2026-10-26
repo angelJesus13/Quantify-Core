@@ -1,0 +1,3 @@
+/* Generado por docs/GUI/generar-prototipos.py desde preview.json; solo revisión. */
+:root[data-theme="light"]{--canvas:#F4F7FD;--surface:#FFFFFF;--text:#0B0F17;--muted:#283548;--line:#283548;--action:#275BC0;--onAction:#FFFFFF;--focus:#183D87;}
+:root[data-theme="dark"]{--canvas:#0B0F17;--surface:#161F2E;--text:#FFFFFF;--muted:#8A99AD;--line:#8A99AD;--action:#275BC0;--onAction:#FFFFFF;--focus:#4A7DE8;}
