@@ -1,4 +1,4 @@
-"""Genera recursos de revisión SVG/CSS desde preview.json. Python 3, sin paquetes.
+"""Prepara escenas vectoriales para exportar PNG con Inter desde preview.json.
 No escribe en prácticas, aplicaciones ni activos heredados.
 """
 from pathlib import Path
@@ -381,4 +381,3 @@ def main():
     print(f'{len(SCENES)} escenas listas para exportar. La fuente tipográfica es Inter.')
 
 if __name__=='__main__':main()
-

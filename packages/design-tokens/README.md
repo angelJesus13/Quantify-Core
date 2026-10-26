@@ -1,6 +1,12 @@
 # Tokens de diseño
 
-**Estado: contrato visual documental; todavía no hay paquete, generador ni archivos de tokens ejecutables.** La identidad del [README principal](../../README.md) es la referencia de color para Quantify Core V2.0. Este documento propone nombres semánticos y registra decisiones necesarias antes de distribuir valores a React o Flutter.
+**Estado: contrato visual documental con tokens de revisión; todavía no hay paquete distribuido a clientes.** La identidad del [README principal](../../README.md) es la referencia de color para Quantify Core V2.0. Este documento propone nombres semánticos y registra decisiones necesarias antes de distribuir valores a React o Flutter.
+
+## Tokens materializados para los prototipos
+
+[preview.json](preview.json) conserva la paleta y define **Inter** como familia de la entrega GUI. Los roles claros/oscuros y la geometría alimentan las [fuentes de láminas](../../docs/GUI/fuente/generar.py), exportadas como PNG con el mismo archivo WOFF2 local. Instrucciones y especificación completa en el [README de GUI](../../docs/GUI/README.md).
+
+Todavía no se distribuye un paquete React/Flutter. Inter queda elegida para la interfaz visual por petición del proyecto; la implementación de componentes y el resto de decisiones técnicas D-10 siguen su proceso. El borde suave derivado `softBorder` es decorativo; campos, foco y estados deben conservar contraste suficiente.
 
 ## Paleta base canónica
 
@@ -39,7 +45,7 @@ flowchart LR
 | Primitiva | `color.brand.laserBlue` | Un valor de paleta, sin asumir contraste |
 | Semántica | `color.action.primary`, `color.text.primary`, `color.surface.canvas` | Referencia a un primitivo según propósito y tema |
 | Estado | `color.feedback.error`, `color.focus.ring`, `color.sync.pending` | Texto/icono/patrón acompañan el color |
-| Tipografía | `font.family.body`, `font.size.body`, `font.weight.label` | Familia y escala pendientes |
+| Tipografía | `font.family.body`, `font.size.body`, `font.weight.label` | Inter definida para GUI; escala 40/28/20/16/14 |
 | Geometría | `space.4`, `radius.control`, `size.target.touch` | Escalas propuestas, no exportadas todavía |
 | Movimiento | `motion.duration.feedback`, `motion.reduce` | Equivalente sin animación obligatoria |
 
@@ -67,13 +73,13 @@ Por tanto, no usar texto pequeño blanco sobre botones Sky Laser solo porque el 
 
 ## Entrega del futuro paquete
 
-1. Aprobar formato, nombres, temas, tipografía, escalas e iconografía en la revisión de diseño.
+1. Aprobar formato y distribución del paquete; aplicar Inter como familia definida y revisar temas, escalas e iconografía.
 2. Mantener valor, tipo, propósito, tema y estado de cada token; distinguir provisional y aprobado.
 3. Producir adaptadores para web y móvil sin introducir lógica de negocio ni dependencias de componentes.
 4. Documentar generación, comprobación y actualización con comandos reales cuando exista el paquete.
 5. Revisar consumidores y contrastes cuando cambie un token. Renombrar/eliminar un token es un cambio de contrato; acompañarlo de migración y versión.
 6. Comprobar que los valores generados coinciden con su fuente y que los componentes representativos mantienen accesibilidad en ambos temas.
 
-No hay API de importación publicada. Hasta la implementación, cualquier mockup debe citar esta paleta y señalar qué decisiones visuales son provisionales.
+No hay API de importación publicada. Los mockups citan esta paleta y utilizan la familia Inter definida; no acreditan componentes de producto implementados.
 
 [Sistema de diseño](../../docs/diseno/sistema-diseno.md) · [Recorridos](../../docs/diseno/recorridos.md) · [Paquetes compartidos](../README.md)

@@ -12,13 +12,15 @@
 
 ## Base visual
 
+La [galería visual](../GUI/index.html) y su [README único](../GUI/README.md) reúnen las cinco láminas y las pantallas. Por solicitud del proyecto, **Inter** queda definida para toda la interfaz de esta entrega; el archivo WOFF2 se sirve localmente. Los [tokens](../../packages/design-tokens/preview.json) registran la familia y los roles; todavía no constituyen una biblioteca de componentes React/Flutter.
+
 Consultar los [tokens](../../packages/design-tokens/README.md) antes de elegir un color. Usar nombres por propósito (`color.action.primary`, `color.text.primary`) y no copiar HEX en cada componente. Una variante de tema necesita contrastes comprobados para texto, iconos, bordes interactivos, foco y estados.
 
 Propuesta para validar con pantallas reales, **pendiente de aprobación**:
 
 | Aspecto | Propuesta inicial | Criterio de cierre |
 |---|---|---|
-| Tipografía | Familia del sistema sin descarga externa; escala con unidades adaptables | Legibilidad, caracteres en español y consistencia de pesos en ambas plataformas |
+| Tipografía | Inter Variable local; familia definida para la entrega GUI | Aplicar el mismo archivo a todos los textos; conservar escalado accesible al implementar clientes |
 | Espaciado | Escala base de 4 unidades con pasos 4, 8, 12, 16, 24, 32 y 48 | Formularios y listas a tamaños compactos y amplios |
 | Tamaño de texto | Texto base equivalente a 16 CSS px en web, respetando escalado nativo móvil | Zoom, texto grande y densidad sin recortes |
 | Radios | Pocos niveles semánticos para controles, tarjetas y diálogos | Revisión visual; no inferirlos de la demo |
