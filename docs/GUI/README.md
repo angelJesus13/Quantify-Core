@@ -4,7 +4,9 @@
 
 ## Revisar las imágenes
 
-### [Abrir la galería en GitHub Pages →](https://angeljesus13.github.io/Quantify-Core/docs/GUI/)
+### [Dirección preparada para GitHub Pages →](https://angeljesus13.github.io/Quantify-Core/docs/GUI/)
+
+**Estado de publicación:** la rama `gh-pages` está publicada y lista. Pages todavía apunta a `main`; falta que una cuenta administradora seleccione `gh-pages` y `/(root)` en Settings → Pages. La cuenta de autoría tiene permisos de escritura, pero no de administración; el intento de actualización devolvió HTTP 404. Hasta cambiar ese origen, la dirección de la galería puede devolver 404. No se afirma un despliegue activo antes de verificarlo.
 
 La galería muestra las cinco láminas completas de identidad y las pantallas de diseño como imágenes. Cada miniatura se puede abrir, ampliar y descargar en PNG. Las flechas recorren las imágenes; Escape cierra el visor y devuelve el foco. Los filtros separan sketches, wireframes, mockups, temas y formato. [Abrir el archivo local](index.html).
 
@@ -115,7 +117,7 @@ Los cambios visuales compartidos se hacen primero en tokens o en el catálogo de
 
 La rama de trabajo sigue siendo `feature/QUANCORE-26-documentacion-prototipos`, creada desde `develop` en `55604085492983ecebcea81d0ad4d0fef04d99a9`. Se conservan los commits anteriores y se añaden commits separados de identidad, galería/consolidación y publicación.
 
-GitHub Pages utilizaba `main` con raíz `/`. Para publicar sin integrar cambios a `main`, la rama **`gh-pages`** conserva una instantánea del contenido del portal ya publicado y añade la nueva galería. Es una rama de artefactos de publicación, no una fusión del código. El ajuste de Pages apunta a `gh-pages`/`/`; las rutas previas del portal y de la Práctica 07 se conservan. Para actualizar, exportar nuevamente el portal vigente más los recursos GUI revisados; no publicar `.git`, `.build`, credenciales ni archivos de trabajo.
+GitHub Pages utiliza `main` con raíz `/`. Para preparar la publicación sin integrar cambios a `main`, la rama **`gh-pages`** conserva una instantánea del contenido del portal ya publicado y añade la nueva galería. Es una rama de artefactos de publicación, no una fusión del código. El ajuste pendiente es seleccionar `gh-pages`/`/`; las rutas previas del portal y de la Práctica 07 se conservan. Para actualizar, exportar nuevamente el portal vigente más los recursos GUI revisados; no publicar `.git`, `.build`, credenciales ni archivos de trabajo.
 
 `main` y `develop` no reciben commits, no se crea PR y no se hace merge. La Práctica 07 conserva su contexto y árbol original `9a87a160df81b88c4f5a925f71970d969e36e60d`. Una publicación de imágenes no da por terminada la implementación de QUANCORE-26.
 
@@ -135,4 +137,16 @@ git diff 55604085492983ecebcea81d0ad4d0fef04d99a9 -- docs/practica-07
 git rev-parse HEAD:docs/practica-07
 ```
 
-El diff de Práctica 07 debe estar vacío y su árbol coincidir con el indicado. Los resultados finales de publicación y revisión se añaden al cierre de esta sección.
+El diff de Práctica 07 debe estar vacío y su árbol coincidir con el indicado.
+
+### Resultados de esta revisión
+
+- **39 imágenes exportadas:** cinco láminas de identidad a 1600 × 2000 y 34 pantallas. Se comprobó la fuente Inter antes de exportar y las cajas de texto dentro del lienzo. Los ocho sketches no contienen elementos de texto visible.
+- **16 configuraciones del visor**, entre fidelidades/temas a 320, 390, 768 y 1440 px, con 208 cargas de miniaturas comprobadas. Las vistas de escritorio se revisaron también a esos cuatro anchos. Sin desbordamiento horizontal de página ni errores JavaScript o peticiones fallidas por HTTP local.
+- **Visor:** las cinco láminas abren a resolución original; se comprobaron descarga PNG, ampliación, flechas, Escape y restauración de foco.
+- **Tipografía:** Inter local cargada y familia calculada coherente en títulos, párrafos, controles y enlaces de la galería. Los logos oficiales son imágenes independientes de la fuente de interfaz.
+- **Documentación:** `node scripts/check-docs.mjs` aprobó 72 Markdown, 514 enlaces locales y 51 bloques Mermaid, además de la comprobación básica OpenAPI existente. La revisión específica de los seis documentos/entrada afectados comprobó 126 enlaces locales sin destinos rotos.
+- **Práctica 07:** 21/21 pruebas existentes aprobadas; diff vacío y árbol conservado. Los tres logos heredados mantienen sus bytes originales.
+- **Publicación:** rama `gh-pages` subida; 13 archivos de Práctica 07 preservados respecto al portal anterior. El origen de Pages sigue en `main`; la activación requiere la acción administradora indicada al inicio. No se creó PR ni se hizo merge.
+
+Estos resultados corresponden a la galería por HTTP local y a los artefactos exportados. El estado de GitHub Pages se debe volver a comprobar después del cambio de origen; no equivalen a una prueba del sitio público ni a conformidad accesible de una aplicación de producto.

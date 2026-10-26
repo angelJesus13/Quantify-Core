@@ -381,4 +381,3 @@ def main():
     print(f'{len(SCENES)} escenas listas para exportar. La fuente tipográfica es Inter.')
 
 if __name__=='__main__':main()
-
