@@ -4,9 +4,9 @@
 
 ## Revisar las imágenes
 
-### [Dirección preparada para GitHub Pages →](https://angeljesus13.github.io/Quantify-Core/docs/GUI/)
+### [Abrir la galería en GitHub Pages →](https://angeljesus13.github.io/Quantify-Core/docs/GUI/)
 
-**Estado de publicación:** la rama `gh-pages` está publicada y lista. Pages todavía apunta a `main`; falta que una cuenta administradora seleccione `gh-pages` y `/(root)` en Settings → Pages. La cuenta de autoría tiene permisos de escritura, pero no de administración; el intento de actualización devolvió HTTP 404. Hasta cambiar ese origen, la dirección de la galería puede devolver 404. No se afirma un despliegue activo antes de verificarlo.
+**Estado de publicación: activa y verificada.** GitHub Pages utiliza `gh-pages` y `/(root)`. La galería, las cinco láminas, los prototipos, Inter y los dos logos oficiales están disponibles por HTTPS. La activación del origen fue completada por una cuenta administradora.
 
 La galería muestra las cinco láminas completas de identidad y las pantallas de diseño como imágenes. Cada miniatura se puede abrir, ampliar y descargar en PNG. Las flechas recorren las imágenes; Escape cierra el visor y devuelve el foco. Los filtros separan sketches, wireframes, mockups, temas y formato. [Abrir el archivo local](index.html).
 
@@ -117,7 +117,7 @@ Los cambios visuales compartidos se hacen primero en tokens o en el catálogo de
 
 La rama de trabajo sigue siendo `feature/QUANCORE-26-documentacion-prototipos`, creada desde `develop` en `55604085492983ecebcea81d0ad4d0fef04d99a9`. Se conservan los commits anteriores y se añaden commits separados de identidad, galería/consolidación y publicación.
 
-GitHub Pages utiliza `main` con raíz `/`. Para preparar la publicación sin integrar cambios a `main`, la rama **`gh-pages`** conserva una instantánea del contenido del portal ya publicado y añade la nueva galería. Es una rama de artefactos de publicación, no una fusión del código. El ajuste pendiente es seleccionar `gh-pages`/`/`; las rutas previas del portal y de la Práctica 07 se conservan. Para actualizar, exportar nuevamente el portal vigente más los recursos GUI revisados; no publicar `.git`, `.build`, credenciales ni archivos de trabajo.
+GitHub Pages utiliza **`gh-pages` con raíz `/`**. Para publicar sin integrar cambios a `main`, la rama **`gh-pages`** conserva una instantánea del contenido del portal ya publicado y añade la nueva galería. Es una rama de artefactos de publicación, no una fusión del código. El origen ya está configurado como `gh-pages`/`/`; las rutas previas del portal y de la Práctica 07 se conservan. Para actualizar, exportar nuevamente el portal vigente más los recursos GUI revisados; no publicar `.git`, `.build`, credenciales ni archivos de trabajo.
 
 `main` y `develop` no reciben commits, no se crea PR y no se hace merge. La Práctica 07 conserva su contexto y árbol original `9a87a160df81b88c4f5a925f71970d969e36e60d`. Una publicación de imágenes no da por terminada la implementación de QUANCORE-26.
 
@@ -147,6 +147,6 @@ El diff de Práctica 07 debe estar vacío y su árbol coincidir con el indicado.
 - **Tipografía:** Inter local cargada y familia calculada coherente en títulos, párrafos, controles y enlaces de la galería. Los logos oficiales son imágenes independientes de la fuente de interfaz.
 - **Documentación:** `node scripts/check-docs.mjs` aprobó 72 Markdown, 514 enlaces locales y 51 bloques Mermaid, además de la comprobación básica OpenAPI existente. La revisión específica de los seis documentos/entrada afectados comprobó 126 enlaces locales sin destinos rotos.
 - **Práctica 07:** 21/21 pruebas existentes aprobadas; diff vacío y árbol conservado. Los tres logos heredados mantienen sus bytes originales.
-- **Publicación:** rama `gh-pages` subida; 13 archivos de Práctica 07 preservados respecto al portal anterior. El origen de Pages sigue en `main`; la activación requiere la acción administradora indicada al inicio. No se creó PR ni se hizo merge.
+- **Publicación:** GitHub informó despliegue `built` desde `gh-pages`. La revisión pública repitió las 16 configuraciones y las 208 cargas de miniaturas sin errores. Se comprobaron HTTP 200 y coincidencia SHA-256 de 42 recursos: 39 imágenes, Inter y los dos logos oficiales. El portal principal y los cuatro recursos principales de Práctica 07 coinciden byte por byte con sus blobs Git; los 13 archivos de la práctica conservan el árbol original. No se creó PR ni se hizo merge.
 
-Estos resultados corresponden a la galería por HTTP local y a los artefactos exportados. El estado de GitHub Pages se debe volver a comprobar después del cambio de origen; no equivalen a una prueba del sitio público ni a conformidad accesible de una aplicación de producto.
+La galería se verificó tanto por HTTP local como en el sitio público de GitHub Pages el 26/10/2026. Esta revisión de imágenes y controles del visor no certifica accesibilidad global ni implementación funcional de una aplicación de producto.
