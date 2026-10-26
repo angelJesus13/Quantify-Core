@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Quantify Core · Estudio de interfaz</title><link rel="stylesheet" href="tokens-preview.css"><link rel="stylesheet" href="galeria.css"><script src="pantallas.js" defer></script><script src="galeria.js" defer></script></head>
+<body>
+<a class="skip" href="#lamina">Saltar a la lámina</a>
+<header><a class="brand" href="../diseno/manual-visual.html">QUANTIFY <span>CORE / DESIGN</span></a><nav aria-label="Documentación"><a href="README.md">Guía GUI</a><a href="../diseno/manual-visual.html">Manual visual ↗</a></nav></header>
+<main>
+<section class="intro"><p class="eyebrow">ESTUDIO DE INTERFAZ / 26 OCTUBRE 2026</p><h1>Una rutina clara.<br>Un sistema coherente.</h1><p>Del primer trazo a la interfaz: explora la estructura, la jerarquía y los estados de Quantify Core.</p><p class="tag">Propuesta de diseño · Datos sintéticos · QUANCORE-26</p></section>
+<section class="workspace" aria-label="Visor de prototipos">
+<aside><h2>Explorar el sistema</h2>
+<label for="screen">Pantalla</label><select id="screen"></select>
+<label for="fidelity">Nivel de diseño</label><select id="fidelity"><option value="sketch">01 · Sketch conceptual</option><option value="wireframe">02 · Wireframe estructural</option><option value="mockup" selected>03 · Mockup visual</option></select>
+<label for="theme">Tema del mockup</label><select id="theme"><option value="light">Claro</option><option value="dark">Oscuro</option></select>
+<label for="format">Formato</label><select id="format"><option value="mobile">Móvil</option><option value="desktop">Escritorio · Solo Hoy</option></select>
+<label for="state">Estado para revisar</label><select id="state"><option value="base">Vista base</option><option value="loading">Carga</option><option value="empty">Vacío</option><option value="validation">Validación</option><option value="error">Error de servicio</option><option value="pending">Pendiente de sincronizar</option><option value="conflict">Conflicto de versión</option><option value="expired">Sesión vencida</option><option value="denied">Permiso insuficiente</option></select>
+<p class="small">Los controles cambian láminas de revisión. Las acciones dibujadas no guardan información ni se conectan a servicios.</p>
+<a id="download" href="mockups/hoy-light.svg" download>Descargar SVG de la vista ↗</a>
+</aside>
+<div class="stage" id="lamina" tabindex="-1"><div class="stage-head"><span id="caption"></span><span id="dimensions"></span></div><img id="preview" src="mockups/hoy-light.svg" alt="Mockup móvil de Hoy, tema claro" width="390" height="844"><noscript>Abre las láminas desde los enlaces del README; el visor necesita JavaScript.</noscript></div>
+<section class="review" aria-label="Anotaciones"><p class="eyebrow">INTENCIÓN Y COMPORTAMIENTO</p><h2 id="screen-title"></h2><p id="reference"></p><p id="note"></p><section class="state-card" aria-live="polite" aria-atomic="true"><h3 id="state-title"></h3><p id="state-body"></p><button id="recover" hidden>Volver a vista base</button></section><h3>Continuar el recorrido</h3><div id="flow"></div><p class="small">No se simula autorización real. El servidor deberá validar identidad, pertenencia y revisión.</p><a href="matriz-pantallas.md">Leer matriz de requisitos y estados ↗</a></section>
+</section>
+<section class="closing"><h2>Un lenguaje visual compartido.</h2><p>Laser Blue, tipografía del sistema, iconos con etiqueta y estados que se entienden con palabras.</p><a href="../diseno/manual-visual.html">Abrir paleta, tipografía e identidad →</a></section>
+</main><footer>Diseño propuesto V2.0 · La Práctica 07 conserva su contexto académico y sus archivos originales.</footer>
+</body></html>
