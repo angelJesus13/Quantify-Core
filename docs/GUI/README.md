@@ -2,6 +2,15 @@
 
 **Versión 02 · 26 de octubre de 2026 · [QUANCORE-26](https://utxicotepec-team-q5ufett6.atlassian.net/browse/QUANCORE-26)**
 
+## Contenido
+
+1. [Revisar las imágenes](#revisar-las-imágenes)
+2. [Sistema visual](#1-paleta-de-colores)
+3. [Prototipos](#prototipos-tres-fidelidades-reales)
+4. [Organización y mantenimiento](#organización-y-mantenimiento)
+5. [Publicación y control de ramas](#publicación-y-control-de-ramas)
+6. [Verificación y límites](#verificación-y-límites)
+
 ## Revisar las imágenes
 
 ### [Abrir la galería en GitHub Pages →](https://angeljesus13.github.io/Quantify-Core/docs/GUI/)
