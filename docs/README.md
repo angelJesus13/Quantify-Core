@@ -27,6 +27,8 @@ Estas carpetas organizan la lectura solicitada. Los requisitos, reglas y contrat
 
 ## Entregables interactivos en vivo (GitHub Pages)
 
+[Galería visual de Quantify Core](https://angeljesus13.github.io/Quantify-Core/docs/GUI/) · [Documentación completa de diseño](GUI/README.md). Cinco láminas de identidad y prototipos en tres fidelidades, con la familia Inter unificada.
+
 - [Portal principal](https://angeljesus13.github.io/Quantify-Core/)
 - [Práctica 04 — Business Model Canvas Interactivo](https://angeljesus13.github.io/Quantify-Core/docs/Practica04/business-model-canvas.html)
 - [Práctica 05 — Diagrama de Roles de Usuario Interactivo](https://angeljesus13.github.io/Quantify-Core/docs/Practica05/diagrama-roles-quantify.html)
