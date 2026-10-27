@@ -11,6 +11,16 @@
 5. [Publicación y control de ramas](#publicación-y-control-de-ramas)
 6. [Verificación y límites](#verificación-y-límites)
 
+## Estado de la entrega
+
+| Elemento | Estado | Dónde revisarlo |
+|---|---|---|
+| Paleta, tipografía, iconografía, uso de imágenes, identidad | Completo (5 láminas PNG) | [imagenes/](imagenes/) |
+| Pantallas en sketch, wireframe y mockup | Completo (34 PNG) | [prototipos/](prototipos/) |
+| Galería pública | Publicada en GitHub Pages | [Abrir galería](https://angeljesus13.github.io/Quantify-Core/docs/GUI/) |
+| Archivo editable | Disponible | [Figma](https://www.figma.com/design/iLvbL5uaWxAPwuX58xN4yq/Quantify-Core-%C2%B7-Sistema-visual-y-prototipos--QUANCORE-26-?node-id=0-1&t=vNJ6E9RRwxvSXkNs-1) |
+| Implementación en producto | Pendiente | Ver [Verificación y límites](#verificación-y-límites) |
+
 ## Revisar las imágenes
 
 ### [Abrir la galería en GitHub Pages →](https://angeljesus13.github.io/Quantify-Core/docs/GUI/)
