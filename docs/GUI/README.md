@@ -29,9 +29,7 @@
 
 La galería muestra las cinco láminas completas de identidad y las pantallas de diseño como imágenes. Cada miniatura se puede abrir, ampliar y descargar en PNG. Las flechas recorren las imágenes; Escape cierra el visor y devuelve el foco. Los filtros separan sketches, wireframes, mockups, temas y formato. [Abrir el archivo local](index.html).
 
-### Archivo editable en Figma
-
-[Quantify Core · Sistema visual y prototipos (QUANCORE-26)](https://www.figma.com/design/iLvbL5uaWxAPwuX58xN4yq/Quantify-Core-%C2%B7-Sistema-visual-y-prototipos--QUANCORE-26-?node-id=0-1&t=vNJ6E9RRwxvSXkNs-1). Contiene fundamentos (paleta con variables de Tema Claro y Tema Oscuro, tipografía Inter), iconografía, identidad, componentes y pantallas en sketch, wireframe y mockup. Las imágenes de esta carpeta siguen siendo la referencia estática.
+El archivo de Figma contiene fundamentos (variables de Tema Claro y Tema Oscuro, tipografía Inter), iconografía, identidad, componentes y pantallas. Las imágenes de esta carpeta siguen siendo la referencia estática.
 
 Esta es la **única documentación completa de la entrega visual**. Los índices de `docs/diseno` y del mapa documental enlazan aquí. Se retiraron las tablas de enlaces SVG, el manual duplicado, los manifiestos duplicados, los informes separados y los iconos exportados uno por uno. Las fuentes de autoría permanecen para poder actualizar las imágenes sin redibujar cada una manualmente.
 
