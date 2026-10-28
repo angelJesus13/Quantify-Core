@@ -1,6 +1,6 @@
 # Quantify Core · Galería y sistema visual
 
-**Versión 02 · 26 de octubre de 2026 · [QUANCORE-26](https://utxicotepec-team-q5ufett6.atlassian.net/browse/QUANCORE-26)**
+**Versión 03 · 28 de octubre de 2026 · [QUANCORE-26](https://utxicotepec-team-q5ufett6.atlassian.net/browse/QUANCORE-26)**
 
 ## Contenido
 
@@ -15,29 +15,27 @@
 
 | Elemento | Estado | Dónde revisarlo |
 |---|---|---|
-| Paleta, tipografía, iconografía, uso de imágenes, identidad | Completo (5 láminas PNG) | [imagenes/](imagenes/) |
+| Paleta, tipografía, iconografía, logotipo/isologo y marcas de agua | Cuatro lienzos PNG en hotfix | [imagenes/](imagenes/) |
 | Pantallas en sketch, wireframe y mockup | Completo (34 PNG) | [prototipos/](prototipos/) |
-| Galería pública | Publicada en GitHub Pages | [Abrir galería](https://angeljesus13.github.io/Quantify-Core/docs/GUI/) |
-| Archivo editable | Disponible | [Figma](https://www.figma.com/design/iLvbL5uaWxAPwuX58xN4yq/Quantify-Core-%C2%B7-Sistema-visual-y-prototipos--QUANCORE-26-?node-id=0-1&t=vNJ6E9RRwxvSXkNs-1) |
+| Galería pública | Versión anterior; esta hotfix no se publica en Pages | [Abrir galería](https://angeljesus13.github.io/Quantify-Core/docs/GUI/) |
+| Archivo editable | Conexión autenticada; Figma rechaza acceso al archivo | [Figma](https://www.figma.com/design/iLvbL5uaWxAPwuX58xN4yq/Quantify-Core-%C2%B7-Sistema-visual-y-prototipos--QUANCORE-26-?node-id=0-1&t=vNJ6E9RRwxvSXkNs-1) |
 | Implementación en producto | Pendiente | Ver [Verificación y límites](#verificación-y-límites) |
 
 ## Revisar las imágenes
 
 ### [Abrir la galería en GitHub Pages →](https://angeljesus13.github.io/Quantify-Core/docs/GUI/)
 
-**Estado de publicación: activa y verificada.** GitHub Pages utiliza `gh-pages` y `/(root)`. La galería, las cinco láminas, los prototipos, Inter y los dos logos oficiales están disponibles por HTTPS. La activación del origen fue completada por una cuenta administradora.
+**Estado de esta revisión:** cuatro lienzos en la rama `hotfix/QUANCORE-26-cuatro-lienzos`; GitHub Pages conserva la versión anterior. [Abrir la galería local](index.html). Cada lienzo puede ampliarse y descargarse; los prototipos conservan sus filtros y visor.
 
-La galería muestra las cinco láminas completas de identidad y las pantallas de diseño como imágenes. Cada miniatura se puede abrir, ampliar y descargar en PNG. Las flechas recorren las imágenes; Escape cierra el visor y devuelve el foco. Los filtros separan sketches, wireframes, mockups, temas y formato. [Abrir el archivo local](index.html).
-
-El archivo de Figma contiene fundamentos (variables de Tema Claro y Tema Oscuro, tipografía Inter), iconografía, identidad, componentes y pantallas. Las imágenes de esta carpeta siguen siendo la referencia estática.
+Figma está instalado y autenticado. Los intentos de sesión y lectura del nodo `0:1` del 28/10/2026 devolvieron falta de acceso de edición. No fue posible auditar ni modificar el archivo remoto. El propietario debe compartirlo como editor; no se afirma sincronización con esta revisión.
 
 Esta es la **única documentación completa de la entrega visual**. Los índices de `docs/diseno` y del mapa documental enlazan aquí. Se retiraron las tablas de enlaces SVG, el manual duplicado, los manifiestos duplicados, los informes separados y los iconos exportados uno por uno. Las fuentes de autoría permanecen para poder actualizar las imágenes sin redibujar cada una manualmente.
 
 ## 1. Paleta de colores
 
-[![Paleta de colores de Quantify Core: trece tonos con nombre, HEX, RGB y aplicación](imagenes/01-paleta-de-colores.png)](imagenes/01-paleta-de-colores.png)
+[![Paleta de colores de Quantify Core: trece tonos con nombre, HEX, RGB, HSL, CMYK, psicología y justificación](imagenes/01-paleta-de-colores.png)](imagenes/01-paleta-de-colores.png)
 
-La identidad conserva **Laser Blue `#275BC0`** como marca y acción principal. La imagen desarrolla las trece familias de la [paleta canónica](../../packages/design-tokens/README.md), con valores HEX/RGB y propósito: marca, neutros y estados. La separación de roles sostiene jerarquía y legibilidad; no se atribuyen efectos psicológicos universales al color.
+La identidad conserva **Laser Blue `#275BC0`** como marca y acción principal. La imagen desarrolla las trece familias de la [paleta canónica](../../packages/design-tokens/README.md), con valores HEX/RGB/HSL/CMYK, psicología y justificación por color: marca, neutros y estados. HSL se deriva de sRGB; CMYK usa conversión matemática sin perfil ICC y requiere prueba de impresión. La separación de roles sostiene jerarquía y legibilidad; no se atribuyen efectos psicológicos universales al color.
 
 Tema claro: fondo Pure Mist, tarjetas blancas, texto Obsidian y secundario Steel. Tema oscuro: fondo Obsidian, tarjetas Midnight, texto blanco y secundario Cool Gray. El borde suave derivado `#D8E1F0` separa tarjetas decorativas; no sirve como único contorno de un control interactivo. Campos y controles de wireframe usan borde con contraste. En la implementación, distinguir el borde decorativo del borde requerido para identificar un control.
 
@@ -53,21 +51,30 @@ La fuente de valores y geometría es [preview.json](../../packages/design-tokens
 
 Inter ofrece una construcción legible para interfaz, soporte de los caracteres del español y pesos variables sin cambiar de familia. Escala base: 40 presentación, 28 pantalla, 20 sección, 16 cuerpo y 14 ayuda; pesos habituales 400/500/600/700. El logotipo raster heredado conserva su dibujo original: no se pretende identificar o sustituir la fuente con la que fue creado.
 
+Los seis criterios del lienzo se justifican así:
+
+| Criterio | Justificación de Inter |
+|---|---|
+| Identidad de marca | Claridad y precisión para registrar hábitos; acompaña las marcas oficiales. |
+| Legibilidad | Formas abiertas y español; cuerpo 16 y ayuda 14, con revisión de zoom y reflujo al implementar. |
+| Estética moderna | Dibujo sobrio y jerarquía por tamaño/peso para una interfaz de datos. |
+| Consistencia visual | Una familia compartida en títulos, controles, tablas y gráficos. |
+| Flexibilidad tipográfica | Pesos 400/500/600/700 y escala 40/28/20/16/14 sin añadir otra familia. |
+| Compatibilidad tecnológica | WOFF2 local verificado en navegador y exportación; Flutter necesita TTF/OTF empaquetado y validación propia. |
+
 Fuente: [proyecto oficial rsms/inter](https://github.com/rsms/inter), autoría Rasmus Andersson; [licencia SIL Open Font License incluida](assets/inter-license.txt). Archivo fijado al commit `353b61b9f4430d5f420d56605a6e7993e0941470`, sin modificaciones. SHA-256 WOFF2: `693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3`.
 
 ## 3. Iconografía en una sola lámina
 
 [![Catálogo de 24 iconos coherentes de Quantify Core](imagenes/03-iconografia.png)](imagenes/03-iconografia.png)
 
-La imagen reúne los **24 iconos**: Hoy, hábitos, análisis, preferencias, crear, confirmado, pendiente, aviso, volver, privacidad, salir, sugerencias, calendario, recordatorio, lectura, movimiento, descanso, historial, ver, editar, archivar, descargar, sincronizar y dispositivo.
+Cada icono identifica su función y el símbolo que lo representa (casa, escudo, reloj, etc.). La imagen reúne los **24 iconos**: Hoy, hábitos, análisis, preferencias, crear, confirmado, pendiente, aviso, volver, privacidad, salir, sugerencias, calendario, recordatorio, lectura, movimiento, descanso, historial, ver, editar, archivar, descargar, sincronizar y dispositivo.
 
 Todos comparten retícula 24 × 24, trazo 1.8, extremos/uniones redondos y ausencia de relleno. Se dibujan desde un catálogo único en [la fuente](fuente/generar.py), utilizado también por los mockups. No se instala otra familia ni se mezclan emojis como iconos de navegación. Las acciones conservan etiqueta; los estados combinan forma y texto. Objetivo de interacción del diseño: 48 unidades, por resolver y comprobar al implementar cada plataforma.
 
 Los trazos son originales de esta entrega y siguen las condiciones de distribución del repositorio; no se les atribuye una licencia externa inexistente. Para controles de producto, un icono decorativo se oculta al lector y un control sin texto necesita nombre accesible.
 
-## 4. Uso de imágenes
-
-[![Fotografía de ambiente y reglas de encuadre, color, contexto y accesibilidad](imagenes/04-uso-de-imagenes.png)](imagenes/04-uso-de-imagenes.png)
+### Uso de imágenes (reglas documentales, sin quinto lienzo)
 
 La fotografía representa un ritual cotidiano de lectura e hidratación: luz natural, objetos sencillos, paleta neutra y cuaderno azul. Se usa en bienvenida, apoyo del dashboard y cabecera de la galería. Los formularios priorizan la tarea; no se añade una foto a cada tarjeta por decoración.
 
@@ -75,13 +82,15 @@ El encuadre conserva proporciones mediante recorte de ventana, sin deformar la i
 
 [ritual-cotidiano.png](assets/ritual-cotidiano.png) fue creado para esta entrega mediante generación de imágenes de OpenAI el 26/10/2026. Es una imagen editorial sintética, no evidencia de un usuario ni de mediciones de salud. Las fotografías del ejemplo aportado por el usuario solo inspiran la organización del manual; no se copian Spotify, sus recursos ni sus fuentes.
 
-## 5. Identidad / isologo
+## 4. Logotipo / isologo y marcas de agua
 
-[![Identidad de Quantify Core: firma, variantes, área libre y original preservado](imagenes/05-identidad-isologo.png)](imagenes/05-identidad-isologo.png)
+[![Identidad de Quantify Core: firma, variantes, área libre y original preservado](imagenes/04-identidad-isologo.png)](imagenes/04-identidad-isologo.png)
 
 Las cabeceras presentan **Nexus Core (empresarial) a la izquierda** y **Quantify Core (producto) a la derecha**. Se utilizan los JPEG originales, con su color y proporciones. Sobre oscuro permanecen en una placa blanca. La lámina explica su convivencia sin convertirlos en una sola marca ni recolorear sus letras.
 
 El símbolo Q parecido a una lupa, utilizado en la primera revisión, es únicamente una **marca de agua editorial de la documentación visual**. Es independiente de ambas marcas oficiales y no las sustituye ni representa una tercera identidad empresarial. Aparece de forma tenue como sello de la maqueta; no funciona como botón, icono de búsqueda o logotipo del producto. Los wireframes mantienen referencias de marca en grises; los sketches continúan sin texto ni logos.
+
+Logotipo designa la denominación escrita; isologo, el conjunto de símbolo y nombre. Los JPEG se presentan íntegros sin inventar una versión separable. Área libre propuesta: al menos un cuarto de la altura visible de cada firma; comprobar legibilidad al reducirla. Marca de agua editorial Q: dos variantes al 12 % (gris sobre claro y blanco sobre oscuro), en portada o pie libre de texto y controles, independiente de los logos oficiales. La afinidad geométrica y los neutros mantienen coherencia sin confundir empresa, producto y documentación.
 
 No estirar, recortar letras, añadir sombras ni invertir automáticamente los JPEG. Se pueden retirar visualmente márgenes blancos exteriores para presentar el contenido, conservando todas las letras y símbolos. La tipografía Inter rige los textos de la interfaz; las marcas raster conservan su dibujo propio.
 
@@ -122,7 +131,7 @@ La cobertura no equivale a las 24 pantallas históricas completas. Recordatorios
 docs/GUI/
   README.md             Documentación completa de esta entrega
   index.html            Galería pública y visor
-  imagenes/             Las cinco láminas completas (PNG)
+  imagenes/             Los cuatro lienzos completos (PNG)
   prototipos/           Sketches, wireframes y mockups (PNG)
   assets/               Fuente Inter, licencia, foto, estilos e interacción
   fuente/               Dos archivos para regenerar las imágenes
@@ -136,15 +145,13 @@ Los cambios visuales compartidos se hacen primero en tokens o en el catálogo de
 
 ## Publicación y control de ramas
 
-La rama de trabajo sigue siendo `feature/QUANCORE-26-documentacion-prototipos`, creada desde `develop` en `55604085492983ecebcea81d0ad4d0fef04d99a9`. Se conservan los commits anteriores y se añaden commits separados de identidad, galería/consolidación y publicación.
+Base: `origin/develop`, commit `dc127ea`, obtenido el 28/10/2026. La copia anterior conserva su `develop` divergente (`ba7bc96`, un commit local y cinco remotos distintos); se creó una copia independiente para conservar ese historial sin reset, rebase ni merge. En la nueva copia, `develop` coincide con remoto y la hotfix parte de él.
 
-GitHub Pages utiliza **`gh-pages` con raíz `/`**. Para publicar sin integrar cambios a `main`, la rama **`gh-pages`** conserva una instantánea del contenido del portal ya publicado y añade la nueva galería. Es una rama de artefactos de publicación, no una fusión del código. El origen ya está configurado como `gh-pages`/`/`; las rutas previas del portal y de la Práctica 07 se conservan. Para actualizar, exportar nuevamente el portal vigente más los recursos GUI revisados; no publicar `.git`, `.build`, credenciales ni archivos de trabajo.
-
-`main` y `develop` no reciben commits, no se crea PR y no se hace merge. La Práctica 07 conserva su contexto y árbol original `9a87a160df81b88c4f5a925f71970d969e36e60d`. Una publicación de imágenes no da por terminada la implementación de QUANCORE-26.
+Por instrucción expresa del usuario, `hotfix/QUANCORE-26-cuatro-lienzos` parte de `develop`, excepción al origen `main` del flujo general. La rama permanece abierta. No se modifica `main`, no se fusiona ni se publica en `gh-pages`. La Práctica 07 y los logos originales quedan fuera del cambio.
 
 ## Verificación y límites
 
-Las comprobaciones de esta revisión incluyen los cinco PNG de identidad, 34 PNG de pantallas, carga de Inter local, filtros, visor, ampliación, descarga, navegación por flechas, cierre con Escape y retorno del foco, ausencia de desbordamiento de página en anchos compactos/amplios, sintaxis y enlaces. Las pruebas existentes de Práctica 07 se ejecutan sin modificarla.
+La revisión de esta hotfix valida generación de los cuatro lienzos, Inter, límites de texto, galería local y enlaces. Las comprobaciones del 26/10 descritas abajo son evidencia histórica y no acreditan publicación de esta versión.
 
 No se declara conformidad WCAG global. La galería utiliza controles HTML con nombre y foco visible; los PNG no son controles accesibles de aplicación. La implementación deberá probar lector de pantalla, teclado, zoom, reflujo y tamaños táctiles de cada componente. No se comprobaron clientes nativos, autenticación, API o hardware real mediante estas imágenes.
 
@@ -160,7 +167,15 @@ git rev-parse HEAD:docs/practica-07
 
 El diff de Práctica 07 debe estar vacío y su árbol coincidir con el indicado.
 
-### Resultados de esta revisión
+### Resultados de la hotfix (28/10/2026)
+
+- Cuatro PNG de identidad a 1600 × 2000; Inter cargada y texto dentro del lienzo.
+- Galería local: 320, 390, 768 y 1440 px; 16 revisiones del visor (cuatro lienzos por ancho), ampliación, flechas, Escape, retorno del foco y enlace de descarga. Sin desbordamiento horizontal, imágenes rotas ni errores de página o HTTP.
+- Documentación: 72 Markdown, 515 enlaces locales y 51 bloques Mermaid válidos; OpenAPI válido.
+- Práctica 07: 21/21 pruebas existentes; sin cambios en su árbol ni en los logos o los 34 prototipos.
+- Figma: acceso rechazado; sin lectura ni cambios remotos. GitHub Pages conserva la versión anterior.
+
+### Evidencia histórica de la versión 02 (26/10/2026)
 
 - **39 imágenes exportadas:** cinco láminas de identidad a 1600 × 2000 y 34 pantallas. Se comprobó la fuente Inter antes de exportar y las cajas de texto dentro del lienzo. Los ocho sketches no contienen elementos de texto visible.
 - **16 configuraciones del visor**, entre fidelidades/temas a 320, 390, 768 y 1440 px, con 208 cargas de miniaturas comprobadas. Las vistas de escritorio se revisaron también a esos cuatro anchos. Sin desbordamiento horizontal de página ni errores JavaScript o peticiones fallidas por HTTP local.

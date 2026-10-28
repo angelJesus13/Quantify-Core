@@ -12,7 +12,7 @@
 
 ## Base visual
 
-La [galería visual](../GUI/index.html) y su [README único](../GUI/README.md) reúnen las cinco láminas y las pantallas. Por solicitud del proyecto, **Inter** queda definida para toda la interfaz de esta entrega; el archivo WOFF2 se sirve localmente. Los [tokens](../../packages/design-tokens/preview.json) registran la familia y los roles; todavía no constituyen una biblioteca de componentes React/Flutter.
+La [galería visual](../GUI/index.html) y su [README único](../GUI/README.md) reúnen las cuatro lienzos y las pantallas. Por solicitud del proyecto, **Inter** queda definida para toda la interfaz de esta entrega; el archivo WOFF2 se sirve localmente. Los [tokens](../../packages/design-tokens/preview.json) registran la familia y los roles; todavía no constituyen una biblioteca de componentes React/Flutter.
 
 Consultar los [tokens](../../packages/design-tokens/README.md) antes de elegir un color. Usar nombres por propósito (`color.action.primary`, `color.text.primary`) y no copiar HEX en cada componente. Una variante de tema necesita contrastes comprobados para texto, iconos, bordes interactivos, foco y estados.
 

@@ -4,7 +4,7 @@ No escribe en prácticas, aplicaciones ni activos heredados.
 from pathlib import Path
 import json
 from html import escape
-import base64, random
+import base64, random, colorsys, textwrap
 
 ROOT = Path(__file__).resolve().parents[3]
 HERE = ROOT / 'docs/GUI'
@@ -211,8 +211,8 @@ def logos(c,x,y,w,h):
         c.rect(xx,y,size,h,'#FFFFFF',6,'#FFFFFF')
         c.s.append(f'<svg x="{xx+4}" y="{y+4}" width="{size-8}" height="{h-8}" viewBox="{view}" preserveAspectRatio="xMidYMid meet"><image href="data:image/jpeg;base64,{data}" width="1600" height="1194"/></svg>')
 
-def watermark(c,x,y,scale):
-    c.s.append(f'<g transform="translate({x} {y}) scale({scale})" opacity=".12"><circle cx="24" cy="24" r="18" fill="none" stroke="#526179" stroke-width="6"/><path d="M34 36l12 12" stroke="#526179" stroke-width="6" stroke-linecap="round"/></g>')
+def watermark(c,x,y,scale,color='#526179'):
+    c.s.append(f'<g transform="translate({x} {y}) scale({scale})" opacity=".12"><circle cx="24" cy="24" r="18" fill="none" stroke="{color}" stroke-width="6"/><path d="M34 36l12 12" stroke="{color}" stroke-width="6" stroke-linecap="round"/></g>')
 
 def mobile_nav(c,key):
     c.rect(0,774,390,70,c.p['surface'],0,c.p['line'])
@@ -293,7 +293,7 @@ def sheet(n,title,subtitle):
     c.p['canvas']='#FFFFFF';c.p['surface']='#FFFFFF';c.p['line']='#D8E1F0'
     c.rect(0,0,1600,2000,'#FFFFFF',0,'#FFFFFF')
     logos(c,80,38,1440,92)
-    c.text(760,96,f'0{n} / 05',22,C['steel'],600)
+    c.text(760,96,f'0{n} / 04',22,C['steel'],600)
     c.s.append(f'<path d="M80 148H1520" stroke="{C["laserBlue"]}" stroke-width="6"/>')
     c.text(80,232,title,58,weight=750)
     c.text(80,280,subtitle,23,C['steel'])
@@ -301,20 +301,36 @@ def sheet(n,title,subtitle):
 
 def finish_sheet(c,label):
     c.s.append('<path d="M80 1904H1520" stroke="#D8E1F0"/>')
-    c.text(80,1952,'QUANTIFY CORE · SISTEMA VISUAL 02',19,C['steel'],600)
+    c.text(80,1952,'QUANTIFY CORE · SISTEMA VISUAL 03',19,C['steel'],600)
     c.text(1100,1952,label,19,C['steel'])
     return c.end()
 
 def sheets():
     c=sheet(1,'Paleta de colores','Laser Blue como eje. Neutros para leer. Acentos para comprender el estado.')
     names=[('laserBlue','Laser Blue','Marca y acción principal. Fondo de botón con texto blanco.'),('skyLaser','Sky Laser','Selección y foco en oscuro. Evitar blanco pequeño sobre este tono.'),('deepCobalt','Deep Cobalt','Énfasis profundo, interacción presionada y foco sobre claro.'),('obsidian','Obsidian Slate','Fondo oscuro y texto principal sobre superficies claras.'),('midnight','Midnight Navy','Tarjetas y capas del tema oscuro.'),('steel','Steel Border','Texto secundario claro y bordes interactivos con contraste.'),('gray','Cool Gray','Texto secundario oscuro; no usar como texto sobre blanco.'),('mist','Pure Mist','Fondo claro que separa las tarjetas sin recargar la interfaz.'),('white','Optical White','Superficies claras y texto invertido de alto contraste.'),('emerald','Emerald','Éxito y avance confirmado; acompañar con icono y etiqueta.'),('amber','Amber','Espera y sincronización pendiente; explicar qué falta.'),('crimson','Crimson','Error o interrupción; indicar la acción para recuperarse.'),('cyan','Electric Cyan','Acento de métricas y sugerencias; sin significado clínico.')]
+    psychology = ['Confianza y estabilidad.', 'Apertura y dinamismo.', 'Solidez y concentración.',
+                  'Sobriedad y profundidad.', 'Calma y continuidad.', 'Orden y estructura.',
+                  'Discreción y neutralidad.', 'Ligereza y descanso visual.', 'Claridad y amplitud.',
+                  'Progreso y equilibrio.', 'Atención y cautela.', 'Urgencia y corrección.',
+                  'Exploración y precisión.']
     for i,(key,name,note) in enumerate(names):
-        y=330+i*108;col=C[key];rgb=', '.join(str(int(col[j:j+2],16)) for j in [1,3,5])
-        c.s.append(f'<circle cx="120" cy="{y+30}" r="31" fill="{col}" stroke="#D8E1F0"/>')
-        c.text(180,y+17,name,27,weight=650);c.text(180,y+51,f'HEX {col}   ·   RGB {rgb}',20,C['steel'])
-        c.text(690,y+30,note,21,C['steel'])
-        c.s.append(f'<path d="M180 {y+78}H1520" stroke="#E7EDF7"/>')
-    c.rect(80,1770,1440,88,C['mist'],12,C['mist']);c.text(108,1824,'Uso digital sRGB · Blanco sobre Laser Blue: 6.28:1 · El estado siempre lleva texto.',23,weight=550)
+        y=322+i*110; col=C[key]
+        rgb=[int(col[j:j+2],16) for j in [1,3,5]]
+        r,g,b=[v/255 for v in rgb]; h,l,sat=colorsys.rgb_to_hls(r,g,b)
+        k=1-max(r,g,b)
+        cmyk=[0,0,0,100] if k==1 else [round((1-v-k)/(1-k)*100) for v in (r,g,b)]+[round(k*100)]
+        c.s.append(f'<circle cx="112" cy="{y+30}" r="28" fill="{col}" stroke="#8A99AD"/>')
+        c.text(166,y+15,name,25,weight=650)
+        c.text(166,y+45,f'HEX {col} · RGB {", ".join(map(str,rgb))}',18,C['steel'])
+        c.text(166,y+73,f'HSL {h*360:.1f}° {sat*100:.1f}% {l*100:.1f}% · CMYK {" / ".join(map(str,cmyk))}%',17,C['steel'])
+        c.text(765,y+12,'Psicología: '+psychology[i],20,weight=600)
+        for j,line in enumerate(textwrap.wrap('Uso / razón: '+note,62)):
+            c.text(765,y+43+j*26,line,20,C['steel'])
+        c.s.append(f'<path d="M166 {y+92}H1520" stroke="#E7EDF7"/>')
+    c.rect(80,1770,1440,100,C['mist'],12,C['mist'])
+    c.lines(104,1802,['Psicología: asociaciones de intención de marca, no efectos universales garantizados.',
+                    'HSL desde sRGB · CMYK matemático orientativo, sin perfil ICC; validar prueba de impresión.',
+                    'Soft Border #D8E1F0 es un derivado decorativo; no un color adicional de identidad.'],20,step=27)
     SCENES['imagenes/01-paleta-de-colores.png']=finish_sheet(c,'COLOR / sRGB')
     c=sheet(2,'Tipografía','Inter es la única familia de la galería, las láminas y los mockups de Quantify Core.')
     c.text(80,555,'Aa',230,C['laserBlue'],650)
@@ -327,41 +343,49 @@ def sheets():
     c.text(80,934,'abcdefghijklmnopqrstuvwxyz',48)
     c.text(80,1000,'0123456789  ÁÉÍÓÚÜÑ  áéíóúüñ',48)
     c.text(80,1066,'¿Cuánto avanzaste hoy? ¡Cada paso cuenta!',42)
-    c.text(80,1160,'JERARQUÍA DE INTERFAZ',20,C['laserBlue'],700)
-    for i,(label,text,size,weight) in enumerate([('40 / 700','Tu rutina, a tu ritmo',40,700),('28 / 700','Cada avance cuenta',28,700),('20 / 600','Hábitos programados',20,600),('16 / 400','Registra tu valor acumulado del día.',16,400),('14 / 500','Pendiente de sincronizar',14,500)]):
-        y=1240+i*92;c.text(80,y,label,22,C['steel']);c.text(430,y,text,size*1.35,weight=weight)
-    c.rect(80,1740,1440,118,C['mist'],12,C['mist']);c.lines(108,1786,['Misma familia en títulos, cuerpos, botones, tablas e iconos con etiqueta.','El logotipo raster heredado conserva su dibujo original; no es una fuente de interfaz.'],23,step=36)
+    c.text(80,1140,'SEIS CRITERIOS / DECISIÓN Y JUSTIFICACIÓN',20,C['laserBlue'],700)
+    criteria = [
+        ('Identidad de marca','Inter comunica claridad y precisión; acompaña el registro de hábitos sin competir con los logos.'),
+        ('Legibilidad','Formas abiertas y caracteres españoles facilitan la lectura. Cuerpo 16, ayuda 14; revisar zoom y reflujo.'),
+        ('Estética moderna','Construcción sobria sin ornamentos: jerarquía por tamaño y peso para una interfaz centrada en datos.'),
+        ('Consistencia visual','Una familia en títulos, tablas, controles y gráficos reduce variaciones entre web, móvil y documentación.'),
+        ('Flexibilidad tipográfica','Pesos 400/500/600/700 y escala 40/28/20/16/14 cubren títulos, cuerpo, etiquetas y cifras sin otra familia.'),
+        ('Compatibilidad tecnológica','WOFF2 local en web y PNG; evita dependencia de red. Flutter requiere empaquetar TTF/OTF y probarlo.')
+    ]
+    for i,(title,note) in enumerate(criteria):
+        x=80+(i%2)*740; y=1170+(i//2)*220
+        c.rect(x,y,700,196,C['mist'],12,C['mist'])
+        c.text(x+24,y+40,title,27,weight=650)
+        c.lines(x+24,y+82,textwrap.wrap(note,49),23,step=31)
+    c.text(80,1860,'Logos: dibujo original preservado. La elección Inter no redefine su tipografía.',22,C['steel'])
     SCENES['imagenes/02-tipografia.png']=finish_sheet(c,'TIPO / INTER')
     c=sheet(3,'Iconografía','Una familia de trazos. El mismo significado en navegación, acciones y estados.')
     labels=['Inicio / Hoy','Mis hábitos','Análisis','Preferencias','Crear hábito','Confirmado','Pendiente','Aviso / error','Volver','Privacidad','Cerrar sesión','Sugerencias','Calendario','Recordatorio','Lectura','Movimiento','Descanso','Historial','Ver detalle','Editar','Archivar','Descargar','Sincronizar','Dispositivo']
+    symbols=['Casa','Lista con verificación','Barras de datos','Deslizadores','Signo más','Marca de verificación','Reloj','Triángulo de alerta','Flecha a la izquierda','Escudo','Puerta con flecha','Destello','Calendario','Campana','Libro abierto','Persona caminando','Luna','Reloj con retorno','Ojo','Lápiz','Caja de archivo','Flecha hacia abajo','Flechas circulares','Reloj inteligente']
     for i,(key,label) in enumerate(zip(ICONS,labels)):
         x=80+i%4*370;y=334+i//4*226
         c.rect(x,y,330,196,'#FFFFFF',12,'#D8E1F0');c.icon(key,x+26,y+26,C['laserBlue'],3.3)
-        c.text(x+24,y+158,f'{i+1:02d}  {label}',24,weight=550)
+        c.text(x+24,y+145,f'{i+1:02d}  {label}',24,weight=550)
+        c.text(x+24,y+177,symbols[i],18,C['steel'])
     c.rect(80,1740,1440,118,C['mist'],12,C['mist']);c.lines(108,1786,['Retícula 24 × 24 · Trazo 1.8 · Extremos redondos · Objetivo táctil mínimo del diseño: 48.','Las acciones tienen etiqueta. Los estados combinan forma, palabra y color.'],23,step=36)
     SCENES['imagenes/03-iconografia.png']=finish_sheet(c,'ICONOS / 24 TRAZOS')
-    c=sheet(4,'Uso de imágenes','Fotografía serena y cotidiana: hábitos posibles, sin promesas ni escenas artificiales de éxito.')
-    photo(c,80,330,1440,760)
-    c.rect(100,1000,560,66,'#FFFFFF',10,'#FFFFFF');c.text(126,1042,'Lectura, hidratación y espacio personal.',24,weight=600)
-    rules=[('01 / Encuadre','Priorizar el objeto y dejar espacio limpio.','Usar proporciones estables, sin deformar.'),('02 / Color','Luz natural, neutros y acentos azules.','El producto conserva protagonismo.'),('03 / Contexto','Acompañar la tarea o el estado vacío.','Evitar decoración que distraiga del registro.'),('04 / Accesibilidad','Texto alternativo según el propósito.','Sin información esencial dentro de la foto.')]
-    for i,(title,a,b) in enumerate(rules):
-        x=80+(i%2)*740;y=1160+(i//2)*230;c.rect(x,y,700,190,C['mist'],14,C['mist']);c.text(x+28,y+52,title,29,weight=650);c.lines(x+28,y+104,[a,b],24,step=38)
-    c.lines(80,1700,['Fotografía creada para esta entrega con generación de imágenes.','No muestra personas ni representa registros o mediciones reales.','El logo se presenta completo y proporcionado; no se usa como textura o recorte.'],24,step=42)
-    SCENES['imagenes/04-uso-de-imagenes.png']=finish_sheet(c,'IMAGEN / CONTEXTO')
-    c=sheet(5,'Identidad / isologo','Dos marcas oficiales: Nexus Core empresarial y Quantify Core producto. Sin sustituir sus originales.')
+    c=sheet(4,'Logotipo / isologo','Dos marcas oficiales: Nexus Core empresarial y Quantify Core producto. Sin sustituir sus originales.')
     c.rect(80,330,1440,270,C['mist'],16,C['mist']);logos(c,144,370,1312,174)
     c.text(112,566,'Empresarial a la izquierda · Producto Quantify Core a la derecha',22,C['steel'])
     c.rect(80,650,700,270,C['obsidian'],16,C['obsidian']);logos(c,112,696,636,160);c.text(112,882,'Sobre oscuro: conservar placa blanca',23,C['white'])
     c.rect(820,650,700,270,'#FFFFFF',16,'#D8E1F0');logos(c,852,696,636,160);c.text(852,882,'Sobre claro: colores originales',23,C['steel'])
-    c.text(80,1004,'ÁREA LIBRE Y TAMAÑO',22,C['laserBlue'],700)
+    c.text(80,1004,'LOGOTIPO, ISOLOGO Y ÁREA LIBRE',22,C['laserBlue'],700)
     c.rect(80,1044,700,234,'#FFFFFF',0,'#8A99AD');logos(c,112,1080,636,146)
-    c.lines(840,1100,['Separar las marcas con espacio libre.','No cortar letras ni deformar proporciones.','Conservar los colores de cada original.','Usar una placa blanca en tema oscuro.'],25,step=42)
+    c.lines(840,1100,['Logotipo: denominación escrita de la marca.','Isologo: símbolo y nombre como conjunto.','No extraer partes de los JPEG originales.','Dejar al menos 1/4 de su altura libre.'],25,step=42)
     c.text(80,1380,'MARCA DE AGUA EDITORIAL / INDEPENDIENTE',22,C['laserBlue'],700)
-    c.rect(80,1420,670,380,C['mist'],16,C['mist'])
-    watermark(c,330,1490,3)
-    c.text(160,1760,'Sello de la documentación visual',25,C['steel'],550)
-    c.lines(840,1490,['El símbolo Q parecido a una lupa','se reserva como marca de agua.','No es el logo empresarial ni el producto.','Los dos JPEG oficiales se conservan','sin recolorear ni reemplazar.'],25,step=44)
-    SCENES['imagenes/05-identidad-isologo.png']=finish_sheet(c,'MARCA / QUANTIFY CORE')
+    c.rect(80,1420,320,380,C['mist'],16,C['mist'])
+    c.rect(430,1420,320,380,C['obsidian'],16,C['obsidian'])
+    watermark(c,160,1490,3)
+    watermark(c,510,1490,3,C['white'])
+    c.text(110,1760,'Documento claro',24,C['steel'],550)
+    c.text(460,1760,'Documento oscuro',24,C['white'],550)
+    c.lines(840,1490,['Q editorial · dos variantes al 12 %.','Gris sobre claro; blanco sobre oscuro.','Usar en portada o pie documental libre.','Sin superponer texto, datos ni controles.','La Q es un recurso, no una tercera marca.'],25,step=44)
+    SCENES['imagenes/04-identidad-isologo.png']=finish_sheet(c,'MARCA / QUANTIFY CORE')
 
 def main():
     for key,title,rf,ref,note in SCREENS:
