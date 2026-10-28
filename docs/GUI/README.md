@@ -1,6 +1,6 @@
 # Quantify Core · Galería y sistema visual
 
-**Versión 03 · 28 de octubre de 2026 · [QUANCORE-26](https://utxicotepec-team-q5ufett6.atlassian.net/browse/QUANCORE-26)**
+**Versión 04 · 28 de octubre de 2026 · [QUANCORE-26](https://utxicotepec-team-q5ufett6.atlassian.net/browse/QUANCORE-26)**
 
 ## Contenido
 
@@ -18,7 +18,7 @@
 | Paleta, tipografía, iconografía, logotipo/isologo y marcas de agua | Cuatro lienzos PNG en hotfix | [imagenes/](imagenes/) |
 | Pantallas en sketch, wireframe y mockup | Completo (34 PNG) | [prototipos/](prototipos/) |
 | Galería pública | Versión anterior; esta hotfix no se publica en Pages | [Abrir galería](https://angeljesus13.github.io/Quantify-Core/docs/GUI/) |
-| Archivo editable | Conexión autenticada; Figma rechaza acceso al archivo | [Figma](https://www.figma.com/design/iLvbL5uaWxAPwuX58xN4yq/Quantify-Core-%C2%B7-Sistema-visual-y-prototipos--QUANCORE-26-?node-id=0-1&t=vNJ6E9RRwxvSXkNs-1) |
+| Archivo editable | Cuatro lienzos editables actualizados; claro y oscuro | [Figma](https://www.figma.com/design/iLvbL5uaWxAPwuX58xN4yq/Quantify-Core-%C2%B7-Sistema-visual-y-prototipos--QUANCORE-26-?node-id=0-1&t=vNJ6E9RRwxvSXkNs-1) |
 | Implementación en producto | Pendiente | Ver [Verificación y límites](#verificación-y-límites) |
 
 ## Revisar las imágenes
@@ -27,7 +27,9 @@
 
 **Estado de esta revisión:** cuatro lienzos en la rama `hotfix/QUANCORE-26-cuatro-lienzos`; GitHub Pages conserva la versión anterior. [Abrir la galería local](index.html). Cada lienzo puede ampliarse y descargarse; los prototipos conservan sus filtros y visor.
 
-Figma está instalado y autenticado. Los intentos de sesión y lectura del nodo `0:1` del 28/10/2026 devolvieron falta de acceso de edición. No fue posible auditar ni modificar el archivo remoto. El propietario debe compartirlo como editor; no se afirma sincronización con esta revisión.
+Figma se actualizó el 28/10/2026 después de obtener acceso. La primera página contiene exactamente cuatro lienzos: [paleta](https://www.figma.com/design/iLvbL5uaWxAPwuX58xN4yq/?node-id=17-2), [tipografía](https://www.figma.com/design/iLvbL5uaWxAPwuX58xN4yq/?node-id=17-146), [iconografía](https://www.figma.com/design/iLvbL5uaWxAPwuX58xN4yq/?node-id=17-187) y [logotipo/isologo y marcas de agua](https://www.figma.com/design/iLvbL5uaWxAPwuX58xN4yq/?node-id=17-508). Son textos, vectores e instancias editables; únicamente los logos oficiales siguen siendo JPEG originales. Se conservaron los 24 maestros de iconos y las otras dos páginas.
+
+Las justificaciones ampliadas de colores y seis criterios tipográficos viven en [identidad.json](fuente/identidad.json), compartido como contenido con Figma. Cada lienzo muestra las aplicaciones de ambos temas. Los PNG se regeneran desde la fuente local y comparten contenido y roles; no se presentan como exportaciones idénticas de Figma.
 
 Esta es la **única documentación completa de la entrega visual**. Los índices de `docs/diseno` y del mapa documental enlazan aquí. Se retiraron las tablas de enlaces SVG, el manual duplicado, los manifiestos duplicados, los informes separados y los iconos exportados uno por uno. Las fuentes de autoría permanecen para poder actualizar las imágenes sin redibujar cada una manualmente.
 
@@ -43,6 +45,54 @@ Blanco sobre Laser Blue alcanza **6.28:1**; Cool Gray sobre Midnight **5.70:1**.
 
 La fuente de valores y geometría es [preview.json](../../packages/design-tokens/preview.json). El nombre histórico del archivo no implica que Inter siga sin elegir: la familia de esta entrega queda definida por la solicitud del proyecto. Todavía no se distribuye un paquete de componentes React/Flutter.
 
+### Justificación completa por color
+
+**Laser Blue.** Psicología de marca: Confianza, continuidad y precisión. Se usa como ancla reconocible del producto y para la acción principal: permite localizar qué hacer sin convertir toda la pantalla en un acento. Su profundidad sostiene texto blanco legible y da continuidad entre web, móvil y documentos. En oscuro conserva el valor de marca; los iconos aislados cambian a Sky Laser para distinguirse de la superficie.
+
+**Sky Laser.** Psicología de marca: Apertura, energía y exploración. Su mayor luminosidad hace visibles selección, foco e iconos activos sobre Midnight Navy. Mantiene parentesco con Laser Blue sin introducir otra marca para el tema oscuro. En claro no se usa con texto blanco pequeño ni como única señal sobre blanco; se reserva como acento y se combina con una etiqueta o contorno legible.
+
+**Deep Cobalt.** Psicología de marca: Solidez, concentración y estabilidad. Es la variante profunda de la familia azul para foco y acciones presionadas sobre claro. Refuerza una interacción sin recurrir a negro ni cambiar de matiz, de modo que el estado sigue perteneciendo a la marca. Sobre oscuro pierde separación: el foco se muestra en Sky Laser y no se hereda este valor automáticamente.
+
+**Obsidian Slate.** Psicología de marca: Sobriedad y profundidad visual. Estructura el fondo oscuro y el texto principal sobre claro, por lo que articula ambos temas sin añadir un negro ajeno a la paleta. También sirve de tinta en badges semánticos luminosos. Su función es separar niveles y priorizar contenido; no se usa como texto sobre Midnight Navy, donde se necesita Optical White.
+
+**Midnight Navy.** Psicología de marca: Calma, continuidad y contención. Eleva tarjetas y paneles respecto del fondo Obsidian sin recurrir a grandes áreas blancas en modo oscuro. La diferencia de luminancia organiza la profundidad, mientras texto blanco y secundarios Cool Gray mantienen la lectura. No se confía solo en esa diferencia para identificar un campo: los controles reciben un borde visible adicional.
+
+**Steel Border.** Psicología de marca: Orden, estructura y neutralidad. Proporciona texto secundario e iconos neutros legibles sobre blanco y un contorno reconocible para controles claros. Su tono azulado mantiene coherencia con la marca sin competir con la acción principal. En modo oscuro se sustituye en esos roles por Cool Gray, porque el mismo tono profundo se perdería contra las superficies oscuras.
+
+**Cool Gray.** Psicología de marca: Discreción y equilibrio. Se elige como segundo nivel de lectura en oscuro: diferencia metadatos de títulos sin volverlos invisibles sobre Midnight Navy. También delimita controles oscuros cuando el borde identifica la interacción. En claro se sustituye por Steel Border para texto e iconos informativos; su apariencia suave sobre blanco no aporta el contraste necesario.
+
+**Pure Mist.** Psicología de marca: Ligereza y espacio visual. Ofrece un fondo claro ligeramente azulado que separa las tarjetas blancas sin rodearlas de bloques intensos. La cercanía con la familia de marca mantiene unidad y deja protagonismo a datos y acciones. Al activar oscuro, el rol fondo pasa a Obsidian; Pure Mist no se invierte ni se conserva como gran superficie luminosa.
+
+**Optical White.** Psicología de marca: Claridad y amplitud. Se emplea en superficies claras y como tinta principal sobre oscuro, además de texto sobre botones Laser Blue. Su rol cambia con el tema, pero el valor permanece estable. Los logos JPEG mantienen su placa blanca en ambos temas para preservar sus colores originales: esa placa es una excepción de identidad, no una tarjeta que olvidó cambiar.
+
+**Emerald.** Psicología de marca: Progreso y confirmación. Relaciona una acción completada con avance verificable, sin usar el verde para prometer bienestar o resultados clínicos. Se conserva en ambos temas como acento o fondo de badge con tinta Obsidian y una marca de verificación. No se pone como texto pequeño sobre blanco ni se confunde un registro pendiente con uno confirmado.
+
+**Amber.** Psicología de marca: Atención y cautela. Distingue espera, pendiente o una decisión que necesita revisión sin comunicar un fallo definitivo. El mismo matiz en ambos temas evita reaprender el significado del estado. Se muestra en un badge con tinta Obsidian, reloj y etiqueta: un punto amarillo por sí solo no explica qué falta ni cuándo puede continuar la persona.
+
+**Crimson.** Psicología de marca: Urgencia y recuperación. Se reserva a error o interrupción para que lo excepcional conserve peso visual. Siempre se acompaña de una explicación y una vía de recuperación, evitando presentarlo como juicio sobre la persona o sus hábitos. En ambos temas puede funcionar como fondo de badge con tinta Obsidian; no como texto blanco pequeño o rojo aislado sobre blanco.
+
+**Electric Cyan.** Psicología de marca: Exploración y precisión informativa. Separa métricas y sugerencias del azul reservado a la acción principal. Así la persona distingue información de una invitación a actuar. Conserva su valor en claro y oscuro como acento o badge con tinta Obsidian y etiqueta descriptiva. El color no certifica inteligencia, exactitud de un modelo ni validez médica de una recomendación.
+
+### Aplicación de claro y oscuro
+
+Los valores primitivos no se invierten: cambian sus asignaciones por rol. [preview.json](../../packages/design-tokens/preview.json) es la fuente; [themes.css](../../packages/design-tokens/themes.css) exporta los roles para revisión y futuros consumidores. El tema normal es claro; `data-qc-theme="dark"` selecciona oscuro en un consumidor que use esas variables. La galería conserva su diseño editorial claro y muestra los dos temas dentro de cada lienzo; no se declara implementado un selector de tema del producto.
+
+| Rol | Claro | Oscuro | Criterio |
+|---|---|---|---|
+| Fondo del lienzo | `#F4F7FD` | `#0B0F17` | Cambia para ajustar la superficie general; conserva la jerarquía. |
+| Tarjeta | `#FFFFFF` | `#161F2E` | Cambia para elevar contenido sin deslumbrar en oscuro. |
+| Texto principal | `#0B0F17` | `#FFFFFF` | Cambia la tinta para mantener legibilidad. |
+| Texto / icono secundario | `#283548` | `#8A99AD` | Cambia la luminosidad; conserva su menor jerarquía. |
+| Icono activo / navegación | `#275BC0` | `#4A7DE8` | Cambia de azul por separación contra la superficie. |
+| Foco visible | `#183D87` | `#4A7DE8` | Cambia para distinguir el control con teclado. |
+| Acción principal | `#275BC0` | `#275BC0` | No cambia: mantiene reconocimiento y texto blanco. |
+| Confirmación | `#10B981` | `#10B981` | Conserva su matiz; badge con tinta Obsidian, forma y etiqueta. |
+| Pendiente | `#F59E0B` | `#F59E0B` | Conserva su matiz; badge con tinta Obsidian, forma y etiqueta. |
+| Error | `#EF4444` | `#EF4444` | Conserva su matiz; badge con tinta Obsidian, forma y etiqueta. |
+| Métrica / sugerencia | `#0EA5E9` | `#0EA5E9` | Conserva su matiz; badge con tinta Obsidian, forma y etiqueta. |
+
+Los badges semánticos usan tinta Obsidian sobre Emerald, Amber, Crimson y Cyan en ambos temas. No trasladar esos tonos a texto pequeño sobre blanco. Las etiquetas, formas y explicación conservan el significado aunque no se distinga el color.
+
 ## 2. Tipografía definida: Inter
 
 [![Tipografía Inter con muestras de español, números, pesos y jerarquías de interfaz](imagenes/02-tipografia.png)](imagenes/02-tipografia.png)
@@ -51,16 +101,19 @@ La fuente de valores y geometría es [preview.json](../../packages/design-tokens
 
 Inter ofrece una construcción legible para interfaz, soporte de los caracteres del español y pesos variables sin cambiar de familia. Escala base: 40 presentación, 28 pantalla, 20 sección, 16 cuerpo y 14 ayuda; pesos habituales 400/500/600/700. El logotipo raster heredado conserva su dibujo original: no se pretende identificar o sustituir la fuente con la que fue creado.
 
-Los seis criterios del lienzo se justifican así:
+Los seis criterios del lienzo se desarrollan así:
 
-| Criterio | Justificación de Inter |
-|---|---|
-| Identidad de marca | Claridad y precisión para registrar hábitos; acompaña las marcas oficiales. |
-| Legibilidad | Formas abiertas y español; cuerpo 16 y ayuda 14, con revisión de zoom y reflujo al implementar. |
-| Estética moderna | Dibujo sobrio y jerarquía por tamaño/peso para una interfaz de datos. |
-| Consistencia visual | Una familia compartida en títulos, controles, tablas y gráficos. |
-| Flexibilidad tipográfica | Pesos 400/500/600/700 y escala 40/28/20/16/14 sin añadir otra familia. |
-| Compatibilidad tecnológica | WOFF2 local verificado en navegador y exportación; Flutter necesita TTF/OTF empaquetado y validación propia. |
+**Identidad de marca.** Inter acompaña una identidad basada en evidencia, hábitos y claridad: su dibujo sobrio permite que el contenido tenga protagonismo y que la personalidad se apoye en el azul, la composición y el tono de voz. Se usa en la interfaz y documentación para reconocer el mismo producto. Los logos conservan su dibujo original; no se recompone su nombre con Inter.
+
+**Legibilidad.** Las formas abiertas, la cobertura del español y una jerarquía consistente ayudan a distinguir etiquetas, cifras y párrafos en una interfaz de consulta frecuente. El cuerpo parte de 16 y la ayuda de 14; el contenido no se comprime para hacerlo caber. En oscuro cambia la tinta, no se adelgaza la fuente. Deben comprobarse zoom, lector, interlineado y reflujo en producto.
+
+**Estética moderna.** La construcción sin ornamentos y los pesos graduados permiten una presentación actual centrada en datos, sin necesitar una familia decorativa para cada sección. El carácter moderno proviene de una jerarquía contenida, aire y alineaciones coherentes. Ambos temas conservan tamaños y pesos para que activar oscuro cambie la iluminación visual sin transformar la personalidad ni el orden de lectura.
+
+**Consistencia visual.** Una sola familia en navegación, formularios, tablas, métricas y documentos evita diferencias accidentales entre plataformas. La escala 40/28/20/16/14 y los pesos 400/500/600/700 asignan funciones repetibles, no elecciones arbitrarias por pantalla. Claro y oscuro mantienen esa estructura; únicamente cambian las tintas y superficies asociadas a sus roles. Cada cliente deberá usar los mismos nombres y criterios.
+
+**Flexibilidad tipográfica.** Los pesos variables permiten pasar de párrafos tranquilos a títulos y etiquetas firmes sin mezclar tipografías. Los números de métricas pueden usar cifras tabulares al alinear columnas; los encabezados no requieren ese tratamiento. Se elige peso por función y no por tema. Si una cadena crece, el contenedor debe reacomodarse antes de reducir tamaño o eliminar contenido.
+
+**Compatibilidad tecnológica.** El archivo WOFF2 local mantiene la familia disponible en la galería sin consultar servicios de fuentes al abrirla. Los PNG fijan su aspecto para revisión, mientras Figma conserva texto editable. React deberá cargar ese recurso y Flutter empaquetar una versión TTF/OTF compatible; ese cliente aún requiere validación propia. Deben conservarse licencia, cobertura, fallback y pruebas en dispositivos reales.
 
 Fuente: [proyecto oficial rsms/inter](https://github.com/rsms/inter), autoría Rasmus Andersson; [licencia SIL Open Font License incluida](assets/inter-license.txt). Archivo fijado al commit `353b61b9f4430d5f420d56605a6e7993e0941470`, sin modificaciones. SHA-256 WOFF2: `693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3`.
 
@@ -68,7 +121,7 @@ Fuente: [proyecto oficial rsms/inter](https://github.com/rsms/inter), autoría R
 
 [![Catálogo de 24 iconos coherentes de Quantify Core](imagenes/03-iconografia.png)](imagenes/03-iconografia.png)
 
-Cada icono identifica su función y el símbolo que lo representa (casa, escudo, reloj, etc.). La imagen reúne los **24 iconos**: Hoy, hábitos, análisis, preferencias, crear, confirmado, pendiente, aviso, volver, privacidad, salir, sugerencias, calendario, recordatorio, lectura, movimiento, descanso, historial, ver, editar, archivar, descargar, sincronizar y dispositivo.
+Cada icono identifica su función y el símbolo que lo representa (casa, escudo, reloj, etc.), con muestras en claro y oscuro. El mismo trazo y significado se conservan al cambiar de tema. Navegación activa: Laser Blue sobre blanco y Sky Laser sobre Midnight. Iconos neutros: Steel en claro y Cool Gray en oscuro. Estados: badge Emerald, Amber, Crimson o Cyan con tinta Obsidian, forma y etiqueta. No usar el color como única información. La imagen reúne los **24 iconos**: Hoy, hábitos, análisis, preferencias, crear, confirmado, pendiente, aviso, volver, privacidad, salir, sugerencias, calendario, recordatorio, lectura, movimiento, descanso, historial, ver, editar, archivar, descargar, sincronizar y dispositivo.
 
 Todos comparten retícula 24 × 24, trazo 1.8, extremos/uniones redondos y ausencia de relleno. Se dibujan desde un catálogo único en [la fuente](fuente/generar.py), utilizado también por los mockups. No se instala otra familia ni se mezclan emojis como iconos de navegación. Las acciones conservan etiqueta; los estados combinan forma y texto. Objetivo de interacción del diseño: 48 unidades, por resolver y comprobar al implementar cada plataforma.
 
@@ -134,14 +187,14 @@ docs/GUI/
   imagenes/             Los cuatro lienzos completos (PNG)
   prototipos/           Sketches, wireframes y mockups (PNG)
   assets/               Fuente Inter, licencia, foto, estilos e interacción
-  fuente/               Dos archivos para regenerar las imágenes
+  fuente/               Generador, exportador y contenido compartido identidad.json
 ```
 
 Cada PNG corresponde a una lámina o variante de pantalla; no se mantiene una segunda copia SVG exportada ni 24 iconos sueltos. La fuente vectorial vive en el generador y sus temporales quedan ignorados en `.build/`. Los PNG preservan exactamente la tipografía elegida al revisarlos en otro equipo.
 
-Para consultar localmente con la fuente web exacta, servir la raíz con `python -m http.server 8765`, y visitar `http://localhost:8765/docs/GUI/`. No hace falta instalar dependencias para consultar la galería. Para regenerar: Python 3 ejecuta `python docs/GUI/fuente/generar.py`; el entorno de autoría con Node/Playwright y Chrome ejecuta `node docs/GUI/fuente/render.cjs`. El exportador comprueba carga de Inter y texto dentro de los lienzos. Los paths del navegador se pueden configurar mediante `QC_CHROME`; Playwright debe estar disponible en el entorno. No se instala como dependencia del producto.
+Para consultar localmente con la fuente web exacta, servir la raíz con `python -m http.server 8765`, y visitar `http://localhost:8765/docs/GUI/`. No hace falta instalar dependencias para consultar la galería. Para regenerar: Python 3 ejecuta `python docs/GUI/fuente/generar.py`; el entorno de autoría con Node/Playwright y Chrome ejecuta `node docs/GUI/fuente/render.cjs`. El exportador comprueba carga de Inter y texto dentro de los lienzos. Para exportar solo los cuatro lienzos sin tocar las pantallas, definir `QC_IDENTITY_ONLY=1` antes de ejecutar el exportador. La altura se adapta a las justificaciones; se mantiene el ancho de 1600 px. Los paths del navegador se pueden configurar mediante `QC_CHROME`; Playwright debe estar disponible en el entorno. No se instala como dependencia del producto.
 
-Los cambios visuales compartidos se hacen primero en tokens o en el catálogo de la fuente, se regeneran las imágenes y se revisan ambos temas. React y Flutter deberán incorporar la misma familia y semántica al implementar componentes; esta entrega no modifica clientes de producto todavía inexistentes en esta base.
+Los cambios visuales compartidos se hacen primero en tokens, identidad.json o el catálogo de la fuente, se regeneran las imágenes y se revisan ambos temas. React y Flutter deberán incorporar la misma familia y semántica al implementar componentes; esta entrega no modifica clientes de producto todavía inexistentes en esta base.
 
 ## Publicación y control de ramas
 
@@ -151,7 +204,7 @@ Por instrucción expresa del usuario, `hotfix/QUANCORE-26-cuatro-lienzos` parte 
 
 ## Verificación y límites
 
-La revisión de esta hotfix valida generación de los cuatro lienzos, Inter, límites de texto, galería local y enlaces. Las comprobaciones del 26/10 descritas abajo son evidencia histórica y no acreditan publicación de esta versión.
+La revisión local de esta hotfix valida generación de los cuatro lienzos, Inter, límites de texto, galería local y enlaces. Las comprobaciones del 26/10 descritas abajo son evidencia histórica y no acreditan publicación de esta versión.
 
 No se declara conformidad WCAG global. La galería utiliza controles HTML con nombre y foco visible; los PNG no son controles accesibles de aplicación. La implementación deberá probar lector de pantalla, teclado, zoom, reflujo y tamaños táctiles de cada componente. No se comprobaron clientes nativos, autenticación, API o hardware real mediante estas imágenes.
 
@@ -169,11 +222,12 @@ El diff de Práctica 07 debe estar vacío y su árbol coincidir con el indicado.
 
 ### Resultados de la hotfix (28/10/2026)
 
-- Cuatro PNG de identidad a 1600 × 2000; Inter cargada y texto dentro del lienzo.
+- Cuatro PNG de identidad a 1600 px de ancho y altura ajustada al contenido; Inter cargada y texto dentro del lienzo.
 - Galería local: 320, 390, 768 y 1440 px; 16 revisiones del visor (cuatro lienzos por ancho), ampliación, flechas, Escape, retorno del foco y enlace de descarga. Sin desbordamiento horizontal, imágenes rotas ni errores de página o HTTP.
-- Documentación: 72 Markdown, 515 enlaces locales y 51 bloques Mermaid válidos; OpenAPI válido.
+- Documentación: 72 Markdown, 520 enlaces locales y 51 bloques Mermaid válidos; OpenAPI válido.
 - Práctica 07: 21/21 pruebas existentes; sin cambios en su árbol ni en los logos o los 34 prototipos.
-- Figma: acceso rechazado; sin lectura ni cambios remotos. GitHub Pages conserva la versión anterior.
+- Contrastes calculados: blanco/Laser Blue 6.28:1; Sky Laser/Midnight 4.25:1 para iconos (no texto normal pequeño); tinta Obsidian sobre estados entre 5.10:1 y 8.93:1. No se declara conformidad global del producto.
+- Figma: cuatro lienzos editables; 24 maestros preservados, 48 instancias de muestra y cuatro colocaciones de los dos logos oficiales. Texto Inter y autoajuste comprobados estructuralmente, sin desbordamientos. La iconografía se revisó visualmente. El plan Starter agotó las llamadas al pedir las otras tres capturas: su revisión visual remota queda pendiente; la estructura sí se verificó. GitHub Pages conserva la versión anterior.
 
 ### Evidencia histórica de la versión 02 (26/10/2026)
 
