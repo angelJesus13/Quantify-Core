@@ -5,6 +5,7 @@ estructura con Arial y grises; los mockups aplican los activos canónicos.
 """
 import json
 import random
+import re
 import textwrap
 from html import escape
 
@@ -182,6 +183,22 @@ def write_readme(manifest, output):
 
 [Índice GUI](../../README.md) · [Identidad visual](../../identidad/README.md) · [Galería](../../index.html#prototipos) · [Catálogo con geometría](catalogo.json) · [Fuente](../../fuente/movil.py)
 
+**Ver imágenes:** [Sketches](#sketches) · [Wireframes](#wireframes) · [Mockups claros](#mockups-claros) · [Mockups oscuros](#mockups-oscuros). La matriz sirve de índice; cada enlace lleva a la imagen incrustada de esa pantalla.
+
+## Acceso, registro de cuenta y recuperación
+
+Auditoría del catálogo y de los PNG existentes (29/10/2026):
+
+| Flujo | Qué existe en estas veinte pantallas |
+|---|---|
+| Bienvenida | **01 Bienvenida**: presenta el producto y conduce a Acceso. |
+| Login / acceso | **02 Acceso**: entrada al proveedor con «Continuar con Keycloak». No muestra campos de usuario o contraseña ni el formulario del proveedor. |
+| Registro de cuenta | **No hay una pantalla de creación de cuenta** en el catálogo móvil ni entre sus PNG. |
+| Forgot password / recuperación | **No hay una pantalla de recuperación de contraseña** en el catálogo móvil ni entre sus PNG. |
+| Registrar avance | **08 Registrar avance**: check-in de un hábito; no es registro de cuenta. |
+
+La autenticación se delega a Keycloak. Faltan aquí las representaciones del formulario de login del proveedor, creación de cuenta y recuperación; la pantalla de acceso no acredita que esos flujos estén diseñados o implementados. Esta revisión documental conserva las veinte pantallas y no añade formularios nuevos.
+
 ## Etapas
 
 | Etapa | Pantallas | PNG | Criterio |
@@ -204,17 +221,28 @@ Cada fila identifica una pantalla y sus cuatro recursos correspondientes. Las et
 """
     areas=[('Inicio y acceso',1,2),('Hábitos y registros',3,9),('Recordatorios y avisos',10,11),('Análisis y sugerencias',12,15),('Perfil, privacidad y dispositivos',16,20)]
     names={'bienvenida':'Bienvenida','acceso':'Acceso','hoy':'Hoy','detalle':'Detalle de hábito','historial':'Historial de hábito','analisis':'Análisis','periodo':'Elegir periodo','sugerencias':'Sugerencias','personalizar':'Personalizar sugerencia','ajustes':'Perfil y preferencias','consentimiento':'Consentimiento','dispositivos':'Dispositivos','vincular':'Vincular una fuente','datos':'Datos personales'}
+    stages=[('sketch:none','Sketch','Sketches'),('wireframe:none','Wireframe','Wireframes'),('mockup:light','Mockup claro','Mockups claros'),('mockup:dark','Mockup oscuro','Mockups oscuros')]
+    def heading(item,stage):return f'{stage} {item["number"]:02d} {names.get(item["id"],item["title"])}'
+    def anchor(title):return re.sub(r'[^\w\- ]','',title.lower()).replace(' ','-')
     for area,first,last in areas:
         readme+=f'\n### {area}\n\n| Nº | Pantalla e intención | Requisito | Sketch | Wireframe | Mockup claro | Mockup oscuro |\n|---|---|---|---|---|---|---|\n'
         for item in manifest:
             if not first<=item['number']<=last:continue
             links=[]
-            for stage in ('sketch:none','wireframe:none','mockup:light','mockup:dark'):
-                rel=item['assets'][stage].removeprefix('prototipos/movil/')
-                links.append(f'[PNG]({rel})')
+            for key,stage,_ in stages:
+                links.append(f'[Ver](#{anchor(heading(item,stage))})')
             label=names.get(item['id'],item['title'])
             caption=f'**{label}**' if label==item['title'] else f'**{label}** · {item["title"]}'
             readme+=f'| {item["number"]:02d} | {caption} — {item["intent"]} | {item["rf"]} | '+' | '.join(links)+' |\n'
+    for key,stage,title in stages:
+        readme+=f'\n## {title}\n\n[Volver a la matriz](#matriz-por-áreas-funcionales). Las imágenes conservan su número e ID entre etapas.\n'
+        for area,first,last in areas:
+            readme+=f'\n### {stage} · {area}\n'
+            for item in manifest:
+                if not first<=item['number']<=last:continue
+                caption=heading(item,stage)
+                rel=item['assets'][key].removeprefix('prototipos/movil/')
+                readme+=f'\n#### {caption}\n\nID: `{item["id"]}`.\n\n![{caption}]({rel})\n'
     readme+='\n## Condiciones por pantalla\n\n'
     for item in manifest:readme+=f'{item["number"]:02d}. **{item["title"]}:** {item["note"]}\n'
     readme+="""
