@@ -76,16 +76,18 @@ class MobileDesign(unittest.TestCase):
                     if value!='none':self.assertTrue(is_gray(value),(ident,value))
 
     def test_mockups_inter_paleta_y_logos_existentes_en_dos_temas(self):
-        originals=[(g.ROOT/f'assets/images/{kind}Logo.jpeg').read_bytes() for kind in ('enterprise','product')]
         import base64
         canonical={x.lower() for x in g.C.values()}
         for ident,scenes in self.scenes.items():
             a,b=scenes['mockup','light'],scenes['mockup','dark']
             self.assertNotEqual(ET.tostring(a),ET.tostring(b))
-            for svg in (a,b):
+            for theme,svg in [('light',a),('dark',b)]:
                 for n in svg.iter(NS+'text'):self.assertEqual(n.attrib['font-family'],'Inter')
                 images=[n.attrib['href'] for n in svg.iter(NS+'image')]
-                for raw in originals:self.assertIn('data:image/jpeg;base64,'+base64.b64encode(raw).decode(),images)
+                for kind in ('enterprise','product'):
+                    resource=g.ROOT/(f'assets/images/brand/{kind}-dark.png' if theme=='dark' else f'assets/images/{kind}Logo.jpeg')
+                    mime='image/png' if theme=='dark' else 'image/jpeg'
+                    self.assertIn(f'data:{mime};base64,'+base64.b64encode(resource.read_bytes()).decode(),images)
                 for n in svg.iter():
                     for key in ('fill','stroke'):
                         value=n.attrib.get(key,'none')

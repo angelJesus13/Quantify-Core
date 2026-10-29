@@ -10,7 +10,7 @@
       "skyLaser",
       "Sky Laser",
       "Apertura, energía y exploración.",
-      "Su mayor luminosidad hace visibles selección, foco e iconos activos sobre Midnight Navy. Mantiene parentesco con Laser Blue sin introducir otra marca para el tema oscuro. En claro no se usa con texto blanco pequeño ni como única señal sobre blanco; se reserva como acento y se combina con una etiqueta o contorno legible."
+      "Su mayor luminosidad hace visibles selección, foco e iconos activos sobre Midnight Navy. Mantiene parentesco con Laser Blue sin introducir otra marca para el tema oscuro. En claro no se usa con texto blanco pequeño ni como única señal sobre blanco; se reserva como acento y se combina con una etiqueta o contorno legible. También es el azul de las variantes oscuras de empresa y producto: ilumina sus trazos sin convertir el azul en su complementario ni modificar sus formas."
     ],
     [
       "deepCobalt",
@@ -52,7 +52,7 @@
       "white",
       "Optical White",
       "Claridad y amplitud.",
-      "Se emplea en superficies claras y como tinta principal sobre oscuro, además de texto sobre botones Laser Blue. Su rol cambia con el tema, pero el valor permanece estable. Los logos JPEG mantienen su placa blanca en ambos temas para preservar sus colores originales: esa placa es una excepción de identidad, no una tarjeta que olvidó cambiar."
+      "Se emplea en superficies claras y como tinta principal sobre oscuro, además de texto sobre botones Laser Blue. Su rol cambia con el tema, pero el valor permanece estable. En los derivados oscuros de las marcas, las letras y trazos neutros pasan a Optical White sobre transparencia. Los originales claros permanecen intactos: ya no se coloca un rectángulo blanco detrás de la marca oscura."
     ],
     [
       "emerald",
@@ -174,6 +174,6 @@
     ]
   ],
   "iconRules": "El mismo trazo y significado se conservan al cambiar de tema. Navegación activa: Laser Blue sobre blanco y Sky Laser sobre Midnight. Iconos neutros: Steel en claro y Cool Gray en oscuro. Estados: badge Emerald, Amber, Crimson o Cyan con tinta Obsidian, forma y etiqueta. No usar el color como única información.",
-  "logoRules": "Nexus Core identifica a la empresa; Quantify Core al producto. Se muestran por separado, conservando sus originales, proporción y área libre mínima de un cuarto de su altura visible. En modo oscuro ambos mantienen una placa blanca: no invertir el JPEG ni recolorear sus letras. Una futura versión inversa exige un original vectorial autorizado; no se simula con filtros.",
+  "logoRules": "Nexus Core identifica a la empresa; Quantify Core al producto. Los originales claros permanecen intactos. Los derivados oscuros usan fondo transparente, Sky Laser en los trazos azules y Optical White en letras y segmentos neutros. Se mantienen exactamente dimensiones, coordenadas, dibujo, nombres, proporciones, composición y eslóganes. No se redibuja ni se recompone tipografía; solo se adapta color y fondo. Reservar al menos 1/4 de la altura visible alrededor de cada firma.",
   "watermarkRules": "La Q editorial se reserva a documentación y permanece independiente de empresa y producto. Variante clara: gris sobre fondo claro; variante oscura: blanco sobre Obsidian, ambas al 12 %. Colocarla en portada o pie libre, sin tapar texto, métricas, logos ni controles. No representa un botón de búsqueda ni una nueva marca."
 }

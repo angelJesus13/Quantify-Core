@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "authorization": "Variantes de color/fondo autorizadas por el propietario el 29/10/2026. Sin cambios de dibujo o composición.",
+  "colors": {
+    "blue": "skyLaser",
+    "neutral": "white",
+    "background": "transparent"
+  },
+  "method": {
+    "whiteMatte": 245,
+    "opaqueInk": 40,
+    "geometry": "Mismas dimensiones y coordenadas; sin recorte, interpolación, vectorizado ni tipografía nueva."
+  },
+  "logos": {
+    "enterprise": {
+      "original": "assets/images/enterpriseLogo.jpeg",
+      "dark": "assets/images/brand/enterprise-dark.png",
+      "sourceSHA256": "81061f9327ed3b7639b50be111d7fa83b3d11a5dcb300bb4f080548c3c3d2db9",
+      "darkSHA256": "df3a47d4f66f94e3986281cc759ebb4486d619b2de5da8d8eaae2334ac00163f",
+      "size": [
+        1600,
+        1194
+      ]
+    },
+    "product": {
+      "original": "assets/images/productLogo.jpeg",
+      "dark": "assets/images/brand/product-dark.png",
+      "sourceSHA256": "d854fd96a92bb3d1e8513d00a014671ba3cfcc1444f12104438611135174e5bd",
+      "darkSHA256": "656a17d9720a73c3ad78540ccd6b07195aa5814fb734e57a9a9aaa981012073a",
+      "size": [
+        1600,
+        1194
+      ]
+    },
+    "productLegacy": {
+      "original": "docs/quantifyLogo.jpeg",
+      "dark": "assets/images/brand/product-legacy-dark.png",
+      "sourceSHA256": "647bf70456b4d9379e7cb0b7ebe983b354527bbbfd10c3c0571d5aefca75698f",
+      "darkSHA256": "327d5efc0a7600c49206025f5f57b9955d9dc3e0b5695a98543c050df276c078",
+      "size": [
+        640,
+        640
+      ]
+    }
+  }
+}

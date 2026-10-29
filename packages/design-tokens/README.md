@@ -89,3 +89,7 @@ No hay API de importación publicada. Los mockups citan esta paleta y utilizan l
 `themes.light` y `themes.dark` incluyen `icon`, `iconMuted`, `controlBorder` y `statusInk`. Icono activo: Laser Blue en claro y Sky Laser en oscuro; neutro y borde de control: Steel / Cool Gray. Los badges de estado conservan su matiz y usan tinta Obsidian en ambos temas. Las justificaciones y ejemplos se documentan en el [README de GUI](../../docs/GUI/README.md).
 
 [themes.css](themes.css) se genera al ejecutar `python docs/GUI/fuente/generar.py`. Exporta `--qc-icon-active`, `--qc-icon-muted`, `--qc-control-border`, `--qc-status-ink` y los demás roles. El selector raíz define claro; `[data-qc-theme="dark"]` sustituye roles para un futuro consumidor. No cambia por sí solo la apariencia de aplicaciones ni acredita integración React/Flutter. Los nombres de icono y tinta están registrados como variables semánticas también en Figma.
+
+## Marca sobre oscuro · 29/10/2026
+
+`branding.dark` referencia `skyLaser` para los trazos azules y `white` para las letras y trazos neutros, sobre transparencia. Reutiliza colores existentes; no amplía la paleta. Los originales claros conservan sus bytes y los PNG oscuros se generan desde ellos. Las reglas anteriores de placa blanca quedan sustituidas por esta variante autorizada. [Recursos, procedencia y generación](../../assets/images/README.md#derivados-oscuros-autorizados--29102026).

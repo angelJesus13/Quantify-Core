@@ -43,7 +43,7 @@ def write(path, value):
 
 class Canvas:
     def __init__(self,w,h,title,theme='light',fidelity='mockup'):
-        self.w,self.h,self.fidelity=w,h,fidelity
+        self.w,self.h,self.fidelity,self.theme=w,h,fidelity,theme
         self.p={k:C[v] for k,v in TOKENS['themes'][theme].items()}
         if fidelity!='mockup':
             self.p.update(canvas='#FFFFFF',surface='#FFFFFF',text='#202020',muted='#454545',line='#777777',action='#202020',onAction='#FFFFFF')
@@ -199,17 +199,19 @@ def photo(c,x,y,w,h):
     image(c,HERE/'assets/ritual-cotidiano.png',x,y,w,h)
 
 
-def logos(c,x,y,w,h):
+def logos(c,x,y,w,h,dark=None):
     """Co-branding: original enterprise left, original product right.
     The SVG viewport removes outer white margins, never any lettering.
     """
     size=min(w*.44,h*2.4)
+    dark=(c.theme=='dark') if dark is None else dark
     for kind,xx in [('enterprise',x),('product',x+w-size)]:
-        path=ROOT/f'assets/images/{kind}Logo.jpeg'
+        path=ROOT/f'assets/images/brand/{kind}-dark.png' if dark else ROOT/f'assets/images/{kind}Logo.jpeg'
         data=base64.b64encode(path.read_bytes()).decode()
         view='100 290 1400 650' if kind=='enterprise' else '100 350 1400 520'
-        c.rect(xx,y,size,h,'#FFFFFF',6,'#FFFFFF')
-        c.s.append(f'<svg x="{xx+4}" y="{y+4}" width="{size-8}" height="{h-8}" viewBox="{view}" preserveAspectRatio="xMidYMid meet"><image href="data:image/jpeg;base64,{data}" width="1600" height="1194"/></svg>')
+        if not dark:c.rect(xx,y,size,h,'#FFFFFF',6,'#FFFFFF')
+        mime='image/png' if dark else 'image/jpeg'
+        c.s.append(f'<svg x="{xx+4}" y="{y+4}" width="{size-8}" height="{h-8}" viewBox="{view}" preserveAspectRatio="xMidYMid meet"><image href="data:{mime};base64,{data}" width="1600" height="1194"/></svg>')
 
 def watermark(c,x,y,scale,color='#526179'):
     c.s.append(f'<g transform="translate({x} {y}) scale({scale})" opacity=".12"><circle cx="24" cy="24" r="18" fill="none" stroke="{color}" stroke-width="6"/><path d="M34 36l12 12" stroke="{color}" stroke-width="6" stroke-linecap="round"/></g>')
@@ -377,12 +379,12 @@ def sheets():
             yy=y+22+i*84;c.rect(x+24,yy,672,66,C[key],8,C[key]);c.icon(icon,x+40,yy+20,C['obsidian']);c.text(x+88,yy+42,label,24,C['obsidian'],600)
     y=para(c,64,y+420,'Retícula 24 × 24 · Trazo 1.8 · Extremos y uniones redondos · Objetivo táctil propuesto: 48. Los controles deben tener nombre accesible. La forma y la etiqueta mantienen el significado del estado; un icono no certifica una función de producto implementada.',1472,22,'steel')
     finish(c,y+32,'imagenes/03-iconografia.png')
-    c,y=start(4,'Logotipo / isologo y marcas de agua','Empresa, producto y documentación diferenciados. Los originales conservan sus colores en ambos temas.')
+    c,y=start(4,'Logotipo / isologo y marcas de agua','El mismo dibujo en ambos temas. Original claro intacto; derivado oscuro de color sobre transparencia.')
     y=para(c,64,y,d['logoRules'],1472,23,'steel')+30
     for dark in [False,True]:
         c.rect(64,y,1472,520,C['midnight'] if dark else C['mist'],16,C['midnight'] if dark else C['mist'])
-        c.text(88,y+50,'MODO OSCURO · PLACA BLANCA' if dark else 'MODO CLARO · ORIGINALES',28,C['white'] if dark else C['obsidian'],700)
-        logos(c,112,y+124,1376,292)
+        c.text(88,y+50,'MODO OSCURO · FONDO TRANSPARENTE' if dark else 'MODO CLARO · ORIGINALES',28,C['white'] if dark else C['obsidian'],700)
+        logos(c,112,y+124,1376,292,dark=dark)
         c.text(112,y+460,'Empresa · Nexus Core',24,C['white'] if dark else C['obsidian'],600)
         c.text(900,y+460,'Producto · Quantify Core',24,C['white'] if dark else C['obsidian'],600)
         y+=550
@@ -400,12 +402,21 @@ def sheets():
 def main():
     import argparse
     from movil import build
+    from marcas import generate
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--mobile-only',action='store_true',help='Generar solo el catálogo móvil, sin identidad ni escritorio.')
+    parser.add_argument('--brand-only',action='store_true',help='Solo aplicaciones afectadas por las variantes oscuras de marca.')
     args=parser.parse_args()
+    generate(ROOT)
     mobile,manifest=build(Canvas,C,ICONS,logos,photo,HERE/'prototipos/movil')
     SCENES.update(mobile)
     if not args.mobile_only:sheets()
+    if args.brand_only:
+        for admin,key in [(False,'hoy-escritorio'),(True,'administracion')]:
+            SCENES[f'prototipos/mockups/{key}-dark.png']=desktop('dark','mockup',admin)
+        affected={'imagenes/01-paleta-de-colores.png','imagenes/04-identidad-isologo.png','prototipos/mockups/hoy-escritorio-dark.png','prototipos/mockups/administracion-dark.png'}
+        for name in list(SCENES):
+            if '/mockups/dark/' not in name and name not in affected:del SCENES[name]
     # Adaptador CSS documental; todavía no hay clientes de producto consumidores.
     css=[]
     role_names={'icon':'icon-active','iconMuted':'icon-muted','statusInk':'status-ink'}

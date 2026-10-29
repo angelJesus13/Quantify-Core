@@ -27,7 +27,7 @@
 
 **Estado de esta revisión:** cuatro lienzos en la rama `hotfix/QUANCORE-26-cuatro-lienzos`; GitHub Pages conserva la versión anterior. [Abrir la galería local](index.html). Cada lienzo puede ampliarse y descargarse; los prototipos conservan sus filtros y visor.
 
-Figma se actualizó el 28/10/2026 después de obtener acceso. La primera página contiene exactamente cuatro lienzos: [paleta](https://www.figma.com/design/iLvbL5uaWxAPwuX58xN4yq/?node-id=17-2), [tipografía](https://www.figma.com/design/iLvbL5uaWxAPwuX58xN4yq/?node-id=17-146), [iconografía](https://www.figma.com/design/iLvbL5uaWxAPwuX58xN4yq/?node-id=17-187) y [logotipo/isologo y marcas de agua](https://www.figma.com/design/iLvbL5uaWxAPwuX58xN4yq/?node-id=17-508). Son textos, vectores e instancias editables; únicamente los logos oficiales siguen siendo JPEG originales. Se conservaron los 24 maestros de iconos y las otras dos páginas.
+Figma se actualizó el 28/10/2026 después de obtener acceso. La primera página contiene exactamente cuatro lienzos: [paleta](https://www.figma.com/design/iLvbL5uaWxAPwuX58xN4yq/?node-id=17-2), [tipografía](https://www.figma.com/design/iLvbL5uaWxAPwuX58xN4yq/?node-id=17-146), [iconografía](https://www.figma.com/design/iLvbL5uaWxAPwuX58xN4yq/?node-id=17-187) y [logotipo/isologo y marcas de agua](https://www.figma.com/design/iLvbL5uaWxAPwuX58xN4yq/?node-id=17-508). Son textos, vectores e instancias editables; las marcas usan sus originales raster o derivados de color documentados. Se conservaron los 24 maestros de iconos y las otras dos páginas.
 
 Las justificaciones ampliadas de colores y seis criterios tipográficos viven en [identidad.json](fuente/identidad.json), compartido como contenido con Figma. Cada lienzo muestra las aplicaciones de ambos temas. Los PNG se regeneran desde la fuente local y comparten contenido y roles; no se presentan como exportaciones idénticas de Figma.
 
@@ -49,7 +49,7 @@ La fuente de valores y geometría es [preview.json](../../packages/design-tokens
 
 **Laser Blue.** Psicología de marca: Confianza, continuidad y precisión. Se usa como ancla reconocible del producto y para la acción principal: permite localizar qué hacer sin convertir toda la pantalla en un acento. Su profundidad sostiene texto blanco legible y da continuidad entre web, móvil y documentos. En oscuro conserva el valor de marca; los iconos aislados cambian a Sky Laser para distinguirse de la superficie.
 
-**Sky Laser.** Psicología de marca: Apertura, energía y exploración. Su mayor luminosidad hace visibles selección, foco e iconos activos sobre Midnight Navy. Mantiene parentesco con Laser Blue sin introducir otra marca para el tema oscuro. En claro no se usa con texto blanco pequeño ni como única señal sobre blanco; se reserva como acento y se combina con una etiqueta o contorno legible.
+**Sky Laser.** Psicología de marca: Apertura, energía y exploración. Su mayor luminosidad hace visibles selección, foco e iconos activos sobre Midnight Navy. Mantiene parentesco con Laser Blue sin introducir otra marca para el tema oscuro. En claro no se usa con texto blanco pequeño ni como única señal sobre blanco; se reserva como acento y se combina con una etiqueta o contorno legible. También es el azul de las variantes oscuras de empresa y producto: ilumina sus trazos sin convertir el azul en su complementario ni modificar sus formas.
 
 **Deep Cobalt.** Psicología de marca: Solidez, concentración y estabilidad. Es la variante profunda de la familia azul para foco y acciones presionadas sobre claro. Refuerza una interacción sin recurrir a negro ni cambiar de matiz, de modo que el estado sigue perteneciendo a la marca. Sobre oscuro pierde separación: el foco se muestra en Sky Laser y no se hereda este valor automáticamente.
 
@@ -63,7 +63,7 @@ La fuente de valores y geometría es [preview.json](../../packages/design-tokens
 
 **Pure Mist.** Psicología de marca: Ligereza y espacio visual. Ofrece un fondo claro ligeramente azulado que separa las tarjetas blancas sin rodearlas de bloques intensos. La cercanía con la familia de marca mantiene unidad y deja protagonismo a datos y acciones. Al activar oscuro, el rol fondo pasa a Obsidian; Pure Mist no se invierte ni se conserva como gran superficie luminosa.
 
-**Optical White.** Psicología de marca: Claridad y amplitud. Se emplea en superficies claras y como tinta principal sobre oscuro, además de texto sobre botones Laser Blue. Su rol cambia con el tema, pero el valor permanece estable. Los logos JPEG mantienen su placa blanca en ambos temas para preservar sus colores originales: esa placa es una excepción de identidad, no una tarjeta que olvidó cambiar.
+**Optical White.** Psicología de marca: Claridad y amplitud. Se emplea en superficies claras y como tinta principal sobre oscuro, además de texto sobre botones Laser Blue. Su rol cambia con el tema, pero el valor permanece estable. En los derivados oscuros de las marcas, las letras y trazos neutros pasan a Optical White sobre transparencia. Los originales claros permanecen intactos: ya no se coloca un rectángulo blanco detrás de la marca oscura.
 
 **Emerald.** Psicología de marca: Progreso y confirmación. Relaciona una acción completada con avance verificable, sin usar el verde para prometer bienestar o resultados clínicos. Se conserva en ambos temas como acento o fondo de badge con tinta Obsidian y una marca de verificación. No se pone como texto pequeño sobre blanco ni se confunde un registro pendiente con uno confirmado.
 
@@ -139,15 +139,15 @@ El encuadre conserva proporciones mediante recorte de ventana, sin deformar la i
 
 [![Identidad de Quantify Core: firma, variantes, área libre y original preservado](imagenes/04-identidad-isologo.png)](imagenes/04-identidad-isologo.png)
 
-Las cabeceras presentan **Nexus Core (empresarial) a la izquierda** y **Quantify Core (producto) a la derecha**. Se utilizan los JPEG originales, con su color y proporciones. Sobre oscuro permanecen en una placa blanca. La lámina explica su convivencia sin convertirlos en una sola marca ni recolorear sus letras.
+Las cabeceras presentan **Nexus Core (empresarial) a la izquierda** y **Quantify Core (producto) a la derecha**. En claro se utilizan los JPEG originales sin cambios. En oscuro se utilizan sus derivados PNG transparentes, con Sky Laser y Optical White, sin placa blanca. Las dos marcas conservan sus formas y proporciones; no se fusionan ni se redibujan.
 
 El símbolo Q parecido a una lupa, utilizado en la primera revisión, es únicamente una **marca de agua editorial de la documentación visual**. Es independiente de ambas marcas oficiales y no las sustituye ni representa una tercera identidad empresarial. Aparece de forma tenue como sello de la maqueta; no funciona como botón, icono de búsqueda o logotipo del producto. Los wireframes mantienen referencias de marca en grises; los sketches continúan sin texto ni logos.
 
 Logotipo designa la denominación escrita; isologo, el conjunto de símbolo y nombre. Los JPEG se presentan íntegros sin inventar una versión separable. Área libre propuesta: al menos un cuarto de la altura visible de cada firma; comprobar legibilidad al reducirla. Marca de agua editorial Q: dos variantes al 12 % (gris sobre claro y blanco sobre oscuro), en portada o pie libre de texto y controles, independiente de los logos oficiales. La afinidad geométrica y los neutros mantienen coherencia sin confundir empresa, producto y documentación.
 
-No estirar, recortar letras, añadir sombras ni invertir automáticamente los JPEG. Se pueden retirar visualmente márgenes blancos exteriores para presentar el contenido, conservando todas las letras y símbolos. La tipografía Inter rige los textos de la interfaz; las marcas raster conservan su dibujo propio.
+No estirar, recortar letras, añadir sombras ni invertir automáticamente los JPEG. La adaptación de color/fondo autorizada el 29/10/2026 se aplica a archivos derivados y no sobrescribe originales. Se pueden retirar visualmente márgenes blancos exteriores para presentar el contenido, conservando todas las letras y símbolos. La tipografía Inter rige los textos de la interfaz; las marcas raster conservan su dibujo propio.
 
-Los archivos [quantifyLogo.jpeg](../../assets/images/quantifyLogo.jpeg), [productLogo.jpeg](../../assets/images/productLogo.jpeg) y [enterpriseLogo.jpeg](../../assets/images/enterpriseLogo.jpeg) permanecen intactos. La autoría/licencia del material heredado conserva el estado del [inventario original](../../assets/images/README.md). No se reemplazan activos de prácticas ni de `main`.
+Los archivos [quantifyLogo.jpeg](../../assets/images/quantifyLogo.jpeg), [productLogo.jpeg](../../assets/images/productLogo.jpeg) y [enterpriseLogo.jpeg](../../assets/images/enterpriseLogo.jpeg) permanecen intactos. La autoría/licencia del material heredado conserva el estado del [inventario original](../../assets/images/README.md). Se actualizan únicamente las referencias o aplicaciones afectadas de esos mismos logos; no se modifican prácticas funcionales ni `main`.
 
 ## Prototipos: tres fidelidades reales
 
@@ -207,6 +207,34 @@ python -m unittest discover -s docs/GUI/tests -p 'test_*.py' -v
 No definir `QC_IDENTITY_ONLY=1` en esa exportación. El exportador verifica Inter local y límites de texto tanto del lienzo como de cada bloque; la prueba de fidelidades comprueba que los wireframes especifiquen Arial y que sketches/wireframes solo usen grises.
 
 Los cambios visuales compartidos se hacen primero en tokens, identidad.json o el catálogo de la fuente, se regeneran las imágenes y se revisan ambos temas. React y Flutter deberán incorporar la misma familia y semántica al implementar componentes; esta entrega no modifica clientes de producto todavía inexistentes en esta base.
+
+## Variantes de marca · Corrección del 29/10/2026
+
+La instrucción de conservar una placa blanca en oscuro queda **superada**. Se mantienen los originales claros byte por byte y se generan [empresa oscura](../../assets/images/brand/enterprise-dark.png) y [producto oscuro](../../assets/images/brand/product-dark.png) con transparencia. [Manifiesto de procedencia](../../assets/images/brand/variants.json) · [Generador reproducible](fuente/marcas.py).
+
+Se reutilizan **Sky Laser `#4A7DE8`** y **Optical White `#FFFFFF`**; no se añade un color nuevo. Sky Laser tiene contraste 4.25:1 sobre Midnight y 4.92:1 sobre Obsidian; se aplica a las marcas, no se autoriza como texto pequeño general. Los eslóganes y letras neutras se muestran en blanco. La medida de contraste se refiere al color sólido: los bordes suavizados de un raster tienen cobertura parcial.
+
+La derivación mantiene los 1600 × 1194 píxeles y sus coordenadas; no recorta, escala, vectoriza, dilata trazos ni escribe letras nuevas. Extrae cobertura de tinta del mate casi blanco y reasigna colores. Se conservan símbolos, nombres, composición y eslóganes. El generador registra hashes de los originales y derivados y usa roles de [preview.json](../../packages/design-tokens/preview.json).
+
+Las aplicaciones oscuras actualizadas son los veinte mockups móviles, las dos referencias de escritorio que ya contenían estos logos, la lámina de marcas y la explicación de paleta, y las referencias HTML/Markdown a los mismos originales. La geometría y el resto de píxeles de los mockups móviles permanecen iguales fuera de la cabecera. Sketches, wireframes y mockups claros no se regeneran. No se añaden pantallas PWA.
+
+Para regenerar los únicos PNG afectados:
+
+```powershell
+python docs/GUI/fuente/generar.py --brand-only
+node docs/GUI/fuente/render.cjs
+```
+
+El generador de variantes usa Pillow en el entorno de autoría, como los recursos gráficos; no es una dependencia de producto. Esta corrección conserva los cuatro lienzos de identidad y los veinte conjuntos móviles.
+
+**Figma: actualización parcial verificada por el servicio de carga.** Se reemplazaron las dos imágenes oscuras del lienzo de marcas (`17:528` y `17:531`) por estos PNG. La operación oficial para retirar los fondos de sus contenedores y corregir los textos fue rechazada por el límite Starter. La interfaz de Windows se detuvo al no poder verificar la URL; después el usuario pausó expresamente Figma y asumió su revisión. No se hacen más intentos de edición o recuperación. No se afirma que esos contenedores, reglas ni las otras páginas hayan quedado corregidos en Figma; quedan pendientes de una vía de edición disponible.
+
+### Verificación de variantes (29/10/2026)
+
+- Ocho pruebas aprobadas: integridad de originales, transparencia/cobertura, generación determinista y cinco regresiones del catálogo móvil.
+- Navegador local: cuatro páginas con marcas comprobadas en claro y oscuro (ocho combinaciones); galería con cuatro lienzos y veinte mockups por tema, sin imágenes rotas.
+- Los veinte mockups móviles oscuros solo cambian en la cabecera de marca: los píxeles fuera de los primeros 80 px son idénticos a `4447a9d`. Las dos referencias oscuras de escritorio conservan los píxeles fuera de su área de marca (248 × 100). No se modifican los PNG claros, sketches ni wireframes.
+- Se regeneraron 24 PNG afectados con medición de texto. Enlaces/documentación: 73 Markdown, 618 enlaces locales y 51 bloques Mermaid válidos; sintaxis del selector de marcas y diff comprobados.
 
 ## Publicación y control de ramas
 

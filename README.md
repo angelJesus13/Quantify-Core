@@ -3,8 +3,8 @@
 <h1 align="center">Quantify Core V2.0</h1>
 
 <div align="center">
-  <img src="assets/images/quantifyLogo.jpeg" alt="Logotipo de Quantify Core" width="180" style="vertical-align: middle;" />
-  <img src="assets/images/enterpriseLogo.jpeg" alt="Logo empresarial" width="180" style="vertical-align: middle;" />
+  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/images/brand/product-dark.png"><img src="assets/images/quantifyLogo.jpeg" alt="Logotipo de Quantify Core" width="180" style="vertical-align: middle;" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/images/brand/enterprise-dark.png"><img src="assets/images/enterpriseLogo.jpeg" alt="Logo empresarial" width="180" style="vertical-align: middle;" /></picture>
 </div>
 
 <p align="center">
@@ -484,11 +484,11 @@ La [infografía en alta resolución](assets/images/diagrama-roles-infografia.png
 <div align="center">
   <div style="display: inline-block; margin: 12px 24px; text-align: center;">
     <p><strong>Logo empresarial</strong></p>
-    <img src="assets/images/enterpriseLogo.jpeg" alt="Logo empresarial" width="300" height="224" />
+    <picture><source media="(prefers-color-scheme: dark)" srcset="assets/images/brand/enterprise-dark.png"><img src="assets/images/enterpriseLogo.jpeg" alt="Logo empresarial" width="300" height="224" /></picture>
   </div>
   <div style="display: inline-block; margin: 12px 24px; text-align: center;">
     <p><strong>Logo del producto</strong></p>
-    <img src="assets/images/productLogo.jpeg" alt="Logo del producto" width="300" height="224" />
+    <picture><source media="(prefers-color-scheme: dark)" srcset="assets/images/brand/product-dark.png"><img src="assets/images/productLogo.jpeg" alt="Logo del producto" width="300" height="224" /></picture>
   </div>
 </div>
 
