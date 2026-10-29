@@ -1,6 +1,6 @@
 # Quantify Core · Galería y sistema visual
 
-**Versión 04 · 28 de octubre de 2026 · [QUANCORE-26](https://utxicotepec-team-q5ufett6.atlassian.net/browse/QUANCORE-26)**
+**Versión 05 · Revisión móvil · 28 de octubre de 2026 · [QUANCORE-26](https://utxicotepec-team-q5ufett6.atlassian.net/browse/QUANCORE-26)**
 
 ## Contenido
 
@@ -16,7 +16,7 @@
 | Elemento | Estado | Dónde revisarlo |
 |---|---|---|
 | Paleta, tipografía, iconografía, logotipo/isologo y marcas de agua | Cuatro lienzos PNG en hotfix | [imagenes/](imagenes/) |
-| Pantallas en sketch, wireframe y mockup | Completo (34 PNG) | [prototipos/](prototipos/) |
+| Móvil: 20 pantallas en cada etapa | 20 sketches + 20 wireframes + 40 variantes de mockup (80 PNG) | [Matriz móvil](prototipos/movil/README.md) |
 | Galería pública | Versión anterior; esta hotfix no se publica en Pages | [Abrir galería](https://angeljesus13.github.io/Quantify-Core/docs/GUI/) |
 | Archivo editable | Cuatro lienzos editables actualizados; claro y oscuro | [Figma](https://www.figma.com/design/iLvbL5uaWxAPwuX58xN4yq/Quantify-Core-%C2%B7-Sistema-visual-y-prototipos--QUANCORE-26-?node-id=0-1&t=vNJ6E9RRwxvSXkNs-1) |
 | Implementación en producto | Pendiente | Ver [Verificación y límites](#verificación-y-límites) |
@@ -97,7 +97,7 @@ Los badges semánticos usan tinta Obsidian sobre Emerald, Amber, Crimson y Cyan 
 
 [![Tipografía Inter con muestras de español, números, pesos y jerarquías de interfaz](imagenes/02-tipografia.png)](imagenes/02-tipografia.png)
 
-**Inter es la familia para títulos, párrafos, formularios, botones, etiquetas, gráficos y galería.** Los logos oficiales conservan su dibujo original. Se incluye el mismo archivo [Inter Variable WOFF2](assets/inter.woff2) y se renderizan los PNG con él. No se mezclan Segoe UI y Arial ni se depende de Google Fonts al abrir la página. `sans-serif` queda únicamente como recuperación de emergencia si el archivo no puede cargarse, no como otra elección de diseño.
+**Inter es la familia para títulos, párrafos, formularios, botones, etiquetas, gráficos de la interfaz final y la galería.** Los logos oficiales conservan su dibujo original. Se incluye el mismo archivo [Inter Variable WOFF2](assets/inter.woff2) y se renderizan los mockups con él, sin depender de Google Fonts. Los wireframes son la excepción metodológica: usan Arial genérica, sin representar la tipografía final. Los sketches no tienen texto. `sans-serif` en la galería queda únicamente como recuperación si Inter no puede cargarse.
 
 Inter ofrece una construcción legible para interfaz, soporte de los caracteres del español y pesos variables sin cambiar de familia. Escala base: 40 presentación, 28 pantalla, 20 sección, 16 cuerpo y 14 ayuda; pesos habituales 400/500/600/700. El logotipo raster heredado conserva su dibujo original: no se pretende identificar o sustituir la fuente con la que fue creado.
 
@@ -151,32 +151,31 @@ Los archivos [quantifyLogo.jpeg](../../assets/images/quantifyLogo.jpeg), [produc
 
 ## Prototipos: tres fidelidades reales
 
-**Sketches:** trazos irregulares y formas para explorar composición. **No contienen letras ni texto visible**, ni marca, fotografía, cifras o contenido de pantalla. Los nombres y las referencias se muestran en la galería, fuera de la imagen.
+Esta revisión se concentra **solo en móvil**: veinte pantallas distintas, identificadas del 01 al 20, desarrolladas en tres etapas con correspondencia uno a uno. Cada mockup tiene variante clara y oscura; los temas no cuentan como pantallas diferentes. [Matriz con todos los PNG y la intención de cada pantalla](prototipos/movil/README.md) · [Catálogo y geometría](prototipos/movil/catalogo.json).
 
-**Wireframes:** estructura en grises con bloques, campos y etiquetas funcionales. Permiten evaluar jerarquía, navegación y distribución sin fotografía ni identidad gráfica.
+| Etapa móvil | Pantallas distintas | PNG | Criterio |
+|---|---:|---:|---|
+| Sketch | 20 | 20 | Solo cuadros y líneas de boceto en blanco/gris. Sin texto, colores, logos, fotos ni variantes de tema. |
+| Wireframe | 20 | 20 | Misma estructura, grises, Arial y marcadores de imagen/logo. Sin iconografía o marca final. |
+| Mockup | 20 | 40 | Mismas funciones y organización con Inter, paleta, iconos, imágenes y logos existentes; claro y oscuro. |
 
-**Mockups:** diseños estáticos con Inter, logos oficiales empresarial/producto, colores claros/oscuros, iconos y fotografías donde aportan contexto. Son guía visual de interfaz; los botones dibujados no ejecutan acciones de negocio.
+Las cuatro variantes de cada pantalla usan **los mismos identificadores y posiciones de bloques**, generados desde un catálogo único en [movil.py](fuente/movil.py). Los controles, jerarquía, espacios de imagen y navegación se reconocen de una etapa a la siguiente. El sketch es un boceto geométrico independiente, no un mockup convertido a grises. Las etiquetas de revisión, numeración, requisitos y nombres se muestran fuera del sketch.
 
-Hay **34 PNG de pantallas**: ocho sketches, ocho wireframes, dieciséis mockups claros/oscuros y dos variantes de Hoy en escritorio. Los móviles usan lienzo 390 × 844; administración y Hoy de escritorio, 1440 × 900. La galería es adaptable; una imagen estática no demuestra reflujo ni texto grande dentro de una aplicación futura.
+Se sigue la distinción metodológica de Carlos Salgado en [Mosaic/UOC, «Sketchs, mockups, wireframes y prototipos»](https://mosaic.uoc.edu/2015/09/15/proceso-de-desarrollo-de-un-proyecto-digital/): explorar primero el boceto, ordenar contenido y navegación en el wireframe, y desarrollar después la apariencia visual. La persona solicitante precisa que los sketches no llevan anotaciones, aunque el artículo las admite. El mínimo de veinte es un requisito de esta entrega. No se copian sus ejemplos ni se adoptan sus herramientas históricas.
 
-[![Mockup de Hoy en escritorio con identidad e imagen de producto](prototipos/mockups/hoy-escritorio-light.png)](prototipos/mockups/hoy-escritorio-light.png)
+### Inventario y alcance funcional
 
-### Cobertura funcional y trazabilidad
+01 Bienvenida · 02 Acceso · 03 Hoy · 04 Mis hábitos · 05 Crear hábito · 06 Detalle · 07 Editar programación · 08 Registrar avance · 09 Historial · 10 Recordatorio · 11 Avisos · 12 Análisis · 13 Elegir periodo · 14 Sugerencias · 15 Personalizar una idea · 16 Perfil · 17 Consentimiento · 18 Dispositivos · 19 Vincular una fuente · 20 Datos personales.
 
-- **Acceso:** RF-01, referencia U01–U05/U15. Continuar con Keycloak, cancelar a bienvenida y resolver sesión vencida. Sin contraseña local ni autenticación paralela.
-- **Hoy:** RF-03/04, U06. Hábitos programados y valor confirmado por día; vacío ofrece crear hábito. Los pendientes se separan de los confirmados.
-- **Crear hábito:** RF-03, U07. Nombre, meta, unidad, días y zona; validación conserva borrador. Cancelar creación vuelve a Hoy; cancelar edición vuelve al detalle.
-- **Registrar avance:** RF-04, U08/U13. Valor acumulado absoluto por fecha de negocio. Reintentar conserva la clave idempotente; un conflicto requiere revisar la versión. Archivar conserva el historial.
-- **Análisis:** RF-05, U10. Ventana cerrada, unidad, zona, fuente, regla y alternativa textual. Sin oportunidades se muestra «sin datos», no fracaso.
-- **Sugerencias:** RF-07, U11. Abstención explicada cuando faltan datos o consentimiento. Personalizar no acepta hasta guardar; cancelar no consume la recomendación.
-- **Preferencias:** RF-02, U12. Finalidad voluntaria por uso y fuente; guardar explícitamente. Revocar bloquea usos futuros. Cambiar zona no reclasifica el historial.
-- **Administración:** RF-09/10, A02/A03/A06. Agregados autorizados, motivo y auditoría; sin acceso a rutinas privadas por el simple rol de administrador.
+Cada pantalla tiene una intención distinta, referencias RF y notas de alcance en la matriz. El acceso delega credenciales a Keycloak. Crear y editar conservan sus diferencias; cancelar no guarda. El registro expresa el acumulado absoluto del día, no una suma por reintento. Las sugerencias se abstienen sin datos; personalizar es una vista condicional ilustrativa y no un resultado de IA. Dispositivos no inventa mediciones ni fija un protocolo de vinculación pendiente. Datos personales inicia solicitudes; una eliminación requiere revisión y confirmación posteriores, no se ejecuta desde esta imagen.
 
-Estados a implementar por recorrido: carga, vacío, validación, error de servicio, sesión vencida, permiso insuficiente y conflicto. Pendiente de sincronización es una variante condicionada a soporte offline aprobado; hasta entonces guardar exige conexión. El catálogo de estados sigue en las [reglas canónicas](../requerimientos/reglas-negocio.md), [recorridos](../diseno/recorridos.md) y [sistema de diseño](../diseno/sistema-diseno.md), no en fichas universales que sustituyan una pantalla real.
+Los ejemplos de análisis conservan 19–25/10/2026: 1,1,0,1,1,1,0; 5/7 = 71.4 %, racha al cierre 0 en ese periodo, America/Mexico_City y RN-P17. El 26/10 se muestra separado como día abierto. Son datos sintéticos, sin cuentas ni biometría reales.
 
-Análisis usa datos sintéticos del 19–25/10/2026: un hábito diario, completas L=1, M=1, X=0, J=1, V=1, S=1, D=0. Cumplimiento 5/7 = 71.4 %, racha al cierre 0 **en ese periodo**, zona America/Mexico_City, regla RN-P17, cálculo ilustrativo 26/10. El 26/10 es día abierto y aparece separado en Hoy. No se inventan biometría ni puntuaciones de IA.
+### Límites de esta revisión
 
-La cobertura no equivale a las 24 pantallas históricas completas. Recordatorios/avisos, vinculación Wear OS, exportación/eliminación personal y formularios administrativos detallados requieren ampliación. RF-01 a RF-05 enlazan el [contrato propuesto](../../packages/contracts/README.md); RF-06 a RF-10 requieren contratos adicionales. Las láminas no añaden endpoints ni certifican backend, permisos o sincronización.
+Los PNG son representaciones estáticas a **390 × 844**, no una app ni un prototipo de negocio navegable. El visor de la galería abre imágenes y cambia la etapa; no guarda hábitos, autentica, solicita permisos ni conecta hardware. Los enlaces de destino del catálogo documentan la intención y no se presentan como operaciones implementadas. Los requisitos de carga, error, conflicto, accesibilidad y soporte offline siguen requiriendo implementación y pruebas propias; no se declara cobertura de todos sus estados por tener veinte pantallas.
+
+Las seis imágenes anteriores de escritorio (administración y Hoy) permanecen como referencia histórica sin cambios. **No se amplía PWA/web, no se rediseñan logos y no se edita Figma en esta entrega móvil.** Los cuatro lienzos de identidad y los activos existentes quedan conservados. Los 28 PNG móviles anteriores se sustituyen por el catálogo móvil coherente; su historial sigue disponible en Git.
 
 ## Organización y mantenimiento
 
@@ -185,14 +184,27 @@ docs/GUI/
   README.md             Documentación completa de esta entrega
   index.html            Galería pública y visor
   imagenes/             Los cuatro lienzos completos (PNG)
-  prototipos/           Sketches, wireframes y mockups (PNG)
+  prototipos/movil/     Catálogo, matriz y 80 PNG móviles
+  prototipos/           Seis referencias anteriores de escritorio
   assets/               Fuente Inter, licencia, foto, estilos e interacción
-  fuente/               Generador, exportador y contenido compartido identidad.json
+  fuente/               Generador, catálogo móvil, exportador y contenido de identidad
+  tests/                Regresiones de cantidad, fidelidad y correspondencia móvil
 ```
 
-Cada PNG corresponde a una lámina o variante de pantalla; no se mantiene una segunda copia SVG exportada ni 24 iconos sueltos. La fuente vectorial vive en el generador y sus temporales quedan ignorados en `.build/`. Los PNG preservan exactamente la tipografía elegida al revisarlos en otro equipo.
+Cada PNG corresponde a una lámina o variante de pantalla; no se mantiene una segunda copia SVG exportada ni 24 iconos sueltos. La fuente vectorial vive en el generador y sus temporales quedan ignorados en `.build/`. Los PNG preservan la fuente de su etapa: Arial para wireframes e Inter para mockups; los sketches no contienen texto.
 
 Para consultar localmente con la fuente web exacta, servir la raíz con `python -m http.server 8765`, y visitar `http://localhost:8765/docs/GUI/`. No hace falta instalar dependencias para consultar la galería. Para regenerar: Python 3 ejecuta `python docs/GUI/fuente/generar.py`; el entorno de autoría con Node/Playwright y Chrome ejecuta `node docs/GUI/fuente/render.cjs`. El exportador comprueba carga de Inter y texto dentro de los lienzos. Para exportar solo los cuatro lienzos sin tocar las pantallas, definir `QC_IDENTITY_ONLY=1` antes de ejecutar el exportador. La altura se adapta a las justificaciones; se mantiene el ancho de 1600 px. Los paths del navegador se pueden configurar mediante `QC_CHROME`; Playwright debe estar disponible en el entorno. No se instala como dependencia del producto.
+
+Para regenerar únicamente móvil, sin modificar identidad ni escritorio:
+
+```powershell
+python docs/GUI/fuente/generar.py --mobile-only
+$env:QC_MOBILE_ONLY='1'
+node docs/GUI/fuente/render.cjs
+python -m unittest discover -s docs/GUI/tests -p 'test_*.py' -v
+```
+
+No definir `QC_IDENTITY_ONLY=1` en esa exportación. El exportador verifica Inter local y límites de texto tanto del lienzo como de cada bloque; la prueba de fidelidades comprueba que los wireframes especifiquen Arial y que sketches/wireframes solo usen grises.
 
 Los cambios visuales compartidos se hacen primero en tokens, identidad.json o el catálogo de la fuente, se regeneran las imágenes y se revisan ambos temas. React y Flutter deberán incorporar la misma familia y semántica al implementar componentes; esta entrega no modifica clientes de producto todavía inexistentes en esta base.
 
@@ -220,7 +232,17 @@ git rev-parse HEAD:docs/practica-07
 
 El diff de Práctica 07 debe estar vacío y su árbol coincidir con el indicado.
 
-### Resultados de la hotfix (28/10/2026)
+### Resultados de la revisión móvil (28/10/2026)
+
+- **20/20/20 pantallas distintas:** 20 sketches, 20 wireframes y 20 mockups con dos temas, **80 PNG a 390 × 844**. No se cuentan los temas ni las seis imágenes anteriores de escritorio como pantallas móviles extra.
+- **Cinco pruebas de regresión aprobadas:** inventario y archivos, correspondencia de bloques y destinos, sketches sin texto/imágenes/color, wireframes Arial/grises/marcadores y mockups Inter/paleta/logos existentes. Comando reproducible: `python -m unittest discover -s docs/GUI/tests -p 'test_*.py' -v`.
+- **Exportación:** los 80 lienzos pasan la medición real de texto dentro del lienzo y dentro de cada bloque. Se corrigió el alto de avisos antes de cerrar la revisión. Los 40 PNG de sketches/wireframes se comprobaron también píxel a píxel: R = G = B.
+- **Galería:** 16 combinaciones de etapa/tema/ancho (320, 390, 768 y 1440 px), 80 PNG móviles distintos cargados y 92 comprobaciones del visor, ampliación, flechas, descarga enlazada, Escape y retorno del foco. Sin imágenes rotas, desbordamiento horizontal ni errores JavaScript/HTTP. Tema oculto en sketches/wireframes.
+- **Revisión visual:** hojas de las veinte pantallas en cada etapa/tema y una comparación ampliada de Hoy, con las cuatro variantes alineadas. La numeración y el nombre quedan fuera del sketch.
+- **Documentación:** 73 Markdown, 602 enlaces locales y 51 bloques Mermaid comprobados, más sintaxis del visor y OpenAPI válidos.
+- **Alcance:** sin cambios en las seis referencias de escritorio, logos originales, cuatro lienzos de identidad, tokens, Figma ni Práctica 07. No se crea PR, no se fusiona y no se despliega; Pages conserva la versión anterior.
+
+### Resultados previos de identidad (28/10/2026)
 
 - Cuatro PNG de identidad a 1600 px de ancho y altura ajustada al contenido; Inter cargada y texto dentro del lienzo.
 - Galería local: 320, 390, 768 y 1440 px; 16 revisiones del visor (cuatro lienzos por ancho), ampliación, flechas, Escape, retorno del foco y enlace de descarga. Sin desbordamiento horizontal, imágenes rotas ni errores de página o HTTP.

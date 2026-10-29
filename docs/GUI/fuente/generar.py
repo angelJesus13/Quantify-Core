@@ -1,4 +1,4 @@
-"""Prepara escenas vectoriales para exportar PNG con Inter desde preview.json.
+"""Prepara escenas vectoriales con la fuente de cada etapa desde preview.json.
 No escribe en prácticas, aplicaciones ni activos heredados.
 """
 from pathlib import Path
