@@ -398,13 +398,14 @@ def sheets():
 
 
 def main():
-    for key,title,rf,ref,note in SCREENS:
-        for fidelity in ['sketch','wireframe','mockup']:
-            folder={'sketch':'sketches','wireframe':'wireframes','mockup':'mockups'}[fidelity]
-            for theme in (['light','dark'] if fidelity=='mockup' else ['light']):
-                SCENES[f'prototipos/{folder}/{key}-{theme}.png']=screen(key,theme,fidelity)
-    for theme in ['light','dark']:SCENES[f'prototipos/mockups/hoy-escritorio-{theme}.png']=desktop(theme,'mockup')
-    sheets()
+    import argparse
+    from movil import build
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--mobile-only',action='store_true',help='Generar solo el catálogo móvil, sin identidad ni escritorio.')
+    args=parser.parse_args()
+    mobile,manifest=build(Canvas,C,ICONS,logos,photo,HERE/'prototipos/movil')
+    SCENES.update(mobile)
+    if not args.mobile_only:sheets()
     # Adaptador CSS documental; todavía no hay clientes de producto consumidores.
     css=[]
     role_names={'icon':'icon-active','iconMuted':'icon-muted','statusInk':'status-ink'}
@@ -415,14 +416,16 @@ def main():
             name=role_names.get(role,''.join('-'+ch.lower() if ch.isupper() else ch for ch in role))
             css.append('  --qc-'+name+': '+C[key]+';')
         css.append('}')
-    write(ROOT/'packages/design-tokens/themes.css','\n'.join(css)+'\n')
+    if not args.mobile_only:write(ROOT/'packages/design-tokens/themes.css','\n'.join(css)+'\n')
     BUILD.mkdir(exist_ok=True)
     (BUILD/'escenas.json').write_text(json.dumps(SCENES,ensure_ascii=False),encoding='utf-8')
-    data=[dict(id=key,title=title,rf=rf,reference=ref,note=note) for key,title,rf,ref,note in SCREENS]
+    data=[dict(id=s['id'],number=s['number'],title=s['title'],rf=s['rf'],reference=s['ref'],note=s['note'],intent=s['intent'],assets=s['assets'],width=s['width'],height=s['height']) for s in manifest]
+    # Únicamente las dos vistas de escritorio ya existentes; no se regeneran.
+    data.append(dict(id='administracion',title='Operación con trazabilidad',rf='RF-09 / RF-10',reference='A02 / A03 / A06',note='Referencia de escritorio anterior, fuera de la revisión móvil.',legacyDesktop=True))
     html=(HERE/'index.html').read_text(encoding='utf-8')
     import re
     html=re.sub(r'<script id="screen-data" type="application/json">.*?</script>', '<script id="screen-data" type="application/json">'+json.dumps(data,ensure_ascii=False)+'</script>',html,flags=re.S)
     (HERE/'index.html').write_text(html,encoding='utf-8')
-    print(f'{len(SCENES)} escenas listas para exportar. La fuente tipográfica es Inter.')
+    print(f'{len(SCENES)} escenas listas. Móvil: sketches sin texto, wireframes Arial y mockups Inter.')
 
 if __name__=='__main__':main()

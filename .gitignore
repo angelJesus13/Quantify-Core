@@ -7,3 +7,4 @@
 
 # Intermedios de exportación de la galería (no publicar)
 docs/GUI/.build/
+docs/GUI/fuente/__pycache__/
