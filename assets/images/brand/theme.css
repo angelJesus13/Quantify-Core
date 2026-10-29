@@ -1,0 +1,2 @@
+/* El PNG ya tiene alfa; ningún consumidor debe añadirle una placa en oscuro. */
+img[data-brand-on-dark="true"]{background:transparent!important;box-shadow:none!important}

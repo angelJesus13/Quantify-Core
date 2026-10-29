@@ -3,8 +3,8 @@
   const screens=JSON.parse(document.getElementById('screen-data').textContent);
   const grid=document.getElementById('prototype-grid'),format=document.getElementById('format');
   const dialog=document.getElementById('viewer'),full=document.getElementById('full-image');
-  let fidelity='mockup',theme='light',activeCards=[],current=0,opener;
-  const notes={sketch:'Baja fidelidad: únicamente formas y trazos, sin letras ni contenido. La descripción de cada pantalla queda fuera de la imagen.',wireframe:'Fidelidad media: estructura funcional en grises, con etiquetas y contenido de referencia. Sin fotografía ni identidad gráfica.',mockup:'Alta fidelidad: Inter, firma Quantify Core, color, iconos, fotografía y componentes consistentes. Diseños estáticos con datos sintéticos.'};
+  let fidelity='sketch',theme='light',activeCards=[],current=0,opener;
+  const notes={sketch:'20 pantallas móviles · Solo cuadros y líneas de boceto, sin texto, color ni temas. El número y la intención se identifican fuera del dibujo.',wireframe:'Las mismas 20 pantallas · Estructura en grises, fuente genérica Arial y marcadores de imagen/logo. La numeración conserva la correspondencia con cada sketch.',mockup:'Las mismas 20 pantallas · Inter, paleta, iconos y logos existentes. Claro y oscuro son variantes de cada pantalla; no aumentan el conteo. Imágenes estáticas, con datos de ejemplo.'};
   function showImage(index){
     current=(index+activeCards.length)%activeCards.length;
     const card=activeCards[current];full.src=card.dataset.image;full.alt=card.dataset.title;
@@ -27,16 +27,17 @@
     const desktop=format.value==='desktop';grid.classList.toggle('desktop',desktop);
     document.getElementById('fidelity-note').textContent=notes[fidelity];
     document.querySelectorAll('[data-theme]').forEach(b=>b.disabled=fidelity!=='mockup');
+    document.querySelector('[aria-label="Tema"]').hidden=fidelity!=='mockup';
     if(fidelity!=='mockup'&&desktop){format.value='mobile';return render();}
     format.disabled=fidelity!=='mockup';
-    const visible=desktop?screens.filter(s=>['hoy','administracion'].includes(s.id)):screens;
+    const visible=desktop?screens.filter(s=>['hoy','administracion'].includes(s.id)):screens.filter(s=>!s.legacyDesktop);
     for(const s of visible){
       const folder={sketch:'sketches',wireframe:'wireframes',mockup:'mockups'}[fidelity];
       const name=s.id==='hoy'&&desktop?'hoy-escritorio':s.id;
-      const file=`prototipos/${folder}/${name}-${fidelity==='mockup'?theme:'light'}.png`;
-      const card=document.createElement('button');card.className='image-card';card.dataset.image=file;card.dataset.title=s.title;card.dataset.description=`${s.rf} · ${s.note}`;
-      const img=document.createElement('img');img.src=file;img.alt=`${fidelity}: ${s.title}, ${fidelity==='mockup'?theme:'grises'}`;img.width=s.id==='administracion'||desktop?1440:390;img.height=s.id==='administracion'||desktop?900:844;
-      const caption=document.createElement('span'),title=document.createElement('b'),sub=document.createElement('small');title.textContent=s.title;sub.textContent=`${s.rf} · ${s.id==='administracion'||desktop?'Escritorio':'Móvil'}`;
+      const file=desktop?`prototipos/${folder}/${name}-${theme}.png`:s.assets[`${fidelity}:${fidelity==='mockup'?theme:'none'}`];
+      const card=document.createElement('button');card.className='image-card';card.dataset.image=file;card.dataset.title=(desktop?'':String(s.number).padStart(2,'0')+' / ')+s.title;card.dataset.description=`${s.rf} · ${s.intent||s.note} ${desktop?'':s.note}`;
+      const img=document.createElement('img');img.src=file;img.alt=`${fidelity}: ${s.title}${fidelity==='mockup'?', '+theme:''}`;img.width=desktop?1440:390;img.height=desktop?900:844;
+      const caption=document.createElement('span'),title=document.createElement('b'),sub=document.createElement('small');title.textContent=card.dataset.title;sub.textContent=`${s.rf} · ${desktop?'Escritorio anterior':'Móvil · '+s.intent}`;
       caption.append(title,sub);card.append(img,caption);grid.append(card);
     }
     bindCards();

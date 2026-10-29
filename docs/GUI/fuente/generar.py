@@ -1,10 +1,10 @@
-"""Prepara escenas vectoriales para exportar PNG con Inter desde preview.json.
+"""Prepara escenas vectoriales con la fuente de cada etapa desde preview.json.
 No escribe en prácticas, aplicaciones ni activos heredados.
 """
 from pathlib import Path
 import json
 from html import escape
-import base64, random
+import base64, random, colorsys, textwrap
 
 ROOT = Path(__file__).resolve().parents[3]
 HERE = ROOT / 'docs/GUI'
@@ -43,7 +43,7 @@ def write(path, value):
 
 class Canvas:
     def __init__(self,w,h,title,theme='light',fidelity='mockup'):
-        self.w,self.h,self.fidelity=w,h,fidelity
+        self.w,self.h,self.fidelity,self.theme=w,h,fidelity,theme
         self.p={k:C[v] for k,v in TOKENS['themes'][theme].items()}
         if fidelity!='mockup':
             self.p.update(canvas='#FFFFFF',surface='#FFFFFF',text='#202020',muted='#454545',line='#777777',action='#202020',onAction='#FFFFFF')
@@ -199,20 +199,22 @@ def photo(c,x,y,w,h):
     image(c,HERE/'assets/ritual-cotidiano.png',x,y,w,h)
 
 
-def logos(c,x,y,w,h):
+def logos(c,x,y,w,h,dark=None):
     """Co-branding: original enterprise left, original product right.
     The SVG viewport removes outer white margins, never any lettering.
     """
     size=min(w*.44,h*2.4)
+    dark=(c.theme=='dark') if dark is None else dark
     for kind,xx in [('enterprise',x),('product',x+w-size)]:
-        path=ROOT/f'assets/images/{kind}Logo.jpeg'
+        path=ROOT/f'assets/images/brand/{kind}-dark.png' if dark else ROOT/f'assets/images/{kind}Logo.jpeg'
         data=base64.b64encode(path.read_bytes()).decode()
         view='100 290 1400 650' if kind=='enterprise' else '100 350 1400 520'
-        c.rect(xx,y,size,h,'#FFFFFF',6,'#FFFFFF')
-        c.s.append(f'<svg x="{xx+4}" y="{y+4}" width="{size-8}" height="{h-8}" viewBox="{view}" preserveAspectRatio="xMidYMid meet"><image href="data:image/jpeg;base64,{data}" width="1600" height="1194"/></svg>')
+        if not dark:c.rect(xx,y,size,h,'#FFFFFF',6,'#FFFFFF')
+        mime='image/png' if dark else 'image/jpeg'
+        c.s.append(f'<svg x="{xx+4}" y="{y+4}" width="{size-8}" height="{h-8}" viewBox="{view}" preserveAspectRatio="xMidYMid meet"><image href="data:{mime};base64,{data}" width="1600" height="1194"/></svg>')
 
-def watermark(c,x,y,scale):
-    c.s.append(f'<g transform="translate({x} {y}) scale({scale})" opacity=".12"><circle cx="24" cy="24" r="18" fill="none" stroke="#526179" stroke-width="6"/><path d="M34 36l12 12" stroke="#526179" stroke-width="6" stroke-linecap="round"/></g>')
+def watermark(c,x,y,scale,color='#526179'):
+    c.s.append(f'<g transform="translate({x} {y}) scale({scale})" opacity=".12"><circle cx="24" cy="24" r="18" fill="none" stroke="{color}" stroke-width="6"/><path d="M34 36l12 12" stroke="{color}" stroke-width="6" stroke-linecap="round"/></g>')
 
 def mobile_nav(c,key):
     c.rect(0,774,390,70,c.p['surface'],0,c.p['line'])
@@ -288,96 +290,153 @@ ICONS.update({
  'dispositivo':'M7 5h10v14H7Z M9 2h6v3 M9 19v3h6v-3 M10 9h4 M10 13h4'
 })
 
-def sheet(n,title,subtitle):
-    c=Canvas(1600,2000,title)
-    c.p['canvas']='#FFFFFF';c.p['surface']='#FFFFFF';c.p['line']='#D8E1F0'
-    c.rect(0,0,1600,2000,'#FFFFFF',0,'#FFFFFF')
-    logos(c,80,38,1440,92)
-    c.text(760,96,f'0{n} / 05',22,C['steel'],600)
-    c.s.append(f'<path d="M80 148H1520" stroke="{C["laserBlue"]}" stroke-width="6"/>')
-    c.text(80,232,title,58,weight=750)
-    c.text(80,280,subtitle,23,C['steel'])
-    return c
-
-def finish_sheet(c,label):
-    c.s.append('<path d="M80 1904H1520" stroke="#D8E1F0"/>')
-    c.text(80,1952,'QUANTIFY CORE · SISTEMA VISUAL 02',19,C['steel'],600)
-    c.text(1100,1952,label,19,C['steel'])
-    return c.end()
-
 def sheets():
-    c=sheet(1,'Paleta de colores','Laser Blue como eje. Neutros para leer. Acentos para comprender el estado.')
-    names=[('laserBlue','Laser Blue','Marca y acción principal. Fondo de botón con texto blanco.'),('skyLaser','Sky Laser','Selección y foco en oscuro. Evitar blanco pequeño sobre este tono.'),('deepCobalt','Deep Cobalt','Énfasis profundo, interacción presionada y foco sobre claro.'),('obsidian','Obsidian Slate','Fondo oscuro y texto principal sobre superficies claras.'),('midnight','Midnight Navy','Tarjetas y capas del tema oscuro.'),('steel','Steel Border','Texto secundario claro y bordes interactivos con contraste.'),('gray','Cool Gray','Texto secundario oscuro; no usar como texto sobre blanco.'),('mist','Pure Mist','Fondo claro que separa las tarjetas sin recargar la interfaz.'),('white','Optical White','Superficies claras y texto invertido de alto contraste.'),('emerald','Emerald','Éxito y avance confirmado; acompañar con icono y etiqueta.'),('amber','Amber','Espera y sincronización pendiente; explicar qué falta.'),('crimson','Crimson','Error o interrupción; indicar la acción para recuperarse.'),('cyan','Electric Cyan','Acento de métricas y sugerencias; sin significado clínico.')]
-    for i,(key,name,note) in enumerate(names):
-        y=330+i*108;col=C[key];rgb=', '.join(str(int(col[j:j+2],16)) for j in [1,3,5])
-        c.s.append(f'<circle cx="120" cy="{y+30}" r="31" fill="{col}" stroke="#D8E1F0"/>')
-        c.text(180,y+17,name,27,weight=650);c.text(180,y+51,f'HEX {col}   ·   RGB {rgb}',20,C['steel'])
-        c.text(690,y+30,note,21,C['steel'])
-        c.s.append(f'<path d="M180 {y+78}H1520" stroke="#E7EDF7"/>')
-    c.rect(80,1770,1440,88,C['mist'],12,C['mist']);c.text(108,1824,'Uso digital sRGB · Blanco sobre Laser Blue: 6.28:1 · El estado siempre lleva texto.',23,weight=550)
-    SCENES['imagenes/01-paleta-de-colores.png']=finish_sheet(c,'COLOR / sRGB')
-    c=sheet(2,'Tipografía','Inter es la única familia de la galería, las láminas y los mockups de Quantify Core.')
-    c.text(80,555,'Aa',230,C['laserBlue'],650)
-    c.text(85,624,'Inter',56,weight=750);c.text(85,674,'Rasmus Andersson · SIL Open Font License',22,C['steel'])
-    c.lines(650,382,['Una voz clara y consistente','para registrar, comprender','y mejorar tus hábitos.'],44,step=58)
-    c.lines(650,616,['Archivo local: Inter Variable (WOFF2).','Pesos de interfaz: 400, 500, 600 y 700.','No descargar fuentes de terceros al abrir la galería.'],23,step=38)
-    c.s.append('<path d="M80 734H1520" stroke="#D8E1F0"/>')
-    c.text(80,802,'CARACTERES Y LECTURA',20,C['laserBlue'],700)
-    c.text(80,868,'ABCDEFGHIJKLMNOPQRSTUVWXYZ',48,weight=600)
-    c.text(80,934,'abcdefghijklmnopqrstuvwxyz',48)
-    c.text(80,1000,'0123456789  ÁÉÍÓÚÜÑ  áéíóúüñ',48)
-    c.text(80,1066,'¿Cuánto avanzaste hoy? ¡Cada paso cuenta!',42)
-    c.text(80,1160,'JERARQUÍA DE INTERFAZ',20,C['laserBlue'],700)
-    for i,(label,text,size,weight) in enumerate([('40 / 700','Tu rutina, a tu ritmo',40,700),('28 / 700','Cada avance cuenta',28,700),('20 / 600','Hábitos programados',20,600),('16 / 400','Registra tu valor acumulado del día.',16,400),('14 / 500','Pendiente de sincronizar',14,500)]):
-        y=1240+i*92;c.text(80,y,label,22,C['steel']);c.text(430,y,text,size*1.35,weight=weight)
-    c.rect(80,1740,1440,118,C['mist'],12,C['mist']);c.lines(108,1786,['Misma familia en títulos, cuerpos, botones, tablas e iconos con etiqueta.','El logotipo raster heredado conserva su dibujo original; no es una fuente de interfaz.'],23,step=36)
-    SCENES['imagenes/02-tipografia.png']=finish_sheet(c,'TIPO / INTER')
-    c=sheet(3,'Iconografía','Una familia de trazos. El mismo significado en navegación, acciones y estados.')
+    """Cuatro lienzos; el texto compartido con Figma vive en identidad.json."""
+    d=json.loads((HERE/'fuente/identidad.json').read_text(encoding='utf-8'))
+    def start(n,title,subtitle):
+        c=Canvas(1600,6200,title)
+        c.rect(0,0,1600,6200,C['white'],0,C['white'])
+        logos(c,64,30,1472,96)
+        c.text(744,91,f'{n:02d} / 04',22,C['steel'],600)
+        c.text(64,214,title,48,weight=700)
+        para(c,64,264,subtitle,1472,22,'steel')
+        return c,350
+    def para(c,x,y,value,w,size=22,key='obsidian',weight=400):
+        rows=[]
+        for line in value.split('\n'):
+            rows.extend(textwrap.wrap(line,max(12,int(w/(size*.55)))) or [''])
+        c.lines(x,y,rows,size,C[key],step=round(size*1.5))
+        return y+len(rows)*round(size*1.5)
+    def finish(c,y,path):
+        c.s.append(f'<path d="M64 {y}H1536" stroke="{C["softBorder"]}"/>')
+        c.text(64,y+46,'QUANTIFY CORE · SISTEMA VISUAL 04 · CLARO / OSCURO',20,C['steel'],600)
+        h=int(y+90)
+        svg=c.end().replace('height="6200" viewBox="0 0 1600 6200"',f'height="{h}" viewBox="0 0 1600 {h}"',1)
+        SCENES[path]=svg
+    def samples(c,y,typography=False):
+        for dark,x in [(False,64),(True,816)]:
+            ink='white' if dark else 'obsidian';sub='gray' if dark else 'steel'
+            c.rect(x,y,720,410,C['midnight'] if dark else C['mist'],16,C['midnight'] if dark else C['mist'])
+            c.text(x+24,y+50,'MODO OSCURO' if dark else 'MODO CLARO',24,C[ink],700)
+            c.text(x+24,y+112,'Tu rutina, a tu ritmo',32,C[ink],700)
+            para(c,x+24,y+160,'La misma familia y jerarquía. Cambian superficie, tinta, iconos y foco.',672,23,sub)
+            c.rect(x+24,y+268,672,66,C['laserBlue'],8,C['laserBlue'])
+            c.text(x+44,y+309,'Registrar avance',24,C['white'],600)
+            c.icon('hoy',x+24,y+354,C['skyLaser'] if dark else C['laserBlue'],1.1)
+            c.text(x+68,y+376,'Inter 400 / 500 / 600 / 700' if typography else 'Icono activo y foco visibles',21,C[sub])
+        return y+450
+    c,y=start(1,'Paleta de colores','La identidad se conserva; cada rol responde a su superficie. Valores, psicología y justificación por color.')
+    for key,name,psychology,reason in d['colors']:
+        col=C[key];rgb=[int(col[j:j+2],16) for j in (1,3,5)]
+        h,l,s=colorsys.rgb_to_hls(*[v/255 for v in rgb]);k=1-max(rgb)/255
+        cm=[0,0,0,100] if k==1 else [round((1-v/255-k)/(1-k)*100) for v in rgb]+[round(k*100)]
+        reasonrows=textwrap.wrap(reason,82)
+        psyrows=textwrap.wrap('Psicología: '+psychology,35)
+        height=max(246+len(psyrows)*30,104+len(reasonrows)*33)
+        c.rect(64,y,1472,height,C['mist'],12,C['mist'])
+        c.rect(88,y+24,72,48,col,8,C['gray'])
+        c.text(184,y+58,name,27,weight=700)
+        values=f'HEX {col}\nRGB {", ".join(map(str,rgb))}\nHSL {h*360:.1f}° {s*100:.1f}% {l*100:.1f}%\nCMYK {" / ".join(map(str,cm))}%'
+        para(c,88,y+111,values,440,20,'steel')
+        para(c,88,y+231,'Psicología: '+psychology,440,20,'steel')
+        c.text(580,y+54,'POR QUÉ Y CÓMO SE USA',22,C['laserBlue'],700)
+        para(c,580,y+104,reason,924,22)
+        y+=height+20
+    c.text(64,y+32,'QUÉ CAMBIA AL ACTIVAR OSCURO',28,weight=700);y=samples(c,y+66)
+    for label,light,dark,note in d['themes']:
+        y=para(c,64,y,f'{label}: claro {C[light]} → oscuro {C[dark]}. {note}',1472,22,'steel')+10
+    y=para(c,64,y+12,'Los cuatro estados conservan su matiz: badge con tinta Obsidian, forma y palabra. Psicología: intención de marca, no efecto universal. HSL desde sRGB. CMYK matemático sin perfil ICC: requiere prueba de impresión. Soft Border #D8E1F0 es decorativo; no identifica controles.',1472,21,'steel')
+    finish(c,y+32,'imagenes/01-paleta-de-colores.png')
+    c,y=start(2,'Tipografía · Inter','Una misma familia y jerarquía para claro y oscuro. Seis criterios explican su elección y aplicación.')
+    c.text(64,y+100,'Aa · ÁÉÍÓÚÜÑ · 0123456789',72,C['laserBlue'],650);y+=170
+    y=para(c,64,y,'Inter Variable local · Rasmus Andersson · SIL Open Font License\nEscala 40 / 28 / 20 / 16 / 14 · Pesos 400 / 500 / 600 / 700',1472,22,'steel')+30
+    y=samples(c,y,True)
+    for i in range(0,6,2):
+        entries=d['typography'][i:i+2]
+        height=max(104+len(textwrap.wrap(reason,54))*33 for _,reason in entries)
+        for j,(title,reason) in enumerate(entries):
+            x=64+j*752;c.rect(x,y,720,height,C['mist'],12,C['mist'])
+            c.text(x+24,y+48,title,27,weight=700)
+            para(c,x+24,y+104,reason,672,22)
+        y+=height+28
+    y=para(c,64,y+12,'No adelgazar ni reducir el texto al activar oscuro. La elección de Inter no modifica las letras dibujadas de los logos. El diseño no acredita clientes React o Flutter implementados: requieren pruebas de dispositivo, reflujo y tecnologías de asistencia.',1472,22,'steel')
+    finish(c,y+32,'imagenes/02-tipografia.png')
+    c,y=start(3,'Iconografía · 24 símbolos','Cada símbolo aparece en claro y oscuro, con el mismo trazo, nombre y función. Cambia su tinta activa.')
+    y=para(c,64,y,d['iconRules'],1472,22,'steel')+28
     labels=['Inicio / Hoy','Mis hábitos','Análisis','Preferencias','Crear hábito','Confirmado','Pendiente','Aviso / error','Volver','Privacidad','Cerrar sesión','Sugerencias','Calendario','Recordatorio','Lectura','Movimiento','Descanso','Historial','Ver detalle','Editar','Archivar','Descargar','Sincronizar','Dispositivo']
-    for i,(key,label) in enumerate(zip(ICONS,labels)):
-        x=80+i%4*370;y=334+i//4*226
-        c.rect(x,y,330,196,'#FFFFFF',12,'#D8E1F0');c.icon(key,x+26,y+26,C['laserBlue'],3.3)
-        c.text(x+24,y+158,f'{i+1:02d}  {label}',24,weight=550)
-    c.rect(80,1740,1440,118,C['mist'],12,C['mist']);c.lines(108,1786,['Retícula 24 × 24 · Trazo 1.8 · Extremos redondos · Objetivo táctil mínimo del diseño: 48.','Las acciones tienen etiqueta. Los estados combinan forma, palabra y color.'],23,step=36)
-    SCENES['imagenes/03-iconografia.png']=finish_sheet(c,'ICONOS / 24 TRAZOS')
-    c=sheet(4,'Uso de imágenes','Fotografía serena y cotidiana: hábitos posibles, sin promesas ni escenas artificiales de éxito.')
-    photo(c,80,330,1440,760)
-    c.rect(100,1000,560,66,'#FFFFFF',10,'#FFFFFF');c.text(126,1042,'Lectura, hidratación y espacio personal.',24,weight=600)
-    rules=[('01 / Encuadre','Priorizar el objeto y dejar espacio limpio.','Usar proporciones estables, sin deformar.'),('02 / Color','Luz natural, neutros y acentos azules.','El producto conserva protagonismo.'),('03 / Contexto','Acompañar la tarea o el estado vacío.','Evitar decoración que distraiga del registro.'),('04 / Accesibilidad','Texto alternativo según el propósito.','Sin información esencial dentro de la foto.')]
-    for i,(title,a,b) in enumerate(rules):
-        x=80+(i%2)*740;y=1160+(i//2)*230;c.rect(x,y,700,190,C['mist'],14,C['mist']);c.text(x+28,y+52,title,29,weight=650);c.lines(x+28,y+104,[a,b],24,step=38)
-    c.lines(80,1700,['Fotografía creada para esta entrega con generación de imágenes.','No muestra personas ni representa registros o mediciones reales.','El logo se presenta completo y proporcionado; no se usa como textura o recorte.'],24,step=42)
-    SCENES['imagenes/04-uso-de-imagenes.png']=finish_sheet(c,'IMAGEN / CONTEXTO')
-    c=sheet(5,'Identidad / isologo','Dos marcas oficiales: Nexus Core empresarial y Quantify Core producto. Sin sustituir sus originales.')
-    c.rect(80,330,1440,270,C['mist'],16,C['mist']);logos(c,144,370,1312,174)
-    c.text(112,566,'Empresarial a la izquierda · Producto Quantify Core a la derecha',22,C['steel'])
-    c.rect(80,650,700,270,C['obsidian'],16,C['obsidian']);logos(c,112,696,636,160);c.text(112,882,'Sobre oscuro: conservar placa blanca',23,C['white'])
-    c.rect(820,650,700,270,'#FFFFFF',16,'#D8E1F0');logos(c,852,696,636,160);c.text(852,882,'Sobre claro: colores originales',23,C['steel'])
-    c.text(80,1004,'ÁREA LIBRE Y TAMAÑO',22,C['laserBlue'],700)
-    c.rect(80,1044,700,234,'#FFFFFF',0,'#8A99AD');logos(c,112,1080,636,146)
-    c.lines(840,1100,['Separar las marcas con espacio libre.','No cortar letras ni deformar proporciones.','Conservar los colores de cada original.','Usar una placa blanca en tema oscuro.'],25,step=42)
-    c.text(80,1380,'MARCA DE AGUA EDITORIAL / INDEPENDIENTE',22,C['laserBlue'],700)
-    c.rect(80,1420,670,380,C['mist'],16,C['mist'])
-    watermark(c,330,1490,3)
-    c.text(160,1760,'Sello de la documentación visual',25,C['steel'],550)
-    c.lines(840,1490,['El símbolo Q parecido a una lupa','se reserva como marca de agua.','No es el logo empresarial ni el producto.','Los dos JPEG oficiales se conservan','sin recolorear ni reemplazar.'],25,step=44)
-    SCENES['imagenes/05-identidad-isologo.png']=finish_sheet(c,'MARCA / QUANTIFY CORE')
+    symbols=['Casa','Lista con verificación','Barras de datos','Deslizadores','Signo más','Marca de verificación','Reloj','Triángulo de alerta','Flecha a la izquierda','Escudo','Puerta con flecha','Destello','Calendario','Campana','Libro abierto','Persona caminando','Luna','Reloj con retorno','Ojo','Lápiz','Caja de archivo','Flecha hacia abajo','Flechas circulares','Reloj inteligente']
+    for i,((key,path),label,symbol) in enumerate(zip(ICONS.items(),labels,symbols)):
+        x=64+(i%4)*376;yy=y+(i//4)*270
+        c.rect(x,yy,344,246,C['mist'],12,C['mist']);c.text(x+16,yy+35,f'{i+1:02d} {label}',22,weight=600);c.text(x+16,yy+69,symbol,17,C['steel'])
+        for dark,xx in [(False,x+16),(True,x+180)]:
+            c.rect(xx,yy+90,148,136,C['midnight'] if dark else C['white'],8,C['midnight'] if dark else C['white'])
+            c.icon(key,xx+16,yy+108,C['skyLaser'] if dark else C['laserBlue'],2)
+            c.text(xx+16,yy+204,'Oscuro' if dark else 'Claro',18,C['white'] if dark else C['obsidian'])
+    y+=6*270+20;c.text(64,y+30,'ESTADOS EN LOS DOS TEMAS',28,weight=700);y+=65
+    for dark,x in [(False,64),(True,816)]:
+        c.rect(x,y,720,370,C['midnight'] if dark else C['mist'],16,C['midnight'] if dark else C['mist'])
+        for i,(key,label,icon) in enumerate([('emerald','Confirmado','confirmado'),('amber','Pendiente','pendiente'),('crimson','Error · Reintentar','aviso'),('cyan','Métrica / sugerencia','sugerencias')]):
+            yy=y+22+i*84;c.rect(x+24,yy,672,66,C[key],8,C[key]);c.icon(icon,x+40,yy+20,C['obsidian']);c.text(x+88,yy+42,label,24,C['obsidian'],600)
+    y=para(c,64,y+420,'Retícula 24 × 24 · Trazo 1.8 · Extremos y uniones redondos · Objetivo táctil propuesto: 48. Los controles deben tener nombre accesible. La forma y la etiqueta mantienen el significado del estado; un icono no certifica una función de producto implementada.',1472,22,'steel')
+    finish(c,y+32,'imagenes/03-iconografia.png')
+    c,y=start(4,'Logotipo / isologo y marcas de agua','El mismo dibujo en ambos temas. Original claro intacto; derivado oscuro de color sobre transparencia.')
+    y=para(c,64,y,d['logoRules'],1472,23,'steel')+30
+    for dark in [False,True]:
+        c.rect(64,y,1472,520,C['midnight'] if dark else C['mist'],16,C['midnight'] if dark else C['mist'])
+        c.text(88,y+50,'MODO OSCURO · FONDO TRANSPARENTE' if dark else 'MODO CLARO · ORIGINALES',28,C['white'] if dark else C['obsidian'],700)
+        logos(c,112,y+124,1376,292,dark=dark)
+        c.text(112,y+460,'Empresa · Nexus Core',24,C['white'] if dark else C['obsidian'],600)
+        c.text(900,y+460,'Producto · Quantify Core',24,C['white'] if dark else C['obsidian'],600)
+        y+=550
+    y=para(c,64,y,'Logotipo: denominación escrita. Isologo: símbolo y nombre como conjunto. No separar partes de un JPEG ni reconstruir letras. Área libre mínima: 1/4 de la altura visible de cada firma; validar legibilidad al reducir. La convivencia no crea una marca fusionada: la empresa respalda y el producto identifica la experiencia.',1472,23,'steel')+30
+    c.text(64,y+30,'MARCA DE AGUA DOCUMENTAL / DOS VARIANTES',28,weight=700);y+=75
+    y=para(c,64,y,d['watermarkRules'],1472,23,'steel')+30
+    for dark,x in [(False,64),(True,816)]:
+        c.rect(x,y,720,370,C['midnight'] if dark else C['mist'],16,C['midnight'] if dark else C['mist'])
+        c.text(x+24,y+52,'Documento oscuro' if dark else 'Documento claro',28,C['white'] if dark else C['obsidian'],700)
+        watermark(c,x+250,y+104,3,C['white'] if dark else '#526179')
+        c.text(x+24,y+331,'Q editorial independiente · 12 %',24,C['white'] if dark else C['obsidian'])
+    finish(c,y+420,'imagenes/04-identidad-isologo.png')
+
 
 def main():
-    for key,title,rf,ref,note in SCREENS:
-        for fidelity in ['sketch','wireframe','mockup']:
-            folder={'sketch':'sketches','wireframe':'wireframes','mockup':'mockups'}[fidelity]
-            for theme in (['light','dark'] if fidelity=='mockup' else ['light']):
-                SCENES[f'prototipos/{folder}/{key}-{theme}.png']=screen(key,theme,fidelity)
-    for theme in ['light','dark']:SCENES[f'prototipos/mockups/hoy-escritorio-{theme}.png']=desktop(theme,'mockup')
-    sheets()
+    import argparse
+    from movil import build
+    from marcas import generate
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--mobile-only',action='store_true',help='Generar solo el catálogo móvil, sin identidad ni escritorio.')
+    parser.add_argument('--brand-only',action='store_true',help='Solo aplicaciones afectadas por las variantes oscuras de marca.')
+    args=parser.parse_args()
+    generate(ROOT)
+    mobile,manifest=build(Canvas,C,ICONS,logos,photo,HERE/'prototipos/movil')
+    SCENES.update(mobile)
+    if not args.mobile_only:sheets()
+    if args.brand_only:
+        for admin,key in [(False,'hoy-escritorio'),(True,'administracion')]:
+            SCENES[f'prototipos/mockups/{key}-dark.png']=desktop('dark','mockup',admin)
+        affected={'imagenes/01-paleta-de-colores.png','imagenes/04-identidad-isologo.png','prototipos/mockups/hoy-escritorio-dark.png','prototipos/mockups/administracion-dark.png'}
+        for name in list(SCENES):
+            if '/mockups/dark/' not in name and name not in affected:del SCENES[name]
+    # Adaptador CSS documental; todavía no hay clientes de producto consumidores.
+    css=[]
+    role_names={'icon':'icon-active','iconMuted':'icon-muted','statusInk':'status-ink'}
+    for theme,roles in TOKENS['themes'].items():
+        selector=':root, [data-qc-theme="light"]' if theme=='light' else '[data-qc-theme="dark"]'
+        css.append(selector+' {')
+        for role,key in roles.items():
+            name=role_names.get(role,''.join('-'+ch.lower() if ch.isupper() else ch for ch in role))
+            css.append('  --qc-'+name+': '+C[key]+';')
+        css.append('}')
+    if not args.mobile_only:write(ROOT/'packages/design-tokens/themes.css','\n'.join(css)+'\n')
     BUILD.mkdir(exist_ok=True)
     (BUILD/'escenas.json').write_text(json.dumps(SCENES,ensure_ascii=False),encoding='utf-8')
-    data=[dict(id=key,title=title,rf=rf,reference=ref,note=note) for key,title,rf,ref,note in SCREENS]
+    data=[dict(id=s['id'],number=s['number'],title=s['title'],rf=s['rf'],reference=s['ref'],note=s['note'],intent=s['intent'],assets=s['assets'],width=s['width'],height=s['height']) for s in manifest]
+    # Únicamente las dos vistas de escritorio ya existentes; no se regeneran.
+    data.append(dict(id='administracion',title='Operación con trazabilidad',rf='RF-09 / RF-10',reference='A02 / A03 / A06',note='Referencia de escritorio anterior, fuera de la revisión móvil.',legacyDesktop=True))
     html=(HERE/'index.html').read_text(encoding='utf-8')
     import re
     html=re.sub(r'<script id="screen-data" type="application/json">.*?</script>', '<script id="screen-data" type="application/json">'+json.dumps(data,ensure_ascii=False)+'</script>',html,flags=re.S)
     (HERE/'index.html').write_text(html,encoding='utf-8')
-    print(f'{len(SCENES)} escenas listas para exportar. La fuente tipográfica es Inter.')
+    print(f'{len(SCENES)} escenas listas. Móvil: sketches sin texto, wireframes Arial y mockups Inter.')
 
 if __name__=='__main__':main()

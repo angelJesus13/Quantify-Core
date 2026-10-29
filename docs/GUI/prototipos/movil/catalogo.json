@@ -1,0 +1,1635 @@
+[
+  {
+    "id": "bienvenida",
+    "title": "Cada avance cuenta",
+    "rf": "RF-01",
+    "ref": "U01",
+    "intent": "Presentar el producto y conducir al acceso centralizado.",
+    "note": "La bienvenida no solicita credenciales ni concede una sesión.",
+    "number": 1,
+    "assets": {
+      "sketch:none": "prototipos/movil/sketches/bienvenida.png",
+      "wireframe:none": "prototipos/movil/wireframes/bienvenida.png",
+      "mockup:light": "prototipos/movil/mockups/light/bienvenida.png",
+      "mockup:dark": "prototipos/movil/mockups/dark/bienvenida.png"
+    },
+    "blocks": [
+      {
+        "id": "bienvenida-01",
+        "x": 24,
+        "y": 150,
+        "w": 342,
+        "h": 150,
+        "kind": "photo",
+        "height": 150,
+        "title": "",
+        "text": ""
+      },
+      {
+        "id": "bienvenida-02",
+        "x": 24,
+        "y": 312,
+        "w": 342,
+        "h": 74,
+        "kind": "copy",
+        "height": 74,
+        "title": "Hábitos con intención",
+        "text": "Registra tu rutina y comprende tu progreso, a tu ritmo."
+      },
+      {
+        "id": "bienvenida-03",
+        "x": 24,
+        "y": 398,
+        "w": 342,
+        "h": 78,
+        "kind": "benefit",
+        "height": 78,
+        "title": "Un espacio para tus hábitos",
+        "text": "Organiza, registra y revisa lo que importa.",
+        "icon": "habitos"
+      },
+      {
+        "id": "bienvenida-04",
+        "x": 24,
+        "y": 488,
+        "w": 342,
+        "h": 48,
+        "kind": "button",
+        "height": 48,
+        "title": "Empezar",
+        "text": "",
+        "target": "acceso"
+      },
+      {
+        "id": "bienvenida-05",
+        "x": 24,
+        "y": 548,
+        "w": 342,
+        "h": 44,
+        "kind": "secondary",
+        "height": 44,
+        "title": "Conocer mi privacidad",
+        "text": "",
+        "target": "consentimiento"
+      }
+    ],
+    "width": 390,
+    "height": 844
+  },
+  {
+    "id": "acceso",
+    "title": "Accede a tu espacio",
+    "rf": "RF-01",
+    "ref": "U02–U05 / U15",
+    "intent": "Iniciar el flujo de identidad con Keycloak y regresar al cliente.",
+    "note": "No hay formulario local de contraseña, registro ni recuperación paralelos; se delegan al proveedor.",
+    "number": 2,
+    "assets": {
+      "sketch:none": "prototipos/movil/sketches/acceso.png",
+      "wireframe:none": "prototipos/movil/wireframes/acceso.png",
+      "mockup:light": "prototipos/movil/mockups/light/acceso.png",
+      "mockup:dark": "prototipos/movil/mockups/dark/acceso.png"
+    },
+    "blocks": [
+      {
+        "id": "acceso-01",
+        "x": 24,
+        "y": 150,
+        "w": 342,
+        "h": 148,
+        "kind": "empty",
+        "height": 148,
+        "title": "Una cuenta, un solo acceso",
+        "text": "Continúa con el servicio de identidad para entrar a tu espacio.",
+        "icon": "privacidad"
+      },
+      {
+        "id": "acceso-02",
+        "x": 24,
+        "y": 310,
+        "w": 342,
+        "h": 114,
+        "kind": "notice",
+        "height": 72,
+        "title": "Tú controlas tus datos",
+        "text": "Tus hábitos y preferencias pertenecen a tu cuenta."
+      },
+      {
+        "id": "acceso-03",
+        "x": 24,
+        "y": 436,
+        "w": 342,
+        "h": 48,
+        "kind": "button",
+        "height": 48,
+        "title": "Continuar con Keycloak",
+        "text": "",
+        "target": "hoy"
+      },
+      {
+        "id": "acceso-04",
+        "x": 24,
+        "y": 496,
+        "w": 342,
+        "h": 44,
+        "kind": "secondary",
+        "height": 44,
+        "title": "Volver a bienvenida",
+        "text": "",
+        "target": "bienvenida"
+      }
+    ],
+    "width": 390,
+    "height": 844
+  },
+  {
+    "id": "hoy",
+    "title": "Tu rutina de hoy",
+    "rf": "RF-03 / RF-04",
+    "ref": "U06",
+    "intent": "Consultar lo programado para el día abierto y abrir un hábito.",
+    "note": "Ejemplo del 26/10/2026, America/Mexico_City. Separar día abierto y periodo cerrado.",
+    "number": 3,
+    "assets": {
+      "sketch:none": "prototipos/movil/sketches/hoy.png",
+      "wireframe:none": "prototipos/movil/wireframes/hoy.png",
+      "mockup:light": "prototipos/movil/mockups/light/hoy.png",
+      "mockup:dark": "prototipos/movil/mockups/dark/hoy.png"
+    },
+    "blocks": [
+      {
+        "id": "hoy-01",
+        "x": 24,
+        "y": 150,
+        "w": 342,
+        "h": 80,
+        "kind": "summary",
+        "height": 80,
+        "title": "1 de 3 metas completas",
+        "text": "Hoy · 26 octubre · Día abierto"
+      },
+      {
+        "id": "hoy-02",
+        "x": 24,
+        "y": 242,
+        "w": 342,
+        "h": 80,
+        "kind": "habit",
+        "height": 80,
+        "title": "Leer con calma",
+        "text": "10 / 20 minutos · Parcial confirmado",
+        "icon": "lectura",
+        "target": "detalle"
+      },
+      {
+        "id": "hoy-03",
+        "x": 24,
+        "y": 334,
+        "w": 342,
+        "h": 80,
+        "kind": "habit",
+        "height": 80,
+        "title": "Caminar",
+        "text": "30 / 30 minutos · Meta completa",
+        "icon": "movimiento",
+        "target": "detalle"
+      },
+      {
+        "id": "hoy-04",
+        "x": 24,
+        "y": 426,
+        "w": 342,
+        "h": 80,
+        "kind": "habit",
+        "height": 80,
+        "title": "Pausa consciente",
+        "text": "Sin registro · Meta de 5 minutos",
+        "icon": "descanso",
+        "target": "detalle"
+      },
+      {
+        "id": "hoy-05",
+        "x": 24,
+        "y": 518,
+        "w": 342,
+        "h": 48,
+        "kind": "button",
+        "height": 48,
+        "title": "Crear hábito",
+        "text": "",
+        "target": "habito"
+      }
+    ],
+    "width": 390,
+    "height": 844
+  },
+  {
+    "id": "habitos",
+    "title": "Mis hábitos",
+    "rf": "RF-03",
+    "ref": "U06 / U08",
+    "intent": "Encontrar hábitos propios y distinguir los activos de los archivados.",
+    "note": "La búsqueda y el filtro son controles propuestos, sin consulta a cuentas reales.",
+    "number": 4,
+    "assets": {
+      "sketch:none": "prototipos/movil/sketches/habitos.png",
+      "wireframe:none": "prototipos/movil/wireframes/habitos.png",
+      "mockup:light": "prototipos/movil/mockups/light/habitos.png",
+      "mockup:dark": "prototipos/movil/mockups/dark/habitos.png"
+    },
+    "blocks": [
+      {
+        "id": "habitos-01",
+        "x": 24,
+        "y": 150,
+        "w": 342,
+        "h": 64,
+        "kind": "field",
+        "height": 64,
+        "title": "Buscar por nombre",
+        "text": "Leer, caminar, descansar…"
+      },
+      {
+        "id": "habitos-02",
+        "x": 24,
+        "y": 226,
+        "w": 342,
+        "h": 46,
+        "kind": "tabs",
+        "height": 46,
+        "title": "",
+        "text": "",
+        "options": [
+          "Activos",
+          "Archivados"
+        ]
+      },
+      {
+        "id": "habitos-03",
+        "x": 24,
+        "y": 284,
+        "w": 342,
+        "h": 76,
+        "kind": "habit",
+        "height": 76,
+        "title": "Leer con calma",
+        "text": "Diario · 20 minutos",
+        "icon": "lectura",
+        "target": "detalle"
+      },
+      {
+        "id": "habitos-04",
+        "x": 24,
+        "y": 372,
+        "w": 342,
+        "h": 76,
+        "kind": "habit",
+        "height": 76,
+        "title": "Caminar",
+        "text": "Lunes y jueves · 30 minutos",
+        "icon": "movimiento",
+        "target": "detalle"
+      },
+      {
+        "id": "habitos-05",
+        "x": 24,
+        "y": 460,
+        "w": 342,
+        "h": 76,
+        "kind": "habit",
+        "height": 76,
+        "title": "Pausa consciente",
+        "text": "Diario · 5 minutos",
+        "icon": "descanso",
+        "target": "detalle"
+      },
+      {
+        "id": "habitos-06",
+        "x": 24,
+        "y": 548,
+        "w": 342,
+        "h": 48,
+        "kind": "button",
+        "height": 48,
+        "title": "Crear un hábito",
+        "text": "",
+        "target": "habito"
+      }
+    ],
+    "width": 390,
+    "height": 844
+  },
+  {
+    "id": "habito",
+    "title": "Crear hábito",
+    "rf": "RF-03",
+    "ref": "U07",
+    "intent": "Definir nombre, meta, unidad, días y zona de un hábito nuevo.",
+    "note": "Guardar requiere validación y confirmación del servidor; cancelar vuelve a Hoy sin crear.",
+    "number": 5,
+    "assets": {
+      "sketch:none": "prototipos/movil/sketches/habito.png",
+      "wireframe:none": "prototipos/movil/wireframes/habito.png",
+      "mockup:light": "prototipos/movil/mockups/light/habito.png",
+      "mockup:dark": "prototipos/movil/mockups/dark/habito.png"
+    },
+    "blocks": [
+      {
+        "id": "habito-01",
+        "x": 24,
+        "y": 150,
+        "w": 342,
+        "h": 64,
+        "kind": "field",
+        "height": 64,
+        "title": "Nombre",
+        "text": "Leer con calma"
+      },
+      {
+        "id": "habito-02",
+        "x": 24,
+        "y": 226,
+        "w": 342,
+        "h": 64,
+        "kind": "field",
+        "height": 64,
+        "title": "Meta y unidad",
+        "text": "20 minutos"
+      },
+      {
+        "id": "habito-03",
+        "x": 24,
+        "y": 302,
+        "w": 342,
+        "h": 66,
+        "kind": "days",
+        "height": 66,
+        "title": "Días programados",
+        "text": ""
+      },
+      {
+        "id": "habito-04",
+        "x": 24,
+        "y": 380,
+        "w": 342,
+        "h": 64,
+        "kind": "field",
+        "height": 64,
+        "title": "Zona de agenda",
+        "text": "America/Mexico_City"
+      },
+      {
+        "id": "habito-05",
+        "x": 24,
+        "y": 456,
+        "w": 342,
+        "h": 114,
+        "kind": "notice",
+        "height": 82,
+        "title": "Tu programación",
+        "text": "Se aplicará a nuevos periodos; el historial se conserva."
+      },
+      {
+        "id": "habito-06",
+        "x": 24,
+        "y": 582,
+        "w": 342,
+        "h": 48,
+        "kind": "button",
+        "height": 48,
+        "title": "Guardar hábito",
+        "text": "",
+        "target": "detalle"
+      },
+      {
+        "id": "habito-07",
+        "x": 24,
+        "y": 642,
+        "w": 342,
+        "h": 40,
+        "kind": "secondary",
+        "height": 40,
+        "title": "Cancelar creación",
+        "text": "",
+        "target": "hoy"
+      }
+    ],
+    "width": 390,
+    "height": 844
+  },
+  {
+    "id": "detalle",
+    "title": "Leer con calma",
+    "rf": "RF-03 / RF-04",
+    "ref": "U08",
+    "intent": "Consultar la meta y el avance confirmado de un hábito antes de actuar.",
+    "note": "No recalcular registros pasados con una nueva meta. Archivar conserva el historial y requiere confirmación.",
+    "number": 6,
+    "assets": {
+      "sketch:none": "prototipos/movil/sketches/detalle.png",
+      "wireframe:none": "prototipos/movil/wireframes/detalle.png",
+      "mockup:light": "prototipos/movil/mockups/light/detalle.png",
+      "mockup:dark": "prototipos/movil/mockups/dark/detalle.png"
+    },
+    "blocks": [
+      {
+        "id": "detalle-01",
+        "x": 24,
+        "y": 150,
+        "w": 342,
+        "h": 92,
+        "kind": "habit",
+        "height": 92,
+        "title": "Lectura diaria",
+        "text": "20 minutos · Todos los días",
+        "icon": "lectura"
+      },
+      {
+        "id": "detalle-02",
+        "x": 24,
+        "y": 254,
+        "w": 342,
+        "h": 84,
+        "kind": "summary",
+        "height": 84,
+        "title": "10 de 20 minutos",
+        "text": "Parcial confirmado · 26 octubre"
+      },
+      {
+        "id": "detalle-03",
+        "x": 24,
+        "y": 350,
+        "w": 342,
+        "h": 48,
+        "kind": "button",
+        "height": 48,
+        "title": "Registrar avance",
+        "text": "",
+        "target": "registro"
+      },
+      {
+        "id": "detalle-04",
+        "x": 24,
+        "y": 410,
+        "w": 342,
+        "h": 62,
+        "kind": "row",
+        "height": 62,
+        "title": "Historial de lectura",
+        "text": "Consultar registros anteriores",
+        "target": "historial"
+      },
+      {
+        "id": "detalle-05",
+        "x": 24,
+        "y": 484,
+        "w": 342,
+        "h": 62,
+        "kind": "row",
+        "height": 62,
+        "title": "Recordatorio",
+        "text": "Elegir horario y días",
+        "target": "recordatorio"
+      },
+      {
+        "id": "detalle-06",
+        "x": 24,
+        "y": 558,
+        "w": 342,
+        "h": 44,
+        "kind": "secondary",
+        "height": 44,
+        "title": "Editar programación",
+        "text": "",
+        "target": "editar"
+      }
+    ],
+    "width": 390,
+    "height": 844
+  },
+  {
+    "id": "editar",
+    "title": "Editar programación",
+    "rf": "RF-03",
+    "ref": "U07 / U08",
+    "intent": "Revisar cambios de meta y frecuencia conservando la configuración histórica.",
+    "note": "Una versión obsoleta requiere revisar el conflicto. Cancelar edición regresa a Detalle.",
+    "number": 7,
+    "assets": {
+      "sketch:none": "prototipos/movil/sketches/editar.png",
+      "wireframe:none": "prototipos/movil/wireframes/editar.png",
+      "mockup:light": "prototipos/movil/mockups/light/editar.png",
+      "mockup:dark": "prototipos/movil/mockups/dark/editar.png"
+    },
+    "blocks": [
+      {
+        "id": "editar-01",
+        "x": 24,
+        "y": 150,
+        "w": 342,
+        "h": 114,
+        "kind": "notice",
+        "height": 110,
+        "title": "Tu historial queda intacto",
+        "text": "La nueva programación aplica hacia adelante, desde su fecha de vigencia."
+      },
+      {
+        "id": "editar-02",
+        "x": 24,
+        "y": 276,
+        "w": 342,
+        "h": 64,
+        "kind": "field",
+        "height": 64,
+        "title": "Nombre del hábito",
+        "text": "Leer con calma"
+      },
+      {
+        "id": "editar-03",
+        "x": 24,
+        "y": 352,
+        "w": 342,
+        "h": 64,
+        "kind": "field",
+        "height": 64,
+        "title": "Nueva meta",
+        "text": "25 minutos"
+      },
+      {
+        "id": "editar-04",
+        "x": 24,
+        "y": 428,
+        "w": 342,
+        "h": 66,
+        "kind": "days",
+        "height": 66,
+        "title": "Días de la nueva versión",
+        "text": ""
+      },
+      {
+        "id": "editar-05",
+        "x": 24,
+        "y": 506,
+        "w": 342,
+        "h": 48,
+        "kind": "button",
+        "height": 48,
+        "title": "Revisar y guardar cambios",
+        "text": "",
+        "target": "detalle"
+      },
+      {
+        "id": "editar-06",
+        "x": 24,
+        "y": 566,
+        "w": 342,
+        "h": 44,
+        "kind": "secondary",
+        "height": 44,
+        "title": "Cancelar edición",
+        "text": "",
+        "target": "detalle"
+      }
+    ],
+    "width": 390,
+    "height": 844
+  },
+  {
+    "id": "registro",
+    "title": "Registrar avance",
+    "rf": "RF-04",
+    "ref": "U08",
+    "intent": "Enviar el valor acumulado absoluto para la fecha de negocio del hábito.",
+    "note": "Enviar 15 dos veces no suma 30. Reintentar tras respuesta perdida conserva idempotencia; un conflicto requiere revisión.",
+    "number": 8,
+    "assets": {
+      "sketch:none": "prototipos/movil/sketches/registro.png",
+      "wireframe:none": "prototipos/movil/wireframes/registro.png",
+      "mockup:light": "prototipos/movil/mockups/light/registro.png",
+      "mockup:dark": "prototipos/movil/mockups/dark/registro.png"
+    },
+    "blocks": [
+      {
+        "id": "registro-01",
+        "x": 24,
+        "y": 150,
+        "w": 342,
+        "h": 84,
+        "kind": "habit",
+        "height": 84,
+        "title": "Leer con calma",
+        "text": "26 octubre · Meta de 20 minutos",
+        "icon": "lectura"
+      },
+      {
+        "id": "registro-02",
+        "x": 24,
+        "y": 246,
+        "w": 342,
+        "h": 72,
+        "kind": "field",
+        "height": 72,
+        "title": "Minutos acumulados del día",
+        "text": "15"
+      },
+      {
+        "id": "registro-03",
+        "x": 24,
+        "y": 330,
+        "w": 342,
+        "h": 114,
+        "kind": "notice",
+        "height": 110,
+        "title": "Se guardarán 15 en total",
+        "text": "Este valor sustituye el acumulado de hoy; no se sumará como otro registro."
+      },
+      {
+        "id": "registro-04",
+        "x": 24,
+        "y": 456,
+        "w": 342,
+        "h": 48,
+        "kind": "button",
+        "height": 48,
+        "title": "Confirmar valor acumulado",
+        "text": "",
+        "target": "detalle"
+      },
+      {
+        "id": "registro-05",
+        "x": 24,
+        "y": 516,
+        "w": 342,
+        "h": 44,
+        "kind": "secondary",
+        "height": 44,
+        "title": "Volver sin cambios",
+        "text": "",
+        "target": "detalle"
+      }
+    ],
+    "width": 390,
+    "height": 844
+  },
+  {
+    "id": "historial",
+    "title": "Historial de lectura",
+    "rf": "RF-04 / RF-05",
+    "ref": "U08 / U10",
+    "intent": "Revisar fechas, cantidades y estado confirmado de un hábito.",
+    "note": "Los registros son ejemplos sintéticos; no se inventan señales biométricas.",
+    "number": 9,
+    "assets": {
+      "sketch:none": "prototipos/movil/sketches/historial.png",
+      "wireframe:none": "prototipos/movil/wireframes/historial.png",
+      "mockup:light": "prototipos/movil/mockups/light/historial.png",
+      "mockup:dark": "prototipos/movil/mockups/dark/historial.png"
+    },
+    "blocks": [
+      {
+        "id": "historial-01",
+        "x": 24,
+        "y": 150,
+        "w": 342,
+        "h": 64,
+        "kind": "field",
+        "height": 64,
+        "title": "Periodo de consulta",
+        "text": "19–25 octubre 2026"
+      },
+      {
+        "id": "historial-02",
+        "x": 24,
+        "y": 226,
+        "w": 342,
+        "h": 78,
+        "kind": "summary",
+        "height": 78,
+        "title": "5 de 7 metas completas",
+        "text": "Solo oportunidades cerradas"
+      },
+      {
+        "id": "historial-03",
+        "x": 24,
+        "y": 316,
+        "w": 342,
+        "h": 72,
+        "kind": "row",
+        "height": 72,
+        "title": "Domingo 25 · Sin completar",
+        "text": "0 / 20 minutos · Día cerrado"
+      },
+      {
+        "id": "historial-04",
+        "x": 24,
+        "y": 400,
+        "w": 342,
+        "h": 72,
+        "kind": "row",
+        "height": 72,
+        "title": "Sábado 24 · Meta completa",
+        "text": "20 / 20 minutos · Confirmado"
+      },
+      {
+        "id": "historial-05",
+        "x": 24,
+        "y": 484,
+        "w": 342,
+        "h": 72,
+        "kind": "row",
+        "height": 72,
+        "title": "Viernes 23 · Meta completa",
+        "text": "20 / 20 minutos · Confirmado"
+      },
+      {
+        "id": "historial-06",
+        "x": 24,
+        "y": 568,
+        "w": 342,
+        "h": 44,
+        "kind": "secondary",
+        "height": 44,
+        "title": "Ver análisis del periodo",
+        "text": "",
+        "target": "analisis"
+      }
+    ],
+    "width": 390,
+    "height": 844
+  },
+  {
+    "id": "recordatorio",
+    "title": "Tu recordatorio",
+    "rf": "RF-06",
+    "ref": "U09",
+    "intent": "Configurar un recordatorio dentro de los días programados del hábito.",
+    "note": "No seleccionar días ajenos a la agenda. Comprobar permisos del canal y zona; no se promete entrega operativa.",
+    "number": 10,
+    "assets": {
+      "sketch:none": "prototipos/movil/sketches/recordatorio.png",
+      "wireframe:none": "prototipos/movil/wireframes/recordatorio.png",
+      "mockup:light": "prototipos/movil/mockups/light/recordatorio.png",
+      "mockup:dark": "prototipos/movil/mockups/dark/recordatorio.png"
+    },
+    "blocks": [
+      {
+        "id": "recordatorio-01",
+        "x": 24,
+        "y": 150,
+        "w": 342,
+        "h": 64,
+        "kind": "field",
+        "height": 64,
+        "title": "Hábito",
+        "text": "Leer con calma"
+      },
+      {
+        "id": "recordatorio-02",
+        "x": 24,
+        "y": 226,
+        "w": 342,
+        "h": 64,
+        "kind": "field",
+        "height": 64,
+        "title": "Hora de tu zona",
+        "text": "20:00 · America/Mexico_City"
+      },
+      {
+        "id": "recordatorio-03",
+        "x": 24,
+        "y": 302,
+        "w": 342,
+        "h": 66,
+        "kind": "days",
+        "height": 66,
+        "title": "Días del recordatorio",
+        "text": ""
+      },
+      {
+        "id": "recordatorio-04",
+        "x": 24,
+        "y": 380,
+        "w": 342,
+        "h": 114,
+        "kind": "notice",
+        "height": 110,
+        "title": "Permiso para avisarte",
+        "text": "Revisa las notificaciones del dispositivo. Puedes desactivar este recordatorio cuando quieras."
+      },
+      {
+        "id": "recordatorio-05",
+        "x": 24,
+        "y": 506,
+        "w": 342,
+        "h": 48,
+        "kind": "button",
+        "height": 48,
+        "title": "Guardar recordatorio",
+        "text": "",
+        "target": "detalle"
+      },
+      {
+        "id": "recordatorio-06",
+        "x": 24,
+        "y": 566,
+        "w": 342,
+        "h": 40,
+        "kind": "secondary",
+        "height": 40,
+        "title": "Cancelar",
+        "text": "",
+        "target": "detalle"
+      }
+    ],
+    "width": 390,
+    "height": 844
+  },
+  {
+    "id": "avisos",
+    "title": "Tus avisos",
+    "rf": "RF-06",
+    "ref": "U14",
+    "intent": "Revisar recordatorios y abrir el hábito al que pertenece cada aviso.",
+    "note": "Avisos de ejemplo; las preferencias, horario y permiso deben respetarse en producto.",
+    "number": 11,
+    "assets": {
+      "sketch:none": "prototipos/movil/sketches/avisos.png",
+      "wireframe:none": "prototipos/movil/wireframes/avisos.png",
+      "mockup:light": "prototipos/movil/mockups/light/avisos.png",
+      "mockup:dark": "prototipos/movil/mockups/dark/avisos.png"
+    },
+    "blocks": [
+      {
+        "id": "avisos-01",
+        "x": 24,
+        "y": 150,
+        "w": 342,
+        "h": 46,
+        "kind": "tabs",
+        "height": 46,
+        "title": "",
+        "text": "",
+        "options": [
+          "Todos",
+          "Sin leer"
+        ]
+      },
+      {
+        "id": "avisos-02",
+        "x": 24,
+        "y": 208,
+        "w": 342,
+        "h": 104,
+        "kind": "benefit",
+        "height": 104,
+        "title": "Un momento para leer",
+        "text": "Leer con calma · Hoy, 20:00\nAbre tu hábito cuando estés listo.",
+        "icon": "recordatorio",
+        "target": "detalle"
+      },
+      {
+        "id": "avisos-03",
+        "x": 24,
+        "y": 324,
+        "w": 342,
+        "h": 104,
+        "kind": "benefit",
+        "height": 104,
+        "title": "Tu horario está guardado",
+        "text": "Puedes cambiarlo desde el recordatorio de tu hábito.",
+        "icon": "calendario",
+        "target": "recordatorio"
+      },
+      {
+        "id": "avisos-04",
+        "x": 24,
+        "y": 440,
+        "w": 342,
+        "h": 44,
+        "kind": "secondary",
+        "height": 44,
+        "title": "Revisar mis recordatorios",
+        "text": "",
+        "target": "recordatorio"
+      }
+    ],
+    "width": 390,
+    "height": 844
+  },
+  {
+    "id": "analisis",
+    "title": "Observa tu constancia",
+    "rf": "RF-05",
+    "ref": "U10",
+    "intent": "Interpretar cumplimiento de un periodo cerrado, con fecha, fuente y unidad.",
+    "note": "19–25/10/2026: 1,1,0,1,1,1,0; 5/7=71.4 %. Racha de ese periodo: 0 al cierre; RN-P17.",
+    "number": 12,
+    "assets": {
+      "sketch:none": "prototipos/movil/sketches/analisis.png",
+      "wireframe:none": "prototipos/movil/wireframes/analisis.png",
+      "mockup:light": "prototipos/movil/mockups/light/analisis.png",
+      "mockup:dark": "prototipos/movil/mockups/dark/analisis.png"
+    },
+    "blocks": [
+      {
+        "id": "analisis-01",
+        "x": 24,
+        "y": 150,
+        "w": 342,
+        "h": 80,
+        "kind": "summary",
+        "height": 80,
+        "title": "Cumplimiento: 71.4 %",
+        "text": "5 de 7 oportunidades · 19–25 octubre"
+      },
+      {
+        "id": "analisis-02",
+        "x": 24,
+        "y": 242,
+        "w": 342,
+        "h": 170,
+        "kind": "chart",
+        "height": 170,
+        "title": "Metas completas por día",
+        "text": ""
+      },
+      {
+        "id": "analisis-03",
+        "x": 24,
+        "y": 424,
+        "w": 342,
+        "h": 114,
+        "kind": "notice",
+        "height": 78,
+        "title": "Solo días cerrados",
+        "text": "Datos de registros confirmados. La racha al cierre de este periodo es 0."
+      },
+      {
+        "id": "analisis-04",
+        "x": 24,
+        "y": 550,
+        "w": 342,
+        "h": 62,
+        "kind": "row",
+        "height": 62,
+        "title": "Hábito consultado",
+        "text": "Leer con calma · minutos",
+        "target": "historial"
+      },
+      {
+        "id": "analisis-05",
+        "x": 24,
+        "y": 624,
+        "w": 342,
+        "h": 44,
+        "kind": "secondary",
+        "height": 44,
+        "title": "Cambiar periodo",
+        "text": "",
+        "target": "periodo"
+      }
+    ],
+    "width": 390,
+    "height": 844
+  },
+  {
+    "id": "periodo",
+    "title": "Elige un periodo",
+    "rf": "RF-05",
+    "ref": "U10",
+    "intent": "Elegir una ventana de análisis sin mezclar días abiertos y cerrados.",
+    "note": "Validar inicio≤fin y zona de negocio. No reinterpretar el historial al cambiar zona del perfil.",
+    "number": 13,
+    "assets": {
+      "sketch:none": "prototipos/movil/sketches/periodo.png",
+      "wireframe:none": "prototipos/movil/wireframes/periodo.png",
+      "mockup:light": "prototipos/movil/mockups/light/periodo.png",
+      "mockup:dark": "prototipos/movil/mockups/dark/periodo.png"
+    },
+    "blocks": [
+      {
+        "id": "periodo-01",
+        "x": 24,
+        "y": 150,
+        "w": 342,
+        "h": 64,
+        "kind": "field",
+        "height": 64,
+        "title": "Desde",
+        "text": "19 octubre 2026"
+      },
+      {
+        "id": "periodo-02",
+        "x": 24,
+        "y": 226,
+        "w": 342,
+        "h": 64,
+        "kind": "field",
+        "height": 64,
+        "title": "Hasta",
+        "text": "25 octubre 2026"
+      },
+      {
+        "id": "periodo-03",
+        "x": 24,
+        "y": 302,
+        "w": 342,
+        "h": 64,
+        "kind": "field",
+        "height": 64,
+        "title": "Hábito",
+        "text": "Leer con calma"
+      },
+      {
+        "id": "periodo-04",
+        "x": 24,
+        "y": 378,
+        "w": 342,
+        "h": 114,
+        "kind": "notice",
+        "height": 110,
+        "title": "Una comparación consistente",
+        "text": "La ventana utiliza America/Mexico_City y oportunidades ya cerradas."
+      },
+      {
+        "id": "periodo-05",
+        "x": 24,
+        "y": 504,
+        "w": 342,
+        "h": 48,
+        "kind": "button",
+        "height": 48,
+        "title": "Aplicar periodo",
+        "text": "",
+        "target": "analisis"
+      },
+      {
+        "id": "periodo-06",
+        "x": 24,
+        "y": 564,
+        "w": 342,
+        "h": 44,
+        "kind": "secondary",
+        "height": 44,
+        "title": "Cancelar selección",
+        "text": "",
+        "target": "analisis"
+      }
+    ],
+    "width": 390,
+    "height": 844
+  },
+  {
+    "id": "sugerencias",
+    "title": "Ideas para tu rutina",
+    "rf": "RF-07",
+    "ref": "U11",
+    "intent": "Explicar la ausencia de una recomendación cuando no hay datos suficientes.",
+    "note": "Abstenerse sin inventar IA ni umbrales. El diseño de personalización es una vista condicional separada.",
+    "number": 14,
+    "assets": {
+      "sketch:none": "prototipos/movil/sketches/sugerencias.png",
+      "wireframe:none": "prototipos/movil/wireframes/sugerencias.png",
+      "mockup:light": "prototipos/movil/mockups/light/sugerencias.png",
+      "mockup:dark": "prototipos/movil/mockups/dark/sugerencias.png"
+    },
+    "blocks": [
+      {
+        "id": "sugerencias-01",
+        "x": 24,
+        "y": 150,
+        "w": 342,
+        "h": 164,
+        "kind": "empty",
+        "height": 164,
+        "title": "Aún faltan datos",
+        "text": "Sigue registrando tus hábitos. Cuando haya información suficiente podrás revisar sugerencias.",
+        "icon": "sugerencias"
+      },
+      {
+        "id": "sugerencias-02",
+        "x": 24,
+        "y": 326,
+        "w": 342,
+        "h": 114,
+        "kind": "notice",
+        "height": 82,
+        "title": "Las ideas son voluntarias",
+        "text": "Tú decides si revisarlas y adaptarlas a tu rutina."
+      },
+      {
+        "id": "sugerencias-03",
+        "x": 24,
+        "y": 452,
+        "w": 342,
+        "h": 48,
+        "kind": "button",
+        "height": 48,
+        "title": "Revisar mis hábitos",
+        "text": "",
+        "target": "habitos"
+      },
+      {
+        "id": "sugerencias-04",
+        "x": 24,
+        "y": 512,
+        "w": 342,
+        "h": 44,
+        "kind": "secondary",
+        "height": 44,
+        "title": "Revisar consentimiento",
+        "text": "",
+        "target": "consentimiento"
+      }
+    ],
+    "width": 390,
+    "height": 844
+  },
+  {
+    "id": "personalizar",
+    "title": "Personaliza una idea",
+    "rf": "RF-07 / RF-03",
+    "ref": "U11 → U07",
+    "intent": "Adaptar una sugerencia disponible antes de guardarla y aceptarla.",
+    "note": "Vista condicional de una idea de ejemplo, no resultado de un modelo. Guardar confirma aceptación; cancelar no la acepta.",
+    "number": 15,
+    "assets": {
+      "sketch:none": "prototipos/movil/sketches/personalizar.png",
+      "wireframe:none": "prototipos/movil/wireframes/personalizar.png",
+      "mockup:light": "prototipos/movil/mockups/light/personalizar.png",
+      "mockup:dark": "prototipos/movil/mockups/dark/personalizar.png"
+    },
+    "blocks": [
+      {
+        "id": "personalizar-01",
+        "x": 24,
+        "y": 150,
+        "w": 342,
+        "h": 96,
+        "kind": "benefit",
+        "height": 96,
+        "title": "Una pausa entre tareas",
+        "text": "Idea de ejemplo · Puedes cambiarla antes de decidir.",
+        "icon": "descanso"
+      },
+      {
+        "id": "personalizar-02",
+        "x": 24,
+        "y": 258,
+        "w": 342,
+        "h": 64,
+        "kind": "field",
+        "height": 64,
+        "title": "Nombre de tu versión",
+        "text": "Pausa consciente"
+      },
+      {
+        "id": "personalizar-03",
+        "x": 24,
+        "y": 334,
+        "w": 342,
+        "h": 64,
+        "kind": "field",
+        "height": 64,
+        "title": "Meta y unidad",
+        "text": "5 minutos"
+      },
+      {
+        "id": "personalizar-04",
+        "x": 24,
+        "y": 410,
+        "w": 342,
+        "h": 66,
+        "kind": "days",
+        "height": 66,
+        "title": "Días que te funcionan",
+        "text": ""
+      },
+      {
+        "id": "personalizar-05",
+        "x": 24,
+        "y": 488,
+        "w": 342,
+        "h": 48,
+        "kind": "button",
+        "height": 48,
+        "title": "Guardar y aceptar",
+        "text": "",
+        "target": "detalle"
+      },
+      {
+        "id": "personalizar-06",
+        "x": 24,
+        "y": 548,
+        "w": 342,
+        "h": 44,
+        "kind": "secondary",
+        "height": 44,
+        "title": "Cancelar sin aceptar",
+        "text": "",
+        "target": "sugerencias"
+      }
+    ],
+    "width": 390,
+    "height": 844
+  },
+  {
+    "id": "ajustes",
+    "title": "Perfil y preferencias",
+    "rf": "RF-02",
+    "ref": "U12",
+    "intent": "Ajustar datos del perfil, zona preferida y apariencia con guardado explícito.",
+    "note": "Cambiar zona no reclasifica fechas históricas. Los controles de tema son diseño, no un cliente implementado.",
+    "number": 16,
+    "assets": {
+      "sketch:none": "prototipos/movil/sketches/ajustes.png",
+      "wireframe:none": "prototipos/movil/wireframes/ajustes.png",
+      "mockup:light": "prototipos/movil/mockups/light/ajustes.png",
+      "mockup:dark": "prototipos/movil/mockups/dark/ajustes.png"
+    },
+    "blocks": [
+      {
+        "id": "ajustes-01",
+        "x": 24,
+        "y": 150,
+        "w": 342,
+        "h": 64,
+        "kind": "field",
+        "height": 64,
+        "title": "Nombre para mostrar",
+        "text": "Mi espacio"
+      },
+      {
+        "id": "ajustes-02",
+        "x": 24,
+        "y": 226,
+        "w": 342,
+        "h": 64,
+        "kind": "field",
+        "height": 64,
+        "title": "Zona preferida",
+        "text": "America/Mexico_City"
+      },
+      {
+        "id": "ajustes-03",
+        "x": 24,
+        "y": 302,
+        "w": 342,
+        "h": 58,
+        "kind": "tabs",
+        "height": 58,
+        "title": "Apariencia",
+        "text": "",
+        "options": [
+          "Claro",
+          "Oscuro"
+        ]
+      },
+      {
+        "id": "ajustes-04",
+        "x": 24,
+        "y": 372,
+        "w": 342,
+        "h": 68,
+        "kind": "row",
+        "height": 68,
+        "title": "Privacidad y consentimiento",
+        "text": "Revisar finalidades y permisos",
+        "target": "consentimiento"
+      },
+      {
+        "id": "ajustes-05",
+        "x": 24,
+        "y": 452,
+        "w": 342,
+        "h": 48,
+        "kind": "button",
+        "height": 48,
+        "title": "Guardar preferencias",
+        "text": "",
+        "target": "hoy"
+      },
+      {
+        "id": "ajustes-06",
+        "x": 24,
+        "y": 512,
+        "w": 342,
+        "h": 44,
+        "kind": "secondary",
+        "height": 44,
+        "title": "Cancelar cambios",
+        "text": "",
+        "target": "hoy"
+      }
+    ],
+    "width": 390,
+    "height": 844
+  },
+  {
+    "id": "consentimiento",
+    "title": "Tú decides qué compartir",
+    "rf": "RF-02 / RF-08",
+    "ref": "U12",
+    "intent": "Revisar finalidades y dar o retirar consentimiento por uso y fuente.",
+    "note": "Revocar bloquea nuevos usos y trabajos. No inferir permiso de biometría por aceptar sugerencias.",
+    "number": 17,
+    "assets": {
+      "sketch:none": "prototipos/movil/sketches/consentimiento.png",
+      "wireframe:none": "prototipos/movil/wireframes/consentimiento.png",
+      "mockup:light": "prototipos/movil/mockups/light/consentimiento.png",
+      "mockup:dark": "prototipos/movil/mockups/dark/consentimiento.png"
+    },
+    "blocks": [
+      {
+        "id": "consentimiento-01",
+        "x": 24,
+        "y": 150,
+        "w": 342,
+        "h": 100,
+        "kind": "toggle",
+        "height": 100,
+        "title": "Sugerencias personalizadas",
+        "text": "Opcional · Usar mis hábitos para propuestas.",
+        "enabled": false
+      },
+      {
+        "id": "consentimiento-02",
+        "x": 24,
+        "y": 262,
+        "w": 342,
+        "h": 100,
+        "kind": "toggle",
+        "height": 100,
+        "title": "Señales del dispositivo",
+        "text": "Opcional · Requiere fuente vinculada y permiso.",
+        "enabled": false
+      },
+      {
+        "id": "consentimiento-03",
+        "x": 24,
+        "y": 374,
+        "w": 342,
+        "h": 114,
+        "kind": "notice",
+        "height": 82,
+        "title": "Puedes cambiar de decisión",
+        "text": "Retirar un permiso detiene nuevos usos de esa finalidad."
+      },
+      {
+        "id": "consentimiento-04",
+        "x": 24,
+        "y": 500,
+        "w": 342,
+        "h": 48,
+        "kind": "button",
+        "height": 48,
+        "title": "Guardar mi decisión",
+        "text": "",
+        "target": "ajustes"
+      },
+      {
+        "id": "consentimiento-05",
+        "x": 24,
+        "y": 560,
+        "w": 342,
+        "h": 44,
+        "kind": "secondary",
+        "height": 44,
+        "title": "Gestionar mis datos",
+        "text": "",
+        "target": "datos"
+      }
+    ],
+    "width": 390,
+    "height": 844
+  },
+  {
+    "id": "dispositivos",
+    "title": "Tus dispositivos",
+    "rf": "RF-08",
+    "ref": "Recorrido Wear OS",
+    "intent": "Consultar fuentes vinculadas y comenzar la asociación de una fuente compatible.",
+    "note": "No inventar telemetría ni mediciones. La vinculación requiere capacidades y consentimiento explícitos.",
+    "number": 18,
+    "assets": {
+      "sketch:none": "prototipos/movil/sketches/dispositivos.png",
+      "wireframe:none": "prototipos/movil/wireframes/dispositivos.png",
+      "mockup:light": "prototipos/movil/mockups/light/dispositivos.png",
+      "mockup:dark": "prototipos/movil/mockups/dark/dispositivos.png"
+    },
+    "blocks": [
+      {
+        "id": "dispositivos-01",
+        "x": 24,
+        "y": 150,
+        "w": 342,
+        "h": 156,
+        "kind": "empty",
+        "height": 156,
+        "title": "Aún no hay dispositivos",
+        "text": "Vincula una fuente compatible solo si deseas compartir sus señales.",
+        "icon": "dispositivo"
+      },
+      {
+        "id": "dispositivos-02",
+        "x": 24,
+        "y": 318,
+        "w": 342,
+        "h": 94,
+        "kind": "benefit",
+        "height": 94,
+        "title": "Permisos por fuente",
+        "text": "Puedes revisar y retirar cada finalidad por separado.",
+        "icon": "privacidad",
+        "target": "consentimiento"
+      },
+      {
+        "id": "dispositivos-03",
+        "x": 24,
+        "y": 424,
+        "w": 342,
+        "h": 48,
+        "kind": "button",
+        "height": 48,
+        "title": "Vincular dispositivo",
+        "text": "",
+        "target": "vincular"
+      },
+      {
+        "id": "dispositivos-04",
+        "x": 24,
+        "y": 484,
+        "w": 342,
+        "h": 44,
+        "kind": "secondary",
+        "height": 44,
+        "title": "Volver a preferencias",
+        "text": "",
+        "target": "ajustes"
+      }
+    ],
+    "width": 390,
+    "height": 844
+  },
+  {
+    "id": "vincular",
+    "title": "Vincula una fuente",
+    "rf": "RF-08 / RF-02",
+    "ref": "Recorrido Wear OS",
+    "intent": "Revisar compatibilidad y permisos antes de confirmar una asociación.",
+    "note": "No fija OTP, QR, Bluetooth ni protocolo aún pendiente. Confirmación de diseño; no conecta hardware.",
+    "number": 19,
+    "assets": {
+      "sketch:none": "prototipos/movil/sketches/vincular.png",
+      "wireframe:none": "prototipos/movil/wireframes/vincular.png",
+      "mockup:light": "prototipos/movil/mockups/light/vincular.png",
+      "mockup:dark": "prototipos/movil/mockups/dark/vincular.png"
+    },
+    "blocks": [
+      {
+        "id": "vincular-01",
+        "x": 24,
+        "y": 150,
+        "w": 342,
+        "h": 62,
+        "kind": "steps",
+        "height": 62,
+        "title": "",
+        "text": "",
+        "options": [
+          "Fuente",
+          "Permisos",
+          "Confirmar"
+        ]
+      },
+      {
+        "id": "vincular-02",
+        "x": 24,
+        "y": 224,
+        "w": 342,
+        "h": 104,
+        "kind": "benefit",
+        "height": 104,
+        "title": "Dispositivo de ejemplo",
+        "text": "Wear OS · Compatibilidad por comprobar.",
+        "icon": "dispositivo"
+      },
+      {
+        "id": "vincular-03",
+        "x": 24,
+        "y": 340,
+        "w": 342,
+        "h": 108,
+        "kind": "toggle",
+        "height": 108,
+        "title": "Permitir esta finalidad",
+        "text": "Revisa las señales y su uso antes de autorizar.",
+        "enabled": false
+      },
+      {
+        "id": "vincular-04",
+        "x": 24,
+        "y": 460,
+        "w": 342,
+        "h": 48,
+        "kind": "button",
+        "height": 48,
+        "title": "Revisar asociación",
+        "text": "",
+        "target": "dispositivos"
+      },
+      {
+        "id": "vincular-05",
+        "x": 24,
+        "y": 520,
+        "w": 342,
+        "h": 44,
+        "kind": "secondary",
+        "height": 44,
+        "title": "Cancelar vinculación",
+        "text": "",
+        "target": "dispositivos"
+      }
+    ],
+    "width": 390,
+    "height": 844
+  },
+  {
+    "id": "datos",
+    "title": "Tus datos personales",
+    "rf": "RF-02 / RF-10",
+    "ref": "Solicitud personal",
+    "intent": "Solicitar una copia o iniciar una solicitud de eliminación de datos propios.",
+    "note": "Revisar alcance y política; la eliminación requiere confirmación específica posterior. Ninguna imagen ejecuta solicitudes.",
+    "number": 20,
+    "assets": {
+      "sketch:none": "prototipos/movil/sketches/datos.png",
+      "wireframe:none": "prototipos/movil/wireframes/datos.png",
+      "mockup:light": "prototipos/movil/mockups/light/datos.png",
+      "mockup:dark": "prototipos/movil/mockups/dark/datos.png"
+    },
+    "blocks": [
+      {
+        "id": "datos-01",
+        "x": 24,
+        "y": 150,
+        "w": 342,
+        "h": 106,
+        "kind": "benefit",
+        "height": 106,
+        "title": "Una copia para ti",
+        "text": "Reúne tus registros y preferencias. Podrás consultar el estado de tu solicitud.",
+        "icon": "descargar"
+      },
+      {
+        "id": "datos-02",
+        "x": 24,
+        "y": 268,
+        "w": 342,
+        "h": 48,
+        "kind": "button",
+        "height": 48,
+        "title": "Solicitar una copia",
+        "text": "",
+        "target": "datos"
+      },
+      {
+        "id": "datos-03",
+        "x": 24,
+        "y": 328,
+        "w": 342,
+        "h": 122,
+        "kind": "notice",
+        "height": 122,
+        "title": "Eliminar tus datos",
+        "text": "Antes de confirmar, revisa qué se elimina, qué se conserva por política y las consecuencias."
+      },
+      {
+        "id": "datos-04",
+        "x": 24,
+        "y": 462,
+        "w": 342,
+        "h": 48,
+        "kind": "secondary",
+        "height": 48,
+        "title": "Revisar solicitud de eliminación",
+        "text": "",
+        "target": "datos"
+      },
+      {
+        "id": "datos-05",
+        "x": 24,
+        "y": 522,
+        "w": 342,
+        "h": 64,
+        "kind": "row",
+        "height": 64,
+        "title": "Tu privacidad",
+        "text": "Volver a finalidades y permisos",
+        "target": "consentimiento"
+      }
+    ],
+    "width": 390,
+    "height": 844
+  }
+]
