@@ -174,6 +174,76 @@ def render(spec, fidelity, theme, Canvas, colors, icons, logos, photo):
     return svg
 
 
+def write_readme(manifest, output):
+    """Una sola matriz documental, agrupada por función y sin cambiar el catálogo."""
+    readme="""# Móvil · Correspondencia de veinte pantallas
+
+20 sketches + 20 wireframes + 20 mockups con variante clara y oscura: **80 PNG**, todos a 390 × 844. Los temas no son pantallas adicionales. La intención y las posiciones de bloques se conservan entre etapas. Son imágenes estáticas de diseño; el visor no ejecuta operaciones de negocio.
+
+[Índice GUI](../../README.md) · [Identidad visual](../../identidad/README.md) · [Galería](../../index.html#prototipos) · [Catálogo con geometría](catalogo.json) · [Fuente](../../fuente/movil.py)
+
+## Etapas
+
+| Etapa | Pantallas | PNG | Criterio |
+|---|---:|---:|---|
+| Sketch | 20 | 20 | Cuadros y líneas en blanco/gris; sin texto, logos, fotos, color ni temas. Número y nombre fuera del dibujo. |
+| Wireframe | 20 | 20 | Misma estructura, grises, Arial y marcadores de imagen/logo. |
+| Mockup | 20 | 40 | Misma función y organización con Inter, paleta, iconos y marcas existentes; claro y oscuro. |
+
+Se sigue la distinción de Carlos Salgado en [Mosaic/UOC, «Sketchs, mockups, wireframes y prototipos»](https://mosaic.uoc.edu/2015/09/15/proceso-de-desarrollo-de-un-proyecto-digital/). La solicitud de esta entrega precisa sketches sin anotaciones y veinte pantallas; no se copian los ejemplos del artículo.
+
+## Matriz por áreas funcionales
+
+- [Inicio y acceso · 01–02](#inicio-y-acceso)
+- [Hábitos y registros · 03–09](#hábitos-y-registros)
+- [Recordatorios y avisos · 10–11](#recordatorios-y-avisos)
+- [Análisis y sugerencias · 12–15](#análisis-y-sugerencias)
+- [Perfil, privacidad y dispositivos · 16–20](#perfil-privacidad-y-dispositivos)
+
+Cada fila identifica una pantalla y sus cuatro recursos correspondientes. Las etapas se indican en las columnas; los títulos de Detalle e Historial conservan el hábito de lectura usado como ejemplo.
+"""
+    areas=[('Inicio y acceso',1,2),('Hábitos y registros',3,9),('Recordatorios y avisos',10,11),('Análisis y sugerencias',12,15),('Perfil, privacidad y dispositivos',16,20)]
+    names={'bienvenida':'Bienvenida','acceso':'Acceso','hoy':'Hoy','detalle':'Detalle de hábito','historial':'Historial de hábito','analisis':'Análisis','periodo':'Elegir periodo','sugerencias':'Sugerencias','personalizar':'Personalizar sugerencia','ajustes':'Perfil y preferencias','consentimiento':'Consentimiento','dispositivos':'Dispositivos','vincular':'Vincular una fuente','datos':'Datos personales'}
+    for area,first,last in areas:
+        readme+=f'\n### {area}\n\n| Nº | Pantalla e intención | Requisito | Sketch | Wireframe | Mockup claro | Mockup oscuro |\n|---|---|---|---|---|---|---|\n'
+        for item in manifest:
+            if not first<=item['number']<=last:continue
+            links=[]
+            for stage in ('sketch:none','wireframe:none','mockup:light','mockup:dark'):
+                rel=item['assets'][stage].removeprefix('prototipos/movil/')
+                links.append(f'[PNG]({rel})')
+            label=names.get(item['id'],item['title'])
+            caption=f'**{label}**' if label==item['title'] else f'**{label}** · {item["title"]}'
+            readme+=f'| {item["number"]:02d} | {caption} — {item["intent"]} | {item["rf"]} | '+' | '.join(links)+' |\n'
+    readme+='\n## Condiciones por pantalla\n\n'
+    for item in manifest:readme+=f'{item["number"]:02d}. **{item["title"]}:** {item["note"]}\n'
+    readme+="""
+## Alcance y límites
+
+Las referencias RF y notas describen intención y restricciones, no capacidades implementadas. Los ejemplos son sintéticos: análisis del 19–25/10/2026 (5/7 = 71.4 %, racha al cierre 0) y día abierto 26/10, America/Mexico_City, RN-P17. Acceso delega credenciales a Keycloak; permisos, persistencia, errores, conflictos, accesibilidad y soporte offline requieren implementación y pruebas propias.
+
+Las seis referencias anteriores de escritorio permanecen fuera del conteo móvil. Solo sus dos mockups oscuros recibieron los derivados de color de los logos el 29/10/2026. No se añaden pantallas PWA ni funciones de producto. Los veinte mockups móviles oscuros cambiaron únicamente en la cabecera de marca; los demás píxeles, sketches, wireframes y mockups claros se conservaron.
+
+## Fuente, regeneración y verificación
+
+El catálogo de [movil.py](../../fuente/movil.py) genera geometría, manifiesto y este README; mantenerlo como fuente para no perder la agrupación al regenerar. Los PNG no tienen copias SVG exportadas. La [identidad](../../identidad/README.md) define los recursos compartidos.
+
+Desde la raíz del repositorio, en el entorno de autoría Python/Pillow y Node/Playwright con Chrome:
+
+```powershell
+python docs/GUI/fuente/generar.py --mobile-only
+$env:QC_MOBILE_ONLY='1'
+node docs/GUI/fuente/render.cjs
+python -m unittest discover -s docs/GUI/tests -p 'test_*.py' -v
+```
+
+No definir `QC_IDENTITY_ONLY=1` en esa exportación. `QC_CHROME` permite configurar Chrome. El exportador comprueba Inter local y texto dentro del lienzo y de cada bloque.
+
+Validación del catálogo (28–29/10/2026): veinte conjuntos y ochenta archivos; correspondencia de bloques y destinos; sketches sin texto/imágenes/color, wireframes Arial y grises, mockups Inter y marcas en ambos temas. Se comprobaron el visor, los temas, la navegación por imágenes y su carga local. Esta evidencia de diseño no certifica una aplicación funcional ni accesibilidad global.
+"""
+    (output/'README.md').write_text(readme,encoding='utf-8')
+
+
 def build(Canvas, colors, icons, logos, photo, output):
     scenes={};manifest=[]
     for n,spec in enumerate(CATALOG,1):
@@ -188,24 +258,5 @@ def build(Canvas, colors, icons, logos, photo, output):
         manifest.append({k:v for k,v in spec.items() if k!='blocks'}|dict(number=n,assets=assets,blocks=geometry(spec),width=390,height=844))
     output.mkdir(parents=True,exist_ok=True)
     (output/'catalogo.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-    readme='''# Móvil · Correspondencia de veinte pantallas
-
-20 sketches + 20 wireframes + 20 mockups, cada mockup con variante clara y oscura: **80 PNG**. Todas las imágenes miden 390 × 844. Las variantes de tema no son pantallas adicionales.
-
-La misma intención y los mismos bloques/posiciones del catálogo se desarrollan en las tres etapas. Los sketches solo contienen cuadros y líneas, sin texto ni colores; sus nombres están aquí y en la galería. Los wireframes usan Arial, grises y marcadores. Los mockups aplican Inter y los recursos canónicos existentes, sin rediseñar logos. Las imágenes son documentación de diseño, no una aplicación funcional.
-
-[Galería](../../index.html#prototipos) · [Documentación y límites](../../README.md#prototipos-tres-fidelidades-reales) · [Catálogo con geometría](catalogo.json) · [Fuente](../../fuente/movil.py)
-
-| Nº | Pantalla e intención | Requisito | Sketch | Wireframe | Mockup claro | Mockup oscuro |
-|---|---|---|---|---|---|---|
-'''
-    for item in manifest:
-        links=[]
-        for stage in ('sketch:none','wireframe:none','mockup:light','mockup:dark'):
-            rel=item['assets'][stage].removeprefix('prototipos/movil/')
-            links.append(f'[PNG]({rel})')
-        readme+=f'| {item["number"]:02d} | **{item["title"]}** — {item["intent"]} | {item["rf"]} | '+ ' | '.join(links)+' |\n'
-    readme+='\n## Condiciones por pantalla\n\n'
-    for item in manifest:readme+=f'{item["number"]:02d}. **{item["title"]}:** {item["note"]}\n'
-    (output/'README.md').write_text(readme,encoding='utf-8')
+    write_readme(manifest,output)
     return scenes,manifest

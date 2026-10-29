@@ -42,6 +42,6 @@ La paleta de producto y los contrastes están en [tokens de diseño](../../packa
 
 Autorización expresa del propietario: adaptar únicamente colores/fondo, conservando exactamente formas, símbolos, composición y textos. Se reutilizan Sky Laser y Optical White de la paleta; no se crea un azul nuevo ni se aplica una inversión complementaria. Los originales JPEG no se sobrescriben. Los archivos tienen la misma resolución y coordenadas; su cobertura alfa deriva del mismo raster, sin redibujar, recortar o remuestrear. Se reemplaza la antigua aplicación de placa blanca en oscuro.
 
-[Manifiesto con hashes y método](brand/variants.json) · [Fuente reproducible](../../docs/GUI/fuente/marcas.py) · [Reglas y estado Figma](../../docs/GUI/README.md#variantes-de-marca--corrección-del-29102026). El selector [brand/theme.js](brand/theme.js) solo cambia el recurso del logo al cambiar el tema de una página; no altera el resto de su interfaz.
+[Manifiesto con hashes y método](brand/variants.json) · [Fuente reproducible](../../docs/GUI/fuente/marcas.py) · [Reglas y estado Figma](../../docs/GUI/identidad/README.md#variantes-claras-y-oscuras). El selector [brand/theme.js](brand/theme.js) solo cambia el recurso del logo al cambiar el tema de una página; no altera el resto de su interfaz.
 
 La referencia antigua de Práctica 05 usa [product-legacy-dark.png](brand/product-legacy-dark.png), derivado de la misma marca en [su recorte cuadrado histórico](../../docs/quantifyLogo.jpeg), conservando sus 640 × 640 y su encuadre. No es otro logotipo.

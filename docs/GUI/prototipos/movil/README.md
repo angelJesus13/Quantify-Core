@@ -1,33 +1,73 @@
 # Móvil · Correspondencia de veinte pantallas
 
-20 sketches + 20 wireframes + 20 mockups, cada mockup con variante clara y oscura: **80 PNG**. Todas las imágenes miden 390 × 844. Las variantes de tema no son pantallas adicionales.
+20 sketches + 20 wireframes + 20 mockups con variante clara y oscura: **80 PNG**, todos a 390 × 844. Los temas no son pantallas adicionales. La intención y las posiciones de bloques se conservan entre etapas. Son imágenes estáticas de diseño; el visor no ejecuta operaciones de negocio.
 
-La misma intención y los mismos bloques/posiciones del catálogo se desarrollan en las tres etapas. Los sketches solo contienen cuadros y líneas, sin texto ni colores; sus nombres están aquí y en la galería. Los wireframes usan Arial, grises y marcadores. Los mockups aplican Inter y los recursos canónicos existentes, sin rediseñar logos. Las imágenes son documentación de diseño, no una aplicación funcional.
+[Índice GUI](../../README.md) · [Identidad visual](../../identidad/README.md) · [Galería](../../index.html#prototipos) · [Catálogo con geometría](catalogo.json) · [Fuente](../../fuente/movil.py)
 
-[Galería](../../index.html#prototipos) · [Documentación y límites](../../README.md#prototipos-tres-fidelidades-reales) · [Catálogo con geometría](catalogo.json) · [Fuente](../../fuente/movil.py)
+## Etapas
+
+| Etapa | Pantallas | PNG | Criterio |
+|---|---:|---:|---|
+| Sketch | 20 | 20 | Cuadros y líneas en blanco/gris; sin texto, logos, fotos, color ni temas. Número y nombre fuera del dibujo. |
+| Wireframe | 20 | 20 | Misma estructura, grises, Arial y marcadores de imagen/logo. |
+| Mockup | 20 | 40 | Misma función y organización con Inter, paleta, iconos y marcas existentes; claro y oscuro. |
+
+Se sigue la distinción de Carlos Salgado en [Mosaic/UOC, «Sketchs, mockups, wireframes y prototipos»](https://mosaic.uoc.edu/2015/09/15/proceso-de-desarrollo-de-un-proyecto-digital/). La solicitud de esta entrega precisa sketches sin anotaciones y veinte pantallas; no se copian los ejemplos del artículo.
+
+## Matriz por áreas funcionales
+
+- [Inicio y acceso · 01–02](#inicio-y-acceso)
+- [Hábitos y registros · 03–09](#hábitos-y-registros)
+- [Recordatorios y avisos · 10–11](#recordatorios-y-avisos)
+- [Análisis y sugerencias · 12–15](#análisis-y-sugerencias)
+- [Perfil, privacidad y dispositivos · 16–20](#perfil-privacidad-y-dispositivos)
+
+Cada fila identifica una pantalla y sus cuatro recursos correspondientes. Las etapas se indican en las columnas; los títulos de Detalle e Historial conservan el hábito de lectura usado como ejemplo.
+
+### Inicio y acceso
 
 | Nº | Pantalla e intención | Requisito | Sketch | Wireframe | Mockup claro | Mockup oscuro |
 |---|---|---|---|---|---|---|
-| 01 | **Cada avance cuenta** — Presentar el producto y conducir al acceso centralizado. | RF-01 | [PNG](sketches/bienvenida.png) | [PNG](wireframes/bienvenida.png) | [PNG](mockups/light/bienvenida.png) | [PNG](mockups/dark/bienvenida.png) |
-| 02 | **Accede a tu espacio** — Iniciar el flujo de identidad con Keycloak y regresar al cliente. | RF-01 | [PNG](sketches/acceso.png) | [PNG](wireframes/acceso.png) | [PNG](mockups/light/acceso.png) | [PNG](mockups/dark/acceso.png) |
-| 03 | **Tu rutina de hoy** — Consultar lo programado para el día abierto y abrir un hábito. | RF-03 / RF-04 | [PNG](sketches/hoy.png) | [PNG](wireframes/hoy.png) | [PNG](mockups/light/hoy.png) | [PNG](mockups/dark/hoy.png) |
+| 01 | **Bienvenida** · Cada avance cuenta — Presentar el producto y conducir al acceso centralizado. | RF-01 | [PNG](sketches/bienvenida.png) | [PNG](wireframes/bienvenida.png) | [PNG](mockups/light/bienvenida.png) | [PNG](mockups/dark/bienvenida.png) |
+| 02 | **Acceso** · Accede a tu espacio — Iniciar el flujo de identidad con Keycloak y regresar al cliente. | RF-01 | [PNG](sketches/acceso.png) | [PNG](wireframes/acceso.png) | [PNG](mockups/light/acceso.png) | [PNG](mockups/dark/acceso.png) |
+
+### Hábitos y registros
+
+| Nº | Pantalla e intención | Requisito | Sketch | Wireframe | Mockup claro | Mockup oscuro |
+|---|---|---|---|---|---|---|
+| 03 | **Hoy** · Tu rutina de hoy — Consultar lo programado para el día abierto y abrir un hábito. | RF-03 / RF-04 | [PNG](sketches/hoy.png) | [PNG](wireframes/hoy.png) | [PNG](mockups/light/hoy.png) | [PNG](mockups/dark/hoy.png) |
 | 04 | **Mis hábitos** — Encontrar hábitos propios y distinguir los activos de los archivados. | RF-03 | [PNG](sketches/habitos.png) | [PNG](wireframes/habitos.png) | [PNG](mockups/light/habitos.png) | [PNG](mockups/dark/habitos.png) |
 | 05 | **Crear hábito** — Definir nombre, meta, unidad, días y zona de un hábito nuevo. | RF-03 | [PNG](sketches/habito.png) | [PNG](wireframes/habito.png) | [PNG](mockups/light/habito.png) | [PNG](mockups/dark/habito.png) |
-| 06 | **Leer con calma** — Consultar la meta y el avance confirmado de un hábito antes de actuar. | RF-03 / RF-04 | [PNG](sketches/detalle.png) | [PNG](wireframes/detalle.png) | [PNG](mockups/light/detalle.png) | [PNG](mockups/dark/detalle.png) |
+| 06 | **Detalle de hábito** · Leer con calma — Consultar la meta y el avance confirmado de un hábito antes de actuar. | RF-03 / RF-04 | [PNG](sketches/detalle.png) | [PNG](wireframes/detalle.png) | [PNG](mockups/light/detalle.png) | [PNG](mockups/dark/detalle.png) |
 | 07 | **Editar programación** — Revisar cambios de meta y frecuencia conservando la configuración histórica. | RF-03 | [PNG](sketches/editar.png) | [PNG](wireframes/editar.png) | [PNG](mockups/light/editar.png) | [PNG](mockups/dark/editar.png) |
 | 08 | **Registrar avance** — Enviar el valor acumulado absoluto para la fecha de negocio del hábito. | RF-04 | [PNG](sketches/registro.png) | [PNG](wireframes/registro.png) | [PNG](mockups/light/registro.png) | [PNG](mockups/dark/registro.png) |
-| 09 | **Historial de lectura** — Revisar fechas, cantidades y estado confirmado de un hábito. | RF-04 / RF-05 | [PNG](sketches/historial.png) | [PNG](wireframes/historial.png) | [PNG](mockups/light/historial.png) | [PNG](mockups/dark/historial.png) |
+| 09 | **Historial de hábito** · Historial de lectura — Revisar fechas, cantidades y estado confirmado de un hábito. | RF-04 / RF-05 | [PNG](sketches/historial.png) | [PNG](wireframes/historial.png) | [PNG](mockups/light/historial.png) | [PNG](mockups/dark/historial.png) |
+
+### Recordatorios y avisos
+
+| Nº | Pantalla e intención | Requisito | Sketch | Wireframe | Mockup claro | Mockup oscuro |
+|---|---|---|---|---|---|---|
 | 10 | **Tu recordatorio** — Configurar un recordatorio dentro de los días programados del hábito. | RF-06 | [PNG](sketches/recordatorio.png) | [PNG](wireframes/recordatorio.png) | [PNG](mockups/light/recordatorio.png) | [PNG](mockups/dark/recordatorio.png) |
 | 11 | **Tus avisos** — Revisar recordatorios y abrir el hábito al que pertenece cada aviso. | RF-06 | [PNG](sketches/avisos.png) | [PNG](wireframes/avisos.png) | [PNG](mockups/light/avisos.png) | [PNG](mockups/dark/avisos.png) |
-| 12 | **Observa tu constancia** — Interpretar cumplimiento de un periodo cerrado, con fecha, fuente y unidad. | RF-05 | [PNG](sketches/analisis.png) | [PNG](wireframes/analisis.png) | [PNG](mockups/light/analisis.png) | [PNG](mockups/dark/analisis.png) |
-| 13 | **Elige un periodo** — Elegir una ventana de análisis sin mezclar días abiertos y cerrados. | RF-05 | [PNG](sketches/periodo.png) | [PNG](wireframes/periodo.png) | [PNG](mockups/light/periodo.png) | [PNG](mockups/dark/periodo.png) |
-| 14 | **Ideas para tu rutina** — Explicar la ausencia de una recomendación cuando no hay datos suficientes. | RF-07 | [PNG](sketches/sugerencias.png) | [PNG](wireframes/sugerencias.png) | [PNG](mockups/light/sugerencias.png) | [PNG](mockups/dark/sugerencias.png) |
-| 15 | **Personaliza una idea** — Adaptar una sugerencia disponible antes de guardarla y aceptarla. | RF-07 / RF-03 | [PNG](sketches/personalizar.png) | [PNG](wireframes/personalizar.png) | [PNG](mockups/light/personalizar.png) | [PNG](mockups/dark/personalizar.png) |
+
+### Análisis y sugerencias
+
+| Nº | Pantalla e intención | Requisito | Sketch | Wireframe | Mockup claro | Mockup oscuro |
+|---|---|---|---|---|---|---|
+| 12 | **Análisis** · Observa tu constancia — Interpretar cumplimiento de un periodo cerrado, con fecha, fuente y unidad. | RF-05 | [PNG](sketches/analisis.png) | [PNG](wireframes/analisis.png) | [PNG](mockups/light/analisis.png) | [PNG](mockups/dark/analisis.png) |
+| 13 | **Elegir periodo** · Elige un periodo — Elegir una ventana de análisis sin mezclar días abiertos y cerrados. | RF-05 | [PNG](sketches/periodo.png) | [PNG](wireframes/periodo.png) | [PNG](mockups/light/periodo.png) | [PNG](mockups/dark/periodo.png) |
+| 14 | **Sugerencias** · Ideas para tu rutina — Explicar la ausencia de una recomendación cuando no hay datos suficientes. | RF-07 | [PNG](sketches/sugerencias.png) | [PNG](wireframes/sugerencias.png) | [PNG](mockups/light/sugerencias.png) | [PNG](mockups/dark/sugerencias.png) |
+| 15 | **Personalizar sugerencia** · Personaliza una idea — Adaptar una sugerencia disponible antes de guardarla y aceptarla. | RF-07 / RF-03 | [PNG](sketches/personalizar.png) | [PNG](wireframes/personalizar.png) | [PNG](mockups/light/personalizar.png) | [PNG](mockups/dark/personalizar.png) |
+
+### Perfil, privacidad y dispositivos
+
+| Nº | Pantalla e intención | Requisito | Sketch | Wireframe | Mockup claro | Mockup oscuro |
+|---|---|---|---|---|---|---|
 | 16 | **Perfil y preferencias** — Ajustar datos del perfil, zona preferida y apariencia con guardado explícito. | RF-02 | [PNG](sketches/ajustes.png) | [PNG](wireframes/ajustes.png) | [PNG](mockups/light/ajustes.png) | [PNG](mockups/dark/ajustes.png) |
-| 17 | **Tú decides qué compartir** — Revisar finalidades y dar o retirar consentimiento por uso y fuente. | RF-02 / RF-08 | [PNG](sketches/consentimiento.png) | [PNG](wireframes/consentimiento.png) | [PNG](mockups/light/consentimiento.png) | [PNG](mockups/dark/consentimiento.png) |
-| 18 | **Tus dispositivos** — Consultar fuentes vinculadas y comenzar la asociación de una fuente compatible. | RF-08 | [PNG](sketches/dispositivos.png) | [PNG](wireframes/dispositivos.png) | [PNG](mockups/light/dispositivos.png) | [PNG](mockups/dark/dispositivos.png) |
-| 19 | **Vincula una fuente** — Revisar compatibilidad y permisos antes de confirmar una asociación. | RF-08 / RF-02 | [PNG](sketches/vincular.png) | [PNG](wireframes/vincular.png) | [PNG](mockups/light/vincular.png) | [PNG](mockups/dark/vincular.png) |
-| 20 | **Tus datos personales** — Solicitar una copia o iniciar una solicitud de eliminación de datos propios. | RF-02 / RF-10 | [PNG](sketches/datos.png) | [PNG](wireframes/datos.png) | [PNG](mockups/light/datos.png) | [PNG](mockups/dark/datos.png) |
+| 17 | **Consentimiento** · Tú decides qué compartir — Revisar finalidades y dar o retirar consentimiento por uso y fuente. | RF-02 / RF-08 | [PNG](sketches/consentimiento.png) | [PNG](wireframes/consentimiento.png) | [PNG](mockups/light/consentimiento.png) | [PNG](mockups/dark/consentimiento.png) |
+| 18 | **Dispositivos** · Tus dispositivos — Consultar fuentes vinculadas y comenzar la asociación de una fuente compatible. | RF-08 | [PNG](sketches/dispositivos.png) | [PNG](wireframes/dispositivos.png) | [PNG](mockups/light/dispositivos.png) | [PNG](mockups/dark/dispositivos.png) |
+| 19 | **Vincular una fuente** · Vincula una fuente — Revisar compatibilidad y permisos antes de confirmar una asociación. | RF-08 / RF-02 | [PNG](sketches/vincular.png) | [PNG](wireframes/vincular.png) | [PNG](mockups/light/vincular.png) | [PNG](mockups/dark/vincular.png) |
+| 20 | **Datos personales** · Tus datos personales — Solicitar una copia o iniciar una solicitud de eliminación de datos propios. | RF-02 / RF-10 | [PNG](sketches/datos.png) | [PNG](wireframes/datos.png) | [PNG](mockups/light/datos.png) | [PNG](mockups/dark/datos.png) |
 
 ## Condiciones por pantalla
 
@@ -51,3 +91,26 @@ La misma intención y los mismos bloques/posiciones del catálogo se desarrollan
 18. **Tus dispositivos:** No inventar telemetría ni mediciones. La vinculación requiere capacidades y consentimiento explícitos.
 19. **Vincula una fuente:** No fija OTP, QR, Bluetooth ni protocolo aún pendiente. Confirmación de diseño; no conecta hardware.
 20. **Tus datos personales:** Revisar alcance y política; la eliminación requiere confirmación específica posterior. Ninguna imagen ejecuta solicitudes.
+
+## Alcance y límites
+
+Las referencias RF y notas describen intención y restricciones, no capacidades implementadas. Los ejemplos son sintéticos: análisis del 19–25/10/2026 (5/7 = 71.4 %, racha al cierre 0) y día abierto 26/10, America/Mexico_City, RN-P17. Acceso delega credenciales a Keycloak; permisos, persistencia, errores, conflictos, accesibilidad y soporte offline requieren implementación y pruebas propias.
+
+Las seis referencias anteriores de escritorio permanecen fuera del conteo móvil. Solo sus dos mockups oscuros recibieron los derivados de color de los logos el 29/10/2026. No se añaden pantallas PWA ni funciones de producto. Los veinte mockups móviles oscuros cambiaron únicamente en la cabecera de marca; los demás píxeles, sketches, wireframes y mockups claros se conservaron.
+
+## Fuente, regeneración y verificación
+
+El catálogo de [movil.py](../../fuente/movil.py) genera geometría, manifiesto y este README; mantenerlo como fuente para no perder la agrupación al regenerar. Los PNG no tienen copias SVG exportadas. La [identidad](../../identidad/README.md) define los recursos compartidos.
+
+Desde la raíz del repositorio, en el entorno de autoría Python/Pillow y Node/Playwright con Chrome:
+
+```powershell
+python docs/GUI/fuente/generar.py --mobile-only
+$env:QC_MOBILE_ONLY='1'
+node docs/GUI/fuente/render.cjs
+python -m unittest discover -s docs/GUI/tests -p 'test_*.py' -v
+```
+
+No definir `QC_IDENTITY_ONLY=1` en esa exportación. `QC_CHROME` permite configurar Chrome. El exportador comprueba Inter local y texto dentro del lienzo y de cada bloque.
+
+Validación del catálogo (28–29/10/2026): veinte conjuntos y ochenta archivos; correspondencia de bloques y destinos; sketches sin texto/imágenes/color, wireframes Arial y grises, mockups Inter y marcas en ambos temas. Se comprobaron el visor, los temas, la navegación por imágenes y su carga local. Esta evidencia de diseño no certifica una aplicación funcional ni accesibilidad global.
