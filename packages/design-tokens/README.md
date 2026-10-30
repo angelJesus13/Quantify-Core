@@ -8,6 +8,8 @@
 
 Todavía no se distribuye un paquete React/Flutter. Inter queda elegida para la interfaz visual por petición del proyecto; la implementación de componentes y el resto de decisiones técnicas D-10 siguen su proceso. El borde suave derivado `softBorder` es decorativo; campos, foco y estados deben conservar contraste suficiente.
 
+La versión 0.4.0 añade `typography`: ocho usos con familia, peso, tamaño e interlineado en píxeles. Es la fuente para los [seis frames de Tarea 03](../../docs/GUI/identidad/README.md#tarea-03--guía-de-estilos), no una API distribuida. Los ocho estilos `qc/type/*` y las 46 variables se registraron en el archivo propio Education; la [evidencia](../../docs/GUI/identidad/guia/figma.json) conserva sus referencias y el permiso público pendiente. Los valores de color y las escalas existentes se conservan.
+
 ## Paleta base canónica
 
 | Familia | Nombre | HEX | Propósito de identidad |

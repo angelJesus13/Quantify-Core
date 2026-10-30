@@ -1,23 +1,24 @@
 # Quantify Core · GUI
 
-Índice de la documentación visual de [QUANCORE-26](https://utxicotepec-team-q5ufett6.atlassian.net/browse/QUANCORE-26). Revisión: 29 de octubre de 2026.
+Índice de la documentación visual de [QUANCORE-26](https://utxicotepec-team-q5ufett6.atlassian.net/browse/QUANCORE-26). Revisión: 30 de octubre de 2026.
 
 ## Estado de la entrega
 
 | Elemento | Estado | Dónde revisarlo |
 |---|---|---|
-| Identidad visual: paleta de colores, tipografía, iconografía, logotipo, firma empresarial y marcas de agua | Un solo README con las justificaciones y los cuatro lienzos; claro y oscuro | [README único de identidad visual](identidad/README.md) |
+| Tarea 03 · Guía de Estilos | Seis frames editables sincronizados y revisados en el archivo propio Education | [Requisitos y evidencia](identidad/README.md#tarea-03--guía-de-estilos) · [Vista de los seis frames](identidad/guia/index.html) |
+| Identidad visual anterior | Cuatro lienzos de referencia conservados; claro y oscuro | [README único de identidad visual](identidad/README.md) |
 | Móvil · Sketches | 20 bocetos correspondientes | [README de sketches](prototipos/movil/sketches/README.md) |
 | Móvil · Wireframes | 20 estructuras correspondientes | [README de wireframes](prototipos/movil/wireframes/README.md) |
 | Móvil · Mockups | 20 pantallas; claro y oscuro juntos (40 PNG) | [README de mockups](prototipos/movil/mockups/README.md) |
 | Matriz móvil | Correspondencia y condiciones de las veinte pantallas | [Índice y matriz móvil](prototipos/movil/README.md#matriz-por-áreas-funcionales) |
 | Galería pública | Publicación desde `gh-pages` | [Abrir galería](https://angeljesus13.github.io/Quantify-Core/docs/GUI/) |
-| Archivo editable | — | [Figma](https://www.figma.com/design/iLvbL5uaWxAPwuX58xN4yq/Quantify-Core-%C2%B7-Sistema-visual-y-prototipos--QUANCORE-26-?node-id=0-1&t=vNJ6E9RRwxvSXkNs-1) |
+| Archivo editable propio | Guía, 20 sketches, 20 wireframes y 40 mockups; acceso público del nuevo enlace pendiente de comprobar | [Figma · Proyecto Integrador](https://www.figma.com/design/L6ePtwcmyBeiC2xI1iDGM3?node-id=2-59) |
 | Implementación en producto | Pendiente | Ver [Verificación y límites](#verificación-y-límites) |
 
 ## Revisión y mantenimiento
 
-La [identidad](identidad/README.md) reúne las láminas, justificaciones, fuentes y estado pendiente de Figma. El [índice móvil](prototipos/movil/README.md) reúne correspondencias, condiciones y regeneración; las imágenes se revisan en los tres README de etapa. La [galería local](index.html) permite ampliar y descargar imágenes; puede abrirse sirviendo la raíz del repositorio con `python -m http.server 8765` y visitando `http://localhost:8765/docs/GUI/`.
+La [identidad](identidad/README.md) reúne la matriz de las quince actividades, seis frames de Tarea 03, antecedentes, justificaciones y evidencia de Figma. El [índice móvil](prototipos/movil/README.md) reúne correspondencias, condiciones y regeneración; las imágenes se revisan en los tres README de etapa. La [galería local](index.html) permite ampliar y descargar imágenes; puede abrirse sirviendo la raíz del repositorio con `python -m http.server 8765` y visitando `http://localhost:8765/docs/GUI/`.
 
 Pages publica desde la raíz de `gh-pages`. La galería y sus recursos se sincronizan desde la hotfix autorizada y se comprueban en la URL pública; publicar la documentación no integra la hotfix en `main` ni cambia el estado del producto.
 

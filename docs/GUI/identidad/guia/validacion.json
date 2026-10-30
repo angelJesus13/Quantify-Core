@@ -1,0 +1,42 @@
+{
+  "font": "Inter",
+  "overflow": [],
+  "frames": [
+    {
+      "frame": "01. Identidad Gráfica",
+      "file": "01.png",
+      "width": 1440,
+      "height": 1624
+    },
+    {
+      "frame": "02. Paleta de Colores",
+      "file": "02.png",
+      "width": 1440,
+      "height": 4056
+    },
+    {
+      "frame": "03. Tipografía",
+      "file": "03.png",
+      "width": 1440,
+      "height": 1916
+    },
+    {
+      "frame": "04. Iconografía de Navegación",
+      "file": "04.png",
+      "width": 1440,
+      "height": 1592
+    },
+    {
+      "frame": "05. Iconografía de Acciones y Estados",
+      "file": "05.png",
+      "width": 1440,
+      "height": 2452
+    },
+    {
+      "frame": "06. Aplicación de Estilos",
+      "file": "06.png",
+      "width": 1440,
+      "height": 1460
+    }
+  ]
+}

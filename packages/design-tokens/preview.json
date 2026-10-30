@@ -1,6 +1,6 @@
 {
   "status": "identidad-visual-definida-para-gui",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "font": "Inter",
   "colors": {
     "laserBlue": "#275BC0",
@@ -67,6 +67,16 @@
     "section": 20,
     "title": 28,
     "display": 40
+  },
+  "typography": {
+    "display": {"family": "Inter", "weight": 700, "size": 40, "lineHeight": 48, "use": "Título principal"},
+    "title": {"family": "Inter", "weight": 700, "size": 28, "lineHeight": 36, "use": "Título de pantalla"},
+    "subtitle": {"family": "Inter", "weight": 600, "size": 20, "lineHeight": 28, "use": "Subtítulo"},
+    "heading": {"family": "Inter", "weight": 600, "size": 16, "lineHeight": 24, "use": "Encabezado de tarjeta"},
+    "body": {"family": "Inter", "weight": 400, "size": 16, "lineHeight": 24, "use": "Párrafo"},
+    "label": {"family": "Inter", "weight": 500, "size": 14, "lineHeight": 20, "use": "Etiqueta"},
+    "button": {"family": "Inter", "weight": 600, "size": 16, "lineHeight": 24, "use": "Botón"},
+    "caption": {"family": "Inter", "weight": 400, "size": 14, "lineHeight": 20, "use": "Texto auxiliar"}
   },
   "target": 48,
   "branding": {
