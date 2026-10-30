@@ -92,7 +92,7 @@ Desde la raíz del repositorio, en el entorno de autoría Python/Pillow y Node/P
 python docs/GUI/fuente/generar.py --mobile-only
 $env:QC_MOBILE_ONLY='1'
 node docs/GUI/fuente/render.cjs
-python -m unittest discover -s docs/GUI/tests -p 'test_*.py' -v
+python -m unittest discover -s docs/GUI/fuente/tests -p 'test_*.py' -v
 ```
 
 No definir `QC_IDENTITY_ONLY=1` en esa exportación. `QC_CHROME` permite configurar Chrome. El exportador comprueba Inter local y texto dentro del lienzo y de cada bloque.

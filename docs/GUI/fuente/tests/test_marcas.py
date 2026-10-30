@@ -7,7 +7,7 @@ import unittest
 from PIL import Image,ImageChops
 
 sys.dont_write_bytecode=True
-GUI=Path(__file__).resolve().parents[1];ROOT=GUI.parents[1]
+GUI=Path(__file__).resolve().parents[2];ROOT=GUI.parents[1]
 sys.path.insert(0,str(GUI/'fuente'))
 import marcas
 

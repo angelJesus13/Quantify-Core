@@ -346,7 +346,7 @@ def sheets():
     for label,light,dark,note in d['themes']:
         y=para(c,64,y,f'{label}: claro {C[light]} → oscuro {C[dark]}. {note}',1472,22,'steel')+10
     y=para(c,64,y+12,'Los cuatro estados conservan su matiz: badge con tinta Obsidian, forma y palabra. Psicología: intención de marca, no efecto universal. HSL desde sRGB. CMYK matemático sin perfil ICC: requiere prueba de impresión. Soft Border #D8E1F0 es decorativo; no identifica controles.',1472,21,'steel')
-    finish(c,y+32,'imagenes/01-paleta-de-colores.png')
+    finish(c,y+32,'identidad/imagenes/01-paleta-de-colores.png')
     c,y=start(2,'Tipografía · Inter','Una misma familia y jerarquía para claro y oscuro. Seis criterios explican su elección y aplicación.')
     c.text(64,y+100,'Aa · ÁÉÍÓÚÜÑ · 0123456789',72,C['laserBlue'],650);y+=170
     y=para(c,64,y,'Inter Variable local · Rasmus Andersson · SIL Open Font License\nEscala 40 / 28 / 20 / 16 / 14 · Pesos 400 / 500 / 600 / 700',1472,22,'steel')+30
@@ -360,7 +360,7 @@ def sheets():
             para(c,x+24,y+104,reason,672,22)
         y+=height+28
     y=para(c,64,y+12,'No adelgazar ni reducir el texto al activar oscuro. La elección de Inter no modifica las letras dibujadas de los logos. El diseño no acredita clientes React o Flutter implementados: requieren pruebas de dispositivo, reflujo y tecnologías de asistencia.',1472,22,'steel')
-    finish(c,y+32,'imagenes/02-tipografia.png')
+    finish(c,y+32,'identidad/imagenes/02-tipografia.png')
     c,y=start(3,'Iconografía · 24 símbolos','Cada símbolo aparece en claro y oscuro, con el mismo trazo, nombre y función. Cambia su tinta activa.')
     y=para(c,64,y,d['iconRules'],1472,22,'steel')+28
     labels=['Inicio / Hoy','Mis hábitos','Análisis','Preferencias','Crear hábito','Confirmado','Pendiente','Aviso / error','Volver','Privacidad','Cerrar sesión','Sugerencias','Calendario','Recordatorio','Lectura','Movimiento','Descanso','Historial','Ver detalle','Editar','Archivar','Descargar','Sincronizar','Dispositivo']
@@ -378,7 +378,7 @@ def sheets():
         for i,(key,label,icon) in enumerate([('emerald','Confirmado','confirmado'),('amber','Pendiente','pendiente'),('crimson','Error · Reintentar','aviso'),('cyan','Métrica / sugerencia','sugerencias')]):
             yy=y+22+i*84;c.rect(x+24,yy,672,66,C[key],8,C[key]);c.icon(icon,x+40,yy+20,C['obsidian']);c.text(x+88,yy+42,label,24,C['obsidian'],600)
     y=para(c,64,y+420,'Retícula 24 × 24 · Trazo 1.8 · Extremos y uniones redondos · Objetivo táctil propuesto: 48. Los controles deben tener nombre accesible. La forma y la etiqueta mantienen el significado del estado; un icono no certifica una función de producto implementada.',1472,22,'steel')
-    finish(c,y+32,'imagenes/03-iconografia.png')
+    finish(c,y+32,'identidad/imagenes/03-iconografia.png')
     c,y=start(4,'Logotipo / isologo y marcas de agua','El mismo dibujo en ambos temas. Original claro intacto; derivado oscuro de color sobre transparencia.')
     y=para(c,64,y,d['logoRules'],1472,23,'steel')+30
     for dark in [False,True]:
@@ -396,7 +396,7 @@ def sheets():
         c.text(x+24,y+52,'Documento oscuro' if dark else 'Documento claro',28,C['white'] if dark else C['obsidian'],700)
         watermark(c,x+250,y+104,3,C['white'] if dark else '#526179')
         c.text(x+24,y+331,'Q editorial independiente · 12 %',24,C['white'] if dark else C['obsidian'])
-    finish(c,y+420,'imagenes/04-identidad-isologo.png')
+    finish(c,y+420,'identidad/imagenes/04-identidad-isologo.png')
 
 
 def main():
@@ -414,7 +414,7 @@ def main():
     if args.brand_only:
         for admin,key in [(False,'hoy-escritorio'),(True,'administracion')]:
             SCENES[f'prototipos/mockups/{key}-dark.png']=desktop('dark','mockup',admin)
-        affected={'imagenes/01-paleta-de-colores.png','imagenes/04-identidad-isologo.png','prototipos/mockups/hoy-escritorio-dark.png','prototipos/mockups/administracion-dark.png'}
+        affected={'identidad/imagenes/01-paleta-de-colores.png','identidad/imagenes/04-identidad-isologo.png','prototipos/mockups/hoy-escritorio-dark.png','prototipos/mockups/administracion-dark.png'}
         for name in list(SCENES):
             if '/mockups/dark/' not in name and name not in affected:del SCENES[name]
     # Adaptador CSS documental; todavía no hay clientes de producto consumidores.

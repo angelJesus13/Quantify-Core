@@ -21,6 +21,13 @@ La [identidad](identidad/README.md) reúne las láminas, justificaciones, fuente
 
 Pages publica desde la raíz de `gh-pages`. La galería y sus recursos se sincronizan desde la hotfix autorizada y se comprueban en la URL pública; publicar la documentación no integra la hotfix en `main` ni cambia el estado del producto.
 
+## Carpetas
+
+- `identidad/`: README único y sus cuatro láminas en `identidad/imagenes/`.
+- `prototipos/`: diseños y README de cada etapa móvil; referencias de escritorio.
+- `assets/`: estilos, visor, fuente Inter, licencia y fotografía compartidos por la galería.
+- `fuente/`: contenido y generadores; sus pruebas están en `fuente/tests/`.
+
 ## Verificación y límites
 
 La revisión valida generación de los cuatro lienzos, Inter, límites de texto, galería y enlaces. Los PNG y el visor documentan el diseño; no autentican, guardan hábitos ni conectan hardware.

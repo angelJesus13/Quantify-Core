@@ -13,7 +13,7 @@ Este único README reúne **paleta de colores, tipografía, iconografía, logoti
 
 ## Paleta de colores
 
-[![Paleta de colores de Quantify Core: trece tonos con nombre, HEX, RGB, HSL, CMYK, psicología y justificación](../imagenes/01-paleta-de-colores.png)](../imagenes/01-paleta-de-colores.png)
+[![Paleta de colores de Quantify Core: trece tonos con nombre, HEX, RGB, HSL, CMYK, psicología y justificación](imagenes/01-paleta-de-colores.png)](imagenes/01-paleta-de-colores.png)
 
 La identidad conserva **Laser Blue `#275BC0`** como marca y acción principal. La imagen desarrolla las trece familias de la [paleta canónica](../../../packages/design-tokens/README.md), con valores HEX/RGB/HSL/CMYK, psicología y justificación por color: marca, neutros y estados. HSL se deriva de sRGB; CMYK usa conversión matemática sin perfil ICC y requiere prueba de impresión. La separación de roles sostiene jerarquía y legibilidad; no se atribuyen efectos psicológicos universales al color.
 
@@ -73,7 +73,7 @@ Los badges semánticos usan tinta Obsidian sobre Emerald, Amber, Crimson y Cyan 
 
 ## Tipografía
 
-[![Tipografía Inter con muestras de español, números, pesos y jerarquías de interfaz](../imagenes/02-tipografia.png)](../imagenes/02-tipografia.png)
+[![Tipografía Inter con muestras de español, números, pesos y jerarquías de interfaz](imagenes/02-tipografia.png)](imagenes/02-tipografia.png)
 
 **Inter es la familia para títulos, párrafos, formularios, botones, etiquetas, gráficos de la interfaz final y la galería.** Los logos oficiales conservan su dibujo original. Se incluye el mismo archivo [Inter Variable WOFF2](../assets/inter.woff2) y se renderizan los mockups con él, sin depender de Google Fonts. Los wireframes son la excepción metodológica: usan Arial genérica, sin representar la tipografía final. Los sketches no tienen texto. `sans-serif` en la galería queda únicamente como recuperación si Inter no puede cargarse.
 
@@ -97,7 +97,7 @@ Fuente: [proyecto oficial rsms/inter](https://github.com/rsms/inter), autoría R
 
 ## Iconografía
 
-[![Catálogo de 24 iconos coherentes de Quantify Core](../imagenes/03-iconografia.png)](../imagenes/03-iconografia.png)
+[![Catálogo de 24 iconos coherentes de Quantify Core](imagenes/03-iconografia.png)](imagenes/03-iconografia.png)
 
 Cada icono identifica su función y el símbolo que lo representa (casa, escudo, reloj, etc.), con muestras en claro y oscuro. El mismo trazo y significado se conservan al cambiar de tema. Navegación activa: Laser Blue sobre blanco y Sky Laser sobre Midnight. Iconos neutros: Steel en claro y Cool Gray en oscuro. Estados: badge Emerald, Amber, Crimson o Cyan con tinta Obsidian, forma y etiqueta. No usar el color como única información. La imagen reúne los **24 iconos**: Hoy, hábitos, análisis, preferencias, crear, confirmado, pendiente, aviso, volver, privacidad, salir, sugerencias, calendario, recordatorio, lectura, movimiento, descanso, historial, ver, editar, archivar, descargar, sincronizar y dispositivo.
 
@@ -117,7 +117,7 @@ El encuadre conserva proporciones mediante recorte de ventana, sin deformar la i
 
 Quantify Core utiliza un **logotipo** tipográfico. La firma empresarial Nexus Core combina símbolo y nombre en la composición existente. Se documenta íntegra; no se crea un isotipo separado ni otra versión de marca.
 
-[![Identidad de Quantify Core: firma, variantes, área libre y original preservado](../imagenes/04-identidad-isologo.png)](../imagenes/04-identidad-isologo.png)
+[![Identidad de Quantify Core: firma, variantes, área libre y original preservado](imagenes/04-identidad-isologo.png)](imagenes/04-identidad-isologo.png)
 
 Las cabeceras presentan **Nexus Core (empresarial) a la izquierda** y **Quantify Core (producto) a la derecha**. En claro se utilizan los JPEG originales sin cambios. En oscuro se utilizan sus derivados PNG transparentes, con Sky Laser y Optical White, sin placa blanca. Las dos marcas conservan sus formas y proporciones; no se fusionan ni se redibujan.
 
