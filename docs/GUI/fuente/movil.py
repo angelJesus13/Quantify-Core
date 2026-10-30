@@ -214,22 +214,26 @@ La misma numeración e ID conserva la correspondencia. Cada enlace abre la panta
     readme+='\n'+AUDIT_TEXT+'\n\n'+SHARED_NOTES
     (output/'README.md').write_text(readme,encoding='utf-8')
     for folder,stage,title,criterion in stages:
-        document=f'# Móvil · {title}\n\n{criterion} Todas las imágenes miden 390 × 844 y son documentación estática.\n\n[Índice y matriz móvil](../README.md) · [Condiciones por pantalla](../README.md#condiciones-por-pantalla) · [Identidad visual](../../../identidad/README.md) · [Galería](../../../index.html#prototipos)\n\n'
+        document=f'# Móvil · {title}\n\n{criterion} Miniaturas de 210 px, hasta tres por fila; pulsa una imagen para abrir el PNG completo a 390 × 844. Son documentación estática.\n\n[Índice y matriz móvil](../README.md) · [Condiciones por pantalla](../README.md#condiciones-por-pantalla) · [Identidad visual](../../../identidad/README.md) · [Galería](../../../index.html#prototipos)\n\n'
         document+='\n'.join(f'- [{area} · {first:02d}–{last:02d}](#{anchor(area)})' for area,first,last in areas)+'\n'
         for area,first,last in areas:
             document+=f'\n## {area}\n'
-            for item in manifest:
-                if not first<=item['number']<=last:continue
-                caption=heading(item,stage)
-                document+=f'\n### {caption}\n\nID: `{item["id"]}`.\n\n'
-                if folder=='mockups':
-                    light=item['assets']['mockup:light'].removeprefix('prototipos/movil/mockups/')
-                    dark=item['assets']['mockup:dark'].removeprefix('prototipos/movil/mockups/')
-                    document+=f'| Claro | Oscuro |\n|---|---|\n| ![{caption} claro]({light}) | ![{caption} oscuro]({dark}) |\n'
-                else:
-                    key='sketch:none' if folder=='sketches' else 'wireframe:none'
-                    rel=item['assets'][key].removeprefix(f'prototipos/movil/{folder}/')
-                    document+=f'![{caption}]({rel})\n'
+            selected=[item for item in manifest if first<=item['number']<=last]
+            for offset in range(0,len(selected),3):
+                group=selected[offset:offset+3]
+                headers=[f'<a id="{anchor(heading(item,stage))}"></a>**{item["number"]:02d} {label(item)}**<br>`{item["id"]}`' for item in group]
+                headers+=['—']*(3-len(group))
+                document+='\n| '+' | '.join(headers)+' |\n|---|---|---|\n'
+                variants=[('mockup:light','Claro'),('mockup:dark','Oscuro')] if folder=='mockups' else [('sketch:none' if folder=='sketches' else 'wireframe:none','')]
+                for key,theme in variants:
+                    cells=[]
+                    for item in group:
+                        rel=item['assets'][key].removeprefix(f'prototipos/movil/{folder}/')
+                        caption=escape(heading(item,stage)+(f' {theme.lower()}' if theme else ''))
+                        image=f'<a href="{rel}"><img src="{rel}" alt="{caption}" width="210"></a>'
+                        cells.append((f'**{theme}**<br>' if theme else '')+image)
+                    cells+=['—']*(3-len(group))
+                    document+='| '+' | '.join(cells)+' |\n'
         destination=output/folder;destination.mkdir(exist_ok=True)
         (destination/'README.md').write_text(document,encoding='utf-8')
 
