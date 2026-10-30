@@ -1,6 +1,6 @@
 # Identidad visual de Quantify Core
 
-Este único README reúne **paleta de colores, tipografía, iconografía, logotipo del producto, firma empresarial y marcas de agua**, con sus justificaciones y cuatro lienzos. Se documentan claro y oscuro sin cambiar la identidad canónica. Cada tema es un apartado de este mismo documento.
+Este README reúne **identidad, paleta, tipografía, iconografía y aplicación de estilos**. La corrección de Tarea 03 organiza seis frames con sus nombres obligatorios, uno por lienzo de Figma. Conserva la paleta, Inter y los archivos originales, y añade una extensión vectorial Q para presentar imagotipo e isotipo independientes. Los cuatro lienzos anteriores se conservan como antecedentes de QUANCORE-26.
 
 [Índice GUI](../README.md) · [Galería](../index.html#identidad) · [Móvil](../prototipos/movil/README.md)
 
@@ -10,6 +10,90 @@ Este único README reúne **paleta de colores, tipografía, iconografía, logoti
 - [Marcas oficiales](#marcas-oficiales)
 - [Marcas de agua](#marcas-de-agua)
 - [Estado de Figma](#estado-del-archivo-figma)
+
+## Guía de Estilos
+
+[Abrir los seis frames en HTML](guia/index.html) · [Modelo semántico compartido](guia/modelo.json) · [Índice GUI y enlace de Figma](../README.md).
+
+**Estado al 30/10/2026:** corrección local renderizada y sincronizada en el [archivo propio del Proyecto Integrador](https://www.figma.com/design/L6ePtwcmyBeiC2xI1iDGM3?node-id=2-59), creado tras activar Education. Se verificaron seis frames, 230 textos Inter, 110 instancias, 48 componentes y 46 variables. Cada frame de la guía ocupa un lienzo propio; sketches, wireframes, mockups y recursos ocupan otros cuatro. La guía no contiene imágenes de interfaces completas. Se corrigió el autoajuste de la muestra de caracteres y se revisó la [composición exportada de Figma antes de separar los lienzos](guia/figma-composicion.png). La captura del propietario muestra «Cualquier persona» con permiso «Ver» y sin contraseña; el acceso anónimo desde otra cuenta no se probó de forma independiente.
+
+| Frame obligatorio | Vista previa | Contenido |
+|---|---|---|
+| 01. Identidad Gráfica | [PNG](guia/01.png) | Imagotipo e isotipo Q; cuatro aplicaciones de cada uno; atributos, proporciones, área libre, mínimos y restricciones. |
+| 02. Paleta de Colores | [PNG](guia/02.png) | Trece muestras con nombre, HEX/RGB, función, justificación y contraste por tema. |
+| 03. Tipografía | [PNG](guia/03.png) | Inter y licencia; ocho estilos con peso, tamaño e interlineado; alfabeto, español, números y caracteres especiales. |
+| 04. Iconografía de Navegación | [PNG](guia/04.png) | Doce entradas de navegación, significado, dimensiones, trazo, colores y procedencia. |
+| 05. Iconografía de Acciones y Estados | [PNG](guia/05.png) | Doce acciones, cinco estados y decoración contextual; accesibilidad y reglas de reutilización. |
+| 06. Aplicación de Estilos | [PNG](guia/06.png) | Pantalla Hoy en claro y oscuro, construida con los estilos, colores e iconos documentados. |
+
+Las vistas previas permiten revisar el contenido; **no sustituyen los elementos editables en Figma**. La aplicación RF-03/RF-04 contiene únicamente datos sintéticos. No representa un cliente implementado ni un registro realmente guardado.
+
+### Identidad y jerarquía completadas
+
+La extensión usa una Q tipográfica vectorial: anillo grueso y cola descendente sobre retícula 100 × 100. El imagotipo combina ese símbolo con «Quantify Core» en Inter 700; símbolo y denominación son separables. No se extrae un fragmento de un JPEG ni se altera el dibujo de los originales. La marca editorial histórica conserva su uso documental. La adopción de esta composición en los veinte mockups previos o clientes futuros es trabajo posterior; la pantalla del frame 06 muestra la aplicación prevista solicitada por esta tarea.
+
+Las cuatro aplicaciones **de ambos elementos** son principal a color, monocromática, sobre oscuro y sobre claro. Área libre: 1/4 del alto del símbolo; isotipo mínimo 24 × 24 e imagotipo mínimo 240 × 72. A 16 px, revisar el favicon por separado. No deformar, rotar, añadir sombras ni usar fondos que reduzcan legibilidad. Las proporciones se detallan en el frame 01.
+
+Los valores tipográficos canónicos se mantienen en [preview.json](../../../packages/design-tokens/preview.json):
+
+| Uso / estilo Figma | Familia | Peso | Tamaño / interlineado |
+|---|---|---:|---|
+| Título principal · `qc/type/display` | Inter | 700 | 40 / 48 px |
+| Título de pantalla · `qc/type/title` | Inter | 700 | 28 / 36 px |
+| Subtítulo · `qc/type/subtitle` | Inter | 600 | 20 / 28 px |
+| Encabezado · `qc/type/heading` | Inter | 600 | 16 / 24 px |
+| Párrafo · `qc/type/body` | Inter | 400 | 16 / 24 px |
+| Etiqueta · `qc/type/label` | Inter | 500 | 14 / 20 px |
+| Botón · `qc/type/button` | Inter | 600 | 16 / 24 px |
+| Auxiliar · `qc/type/caption` | Inter | 400 | 14 / 20 px |
+
+El catálogo ampliado reutiliza los trazos previos y añade menú, búsqueda, perfil, eliminar, guardar, compartir, cancelar e información: **32 símbolos disponibles**. El estado de error utiliza cruz, advertencia triángulo e información círculo con i. Retícula 24 × 24, trazo 1.8, extremos y uniones redondos, sin relleno; objetivo táctil 48 × 48. Los iconos siguen los términos del repositorio; Inter conserva su licencia SIL OFL incluida. Compartir es una operación prevista, condicionada a permisos y consentimiento; no implica un servicio operativo.
+
+### Correspondencia con las quince actividades
+
+| Actividad de la consigna | Evidencia local / condición de cierre |
+|---|---|
+| 1. Sección y organización | Seis lienzos consecutivos «Guía de Estilos», uno por frame obligatorio; la primera página conserva la sección con ese nombre. Los prototipos y recursos están en otros cuatro lienzos. |
+| 2. Atributos de identidad | Frame 01: propósito, público y atributos de producto/empresa. |
+| 3. Imagotipo | Frame 01: símbolo más denominación, proporciones y composición. |
+| 4. Isotipo | Frame 01: símbolo independiente y usos como app/avatar/favicon. |
+| 5. Cuatro aplicaciones | Frame 01: principal, monocromática, oscuro y claro para ambos elementos. |
+| 6. Cinco colores o más | Frame 02: trece colores de la paleta canónica. |
+| 7. Especificaciones cromáticas | Frame 02: nombre, HEX, RGB, función, intención y contraste. |
+| 8. Familias y licencia | Frame 03: Inter, compatibilidad y SIL Open Font License. |
+| 9. Jerarquía y caracteres | Frame 03 y tokens: ocho estilos y muestras completas. |
+| 10. Iconos de navegación | Frame 04: doce funciones con muestras claras y oscuras. |
+| 11. Iconos de acciones | Frame 05: agregar, editar, eliminar, guardar, descargar, compartir, confirmar, cancelar y acciones del producto. |
+| 12. Estados y decoración | Frame 05: éxito, advertencia, error, información, pendiente y tres motivos de hábitos. |
+| 13. Estandarización | Frames 04/05: dimensiones, trazo, colores, estilo, procedencia y condiciones de uso. |
+| 14. Recursos reutilizables Figma | Ocho estilos `qc/type/*`, 46 variables, 48 componentes y 110 instancias verificados en la guía remota. |
+| 15. Validación y entrega | Doce pruebas y seis renders locales; frame 06 en ambos temas. Se revisaron la composición y los límites de texto; el propietario confirmó en Figma «Cualquier persona · Ver». |
+
+La colaboración y el reparto equitativo deben acreditarse con aportes y responsabilidades reales del equipo. Esta corrección no inventa asignaciones, firmas ni revisiones del docente; «15 Firmas» es el rótulo recibido, no evidencia de quince firmas obtenidas.
+
+### Regeneración y evidencia de sincronización
+
+```powershell
+python docs/GUI/fuente/guia_estilos.py
+node docs/GUI/fuente/render_guia.cjs
+node docs/GUI/fuente/preparar_figma.cjs
+python docs/GUI/fuente/figma_prototipos.py
+python -m unittest discover -s docs/GUI/fuente/tests -v
+```
+
+El render necesita Playwright en el entorno de autoría y Chrome mediante `QC_CHROME` cuando corresponda. En esta corrección se usó Playwright 1.56.1 instalado únicamente en `.build/` (ignorado); no es dependencia del producto. El render produce los seis PNG y [validacion.json](guia/validacion.json), mide límites reales de texto y comprueba Inter. El HTML y el modelo son derivados de [guia_estilos.py](../fuente/guia_estilos.py), los textos cromáticos de [identidad.json](../fuente/identidad.json) y los tokens canónicos.
+
+[figma_guia.js](../fuente/figma_guia.js) contiene `syncStyleGuide(figma, modelo)`, ejecutada mediante la herramienta oficial `use_figma`. [preparar_figma.cjs](../fuente/preparar_figma.cjs) empaqueta el modelo sin perder textos para respetar el límite de 50 000 caracteres de la herramienta; escribe solamente en `.build/`. [organizar_lienzos.js](../fuente/organizar_lienzos.js) documenta el paso posterior que distribuye los seis frames y los recursos en páginas separadas sin duplicar nodos. Antes de otra ejecución hay que inventariar el archivo remoto: `syncStyleGuide` se detiene si ya existe la sección para impedir duplicados. No es una biblioteca de clientes ni un plugin publicado. Las variables primitivas, alias por tema y estilos quedaron registrados en el archivo Education; se mantienen colecciones de claro/oscuro compatibles con la estructura preparada previamente.
+
+El [manifiesto de evidencia](guia/figma.json) registra archivo, diez páginas, nodos de la guía y ochenta vistas móviles. Los seis primeros lienzos corresponden a los seis apartados; los siguientes contienen sketches, wireframes, mockups y recursos. Se comprobaron 342 nodos con fills ligados a variables en la guía y ausencia de textos fuera de los seis frames. Las 80 vistas móviles conservan las veinte intenciones del catálogo; 369 destinos entre pantallas quedaron conectados. El prototipo solo navega: no autentica, persiste datos ni ejecuta operaciones de negocio.
+
+El traslado usa [figma_prototipos.py](../fuente/figma_prototipos.py) y [figma_prototipos.js](../fuente/figma_prototipos.js): separa texto, geometría y activos. Los sketches no llevan textos internos; wireframes y mockups tienen textos nativos. Las únicas imágenes son logos y fotografía originales: 82 nodos de contenido entre los cuarenta mockups, sin PNG de pantallas completas. Como Arial no está disponible en el motor remoto, los wireframes de Figma usan **Arimo** (fuente neutra, [SIL OFL del proyecto oficial](https://github.com/google/fonts/blob/main/ofl/arimo/OFL.txt)); los PNG previos conservan Arial y no se presentan como exportaciones idénticas. Inter se conserva en guía y mockups. El archivo anterior y sus cuatro lienzos no se modificaron.
+
+El propietario abrió el archivo y mostró en Figma «Cualquier persona · Ver» sin contraseña. Queda como comprobación adicional abrir el enlace desde otra cuenta o sin sesión antes de enviarlo al docente. El intento previo por oEmbed devolvió 404; no se interpreta como prueba concluyente de permisos. Las responsabilidades y revisiones colaborativas deben corresponder a aportes reales del equipo.
+
+## Antecedentes · cuatro lienzos de QUANCORE-26
+
+Las siguientes secciones conservan justificaciones y recursos anteriores. Para la estructura y el catálogo de la Tarea 03, usar los seis frames y la tabla de correspondencia anteriores.
 
 ## Paleta de colores
 
@@ -152,7 +236,7 @@ La Q editorial, parecida a una lupa, se reserva a documentación y no sustituye 
 
 ## Estado del archivo Figma
 
-Edición pausada por el usuario. Los cuatro lienzos existentes corresponden a paleta, tipografía, iconografía y marcas; los PNG locales comparten contenido y roles, pero no se presentan como exportaciones idénticas de Figma. Las dos imágenes oscuras del lienzo de marcas (`17:528` y `17:531`) se reemplazaron. Retirar los fondos blancos de sus contenedores y ajustar sus textos sigue pendiente de revisión manual; la operación oficial fue rechazada por el límite Starter. No se han hecho nuevas lecturas ni ediciones tras la pausa. El enlace del archivo editable está en el [índice de GUI](../README.md).
+La corrección fue reabierta el 30/10/2026. Después de activar Education se creó un archivo propio con seis lienzos de guía, tres de prototipos y uno de recursos y componentes; su evidencia se describe al inicio. La sección «Guía de Estilos» permanece en el primer lienzo. El archivo anterior de cuatro lienzos se conserva sin cambios y ya no es el enlace de entrega de esta corrección. Sus ajustes históricos de marcas oscuras no se presentan como terminados ni se confunden con el contenido del archivo nuevo.
 
 ## Fuentes y mantenimiento
 

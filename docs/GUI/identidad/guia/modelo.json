@@ -1,0 +1,4168 @@
+{
+  "version": 1,
+  "section": "Guía de Estilos",
+  "fileKey": "L6ePtwcmyBeiC2xI1iDGM3",
+  "tokens": {
+    "status": "identidad-visual-definida-para-gui",
+    "version": "0.4.0",
+    "font": "Inter",
+    "colors": {
+      "laserBlue": "#275BC0",
+      "skyLaser": "#4A7DE8",
+      "deepCobalt": "#183D87",
+      "obsidian": "#0B0F17",
+      "midnight": "#161F2E",
+      "steel": "#283548",
+      "gray": "#8A99AD",
+      "mist": "#F4F7FD",
+      "white": "#FFFFFF",
+      "emerald": "#10B981",
+      "amber": "#F59E0B",
+      "crimson": "#EF4444",
+      "cyan": "#0EA5E9",
+      "softBorder": "#D8E1F0"
+    },
+    "themes": {
+      "light": {
+        "canvas": "mist",
+        "surface": "white",
+        "text": "obsidian",
+        "muted": "steel",
+        "line": "softBorder",
+        "action": "laserBlue",
+        "onAction": "white",
+        "focus": "deepCobalt",
+        "icon": "laserBlue",
+        "iconMuted": "steel",
+        "controlBorder": "steel",
+        "statusInk": "obsidian"
+      },
+      "dark": {
+        "canvas": "obsidian",
+        "surface": "midnight",
+        "text": "white",
+        "muted": "gray",
+        "line": "gray",
+        "action": "laserBlue",
+        "onAction": "white",
+        "focus": "skyLaser",
+        "icon": "skyLaser",
+        "iconMuted": "gray",
+        "controlBorder": "gray",
+        "statusInk": "obsidian"
+      }
+    },
+    "space": [
+      4,
+      8,
+      12,
+      16,
+      24,
+      32,
+      48
+    ],
+    "radius": {
+      "control": 8,
+      "card": 16
+    },
+    "fontSize": {
+      "caption": 14,
+      "body": 16,
+      "section": 20,
+      "title": 28,
+      "display": 40
+    },
+    "typography": {
+      "display": {
+        "family": "Inter",
+        "weight": 700,
+        "size": 40,
+        "lineHeight": 48,
+        "use": "Título principal"
+      },
+      "title": {
+        "family": "Inter",
+        "weight": 700,
+        "size": 28,
+        "lineHeight": 36,
+        "use": "Título de pantalla"
+      },
+      "subtitle": {
+        "family": "Inter",
+        "weight": 600,
+        "size": 20,
+        "lineHeight": 28,
+        "use": "Subtítulo"
+      },
+      "heading": {
+        "family": "Inter",
+        "weight": 600,
+        "size": 16,
+        "lineHeight": 24,
+        "use": "Encabezado de tarjeta"
+      },
+      "body": {
+        "family": "Inter",
+        "weight": 400,
+        "size": 16,
+        "lineHeight": 24,
+        "use": "Párrafo"
+      },
+      "label": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 14,
+        "lineHeight": 20,
+        "use": "Etiqueta"
+      },
+      "button": {
+        "family": "Inter",
+        "weight": 600,
+        "size": 16,
+        "lineHeight": 24,
+        "use": "Botón"
+      },
+      "caption": {
+        "family": "Inter",
+        "weight": 400,
+        "size": 14,
+        "lineHeight": 20,
+        "use": "Texto auxiliar"
+      }
+    },
+    "target": 48,
+    "branding": {
+      "dark": {
+        "blue": "skyLaser",
+        "neutral": "white",
+        "background": "transparent"
+      }
+    }
+  },
+  "icons": {
+    "hoy": "M3 10L12 3l9 7v11h-6v-7H9v7H3Z",
+    "habitos": "M5 4h14v17H5Z M9 2h6v4H9Z M8 11l2 2 5-5 M8 17h8",
+    "analisis": "M4 20V10 M10 20V4 M16 20v-8 M22 20H2",
+    "ajustes": "M4 7h16 M4 17h16 M9 4v6 M16 14v6",
+    "crear": "M12 4v16 M4 12h16",
+    "confirmado": "M4 12l5 5L20 6",
+    "pendiente": "M12 8v5l4 2 M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20",
+    "aviso": "M12 3L2 21h20Z M12 9v5 M12 17v1",
+    "volver": "M15 4l-8 8 8 8",
+    "privacidad": "M12 2l8 4v6c0 5-8 10-8 10S4 17 4 12V6Z",
+    "salir": "M10 3H3v18h7 M8 12h14 M17 7l5 5-5 5",
+    "sugerencias": "M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3Z",
+    "calendario": "M3 5h18v16H3Z M3 10h18 M7 2v6 M17 2v6 M7 14h2 M13 14h2 M7 18h2",
+    "recordatorio": "M5 17h14l-2-3V9a5 5 0 0 0-10 0v5Z M10 21h4 M12 2v2",
+    "lectura": "M3 4h7l2 2 2-2h7v16h-7l-2 2-2-2H3Z M12 6v16",
+    "movimiento": "M14 4a1 1 0 1 0 0-2 1 1 0 1 0 0 2 M10 8l4-2 3 5 4 1 M3 12l5-4 4 5-4 8 M12 13l5 3 1 5",
+    "descanso": "M20 15A9 9 0 0 1 9 3a9 9 0 1 0 11 12Z",
+    "historial": "M3 10A9 9 0 1 1 5 19 M3 3v7h7 M12 7v6l4 2",
+    "ver": "M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z M15 12a3 3 0 1 0-6 0 3 3 0 1 0 6 0",
+    "editar": "M4 16L16 4l4 4L8 20H4Z M14 6l4 4",
+    "archivar": "M3 3h18v5H3Z M5 8v13h14V8 M9 12h6",
+    "descargar": "M12 2v13 M7 10l5 5 5-5 M3 16v5h18v-5",
+    "sincronizar": "M3 10A9 9 0 0 1 18 5l3 3 M21 2v6h-6 M21 14A9 9 0 0 1 6 19l-3-3 M3 22v-6h6",
+    "dispositivo": "M7 5h10v14H7Z M9 2h6v3 M9 19v3h6v-3 M10 9h4 M10 13h4",
+    "menu": "M4 6h16 M4 12h16 M4 18h16",
+    "buscar": "M16 16l6 6 M18 10a8 8 0 1 0-16 0 8 8 0 1 0 16 0",
+    "perfil": "M16 7a4 4 0 1 0-8 0 4 4 0 1 0 8 0 M4 21v-2a8 8 0 0 1 16 0v2",
+    "eliminar": "M3 6h18 M9 6V3h6v3 M5 6l1 15h12l1-15 M10 10v7 M14 10v7",
+    "guardar": "M3 3h14l4 4v14H3Z M7 3v6h10V3 M7 21v-8h10v8",
+    "compartir": "M8 11l8-5 M8 13l8 5 M8 12a3 3 0 1 0-6 0 3 3 0 1 0 6 0 M22 4a3 3 0 1 0-6 0 3 3 0 1 0 6 0 M22 20a3 3 0 1 0-6 0 3 3 0 1 0 6 0",
+    "cancelar": "M5 5l14 14 M19 5L5 19",
+    "informacion": "M12 11v7 M12 6v1 M22 12a10 10 0 1 0-20 0 10 10 0 1 0 20 0"
+  },
+  "symbol": "M50 12a34 34 0 1 0 0 68 34 34 0 1 0 0-68 M62 66l24 22",
+  "frames": [
+    {
+      "type": "box",
+      "children": [
+        {
+          "type": "text",
+          "text": "QUANTIFY CORE / NEXUS CORE · TAREA 03",
+          "style": "label",
+          "color": "steel"
+        },
+        {
+          "type": "text",
+          "text": "01. Identidad Gráfica",
+          "style": "display",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "Una extensión de identidad para completar imagotipo e isotipo sin sobrescribir los logos heredados.",
+          "style": "body",
+          "color": "steel"
+        },
+        {
+          "type": "text",
+          "text": "Identidad y público",
+          "style": "subtitle",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "Quantify Core acompaña a personas que registran hábitos y consultan avances con evidencia. Nexus Core identifica a la empresa. La identidad comunica confianza, claridad, continuidad y autonomía; evita promesas clínicas y presión por productividad.",
+          "style": "body",
+          "color": "obsidian"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "text",
+              "text": "Principal a color",
+              "style": "subtitle",
+              "color": "obsidian"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "brand",
+                  "variant": "principal",
+                  "symbolOnly": false
+                },
+                {
+                  "type": "brand",
+                  "variant": "principal",
+                  "symbolOnly": true
+                }
+              ],
+              "direction": "horizontal",
+              "width": null,
+              "background": null,
+              "padding": 0,
+              "gap": 32,
+              "name": "Grupo"
+            }
+          ],
+          "direction": "vertical",
+          "width": null,
+          "background": "mist",
+          "padding": 32,
+          "gap": 16,
+          "name": "Aplicación / Principal a color"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "text",
+              "text": "Monocromática",
+              "style": "subtitle",
+              "color": "obsidian"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "brand",
+                  "variant": "monocromatica",
+                  "symbolOnly": false
+                },
+                {
+                  "type": "brand",
+                  "variant": "monocromatica",
+                  "symbolOnly": true
+                }
+              ],
+              "direction": "horizontal",
+              "width": null,
+              "background": null,
+              "padding": 0,
+              "gap": 32,
+              "name": "Grupo"
+            }
+          ],
+          "direction": "vertical",
+          "width": null,
+          "background": "mist",
+          "padding": 32,
+          "gap": 16,
+          "name": "Aplicación / Monocromática"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "text",
+              "text": "Sobre fondo oscuro",
+              "style": "subtitle",
+              "color": "white"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "brand",
+                  "variant": "oscura",
+                  "symbolOnly": false
+                },
+                {
+                  "type": "brand",
+                  "variant": "oscura",
+                  "symbolOnly": true
+                }
+              ],
+              "direction": "horizontal",
+              "width": null,
+              "background": null,
+              "padding": 0,
+              "gap": 32,
+              "name": "Grupo"
+            }
+          ],
+          "direction": "vertical",
+          "width": null,
+          "background": "midnight",
+          "padding": 32,
+          "gap": 16,
+          "name": "Aplicación / Sobre fondo oscuro"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "text",
+              "text": "Sobre fondo claro",
+              "style": "subtitle",
+              "color": "obsidian"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "brand",
+                  "variant": "clara",
+                  "symbolOnly": false
+                },
+                {
+                  "type": "brand",
+                  "variant": "clara",
+                  "symbolOnly": true
+                }
+              ],
+              "direction": "horizontal",
+              "width": null,
+              "background": null,
+              "padding": 0,
+              "gap": 32,
+              "name": "Grupo"
+            }
+          ],
+          "direction": "vertical",
+          "width": null,
+          "background": "white",
+          "padding": 32,
+          "gap": 16,
+          "name": "Aplicación / Sobre fondo claro"
+        },
+        {
+          "type": "text",
+          "text": "Composición y proporciones",
+          "style": "subtitle",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "Isotipo Q: retícula 100 × 100, anillo de radio 34, trazo 12 y cola descendente. Imagotipo: símbolo de 72 × 72, separación de 24 y denominación Quantify Core en Inter 700. Símbolo y nombre pueden utilizarse juntos o por separado: es un imagotipo, no un isologo indivisible.",
+          "style": "body",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "Uso y restricciones",
+          "style": "subtitle",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "Área libre: al menos 1/4 del alto del símbolo. Mínimos: isotipo 24 × 24; imagotipo 240 × 72. Para favicon de 16 px usar solo la Q y comprobar la lectura. Principal: Laser Blue y Obsidian; oscuro: Sky Laser y blanco; monocromática: una sola tinta Obsidian, o blanco en negativo. No deformar, rotar, añadir sombras, alterar la cola ni colocar sobre fotos sin superficie de protección.",
+          "style": "body",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "Esta Q tipográfica pertenece al producto y usa anillo grueso y cola descendente. La antigua Q editorial de trazo ligero permanece como marca de agua documental y no se utiliza como icono de búsqueda. Los JPEG de empresa y producto permanecen íntegros como antecedentes.",
+          "style": "body",
+          "color": "obsidian"
+        }
+      ],
+      "direction": "vertical",
+      "width": 1440,
+      "background": "white",
+      "padding": 48,
+      "gap": 32,
+      "name": "01. Identidad Gráfica",
+      "artboard": true
+    },
+    {
+      "type": "box",
+      "children": [
+        {
+          "type": "text",
+          "text": "QUANTIFY CORE / NEXUS CORE · TAREA 03",
+          "style": "label",
+          "color": "steel"
+        },
+        {
+          "type": "text",
+          "text": "02. Paleta de Colores",
+          "style": "display",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "Trece colores canónicos: valores sRGB, función e intención de marca. La psicología expresa intención, no efectos universales.",
+          "style": "body",
+          "color": "steel"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "box",
+              "children": [],
+              "direction": "vertical",
+              "width": 96,
+              "background": "laserBlue",
+              "padding": 32,
+              "gap": 16,
+              "name": "Muestra"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Laser Blue",
+                  "style": "subtitle",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "#275BC0 · RGB 39, 91, 192",
+                  "style": "label",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Intención de marca: Confianza, continuidad y precisión.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Se usa como ancla reconocible del producto y para la acción principal: permite localizar qué hacer sin convertir toda la pantalla en un acento. Su profundidad sostiene texto blanco legible y da continuidad entre web, móvil y documentos. En oscuro conserva el valor de marca; los iconos aislados cambian a Sky Laser para distinguirse de la superficie.",
+                  "style": "body",
+                  "color": "obsidian"
+                }
+              ],
+              "direction": "vertical",
+              "width": null,
+              "background": null,
+              "padding": 0,
+              "gap": 16,
+              "name": "Grupo"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": "mist",
+          "padding": 24,
+          "gap": 24,
+          "name": "Color / Laser Blue"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "box",
+              "children": [],
+              "direction": "vertical",
+              "width": 96,
+              "background": "skyLaser",
+              "padding": 32,
+              "gap": 16,
+              "name": "Muestra"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Sky Laser",
+                  "style": "subtitle",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "#4A7DE8 · RGB 74, 125, 232",
+                  "style": "label",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Intención de marca: Apertura, energía y exploración.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Su mayor luminosidad hace visibles selección, foco e iconos activos sobre Midnight Navy. Mantiene parentesco con Laser Blue sin introducir otra marca para el tema oscuro. En claro no se usa con texto blanco pequeño ni como única señal sobre blanco; se reserva como acento y se combina con una etiqueta o contorno legible. También es el azul de las variantes oscuras de empresa y producto: ilumina sus trazos sin convertir el azul en su complementario ni modificar sus formas.",
+                  "style": "body",
+                  "color": "obsidian"
+                }
+              ],
+              "direction": "vertical",
+              "width": null,
+              "background": null,
+              "padding": 0,
+              "gap": 16,
+              "name": "Grupo"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": "mist",
+          "padding": 24,
+          "gap": 24,
+          "name": "Color / Sky Laser"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "box",
+              "children": [],
+              "direction": "vertical",
+              "width": 96,
+              "background": "deepCobalt",
+              "padding": 32,
+              "gap": 16,
+              "name": "Muestra"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Deep Cobalt",
+                  "style": "subtitle",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "#183D87 · RGB 24, 61, 135",
+                  "style": "label",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Intención de marca: Solidez, concentración y estabilidad.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Es la variante profunda de la familia azul para foco y acciones presionadas sobre claro. Refuerza una interacción sin recurrir a negro ni cambiar de matiz, de modo que el estado sigue perteneciendo a la marca. Sobre oscuro pierde separación: el foco se muestra en Sky Laser y no se hereda este valor automáticamente.",
+                  "style": "body",
+                  "color": "obsidian"
+                }
+              ],
+              "direction": "vertical",
+              "width": null,
+              "background": null,
+              "padding": 0,
+              "gap": 16,
+              "name": "Grupo"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": "mist",
+          "padding": 24,
+          "gap": 24,
+          "name": "Color / Deep Cobalt"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "box",
+              "children": [],
+              "direction": "vertical",
+              "width": 96,
+              "background": "obsidian",
+              "padding": 32,
+              "gap": 16,
+              "name": "Muestra"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Obsidian Slate",
+                  "style": "subtitle",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "#0B0F17 · RGB 11, 15, 23",
+                  "style": "label",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Intención de marca: Sobriedad y profundidad visual.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Estructura el fondo oscuro y el texto principal sobre claro, por lo que articula ambos temas sin añadir un negro ajeno a la paleta. También sirve de tinta en badges semánticos luminosos. Su función es separar niveles y priorizar contenido; no se usa como texto sobre Midnight Navy, donde se necesita Optical White.",
+                  "style": "body",
+                  "color": "obsidian"
+                }
+              ],
+              "direction": "vertical",
+              "width": null,
+              "background": null,
+              "padding": 0,
+              "gap": 16,
+              "name": "Grupo"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": "mist",
+          "padding": 24,
+          "gap": 24,
+          "name": "Color / Obsidian Slate"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "box",
+              "children": [],
+              "direction": "vertical",
+              "width": 96,
+              "background": "midnight",
+              "padding": 32,
+              "gap": 16,
+              "name": "Muestra"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Midnight Navy",
+                  "style": "subtitle",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "#161F2E · RGB 22, 31, 46",
+                  "style": "label",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Intención de marca: Calma, continuidad y contención.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Eleva tarjetas y paneles respecto del fondo Obsidian sin recurrir a grandes áreas blancas en modo oscuro. La diferencia de luminancia organiza la profundidad, mientras texto blanco y secundarios Cool Gray mantienen la lectura. No se confía solo en esa diferencia para identificar un campo: los controles reciben un borde visible adicional.",
+                  "style": "body",
+                  "color": "obsidian"
+                }
+              ],
+              "direction": "vertical",
+              "width": null,
+              "background": null,
+              "padding": 0,
+              "gap": 16,
+              "name": "Grupo"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": "mist",
+          "padding": 24,
+          "gap": 24,
+          "name": "Color / Midnight Navy"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "box",
+              "children": [],
+              "direction": "vertical",
+              "width": 96,
+              "background": "steel",
+              "padding": 32,
+              "gap": 16,
+              "name": "Muestra"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Steel Border",
+                  "style": "subtitle",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "#283548 · RGB 40, 53, 72",
+                  "style": "label",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Intención de marca: Orden, estructura y neutralidad.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Proporciona texto secundario e iconos neutros legibles sobre blanco y un contorno reconocible para controles claros. Su tono azulado mantiene coherencia con la marca sin competir con la acción principal. En modo oscuro se sustituye en esos roles por Cool Gray, porque el mismo tono profundo se perdería contra las superficies oscuras.",
+                  "style": "body",
+                  "color": "obsidian"
+                }
+              ],
+              "direction": "vertical",
+              "width": null,
+              "background": null,
+              "padding": 0,
+              "gap": 16,
+              "name": "Grupo"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": "mist",
+          "padding": 24,
+          "gap": 24,
+          "name": "Color / Steel Border"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "box",
+              "children": [],
+              "direction": "vertical",
+              "width": 96,
+              "background": "gray",
+              "padding": 32,
+              "gap": 16,
+              "name": "Muestra"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Cool Gray",
+                  "style": "subtitle",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "#8A99AD · RGB 138, 153, 173",
+                  "style": "label",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Intención de marca: Discreción y equilibrio.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Se elige como segundo nivel de lectura en oscuro: diferencia metadatos de títulos sin volverlos invisibles sobre Midnight Navy. También delimita controles oscuros cuando el borde identifica la interacción. En claro se sustituye por Steel Border para texto e iconos informativos; su apariencia suave sobre blanco no aporta el contraste necesario.",
+                  "style": "body",
+                  "color": "obsidian"
+                }
+              ],
+              "direction": "vertical",
+              "width": null,
+              "background": null,
+              "padding": 0,
+              "gap": 16,
+              "name": "Grupo"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": "mist",
+          "padding": 24,
+          "gap": 24,
+          "name": "Color / Cool Gray"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "box",
+              "children": [],
+              "direction": "vertical",
+              "width": 96,
+              "background": "mist",
+              "padding": 32,
+              "gap": 16,
+              "name": "Muestra"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Pure Mist",
+                  "style": "subtitle",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "#F4F7FD · RGB 244, 247, 253",
+                  "style": "label",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Intención de marca: Ligereza y espacio visual.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Ofrece un fondo claro ligeramente azulado que separa las tarjetas blancas sin rodearlas de bloques intensos. La cercanía con la familia de marca mantiene unidad y deja protagonismo a datos y acciones. Al activar oscuro, el rol fondo pasa a Obsidian; Pure Mist no se invierte ni se conserva como gran superficie luminosa.",
+                  "style": "body",
+                  "color": "obsidian"
+                }
+              ],
+              "direction": "vertical",
+              "width": null,
+              "background": null,
+              "padding": 0,
+              "gap": 16,
+              "name": "Grupo"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": "mist",
+          "padding": 24,
+          "gap": 24,
+          "name": "Color / Pure Mist"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "box",
+              "children": [],
+              "direction": "vertical",
+              "width": 96,
+              "background": "white",
+              "padding": 32,
+              "gap": 16,
+              "name": "Muestra"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Optical White",
+                  "style": "subtitle",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "#FFFFFF · RGB 255, 255, 255",
+                  "style": "label",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Intención de marca: Claridad y amplitud.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Se emplea en superficies claras y como tinta principal sobre oscuro, además de texto sobre botones Laser Blue. Su rol cambia con el tema, pero el valor permanece estable. En los derivados oscuros de las marcas, las letras y trazos neutros pasan a Optical White sobre transparencia. Los originales claros permanecen intactos: ya no se coloca un rectángulo blanco detrás de la marca oscura.",
+                  "style": "body",
+                  "color": "obsidian"
+                }
+              ],
+              "direction": "vertical",
+              "width": null,
+              "background": null,
+              "padding": 0,
+              "gap": 16,
+              "name": "Grupo"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": "mist",
+          "padding": 24,
+          "gap": 24,
+          "name": "Color / Optical White"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "box",
+              "children": [],
+              "direction": "vertical",
+              "width": 96,
+              "background": "emerald",
+              "padding": 32,
+              "gap": 16,
+              "name": "Muestra"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Emerald",
+                  "style": "subtitle",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "#10B981 · RGB 16, 185, 129",
+                  "style": "label",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Intención de marca: Progreso y confirmación.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Relaciona una acción completada con avance verificable, sin usar el verde para prometer bienestar o resultados clínicos. Se conserva en ambos temas como acento o fondo de badge con tinta Obsidian y una marca de verificación. No se pone como texto pequeño sobre blanco ni se confunde un registro pendiente con uno confirmado.",
+                  "style": "body",
+                  "color": "obsidian"
+                }
+              ],
+              "direction": "vertical",
+              "width": null,
+              "background": null,
+              "padding": 0,
+              "gap": 16,
+              "name": "Grupo"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": "mist",
+          "padding": 24,
+          "gap": 24,
+          "name": "Color / Emerald"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "box",
+              "children": [],
+              "direction": "vertical",
+              "width": 96,
+              "background": "amber",
+              "padding": 32,
+              "gap": 16,
+              "name": "Muestra"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Amber",
+                  "style": "subtitle",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "#F59E0B · RGB 245, 158, 11",
+                  "style": "label",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Intención de marca: Atención y cautela.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Distingue espera, pendiente o una decisión que necesita revisión sin comunicar un fallo definitivo. El mismo matiz en ambos temas evita reaprender el significado del estado. Se muestra en un badge con tinta Obsidian, reloj y etiqueta: un punto amarillo por sí solo no explica qué falta ni cuándo puede continuar la persona.",
+                  "style": "body",
+                  "color": "obsidian"
+                }
+              ],
+              "direction": "vertical",
+              "width": null,
+              "background": null,
+              "padding": 0,
+              "gap": 16,
+              "name": "Grupo"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": "mist",
+          "padding": 24,
+          "gap": 24,
+          "name": "Color / Amber"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "box",
+              "children": [],
+              "direction": "vertical",
+              "width": 96,
+              "background": "crimson",
+              "padding": 32,
+              "gap": 16,
+              "name": "Muestra"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Crimson",
+                  "style": "subtitle",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "#EF4444 · RGB 239, 68, 68",
+                  "style": "label",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Intención de marca: Urgencia y recuperación.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Se reserva a error o interrupción para que lo excepcional conserve peso visual. Siempre se acompaña de una explicación y una vía de recuperación, evitando presentarlo como juicio sobre la persona o sus hábitos. En ambos temas puede funcionar como fondo de badge con tinta Obsidian; no como texto blanco pequeño o rojo aislado sobre blanco.",
+                  "style": "body",
+                  "color": "obsidian"
+                }
+              ],
+              "direction": "vertical",
+              "width": null,
+              "background": null,
+              "padding": 0,
+              "gap": 16,
+              "name": "Grupo"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": "mist",
+          "padding": 24,
+          "gap": 24,
+          "name": "Color / Crimson"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "box",
+              "children": [],
+              "direction": "vertical",
+              "width": 96,
+              "background": "cyan",
+              "padding": 32,
+              "gap": 16,
+              "name": "Muestra"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Electric Cyan",
+                  "style": "subtitle",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "#0EA5E9 · RGB 14, 165, 233",
+                  "style": "label",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Intención de marca: Exploración y precisión informativa.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "Separa métricas y sugerencias del azul reservado a la acción principal. Así la persona distingue información de una invitación a actuar. Conserva su valor en claro y oscuro como acento o badge con tinta Obsidian y etiqueta descriptiva. El color no certifica inteligencia, exactitud de un modelo ni validez médica de una recomendación.",
+                  "style": "body",
+                  "color": "obsidian"
+                }
+              ],
+              "direction": "vertical",
+              "width": null,
+              "background": null,
+              "padding": 0,
+              "gap": 16,
+              "name": "Grupo"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": "mist",
+          "padding": 24,
+          "gap": 24,
+          "name": "Color / Electric Cyan"
+        },
+        {
+          "type": "text",
+          "text": "Contraste y asignación por tema",
+          "style": "subtitle",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "Claro: Pure Mist / blanco / Obsidian / Steel. Oscuro: Obsidian / Midnight / blanco / Cool Gray. Acción: Laser Blue con blanco. Blanco sobre Laser Blue: 6.28:1; Cool Gray sobre Midnight: 5.70:1. Sky Laser sobre Midnight: 4.25:1 para iconos y gráficos; no texto pequeño. Los cuatro colores de estado se acompañan de forma y texto Obsidian. No usar blanco pequeño sobre Crimson, Amber, Emerald o Cyan.",
+          "style": "body",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "Objetivo de diseño: texto normal ≥ 4.5:1, texto grande y gráficos significativos ≥ 3:1. Bordes decorativos no sustituyen los bordes de controles. La guía no acredita conformidad de una aplicación implementada.",
+          "style": "body",
+          "color": "obsidian"
+        }
+      ],
+      "direction": "vertical",
+      "width": 1440,
+      "background": "white",
+      "padding": 48,
+      "gap": 32,
+      "name": "02. Paleta de Colores",
+      "artboard": true
+    },
+    {
+      "type": "box",
+      "children": [
+        {
+          "type": "text",
+          "text": "QUANTIFY CORE / NEXUS CORE · TAREA 03",
+          "style": "label",
+          "color": "steel"
+        },
+        {
+          "type": "text",
+          "text": "03. Tipografía",
+          "style": "display",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "Inter: una familia para una interfaz legible, compatible y coherente.",
+          "style": "body",
+          "color": "steel"
+        },
+        {
+          "type": "text",
+          "text": "Inter Variable · Rasmus Andersson · SIL Open Font License",
+          "style": "subtitle",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "Fuente WOFF2 local para web; empaquetar TTF/OTF en Flutter. La licencia está en docs/GUI/assets/inter-license.txt. Los logotipos heredados conservan su dibujo. Mantener pesos, tamaños e interlineados entre temas; reacomodar contenido antes de reducir texto.",
+          "style": "body",
+          "color": "obsidian"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "text",
+              "text": "Título principal",
+              "style": "display",
+              "color": "obsidian"
+            },
+            {
+              "type": "text",
+              "text": "qc/type/display · Inter · 700 · 40 px / 48 px",
+              "style": "caption",
+              "color": "steel"
+            }
+          ],
+          "direction": "vertical",
+          "width": null,
+          "background": "mist",
+          "padding": 24,
+          "gap": 16,
+          "name": "Tipo / display"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "text",
+              "text": "Título de pantalla",
+              "style": "title",
+              "color": "obsidian"
+            },
+            {
+              "type": "text",
+              "text": "qc/type/title · Inter · 700 · 28 px / 36 px",
+              "style": "caption",
+              "color": "steel"
+            }
+          ],
+          "direction": "vertical",
+          "width": null,
+          "background": "mist",
+          "padding": 24,
+          "gap": 16,
+          "name": "Tipo / title"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "text",
+              "text": "Subtítulo",
+              "style": "subtitle",
+              "color": "obsidian"
+            },
+            {
+              "type": "text",
+              "text": "qc/type/subtitle · Inter · 600 · 20 px / 28 px",
+              "style": "caption",
+              "color": "steel"
+            }
+          ],
+          "direction": "vertical",
+          "width": null,
+          "background": "mist",
+          "padding": 24,
+          "gap": 16,
+          "name": "Tipo / subtitle"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "text",
+              "text": "Encabezado de tarjeta",
+              "style": "heading",
+              "color": "obsidian"
+            },
+            {
+              "type": "text",
+              "text": "qc/type/heading · Inter · 600 · 16 px / 24 px",
+              "style": "caption",
+              "color": "steel"
+            }
+          ],
+          "direction": "vertical",
+          "width": null,
+          "background": "mist",
+          "padding": 24,
+          "gap": 16,
+          "name": "Tipo / heading"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "text",
+              "text": "Párrafo",
+              "style": "body",
+              "color": "obsidian"
+            },
+            {
+              "type": "text",
+              "text": "qc/type/body · Inter · 400 · 16 px / 24 px",
+              "style": "caption",
+              "color": "steel"
+            }
+          ],
+          "direction": "vertical",
+          "width": null,
+          "background": "mist",
+          "padding": 24,
+          "gap": 16,
+          "name": "Tipo / body"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "text",
+              "text": "Etiqueta",
+              "style": "label",
+              "color": "obsidian"
+            },
+            {
+              "type": "text",
+              "text": "qc/type/label · Inter · 500 · 14 px / 20 px",
+              "style": "caption",
+              "color": "steel"
+            }
+          ],
+          "direction": "vertical",
+          "width": null,
+          "background": "mist",
+          "padding": 24,
+          "gap": 16,
+          "name": "Tipo / label"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "text",
+              "text": "Botón",
+              "style": "button",
+              "color": "obsidian"
+            },
+            {
+              "type": "text",
+              "text": "qc/type/button · Inter · 600 · 16 px / 24 px",
+              "style": "caption",
+              "color": "steel"
+            }
+          ],
+          "direction": "vertical",
+          "width": null,
+          "background": "mist",
+          "padding": 24,
+          "gap": 16,
+          "name": "Tipo / button"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "text",
+              "text": "Texto auxiliar",
+              "style": "caption",
+              "color": "obsidian"
+            },
+            {
+              "type": "text",
+              "text": "qc/type/caption · Inter · 400 · 14 px / 20 px",
+              "style": "caption",
+              "color": "steel"
+            }
+          ],
+          "direction": "vertical",
+          "width": null,
+          "background": "mist",
+          "padding": 24,
+          "gap": 16,
+          "name": "Tipo / caption"
+        },
+        {
+          "type": "text",
+          "text": "Muestras de caracteres",
+          "style": "subtitle",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "ABCDEFGHIJKLMNOPQRSTUVWXYZ\nabcdefghijklmnopqrstuvwxyz\nÁÉÍÓÚÜÑ áéíóúüñ\n0123456789 · 10 / 20 minutos · 26/10/2026\n¡Hola! ¿Cómo vas? @ # $ % & * + − = / ( ) [ ] { } : ; , . « » “ ”",
+          "style": "subtitle",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "Jerarquía por función",
+          "style": "subtitle",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "Los títulos presentan la tarea; subtítulos agrupan contenido; encabezados identifican tarjetas; el cuerpo explica; etiquetas identifican campos; botones nombran acciones; ayuda explica condiciones. No usar solo mayúsculas en párrafos ni peso ligero para información esencial. Alinear cifras tabulares en tablas. La pantalla del frame 06 usa estos estilos.",
+          "style": "body",
+          "color": "obsidian"
+        }
+      ],
+      "direction": "vertical",
+      "width": 1440,
+      "background": "white",
+      "padding": 48,
+      "gap": 32,
+      "name": "03. Tipografía",
+      "artboard": true
+    },
+    {
+      "type": "box",
+      "children": [
+        {
+          "type": "text",
+          "text": "QUANTIFY CORE / NEXUS CORE · TAREA 03",
+          "style": "label",
+          "color": "steel"
+        },
+        {
+          "type": "text",
+          "text": "04. Iconografía de Navegación",
+          "style": "display",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "Navegación y acceso a los módulos personales; no concede permisos ni implementa servicios.",
+          "style": "body",
+          "color": "steel"
+        },
+        {
+          "type": "text",
+          "text": "Sistema lineal · retícula 24 × 24 · trazo 1.8 · extremos y uniones redondos. Los tamaños 24 y 32 escalan proporcionalmente. Objetivo táctil: 48 × 48; mantener la geometría sin deformar.",
+          "style": "body",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "Claro: Laser Blue activo y Steel neutro. Oscuro: Sky Laser activo y Cool Gray neutro. Nombre visible junto al icono; controles sin texto requieren nombre accesible. El foco usa Deep Cobalt en claro y Sky Laser en oscuro.",
+          "style": "body",
+          "color": "obsidian"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "hoy",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Inicio / Hoy",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Abrir el día de negocio actual.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "hoy",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "hoy",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/hoy · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Inicio / Hoy"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "menu",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Menú",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Mostrar opciones de navegación.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "menu",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "menu",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/menu · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Menú"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "buscar",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Buscar",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Encontrar hábitos propios.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "buscar",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "buscar",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/buscar · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Buscar"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": null,
+          "padding": 0,
+          "gap": 24,
+          "name": "Grupo"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "perfil",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Perfil",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Consultar la cuenta propia.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "perfil",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "perfil",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/perfil · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Perfil"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "volver",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Regresar",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Volver sin confirmar cambios.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "volver",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "volver",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/volver · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Regresar"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "ajustes",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Configuración",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Preferencias y consentimiento.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "ajustes",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "ajustes",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/ajustes · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Configuración"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": null,
+          "padding": 0,
+          "gap": 24,
+          "name": "Grupo"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "habitos",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Hábitos",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Catálogo personal y archivo.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "habitos",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "habitos",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/habitos · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Hábitos"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "analisis",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Análisis",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Resultados de periodos cerrados.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "analisis",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "analisis",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/analisis · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Análisis"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "calendario",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Calendario",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Consultar fechas de la agenda.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "calendario",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "calendario",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/calendario · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Calendario"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": null,
+          "padding": 0,
+          "gap": 24,
+          "name": "Grupo"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "historial",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Historial",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Revisar registros confirmados.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "historial",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "historial",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/historial · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Historial"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "privacidad",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Privacidad",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Revisar finalidades autorizadas.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "privacidad",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "privacidad",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/privacidad · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Privacidad"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "dispositivo",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Dispositivos",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Consultar vinculaciones autorizadas.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "dispositivo",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "dispositivo",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/dispositivo · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Dispositivos"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": null,
+          "padding": 0,
+          "gap": 24,
+          "name": "Grupo"
+        },
+        {
+          "type": "text",
+          "text": "Procedencia y reutilización",
+          "style": "subtitle",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "Trazos originales del catálogo del repositorio y su extensión Tarea 03; sin recursos de iconos de terceros. La distribución conserva los términos del repositorio: no se inventa una licencia externa. Cada símbolo se prepara como qc/icon/<función> y se utiliza mediante instancias; el nombre accesible depende del control.",
+          "style": "body",
+          "color": "obsidian"
+        }
+      ],
+      "direction": "vertical",
+      "width": 1440,
+      "background": "white",
+      "padding": 48,
+      "gap": 32,
+      "name": "04. Iconografía de Navegación",
+      "artboard": true
+    },
+    {
+      "type": "box",
+      "children": [
+        {
+          "type": "text",
+          "text": "QUANTIFY CORE / NEXUS CORE · TAREA 03",
+          "style": "label",
+          "color": "steel"
+        },
+        {
+          "type": "text",
+          "text": "05. Iconografía de Acciones y Estados",
+          "style": "display",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "Las acciones expresan intención; los estados informan el resultado confirmado.",
+          "style": "body",
+          "color": "steel"
+        },
+        {
+          "type": "text",
+          "text": "Sistema lineal · retícula 24 × 24 · trazo 1.8 · extremos y uniones redondos. Los tamaños 24 y 32 escalan proporcionalmente. Objetivo táctil: 48 × 48; mantener la geometría sin deformar.",
+          "style": "body",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "Claro: Laser Blue activo y Steel neutro. Oscuro: Sky Laser activo y Cool Gray neutro. Nombre visible junto al icono; controles sin texto requieren nombre accesible. El foco usa Deep Cobalt en claro y Sky Laser en oscuro.",
+          "style": "body",
+          "color": "obsidian"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "crear",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Agregar",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Crear un hábito.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "crear",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "crear",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/crear · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Agregar"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "editar",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Editar",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Cambiar su programación.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "editar",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "editar",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/editar · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Editar"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "eliminar",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Eliminar",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Solicitar eliminación con confirmación; no equivale a archivar.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "eliminar",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "eliminar",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/eliminar · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Eliminar"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": null,
+          "padding": 0,
+          "gap": 24,
+          "name": "Grupo"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "guardar",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Guardar",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Solicitar persistencia; esperar confirmación del servidor.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "guardar",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "guardar",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/guardar · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Guardar"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "descargar",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Descargar",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Obtener una exportación propia autorizada.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "descargar",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "descargar",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/descargar · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Descargar"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "compartir",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Compartir",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Acción prevista; requiere definir destinatario y consentimiento.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "compartir",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "compartir",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/compartir · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Compartir"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": null,
+          "padding": 0,
+          "gap": 24,
+          "name": "Grupo"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "confirmado",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Confirmar",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Aceptar una operación explícita.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "confirmado",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "confirmado",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/confirmado · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Confirmar"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "cancelar",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Cancelar",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Salir sin aplicar cambios.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "cancelar",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "cancelar",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/cancelar · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Cancelar"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "archivar",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Archivar",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Retirar de activos conservando historial.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "archivar",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "archivar",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/archivar · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Archivar"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": null,
+          "padding": 0,
+          "gap": 24,
+          "name": "Grupo"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "sincronizar",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Sincronizar",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Reintentar con la misma clave idempotente.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "sincronizar",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "sincronizar",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/sincronizar · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Sincronizar"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "recordatorio",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Recordatorio",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Configurar un aviso de la agenda.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "recordatorio",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "recordatorio",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/recordatorio · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Recordatorio"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "salir",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "text",
+                      "text": "Salir",
+                      "style": "heading",
+                      "color": "obsidian"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "Cerrar la sesión centralizada.",
+                  "style": "body",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "salir",
+                      "color": "laserBlue",
+                      "size": 32
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "salir",
+                          "color": "skyLaser",
+                          "size": 32
+                        }
+                      ],
+                      "direction": "vertical",
+                      "width": null,
+                      "background": "midnight",
+                      "padding": 12,
+                      "gap": 16,
+                      "name": "Grupo"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": null,
+                  "padding": 0,
+                  "gap": 16,
+                  "name": "Grupo"
+                },
+                {
+                  "type": "text",
+                  "text": "qc/icon/salir · 24 × 24 · trazo 1.8",
+                  "style": "caption",
+                  "color": "steel"
+                }
+              ],
+              "direction": "vertical",
+              "width": 432,
+              "background": "mist",
+              "padding": 24,
+              "gap": 16,
+              "name": "Icono / Salir"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": null,
+          "padding": 0,
+          "gap": 24,
+          "name": "Grupo"
+        },
+        {
+          "type": "text",
+          "text": "Retroalimentación en ambos temas",
+          "style": "subtitle",
+          "color": "obsidian"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "icon",
+              "key": "confirmado",
+              "color": "obsidian",
+              "size": 32
+            },
+            {
+              "type": "text",
+              "text": "Éxito · Operación confirmada",
+              "style": "heading",
+              "color": "obsidian"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": "emerald",
+          "padding": 24,
+          "gap": 16,
+          "name": "Estado / Éxito"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "icon",
+              "key": "aviso",
+              "color": "obsidian",
+              "size": 32
+            },
+            {
+              "type": "text",
+              "text": "Advertencia · Revisar antes de continuar",
+              "style": "heading",
+              "color": "obsidian"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": "amber",
+          "padding": 24,
+          "gap": 16,
+          "name": "Estado / Advertencia"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "icon",
+              "key": "cancelar",
+              "color": "obsidian",
+              "size": 32
+            },
+            {
+              "type": "text",
+              "text": "Error · No se guardó · Reintentar",
+              "style": "heading",
+              "color": "obsidian"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": "crimson",
+          "padding": 24,
+          "gap": 16,
+          "name": "Estado / Error"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "icon",
+              "key": "informacion",
+              "color": "obsidian",
+              "size": 32
+            },
+            {
+              "type": "text",
+              "text": "Información · Consulta el detalle",
+              "style": "heading",
+              "color": "obsidian"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": "cyan",
+          "padding": 24,
+          "gap": 16,
+          "name": "Estado / Información"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "icon",
+              "key": "pendiente",
+              "color": "obsidian",
+              "size": 32
+            },
+            {
+              "type": "text",
+              "text": "Pendiente · Esperando confirmación",
+              "style": "heading",
+              "color": "obsidian"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": "amber",
+          "padding": 24,
+          "gap": 16,
+          "name": "Estado / Pendiente"
+        },
+        {
+          "type": "text",
+          "text": "Error usa cruz; advertencia usa triángulo; información usa círculo con i; éxito usa verificación; pendiente usa reloj. Las etiquetas conservan el significado sin depender del color. Confirmar una intención no equivale a una respuesta exitosa del servidor.",
+          "style": "body",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "Decoración",
+          "style": "subtitle",
+          "color": "obsidian"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "icon",
+              "key": "lectura",
+              "color": "laserBlue",
+              "size": 32
+            },
+            {
+              "type": "icon",
+              "key": "movimiento",
+              "color": "laserBlue",
+              "size": 32
+            },
+            {
+              "type": "icon",
+              "key": "descanso",
+              "color": "laserBlue",
+              "size": 32
+            },
+            {
+              "type": "text",
+              "text": "Lectura, movimiento y descanso contextualizan hábitos. No son controles sin una acción explícita.",
+              "style": "body",
+              "color": "obsidian"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": "mist",
+          "padding": 24,
+          "gap": 16,
+          "name": "Grupo"
+        },
+        {
+          "type": "text",
+          "text": "Los iconos decorativos se ocultan a lectores de pantalla. No sustituir eliminar por archivar: archivar conserva historial. Compartir es una acción prevista, sin promesa de servicio ni divulgación automática.",
+          "style": "body",
+          "color": "obsidian"
+        }
+      ],
+      "direction": "vertical",
+      "width": 1440,
+      "background": "white",
+      "padding": 48,
+      "gap": 32,
+      "name": "05. Iconografía de Acciones y Estados",
+      "artboard": true
+    },
+    {
+      "type": "box",
+      "children": [
+        {
+          "type": "text",
+          "text": "QUANTIFY CORE / NEXUS CORE · TAREA 03",
+          "style": "label",
+          "color": "steel"
+        },
+        {
+          "type": "text",
+          "text": "06. Aplicación de Estilos",
+          "style": "display",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "Pantalla propuesta del primer flujo RF-03 / RF-04. Datos sintéticos; sin cuentas reales ni servicios conectados.",
+          "style": "body",
+          "color": "steel"
+        },
+        {
+          "type": "box",
+          "children": [
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "CLARO",
+                  "style": "label",
+                  "color": "steel"
+                },
+                {
+                  "type": "brand",
+                  "variant": "clara",
+                  "symbolOnly": false
+                },
+                {
+                  "type": "text",
+                  "text": "Tu rutina de hoy",
+                  "style": "title",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "text",
+                  "text": "26 oct 2026 · America/Mexico_City",
+                  "style": "caption",
+                  "color": "steel"
+                },
+                {
+                  "type": "text",
+                  "text": "Día abierto · 1 de 2 metas completas",
+                  "style": "heading",
+                  "color": "obsidian"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "Leer con calma",
+                      "style": "heading",
+                      "color": "obsidian"
+                    },
+                    {
+                      "type": "text",
+                      "text": "10 / 20 minutos",
+                      "style": "body",
+                      "color": "steel"
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "confirmado",
+                          "color": "obsidian",
+                          "size": 24
+                        },
+                        {
+                          "type": "text",
+                          "text": "Confirmado",
+                          "style": "label",
+                          "color": "obsidian"
+                        }
+                      ],
+                      "direction": "horizontal",
+                      "width": null,
+                      "background": "emerald",
+                      "padding": 8,
+                      "gap": 16,
+                      "name": "qc/badge/success",
+                      "component": "badge/light"
+                    }
+                  ],
+                  "direction": "vertical",
+                  "width": null,
+                  "background": "white",
+                  "padding": 24,
+                  "gap": 16,
+                  "name": "qc/card/habit",
+                  "component": "habit/light/Leer con calma"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "Caminar",
+                      "style": "heading",
+                      "color": "obsidian"
+                    },
+                    {
+                      "type": "text",
+                      "text": "30 / 30 minutos",
+                      "style": "body",
+                      "color": "steel"
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "confirmado",
+                          "color": "obsidian",
+                          "size": 24
+                        },
+                        {
+                          "type": "text",
+                          "text": "Confirmado",
+                          "style": "label",
+                          "color": "obsidian"
+                        }
+                      ],
+                      "direction": "horizontal",
+                      "width": null,
+                      "background": "emerald",
+                      "padding": 8,
+                      "gap": 16,
+                      "name": "qc/badge/success",
+                      "component": "badge/light"
+                    }
+                  ],
+                  "direction": "vertical",
+                  "width": null,
+                  "background": "white",
+                  "padding": 24,
+                  "gap": 16,
+                  "name": "qc/card/habit",
+                  "component": "habit/light/Caminar"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "crear",
+                      "color": "white",
+                      "size": 24
+                    },
+                    {
+                      "type": "text",
+                      "text": "Crear hábito",
+                      "style": "button",
+                      "color": "white"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": "laserBlue",
+                  "padding": 16,
+                  "gap": 16,
+                  "name": "qc/button/primary",
+                  "component": "button/light"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "hoy",
+                      "color": "laserBlue",
+                      "size": 24
+                    },
+                    {
+                      "type": "text",
+                      "text": "Hoy",
+                      "style": "label",
+                      "color": "obsidian"
+                    },
+                    {
+                      "type": "icon",
+                      "key": "habitos",
+                      "color": "steel",
+                      "size": 24
+                    },
+                    {
+                      "type": "text",
+                      "text": "Hábitos",
+                      "style": "label",
+                      "color": "steel"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": "white",
+                  "padding": 16,
+                  "gap": 16,
+                  "name": "Navegación"
+                }
+              ],
+              "direction": "vertical",
+              "width": 660,
+              "background": "mist",
+              "padding": 32,
+              "gap": 24,
+              "name": "Pantalla Hoy / light"
+            },
+            {
+              "type": "box",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "OSCURO",
+                  "style": "label",
+                  "color": "gray"
+                },
+                {
+                  "type": "brand",
+                  "variant": "oscura",
+                  "symbolOnly": false
+                },
+                {
+                  "type": "text",
+                  "text": "Tu rutina de hoy",
+                  "style": "title",
+                  "color": "white"
+                },
+                {
+                  "type": "text",
+                  "text": "26 oct 2026 · America/Mexico_City",
+                  "style": "caption",
+                  "color": "gray"
+                },
+                {
+                  "type": "text",
+                  "text": "Día abierto · 1 de 2 metas completas",
+                  "style": "heading",
+                  "color": "white"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "Leer con calma",
+                      "style": "heading",
+                      "color": "white"
+                    },
+                    {
+                      "type": "text",
+                      "text": "10 / 20 minutos",
+                      "style": "body",
+                      "color": "gray"
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "confirmado",
+                          "color": "obsidian",
+                          "size": 24
+                        },
+                        {
+                          "type": "text",
+                          "text": "Confirmado",
+                          "style": "label",
+                          "color": "obsidian"
+                        }
+                      ],
+                      "direction": "horizontal",
+                      "width": null,
+                      "background": "emerald",
+                      "padding": 8,
+                      "gap": 16,
+                      "name": "qc/badge/success",
+                      "component": "badge/dark"
+                    }
+                  ],
+                  "direction": "vertical",
+                  "width": null,
+                  "background": "midnight",
+                  "padding": 24,
+                  "gap": 16,
+                  "name": "qc/card/habit",
+                  "component": "habit/dark/Leer con calma"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "Caminar",
+                      "style": "heading",
+                      "color": "white"
+                    },
+                    {
+                      "type": "text",
+                      "text": "30 / 30 minutos",
+                      "style": "body",
+                      "color": "gray"
+                    },
+                    {
+                      "type": "box",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "key": "confirmado",
+                          "color": "obsidian",
+                          "size": 24
+                        },
+                        {
+                          "type": "text",
+                          "text": "Confirmado",
+                          "style": "label",
+                          "color": "obsidian"
+                        }
+                      ],
+                      "direction": "horizontal",
+                      "width": null,
+                      "background": "emerald",
+                      "padding": 8,
+                      "gap": 16,
+                      "name": "qc/badge/success",
+                      "component": "badge/dark"
+                    }
+                  ],
+                  "direction": "vertical",
+                  "width": null,
+                  "background": "midnight",
+                  "padding": 24,
+                  "gap": 16,
+                  "name": "qc/card/habit",
+                  "component": "habit/dark/Caminar"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "crear",
+                      "color": "white",
+                      "size": 24
+                    },
+                    {
+                      "type": "text",
+                      "text": "Crear hábito",
+                      "style": "button",
+                      "color": "white"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": "laserBlue",
+                  "padding": 16,
+                  "gap": 16,
+                  "name": "qc/button/primary",
+                  "component": "button/dark"
+                },
+                {
+                  "type": "box",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "key": "hoy",
+                      "color": "skyLaser",
+                      "size": 24
+                    },
+                    {
+                      "type": "text",
+                      "text": "Hoy",
+                      "style": "label",
+                      "color": "white"
+                    },
+                    {
+                      "type": "icon",
+                      "key": "habitos",
+                      "color": "gray",
+                      "size": 24
+                    },
+                    {
+                      "type": "text",
+                      "text": "Hábitos",
+                      "style": "label",
+                      "color": "gray"
+                    }
+                  ],
+                  "direction": "horizontal",
+                  "width": null,
+                  "background": "midnight",
+                  "padding": 16,
+                  "gap": 16,
+                  "name": "Navegación"
+                }
+              ],
+              "direction": "vertical",
+              "width": 660,
+              "background": "obsidian",
+              "padding": 32,
+              "gap": 24,
+              "name": "Pantalla Hoy / dark"
+            }
+          ],
+          "direction": "horizontal",
+          "width": null,
+          "background": null,
+          "padding": 0,
+          "gap": 24,
+          "name": "Grupo"
+        },
+        {
+          "type": "text",
+          "text": "Aplicación de la guía",
+          "style": "subtitle",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "La Q identifica el producto; Inter organiza títulos, encabezados, párrafos, etiquetas, botones y ayuda. Laser Blue señala la acción. El badge combina verificación, palabra y color. Ambos temas conservan contenido, jerarquía y significado. Los controles se diseñan con área mínima 48 × 48.",
+          "style": "body",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "Anotación funcional: registrar avance envía un valor acumulado absoluto, conserva idempotencia y espera confirmación. El día abierto se separa de métricas cerradas. Los datos de estas tarjetas no certifican guardado real.",
+          "style": "body",
+          "color": "obsidian"
+        },
+        {
+          "type": "text",
+          "text": "Revisión: comprobar legibilidad, zoom, nombres accesibles, foco, correspondencia símbolo/acción y contraste en la implementación. En Figma los textos, vectores y componentes deben seguir editables; los PNG del repositorio son solo vistas previas.",
+          "style": "body",
+          "color": "obsidian"
+        }
+      ],
+      "direction": "vertical",
+      "width": 1440,
+      "background": "white",
+      "padding": 48,
+      "gap": 32,
+      "name": "06. Aplicación de Estilos",
+      "artboard": true
+    }
+  ],
+  "variants": [
+    "principal",
+    "monocromatica",
+    "oscura",
+    "clara"
+  ]
+}

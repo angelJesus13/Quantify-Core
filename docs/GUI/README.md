@@ -1,35 +1,94 @@
 # Quantify Core · GUI
 
-Índice de la documentación visual de [QUANCORE-26](https://utxicotepec-team-q5ufett6.atlassian.net/browse/QUANCORE-26). Revisión: 29 de octubre de 2026.
+Documentación del sistema de diseño, guía de estilos visuales y prototipos de interfaz de usuario de **Quantify Core**. Este módulo centraliza las especificaciones visuales, los componentes de interfaz, las variables de diseño y los prototipos interactivos del producto.
 
 ## Estado de la entrega
 
 | Elemento | Estado | Dónde revisarlo |
 |---|---|---|
-| Identidad visual: paleta de colores, tipografía, iconografía, logotipo, firma empresarial y marcas de agua | Un solo README con las justificaciones y los cuatro lienzos; claro y oscuro | [README único de identidad visual](identidad/README.md) |
+| Identidad visual  | Cuatro lienzos de referencia conservados; claro y oscuro | [README de identidad visual](identidad/README.md) |
 | Móvil · Sketches | 20 bocetos correspondientes | [README de sketches](prototipos/movil/sketches/README.md) |
 | Móvil · Wireframes | 20 estructuras correspondientes | [README de wireframes](prototipos/movil/wireframes/README.md) |
 | Móvil · Mockups | 20 pantallas; claro y oscuro juntos (40 PNG) | [README de mockups](prototipos/movil/mockups/README.md) |
 | Matriz móvil | Correspondencia y condiciones de las veinte pantallas | [Índice y matriz móvil](prototipos/movil/README.md#matriz-por-áreas-funcionales) |
 | Galería pública | Publicación desde `gh-pages` | [Abrir galería](https://angeljesus13.github.io/Quantify-Core/docs/GUI/) |
-| Archivo editable | — | [Figma](https://www.figma.com/design/iLvbL5uaWxAPwuX58xN4yq/Quantify-Core-%C2%B7-Sistema-visual-y-prototipos--QUANCORE-26-?node-id=0-1&t=vNJ6E9RRwxvSXkNs-1) |
-| Implementación en producto | Pendiente | Ver [Verificación y límites](#verificación-y-límites) |
+| Archivo editable propio | Diez lienzos: seis de guía, sketches, wireframes, mockups y recursos en Figma | [Figma · Proyecto Integrador](https://www.figma.com/design/L6ePtwcmyBeiC2xI1iDGM3?node-id=2-59) |
+| Implementación en producto | Pendiente | Ver [Validación técnica y consideraciones de alcance](#validación-técnica-y-consideraciones-de-alcance) |
 
-## Revisión y mantenimiento
+## Estructura de la Guía de Estilos
 
-La [identidad](identidad/README.md) reúne las láminas, justificaciones, fuentes y estado pendiente de Figma. El [índice móvil](prototipos/movil/README.md) reúne correspondencias, condiciones y regeneración; las imágenes se revisan en los tres README de etapa. La [galería local](index.html) permite ampliar y descargar imágenes; puede abrirse sirviendo la raíz del repositorio con `python -m http.server 8765` y visitando `http://localhost:8765/docs/GUI/`.
+La **Guía de Estilos** estandariza el lenguaje visual de la plataforma y está compuesta por seis marcos de trabajo (*frames*) principales, organizados en lienzos independientes dentro del archivo oficial de Figma y accesibles mediante el visor web local:
 
-Pages publica desde la raíz de `gh-pages`. La galería y sus recursos se sincronizan desde la hotfix autorizada y se comprueban en la URL pública; publicar la documentación no integra la hotfix en `main` ni cambia el estado del producto.
+1. **01 · Identidad Gráfica:**
+   - Construcción geométrica del isotipo e imagotipo oficial «Q» sobre una retícula de 100 × 100 px.
+   - Cuatro aplicaciones normativas: principal a color, monocromática, sobre fondo oscuro y sobre fondo claro.
+   - Definición de áreas de reserva (1/4 de la altura del símbolo), tamaños mínimos recomendados (24 × 24 px para isotipo, 240 × 72 px para imagotipo) y restricciones de uso (prohibición de distorsiones, sombras o rotaciones no aprobadas).
 
-## Carpetas
+2. **02 · Paleta de Colores:**
+   - 13 colores canónicos clasificados en roles de interfaz: primarios, secundarios, neutros de superficie y estados funcionales.
+   - Valores técnicos exactos en formatos HEX y sRGB.
+   - Verificación de contraste accesible (WCAG) sobre temas claro y oscuro, garantizando legibilidad en textos y componentes.
 
-- `identidad/`: README único y sus cuatro láminas en `identidad/imagenes/`.
-- `prototipos/`: diseños y README de cada etapa móvil; referencias de escritorio.
-- `assets/`: estilos, visor, fuente Inter, licencia y fotografía compartidos por la galería.
-- `fuente/`: contenido y generadores; sus pruebas están en `fuente/tests/`.
+3. **03 · Tipografía:**
+   - Familia tipográfica institucional: **Inter** (licencia SIL Open Font License).
+   - Escala jerárquica de 8 estilos tipográficos (`qc/type/display`, `title`, `subtitle`, `heading`, `body`, `label`, `button`, `caption`).
+   - Especificaciones de peso tipográfico (Regular 400, Medium 500, SemiBold 600, Bold 700), tamaño en píxeles e interlineado (*line-height*).
+   - Muestra completa de caracteres alfanuméricos, acentos del idioma español y caracteres especiales.
 
-## Verificación y límites
+4. **04 · Iconografía de Navegación:**
+   - 12 iconos base para los flujos de navegación principales (Inicio, Hábitos, Análisis, Recordatorios, Dispositivos, Perfil, etc.).
+   - Diseñados sobre una retícula canónica de 24 × 24 px con un trazo constante de 1.8 px y terminaciones redondeadas.
+   - Área táctil accesible mínima de 48 × 48 px para interacción en dispositivos táctiles.
 
-La revisión valida generación de los cuatro lienzos, Inter, límites de texto, galería y enlaces. Los PNG y el visor documentan el diseño; no autentican, guardan hábitos ni conectan hardware.
+5. **05 · Iconografía de Acciones y Estados:**
+   - 12 iconos de acción funcional (agregar, editar, eliminar, guardar, descargar, compartir, etc.).
+   - 5 indicadores visuales de estado del sistema (éxito, advertencia, error, información y estado neutro/pendiente).
+   - Iconografía de contexto para categorías de hábitos.
 
-No se declara conformidad WCAG global. La galería utiliza controles HTML con nombre y foco visible; los PNG no son controles accesibles de aplicación. La implementación deberá probar lector de pantalla, teclado, zoom, reflujo y tamaños táctiles de cada componente. No se comprobaron clientes nativos, autenticación, API o hardware real mediante estas imágenes.
+6. **06 · Aplicación de Estilos:**
+   - Demostración de integración visual sobre la pantalla representativa **Hoy** (seguimiento y registro de hábitos diarios).
+   - Diseñada en variantes completas de tema claro y tema oscuro, implementando la combinación real de tokens de color, componentes tipográficos e iconografía.
+
+## Entornos de visualización y consulta
+
+Para revisar y validar estos entregables visuales se disponen las siguientes opciones:
+
+- **Archivo editable en Figma:**
+  El diseño se gestiona en el [archivo oficial de Figma (Proyecto Integrador)](https://www.figma.com/design/L6ePtwcmyBeiC2xI1iDGM3?node-id=2-59). Contiene los lienzos independientes de los seis frames de la guía, junto con las páginas de componentes y prototipos.
+- **Visor interactivo de la Guía de Estilos:**
+  Permite consultar los seis frames exportados en alta resolución directamente en el navegador abriendo [identidad/guia/index.html](identidad/guia/index.html).
+- **Galería pública en línea:**
+  Disponible en [GitHub Pages](https://angeljesus13.github.io/Quantify-Core/docs/GUI/) para una visualización accesible sin necesidad de instalar herramientas locales.
+- **Servidor local de desarrollo:**
+  Para ejecutar la galería completa en un entorno local y acceder a los recursos en alta resolución, inicie un servidor web desde la raíz del repositorio:
+  ```powershell
+  python -m http.server 8765
+  ```
+  Luego abra en el navegador la dirección: `http://localhost:8765/docs/GUI/`.
+
+## Prototipos móviles complementarios
+
+Además de la Guía de Estilos, el módulo de diseño incluye la progresión de las 20 pantallas de la aplicación móvil de Quantify Core, documentadas en tres niveles de fidelidad:
+- **[Sketches](prototipos/movil/sketches/README.md):** 20 bocetos iniciales a mano alzada para definir la estructura de contenido de cada pantalla.
+- **[Wireframes](prototipos/movil/wireframes/README.md):** 20 esquemas estructurales en escala de grises con tipografía neutra y jerarquía funcional.
+- **[Mockups](prototipos/movil/mockups/README.md):** 20 pantallas finales de alta fidelidad, diseñadas en versión de tema claro y tema oscuro (40 vistas en total).
+- Para consultar la matriz completa de correspondencia entre pantallas y requerimientos funcionales, consulte el [Índice de Prototipos Móviles](prototipos/movil/README.md).
+
+## Organización de directorios
+
+- `identidad/`: Contiene la documentación del sistema de diseño, la **Guía de Estilos** completa (`identidad/guia/`) con sus seis frames y visor web, así como los antecedentes de identidad de marca.
+- `prototipos/`: Contiene las tres etapas de diseño de las interfaces móviles (`sketches/`, `wireframes/`, `mockups/`) y sus especificaciones de flujo.
+- `assets/`: Archivos compartidos por la galería y los visores, incluyendo fuentes tipográficas (`Inter.woff2`), hojas de estilo CSS y librerías de visualización con zoom.
+- `fuente/`: Scripts de automatización en Python y Node.js para la construcción de modelos, sincronización con Figma y pruebas unitarias de validación visual (`fuente/tests/`).
+
+## Validación técnica y consideraciones de alcance
+
+- **Pruebas automatizadas de diseño:**
+  Los componentes y modelos de estilo se verifican mediante pruebas unitarias que evalúan el uso correcto de la tipografía Inter, los límites de contenedores de texto, las variables de tokens cromáticos y el contraste visual. Para ejecutar la suite de pruebas:
+  ```powershell
+  python -m unittest discover -s docs/GUI/fuente/tests -v
+  ```
+- **Alcance del módulo visual:**
+  Este directorio define exclusivamente las especificaciones de diseño gráfico y experiencia de usuario (UI/UX). Las vistas previas en HTML y las láminas en PNG son recursos de referencia estáticos; la lógica transaccional, persistencia de hábitos y conexión con servicios de backend se implementan en las capas de frontend y API del proyecto.
+- **Pautas para la implementación en frontend:**
+  Durante el desarrollo en clientes web (React) y móviles (Flutter), se deben respetar los tokens definidos en [`packages/design-tokens/`](../../packages/design-tokens/) e implementar las prácticas de accesibilidad WCAG correspondientes (etiquetas semánticas, navegación accesible por teclado y soporte para lectores de pantalla).

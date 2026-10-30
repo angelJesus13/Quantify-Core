@@ -1,0 +1,508 @@
+{
+  "fileKey": "L6ePtwcmyBeiC2xI1iDGM3",
+  "url": "https://www.figma.com/design/L6ePtwcmyBeiC2xI1iDGM3?node-id=2-59",
+  "date": "2026-10-30",
+  "teamPlan": "Education",
+  "pages": [
+    { "id": "0:1", "name": "01 · Guía de Estilos · Identidad Gráfica" },
+    { "id": "10:256", "name": "02 · Guía de Estilos · Paleta de Colores" },
+    { "id": "11:256", "name": "03 · Guía de Estilos · Tipografía" },
+    { "id": "11:257", "name": "04 · Guía de Estilos · Iconografía de Navegación" },
+    { "id": "11:258", "name": "05 · Guía de Estilos · Acciones y Estados" },
+    { "id": "11:259", "name": "06 · Guía de Estilos · Aplicación de Estilos" },
+    { "id": "5:256", "name": "07 · Sketches" },
+    { "id": "5:257", "name": "08 · Wireframes" },
+    { "id": "5:258", "name": "09 · Mockups" },
+    { "id": "11:260", "name": "10 · Recursos y componentes" }
+  ],
+  "guide": {
+    "sectionId": "2:59",
+    "frames": [
+      {
+        "id": "2:157",
+        "pageId": "0:1",
+        "name": "01. Identidad Gráfica"
+      },
+      {
+        "id": "2:236",
+        "pageId": "10:256",
+        "name": "02. Paleta de Colores"
+      },
+      {
+        "id": "2:334",
+        "pageId": "11:256",
+        "name": "03. Tipografía"
+      },
+      {
+        "id": "2:368",
+        "pageId": "11:257",
+        "name": "04. Iconografía de Navegación"
+      },
+      {
+        "id": "2:572",
+        "pageId": "11:258",
+        "name": "05. Iconografía de Acciones y Estados"
+      },
+      {
+        "id": "2:814",
+        "pageId": "11:259",
+        "name": "06. Aplicación de Estilos"
+      }
+    ],
+    "textStyles": [
+      {
+        "id": "S:e5517dfe4bc19b52786c45e7a0b221b1e5b51a11,",
+        "name": "qc/type/display"
+      },
+      {
+        "id": "S:64ccda241166fd50c0a4ca0dd46703371aa47460,",
+        "name": "qc/type/title"
+      },
+      {
+        "id": "S:4fd57e3682a6549bbb8ad0fbcaa9c4772296087f,",
+        "name": "qc/type/subtitle"
+      },
+      {
+        "id": "S:691955302f34ee39962274ce86bb59cab350a548,",
+        "name": "qc/type/heading"
+      },
+      {
+        "id": "S:aaf1da835f3ae63dad3c281106e11fdd49580ae5,",
+        "name": "qc/type/body"
+      },
+      {
+        "id": "S:8be40d9d34aa51cc75c2f3b785dba4aeb1c3e987,",
+        "name": "qc/type/label"
+      },
+      {
+        "id": "S:588991421f5093695cee3eeabf086ebd1ce4c21c,",
+        "name": "qc/type/button"
+      },
+      {
+        "id": "S:33d4fb40f93433e4282a6cc471838e3ae4faf678,",
+        "name": "qc/type/caption"
+      }
+    ],
+    "componentCount": 48,
+    "variableCount": 46,
+    "texts": 230,
+    "instances": 110,
+    "fullInterfaceImages": 0,
+    "overflow": 0,
+    "font": "Inter",
+    "composition": "figma-composicion.png"
+  },
+  "prototypes": {
+    "frames": [
+      {
+        "id": "5:260",
+        "key": "bienvenida",
+        "stage": "sketch/light"
+      },
+      {
+        "id": "5:307",
+        "key": "acceso",
+        "stage": "sketch/light"
+      },
+      {
+        "id": "5:352",
+        "key": "hoy",
+        "stage": "sketch/light"
+      },
+      {
+        "id": "5:405",
+        "key": "habitos",
+        "stage": "sketch/light"
+      },
+      {
+        "id": "5:465",
+        "key": "habito",
+        "stage": "sketch/light"
+      },
+      {
+        "id": "5:539",
+        "key": "detalle",
+        "stage": "sketch/light"
+      },
+      {
+        "id": "5:592",
+        "key": "editar",
+        "stage": "sketch/light"
+      },
+      {
+        "id": "5:659",
+        "key": "registro",
+        "stage": "sketch/light"
+      },
+      {
+        "id": "5:710",
+        "key": "historial",
+        "stage": "sketch/light"
+      },
+      {
+        "id": "5:764",
+        "key": "recordatorio",
+        "stage": "sketch/light"
+      },
+      {
+        "id": "5:831",
+        "key": "avisos",
+        "stage": "sketch/light"
+      },
+      {
+        "id": "5:877",
+        "key": "analisis",
+        "stage": "sketch/light"
+      },
+      {
+        "id": "5:938",
+        "key": "periodo",
+        "stage": "sketch/light"
+      },
+      {
+        "id": "5:996",
+        "key": "sugerencias",
+        "stage": "sketch/light"
+      },
+      {
+        "id": "5:1041",
+        "key": "personalizar",
+        "stage": "sketch/light"
+      },
+      {
+        "id": "5:1109",
+        "key": "ajustes",
+        "stage": "sketch/light"
+      },
+      {
+        "id": "5:1165",
+        "key": "consentimiento",
+        "stage": "sketch/light"
+      },
+      {
+        "id": "5:1216",
+        "key": "dispositivos",
+        "stage": "sketch/light"
+      },
+      {
+        "id": "5:1262",
+        "key": "vincular",
+        "stage": "sketch/light"
+      },
+      {
+        "id": "5:1314",
+        "key": "datos",
+        "stage": "sketch/light"
+      },
+      {
+        "id": "5:1363",
+        "key": "bienvenida",
+        "stage": "wireframe/light"
+      },
+      {
+        "id": "5:1410",
+        "key": "acceso",
+        "stage": "wireframe/light"
+      },
+      {
+        "id": "5:1455",
+        "key": "hoy",
+        "stage": "wireframe/light"
+      },
+      {
+        "id": "5:1509",
+        "key": "habitos",
+        "stage": "wireframe/light"
+      },
+      {
+        "id": "5:1568",
+        "key": "habito",
+        "stage": "wireframe/light"
+      },
+      {
+        "id": "5:1634",
+        "key": "detalle",
+        "stage": "wireframe/light"
+      },
+      {
+        "id": "5:1687",
+        "key": "editar",
+        "stage": "wireframe/light"
+      },
+      {
+        "id": "5:1749",
+        "key": "registro",
+        "stage": "wireframe/light"
+      },
+      {
+        "id": "5:1797",
+        "key": "historial",
+        "stage": "wireframe/light"
+      },
+      {
+        "id": "5:1846",
+        "key": "recordatorio",
+        "stage": "wireframe/light"
+      },
+      {
+        "id": "5:1909",
+        "key": "avisos",
+        "stage": "wireframe/light"
+      },
+      {
+        "id": "5:1959",
+        "key": "analisis",
+        "stage": "wireframe/light"
+      },
+      {
+        "id": "5:2019",
+        "key": "periodo",
+        "stage": "wireframe/light"
+      },
+      {
+        "id": "5:2069",
+        "key": "sugerencias",
+        "stage": "wireframe/light"
+      },
+      {
+        "id": "5:2115",
+        "key": "personalizar",
+        "stage": "wireframe/light"
+      },
+      {
+        "id": "5:2179",
+        "key": "ajustes",
+        "stage": "wireframe/light"
+      },
+      {
+        "id": "5:2231",
+        "key": "consentimiento",
+        "stage": "wireframe/light"
+      },
+      {
+        "id": "5:2283",
+        "key": "dispositivos",
+        "stage": "wireframe/light"
+      },
+      {
+        "id": "5:2331",
+        "key": "vincular",
+        "stage": "wireframe/light"
+      },
+      {
+        "id": "5:2384",
+        "key": "datos",
+        "stage": "wireframe/light"
+      },
+      {
+        "id": "5:2436",
+        "key": "bienvenida",
+        "stage": "mockup/light"
+      },
+      {
+        "id": "5:2484",
+        "key": "acceso",
+        "stage": "mockup/light"
+      },
+      {
+        "id": "5:2530",
+        "key": "hoy",
+        "stage": "mockup/light"
+      },
+      {
+        "id": "5:2583",
+        "key": "habitos",
+        "stage": "mockup/light"
+      },
+      {
+        "id": "5:2641",
+        "key": "habito",
+        "stage": "mockup/light"
+      },
+      {
+        "id": "5:2709",
+        "key": "detalle",
+        "stage": "mockup/light"
+      },
+      {
+        "id": "5:2763",
+        "key": "editar",
+        "stage": "mockup/light"
+      },
+      {
+        "id": "5:2827",
+        "key": "registro",
+        "stage": "mockup/light"
+      },
+      {
+        "id": "5:2876",
+        "key": "historial",
+        "stage": "mockup/light"
+      },
+      {
+        "id": "5:2927",
+        "key": "recordatorio",
+        "stage": "mockup/light"
+      },
+      {
+        "id": "5:2992",
+        "key": "avisos",
+        "stage": "mockup/light"
+      },
+      {
+        "id": "5:3042",
+        "key": "analisis",
+        "stage": "mockup/light"
+      },
+      {
+        "id": "5:3104",
+        "key": "periodo",
+        "stage": "mockup/light"
+      },
+      {
+        "id": "5:3156",
+        "key": "sugerencias",
+        "stage": "mockup/light"
+      },
+      {
+        "id": "5:3203",
+        "key": "personalizar",
+        "stage": "mockup/light"
+      },
+      {
+        "id": "5:3268",
+        "key": "ajustes",
+        "stage": "mockup/light"
+      },
+      {
+        "id": "5:3322",
+        "key": "consentimiento",
+        "stage": "mockup/light"
+      },
+      {
+        "id": "5:3376",
+        "key": "dispositivos",
+        "stage": "mockup/light"
+      },
+      {
+        "id": "5:3424",
+        "key": "vincular",
+        "stage": "mockup/light"
+      },
+      {
+        "id": "5:3478",
+        "key": "datos",
+        "stage": "mockup/light"
+      },
+      {
+        "id": "5:3531",
+        "key": "bienvenida",
+        "stage": "mockup/dark"
+      },
+      {
+        "id": "5:3577",
+        "key": "acceso",
+        "stage": "mockup/dark"
+      },
+      {
+        "id": "5:3621",
+        "key": "hoy",
+        "stage": "mockup/dark"
+      },
+      {
+        "id": "5:3672",
+        "key": "habitos",
+        "stage": "mockup/dark"
+      },
+      {
+        "id": "5:3728",
+        "key": "habito",
+        "stage": "mockup/dark"
+      },
+      {
+        "id": "5:3794",
+        "key": "detalle",
+        "stage": "mockup/dark"
+      },
+      {
+        "id": "5:3846",
+        "key": "editar",
+        "stage": "mockup/dark"
+      },
+      {
+        "id": "5:3908",
+        "key": "registro",
+        "stage": "mockup/dark"
+      },
+      {
+        "id": "5:3955",
+        "key": "historial",
+        "stage": "mockup/dark"
+      },
+      {
+        "id": "5:4004",
+        "key": "recordatorio",
+        "stage": "mockup/dark"
+      },
+      {
+        "id": "5:4067",
+        "key": "avisos",
+        "stage": "mockup/dark"
+      },
+      {
+        "id": "5:4115",
+        "key": "analisis",
+        "stage": "mockup/dark"
+      },
+      {
+        "id": "5:4175",
+        "key": "periodo",
+        "stage": "mockup/dark"
+      },
+      {
+        "id": "5:4225",
+        "key": "sugerencias",
+        "stage": "mockup/dark"
+      },
+      {
+        "id": "5:4270",
+        "key": "personalizar",
+        "stage": "mockup/dark"
+      },
+      {
+        "id": "5:4333",
+        "key": "ajustes",
+        "stage": "mockup/dark"
+      },
+      {
+        "id": "5:4385",
+        "key": "consentimiento",
+        "stage": "mockup/dark"
+      },
+      {
+        "id": "5:4437",
+        "key": "dispositivos",
+        "stage": "mockup/dark"
+      },
+      {
+        "id": "5:4483",
+        "key": "vincular",
+        "stage": "mockup/dark"
+      },
+      {
+        "id": "5:4535",
+        "key": "datos",
+        "stage": "mockup/dark"
+      }
+    ],
+    "sketches": 20,
+    "wireframes": 20,
+    "mockups": 40,
+    "links": 369,
+    "overflow": 0,
+    "contentImageNodes": 82,
+    "wireframeFont": "Arimo",
+    "mockupFont": "Inter"
+  },
+  "publicAccess": "owner-screenshot-anyone-can-view; anonymous-access-not-independently-tested"
+}
