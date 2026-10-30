@@ -13,7 +13,7 @@ const scenes = JSON.parse(fs.readFileSync(path.join(root,'.build/escenas.json'),
   const font=fs.readFileSync(path.join(root,'assets/inter.woff2')).toString('base64');
   const failures=[];
   for(const [filename,svg] of Object.entries(scenes)){
-   if(process.env.QC_IDENTITY_ONLY==='1'&&!filename.startsWith('imagenes/'))continue;
+   if(process.env.QC_IDENTITY_ONLY==='1'&&!filename.startsWith('identidad/imagenes/'))continue;
    if(process.env.QC_MOBILE_ONLY==='1'&&!filename.startsWith('prototipos/movil/'))continue;
    const width=Number(svg.match(/width="(\d+)"/)[1]),height=Number(svg.match(/height="(\d+)"/)[1]);
    const html=`<!doctype html><meta charset="utf-8"><style>@font-face{font-family:Inter;src:url(data:font/woff2;base64,${font});font-weight:100 900}*{box-sizing:border-box}body{margin:0}svg{display:block}svg[data-fidelity="sketch"],svg[data-fidelity="wireframe"]{filter:grayscale(1)}</style>${svg}`;

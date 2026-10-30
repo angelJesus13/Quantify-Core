@@ -12,7 +12,7 @@ import unittest
 import xml.etree.ElementTree as ET
 
 sys.dont_write_bytecode=True
-GUI=Path(__file__).resolve().parents[1]
+GUI=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(GUI/'fuente'))
 import generar as g
 import movil
