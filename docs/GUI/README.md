@@ -6,10 +6,7 @@
 
 | Elemento | Estado | Dónde revisarlo |
 |---|---|---|
-| Paleta de colores | Nombre, HEX, RGB, HSL, CMYK, psicología y justificación; claro y oscuro | [README de identidad · Paleta](identidad/README.md#paleta-de-colores) |
-| Tipografía | Inter; seis criterios justificados | [README de identidad · Tipografía](identidad/README.md#tipografía) |
-| Iconografía | 24 símbolos identificados, en claro y oscuro | [README de identidad · Iconografía](identidad/README.md#iconografía) |
-| Logotipo, firma empresarial y marcas de agua | Originales claros y derivados oscuros; usos diferenciados | [README de identidad · Marcas](identidad/README.md#marcas-oficiales) |
+| Identidad visual: paleta de colores, tipografía, iconografía, logotipo, firma empresarial y marcas de agua | Un solo README con las justificaciones y los cuatro lienzos; claro y oscuro | [README único de identidad visual](identidad/README.md) |
 | Móvil: sketches, wireframes, mockups y matriz | 20 pantallas correspondientes; 80 PNG | [README móvil · Matriz por áreas](prototipos/movil/README.md#matriz-por-áreas-funcionales) |
 | Galería pública | Publicación desde `gh-pages` | [Abrir galería](https://angeljesus13.github.io/Quantify-Core/docs/GUI/) |
 | Archivo editable | — | [Figma](https://www.figma.com/design/iLvbL5uaWxAPwuX58xN4yq/Quantify-Core-%C2%B7-Sistema-visual-y-prototipos--QUANCORE-26-?node-id=0-1&t=vNJ6E9RRwxvSXkNs-1) |
