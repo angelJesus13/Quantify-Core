@@ -1,6 +1,6 @@
 {
   "status": "identidad-visual-definida-para-gui",
-  "version": "0.2.0",
+  "version": "0.3.1",
   "font": "Inter",
   "colors": {
     "laserBlue": "#275BC0",
@@ -27,7 +27,11 @@
       "line": "softBorder",
       "action": "laserBlue",
       "onAction": "white",
-      "focus": "deepCobalt"
+      "focus": "deepCobalt",
+      "icon": "laserBlue",
+      "iconMuted": "steel",
+      "controlBorder": "steel",
+      "statusInk": "obsidian"
     },
     "dark": {
       "canvas": "obsidian",
@@ -37,7 +41,11 @@
       "line": "gray",
       "action": "laserBlue",
       "onAction": "white",
-      "focus": "skyLaser"
+      "focus": "skyLaser",
+      "icon": "skyLaser",
+      "iconMuted": "gray",
+      "controlBorder": "gray",
+      "statusInk": "obsidian"
     }
   },
   "space": [
@@ -60,5 +68,12 @@
     "title": 28,
     "display": 40
   },
-  "target": 48
+  "target": 48,
+  "branding": {
+    "dark": {
+      "blue": "skyLaser",
+      "neutral": "white",
+      "background": "transparent"
+    }
+  }
 }

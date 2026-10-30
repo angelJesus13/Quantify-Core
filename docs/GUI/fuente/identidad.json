@@ -1,0 +1,179 @@
+{
+  "colors": [
+    [
+      "laserBlue",
+      "Laser Blue",
+      "Confianza, continuidad y precisión.",
+      "Se usa como ancla reconocible del producto y para la acción principal: permite localizar qué hacer sin convertir toda la pantalla en un acento. Su profundidad sostiene texto blanco legible y da continuidad entre web, móvil y documentos. En oscuro conserva el valor de marca; los iconos aislados cambian a Sky Laser para distinguirse de la superficie."
+    ],
+    [
+      "skyLaser",
+      "Sky Laser",
+      "Apertura, energía y exploración.",
+      "Su mayor luminosidad hace visibles selección, foco e iconos activos sobre Midnight Navy. Mantiene parentesco con Laser Blue sin introducir otra marca para el tema oscuro. En claro no se usa con texto blanco pequeño ni como única señal sobre blanco; se reserva como acento y se combina con una etiqueta o contorno legible. También es el azul de las variantes oscuras de empresa y producto: ilumina sus trazos sin convertir el azul en su complementario ni modificar sus formas."
+    ],
+    [
+      "deepCobalt",
+      "Deep Cobalt",
+      "Solidez, concentración y estabilidad.",
+      "Es la variante profunda de la familia azul para foco y acciones presionadas sobre claro. Refuerza una interacción sin recurrir a negro ni cambiar de matiz, de modo que el estado sigue perteneciendo a la marca. Sobre oscuro pierde separación: el foco se muestra en Sky Laser y no se hereda este valor automáticamente."
+    ],
+    [
+      "obsidian",
+      "Obsidian Slate",
+      "Sobriedad y profundidad visual.",
+      "Estructura el fondo oscuro y el texto principal sobre claro, por lo que articula ambos temas sin añadir un negro ajeno a la paleta. También sirve de tinta en badges semánticos luminosos. Su función es separar niveles y priorizar contenido; no se usa como texto sobre Midnight Navy, donde se necesita Optical White."
+    ],
+    [
+      "midnight",
+      "Midnight Navy",
+      "Calma, continuidad y contención.",
+      "Eleva tarjetas y paneles respecto del fondo Obsidian sin recurrir a grandes áreas blancas en modo oscuro. La diferencia de luminancia organiza la profundidad, mientras texto blanco y secundarios Cool Gray mantienen la lectura. No se confía solo en esa diferencia para identificar un campo: los controles reciben un borde visible adicional."
+    ],
+    [
+      "steel",
+      "Steel Border",
+      "Orden, estructura y neutralidad.",
+      "Proporciona texto secundario e iconos neutros legibles sobre blanco y un contorno reconocible para controles claros. Su tono azulado mantiene coherencia con la marca sin competir con la acción principal. En modo oscuro se sustituye en esos roles por Cool Gray, porque el mismo tono profundo se perdería contra las superficies oscuras."
+    ],
+    [
+      "gray",
+      "Cool Gray",
+      "Discreción y equilibrio.",
+      "Se elige como segundo nivel de lectura en oscuro: diferencia metadatos de títulos sin volverlos invisibles sobre Midnight Navy. También delimita controles oscuros cuando el borde identifica la interacción. En claro se sustituye por Steel Border para texto e iconos informativos; su apariencia suave sobre blanco no aporta el contraste necesario."
+    ],
+    [
+      "mist",
+      "Pure Mist",
+      "Ligereza y espacio visual.",
+      "Ofrece un fondo claro ligeramente azulado que separa las tarjetas blancas sin rodearlas de bloques intensos. La cercanía con la familia de marca mantiene unidad y deja protagonismo a datos y acciones. Al activar oscuro, el rol fondo pasa a Obsidian; Pure Mist no se invierte ni se conserva como gran superficie luminosa."
+    ],
+    [
+      "white",
+      "Optical White",
+      "Claridad y amplitud.",
+      "Se emplea en superficies claras y como tinta principal sobre oscuro, además de texto sobre botones Laser Blue. Su rol cambia con el tema, pero el valor permanece estable. En los derivados oscuros de las marcas, las letras y trazos neutros pasan a Optical White sobre transparencia. Los originales claros permanecen intactos: ya no se coloca un rectángulo blanco detrás de la marca oscura."
+    ],
+    [
+      "emerald",
+      "Emerald",
+      "Progreso y confirmación.",
+      "Relaciona una acción completada con avance verificable, sin usar el verde para prometer bienestar o resultados clínicos. Se conserva en ambos temas como acento o fondo de badge con tinta Obsidian y una marca de verificación. No se pone como texto pequeño sobre blanco ni se confunde un registro pendiente con uno confirmado."
+    ],
+    [
+      "amber",
+      "Amber",
+      "Atención y cautela.",
+      "Distingue espera, pendiente o una decisión que necesita revisión sin comunicar un fallo definitivo. El mismo matiz en ambos temas evita reaprender el significado del estado. Se muestra en un badge con tinta Obsidian, reloj y etiqueta: un punto amarillo por sí solo no explica qué falta ni cuándo puede continuar la persona."
+    ],
+    [
+      "crimson",
+      "Crimson",
+      "Urgencia y recuperación.",
+      "Se reserva a error o interrupción para que lo excepcional conserve peso visual. Siempre se acompaña de una explicación y una vía de recuperación, evitando presentarlo como juicio sobre la persona o sus hábitos. En ambos temas puede funcionar como fondo de badge con tinta Obsidian; no como texto blanco pequeño o rojo aislado sobre blanco."
+    ],
+    [
+      "cyan",
+      "Electric Cyan",
+      "Exploración y precisión informativa.",
+      "Separa métricas y sugerencias del azul reservado a la acción principal. Así la persona distingue información de una invitación a actuar. Conserva su valor en claro y oscuro como acento o badge con tinta Obsidian y etiqueta descriptiva. El color no certifica inteligencia, exactitud de un modelo ni validez médica de una recomendación."
+    ]
+  ],
+  "typography": [
+    [
+      "Identidad de marca",
+      "Inter acompaña una identidad basada en evidencia, hábitos y claridad: su dibujo sobrio permite que el contenido tenga protagonismo y que la personalidad se apoye en el azul, la composición y el tono de voz. Se usa en la interfaz y documentación para reconocer el mismo producto. Los logos conservan su dibujo original; no se recompone su nombre con Inter."
+    ],
+    [
+      "Legibilidad",
+      "Las formas abiertas, la cobertura del español y una jerarquía consistente ayudan a distinguir etiquetas, cifras y párrafos en una interfaz de consulta frecuente. El cuerpo parte de 16 y la ayuda de 14; el contenido no se comprime para hacerlo caber. En oscuro cambia la tinta, no se adelgaza la fuente. Deben comprobarse zoom, lector, interlineado y reflujo en producto."
+    ],
+    [
+      "Estética moderna",
+      "La construcción sin ornamentos y los pesos graduados permiten una presentación actual centrada en datos, sin necesitar una familia decorativa para cada sección. El carácter moderno proviene de una jerarquía contenida, aire y alineaciones coherentes. Ambos temas conservan tamaños y pesos para que activar oscuro cambie la iluminación visual sin transformar la personalidad ni el orden de lectura."
+    ],
+    [
+      "Consistencia visual",
+      "Una sola familia en navegación, formularios, tablas, métricas y documentos evita diferencias accidentales entre plataformas. La escala 40/28/20/16/14 y los pesos 400/500/600/700 asignan funciones repetibles, no elecciones arbitrarias por pantalla. Claro y oscuro mantienen esa estructura; únicamente cambian las tintas y superficies asociadas a sus roles. Cada cliente deberá usar los mismos nombres y criterios."
+    ],
+    [
+      "Flexibilidad tipográfica",
+      "Los pesos variables permiten pasar de párrafos tranquilos a títulos y etiquetas firmes sin mezclar tipografías. Los números de métricas pueden usar cifras tabulares al alinear columnas; los encabezados no requieren ese tratamiento. Se elige peso por función y no por tema. Si una cadena crece, el contenedor debe reacomodarse antes de reducir tamaño o eliminar contenido."
+    ],
+    [
+      "Compatibilidad tecnológica",
+      "El archivo WOFF2 local mantiene la familia disponible en la galería sin consultar servicios de fuentes al abrirla. Los PNG fijan su aspecto para revisión, mientras Figma conserva texto editable. React deberá cargar ese recurso y Flutter empaquetar una versión TTF/OTF compatible; ese cliente aún requiere validación propia. Deben conservarse licencia, cobertura, fallback y pruebas en dispositivos reales."
+    ]
+  ],
+  "themes": [
+    [
+      "Fondo del lienzo",
+      "mist",
+      "obsidian",
+      "Cambia para ajustar la superficie general; conserva la jerarquía."
+    ],
+    [
+      "Tarjeta",
+      "white",
+      "midnight",
+      "Cambia para elevar contenido sin deslumbrar en oscuro."
+    ],
+    [
+      "Texto principal",
+      "obsidian",
+      "white",
+      "Cambia la tinta para mantener legibilidad."
+    ],
+    [
+      "Texto / icono secundario",
+      "steel",
+      "gray",
+      "Cambia la luminosidad; conserva su menor jerarquía."
+    ],
+    [
+      "Icono activo / navegación",
+      "laserBlue",
+      "skyLaser",
+      "Cambia de azul por separación contra la superficie."
+    ],
+    [
+      "Foco visible",
+      "deepCobalt",
+      "skyLaser",
+      "Cambia para distinguir el control con teclado."
+    ],
+    [
+      "Acción principal",
+      "laserBlue",
+      "laserBlue",
+      "No cambia: mantiene reconocimiento y texto blanco."
+    ],
+    [
+      "Confirmación",
+      "emerald",
+      "emerald",
+      "Conserva su matiz; badge con tinta Obsidian, forma y etiqueta."
+    ],
+    [
+      "Pendiente",
+      "amber",
+      "amber",
+      "Conserva su matiz; badge con tinta Obsidian, forma y etiqueta."
+    ],
+    [
+      "Error",
+      "crimson",
+      "crimson",
+      "Conserva su matiz; badge con tinta Obsidian, forma y etiqueta."
+    ],
+    [
+      "Métrica / sugerencia",
+      "cyan",
+      "cyan",
+      "Conserva su matiz; badge con tinta Obsidian, forma y etiqueta."
+    ]
+  ],
+  "iconRules": "El mismo trazo y significado se conservan al cambiar de tema. Navegación activa: Laser Blue sobre blanco y Sky Laser sobre Midnight. Iconos neutros: Steel en claro y Cool Gray en oscuro. Estados: badge Emerald, Amber, Crimson o Cyan con tinta Obsidian, forma y etiqueta. No usar el color como única información.",
+  "logoRules": "Nexus Core identifica a la empresa; Quantify Core al producto. Los originales claros permanecen intactos. Los derivados oscuros usan fondo transparente, Sky Laser en los trazos azules y Optical White en letras y segmentos neutros. Se mantienen exactamente dimensiones, coordenadas, dibujo, nombres, proporciones, composición y eslóganes. No se redibuja ni se recompone tipografía; solo se adapta color y fondo. Reservar al menos 1/4 de la altura visible alrededor de cada firma.",
+  "watermarkRules": "La Q editorial se reserva a documentación y permanece independiente de empresa y producto. Variante clara: gris sobre fondo claro; variante oscura: blanco sobre Obsidian, ambas al 12 %. Colocarla en portada o pie libre, sin tapar texto, métricas, logos ni controles. No representa un botón de búsqueda ni una nueva marca."
+}

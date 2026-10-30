@@ -32,3 +32,16 @@ Las capturas deben identificar sketch/producto, rol, pantalla, ambiente y commit
 Preferir Mermaid para diagramas mantenidos con la documentación; conserva texto editable y se visualiza directamente en GitHub. Si se exporta una imagen, conservar también su fuente y fecha de actualización. La [Práctica 07](../../docs/practica-07/README.md) mantiene sus propios recursos académicos y evidencia.
 
 La paleta de producto y los contrastes están en [tokens de diseño](../../packages/design-tokens/README.md); las normas de interfaz, en el [sistema de diseño](../../docs/diseno/sistema-diseno.md).
+
+## Derivados oscuros autorizados · 29/10/2026
+
+| Original claro, conservado | Variante oscura transparente |
+|---|---|
+| [enterpriseLogo.jpeg](enterpriseLogo.jpeg) | [brand/enterprise-dark.png](brand/enterprise-dark.png) |
+| [productLogo.jpeg](productLogo.jpeg) | [brand/product-dark.png](brand/product-dark.png) |
+
+Autorización expresa del propietario: adaptar únicamente colores/fondo, conservando exactamente formas, símbolos, composición y textos. Se reutilizan Sky Laser y Optical White de la paleta; no se crea un azul nuevo ni se aplica una inversión complementaria. Los originales JPEG no se sobrescriben. Los archivos tienen la misma resolución y coordenadas; su cobertura alfa deriva del mismo raster, sin redibujar, recortar o remuestrear. Se reemplaza la antigua aplicación de placa blanca en oscuro.
+
+[Manifiesto con hashes y método](brand/variants.json) · [Fuente reproducible](../../docs/GUI/fuente/marcas.py) · [Reglas y estado Figma](../../docs/GUI/identidad/README.md#variantes-claras-y-oscuras). El selector [brand/theme.js](brand/theme.js) solo cambia el recurso del logo al cambiar el tema de una página; no altera el resto de su interfaz.
+
+La referencia antigua de Práctica 05 usa [product-legacy-dark.png](brand/product-legacy-dark.png), derivado de la misma marca en [su recorte cuadrado histórico](../../docs/quantifyLogo.jpeg), conservando sus 640 × 640 y su encuadre. No es otro logotipo.
