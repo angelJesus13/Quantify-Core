@@ -1,6 +1,6 @@
 # Identidad visual de Quantify Core
 
-Cuatro lienzos reúnen la paleta, la tipografía, la iconografía y las marcas oficiales con sus marcas de agua. Se documentan claro y oscuro sin cambiar la identidad canónica.
+Este único README reúne **paleta de colores, tipografía, iconografía, logotipo del producto, firma empresarial y marcas de agua**, con sus justificaciones y cuatro lienzos. Se documentan claro y oscuro sin cambiar la identidad canónica. Cada tema es un apartado de este mismo documento.
 
 [Índice GUI](../README.md) · [Galería](../index.html#identidad) · [Móvil](../prototipos/movil/README.md)
 
