@@ -11,7 +11,7 @@ Este README reúne **identidad, paleta, tipografía, iconografía y aplicación 
 - [Marcas de agua](#marcas-de-agua)
 - [Estado de Figma](#estado-del-archivo-figma)
 
-## Tarea 03 · Guía de Estilos
+## Guía de Estilos
 
 [Abrir los seis frames en HTML](guia/index.html) · [Modelo semántico compartido](guia/modelo.json) · [Índice GUI y enlace de Figma](../README.md).
 
