@@ -6,14 +6,14 @@
 
 | Elemento | Estado | Dónde revisarlo |
 |---|---|---|
-| Tarea 03 · Guía de Estilos | Seis frames editables sincronizados y revisados en el archivo propio Education | [Requisitos y evidencia](identidad/README.md#tarea-03--guía-de-estilos) · [Vista de los seis frames](identidad/guia/index.html) |
+| Tarea 03 · Guía de Estilos | Seis frames editables, cada uno en su propio lienzo del archivo Education | [Requisitos y evidencia](identidad/README.md#tarea-03--guía-de-estilos) · [Vista de los seis frames](identidad/guia/index.html) |
 | Identidad visual anterior | Cuatro lienzos de referencia conservados; claro y oscuro | [README único de identidad visual](identidad/README.md) |
 | Móvil · Sketches | 20 bocetos correspondientes | [README de sketches](prototipos/movil/sketches/README.md) |
 | Móvil · Wireframes | 20 estructuras correspondientes | [README de wireframes](prototipos/movil/wireframes/README.md) |
 | Móvil · Mockups | 20 pantallas; claro y oscuro juntos (40 PNG) | [README de mockups](prototipos/movil/mockups/README.md) |
 | Matriz móvil | Correspondencia y condiciones de las veinte pantallas | [Índice y matriz móvil](prototipos/movil/README.md#matriz-por-áreas-funcionales) |
 | Galería pública | Publicación desde `gh-pages` | [Abrir galería](https://angeljesus13.github.io/Quantify-Core/docs/GUI/) |
-| Archivo editable propio | Guía, 20 sketches, 20 wireframes y 40 mockups; acceso público del nuevo enlace pendiente de comprobar | [Figma · Proyecto Integrador](https://www.figma.com/design/L6ePtwcmyBeiC2xI1iDGM3?node-id=2-59) |
+| Archivo editable propio | Diez lienzos: seis de guía, sketches, wireframes, mockups y recursos; el propietario mostró «Cualquier persona · Ver» en Figma | [Figma · Proyecto Integrador](https://www.figma.com/design/L6ePtwcmyBeiC2xI1iDGM3?node-id=2-59) |
 | Implementación en producto | Pendiente | Ver [Verificación y límites](#verificación-y-límites) |
 
 ## Revisión y mantenimiento

@@ -3,31 +3,49 @@
   "url": "https://www.figma.com/design/L6ePtwcmyBeiC2xI1iDGM3?node-id=2-59",
   "date": "2026-10-30",
   "teamPlan": "Education",
+  "pages": [
+    { "id": "0:1", "name": "01 · Guía de Estilos · Identidad Gráfica" },
+    { "id": "10:256", "name": "02 · Guía de Estilos · Paleta de Colores" },
+    { "id": "11:256", "name": "03 · Guía de Estilos · Tipografía" },
+    { "id": "11:257", "name": "04 · Guía de Estilos · Iconografía de Navegación" },
+    { "id": "11:258", "name": "05 · Guía de Estilos · Acciones y Estados" },
+    { "id": "11:259", "name": "06 · Guía de Estilos · Aplicación de Estilos" },
+    { "id": "5:256", "name": "07 · Sketches" },
+    { "id": "5:257", "name": "08 · Wireframes" },
+    { "id": "5:258", "name": "09 · Mockups" },
+    { "id": "11:260", "name": "10 · Recursos y componentes" }
+  ],
   "guide": {
     "sectionId": "2:59",
     "frames": [
       {
         "id": "2:157",
+        "pageId": "0:1",
         "name": "01. Identidad Gráfica"
       },
       {
         "id": "2:236",
+        "pageId": "10:256",
         "name": "02. Paleta de Colores"
       },
       {
         "id": "2:334",
+        "pageId": "11:256",
         "name": "03. Tipografía"
       },
       {
         "id": "2:368",
+        "pageId": "11:257",
         "name": "04. Iconografía de Navegación"
       },
       {
         "id": "2:572",
+        "pageId": "11:258",
         "name": "05. Iconografía de Acciones y Estados"
       },
       {
         "id": "2:814",
+        "pageId": "11:259",
         "name": "06. Aplicación de Estilos"
       }
     ],
@@ -486,5 +504,5 @@
     "wireframeFont": "Arimo",
     "mockupFont": "Inter"
   },
-  "publicAccess": "pending-independent-verification"
+  "publicAccess": "owner-screenshot-anyone-can-view; anonymous-access-not-independently-tested"
 }
