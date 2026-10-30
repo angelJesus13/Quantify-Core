@@ -175,101 +175,63 @@ def render(spec, fidelity, theme, Canvas, colors, icons, logos, photo):
     return svg
 
 
+AUDIT_TEXT='## Acceso, registro de cuenta y recuperación\n\nAuditoría del catálogo y de los PNG existentes (29/10/2026):\n\n| Flujo | Qué existe en estas veinte pantallas |\n|---|---|\n| Bienvenida | **01 Bienvenida**: presenta el producto y conduce a Acceso. |\n| Login / acceso | **02 Acceso**: entrada al proveedor con «Continuar con Keycloak». No muestra campos de usuario o contraseña ni el formulario del proveedor. |\n| Registro de cuenta | **No hay una pantalla de creación de cuenta** en el catálogo móvil ni entre sus PNG. |\n| Forgot password / recuperación | **No hay una pantalla de recuperación de contraseña** en el catálogo móvil ni entre sus PNG. |\n| Registrar avance | **08 Registrar avance**: check-in de un hábito; no es registro de cuenta. |\n\nLa autenticación se delega a Keycloak. Faltan aquí las representaciones del formulario de login del proveedor, creación de cuenta y recuperación; la pantalla de acceso no acredita que esos flujos estén diseñados o implementados. Esta revisión documental conserva las veinte pantallas y no añade formularios nuevos.'
+
+SHARED_NOTES="## Condiciones por pantalla\n\n01. **Cada avance cuenta:** La bienvenida no solicita credenciales ni concede una sesión.\n02. **Accede a tu espacio:** No hay formulario local de contraseña, registro ni recuperación paralelos; se delegan al proveedor.\n03. **Tu rutina de hoy:** Ejemplo del 26/10/2026, America/Mexico_City. Separar día abierto y periodo cerrado.\n04. **Mis hábitos:** La búsqueda y el filtro son controles propuestos, sin consulta a cuentas reales.\n05. **Crear hábito:** Guardar requiere validación y confirmación del servidor; cancelar vuelve a Hoy sin crear.\n06. **Leer con calma:** No recalcular registros pasados con una nueva meta. Archivar conserva el historial y requiere confirmación.\n07. **Editar programación:** Una versión obsoleta requiere revisar el conflicto. Cancelar edición regresa a Detalle.\n08. **Registrar avance:** Enviar 15 dos veces no suma 30. Reintentar tras respuesta perdida conserva idempotencia; un conflicto requiere revisión.\n09. **Historial de lectura:** Los registros son ejemplos sintéticos; no se inventan señales biométricas.\n10. **Tu recordatorio:** No seleccionar días ajenos a la agenda. Comprobar permisos del canal y zona; no se promete entrega operativa.\n11. **Tus avisos:** Avisos de ejemplo; las preferencias, horario y permiso deben respetarse en producto.\n12. **Observa tu constancia:** 19–25/10/2026: 1,1,0,1,1,1,0; 5/7=71.4 %. Racha de ese periodo: 0 al cierre; RN-P17.\n13. **Elige un periodo:** Validar inicio≤fin y zona de negocio. No reinterpretar el historial al cambiar zona del perfil.\n14. **Ideas para tu rutina:** Abstenerse sin inventar IA ni umbrales. El diseño de personalización es una vista condicional separada.\n15. **Personaliza una idea:** Vista condicional de una idea de ejemplo, no resultado de un modelo. Guardar confirma aceptación; cancelar no la acepta.\n16. **Perfil y preferencias:** Cambiar zona no reclasifica fechas históricas. Los controles de tema son diseño, no un cliente implementado.\n17. **Tú decides qué compartir:** Revocar bloquea nuevos usos y trabajos. No inferir permiso de biometría por aceptar sugerencias.\n18. **Tus dispositivos:** No inventar telemetría ni mediciones. La vinculación requiere capacidades y consentimiento explícitos.\n19. **Vincula una fuente:** No fija OTP, QR, Bluetooth ni protocolo aún pendiente. Confirmación de diseño; no conecta hardware.\n20. **Tus datos personales:** Revisar alcance y política; la eliminación requiere confirmación específica posterior. Ninguna imagen ejecuta solicitudes.\n\n## Alcance y límites\n\nLas referencias RF y notas describen intención y restricciones, no capacidades implementadas. Los ejemplos son sintéticos: análisis del 19–25/10/2026 (5/7 = 71.4 %, racha al cierre 0) y día abierto 26/10, America/Mexico_City, RN-P17. Acceso delega credenciales a Keycloak; permisos, persistencia, errores, conflictos, accesibilidad y soporte offline requieren implementación y pruebas propias.\n\nLas seis referencias anteriores de escritorio permanecen fuera del conteo móvil. Solo sus dos mockups oscuros recibieron los derivados de color de los logos el 29/10/2026. No se añaden pantallas PWA ni funciones de producto. Los veinte mockups móviles oscuros cambiaron únicamente en la cabecera de marca; los demás píxeles, sketches, wireframes y mockups claros se conservaron.\n\n## Fuente, regeneración y verificación\n\nSe sigue la distinción de Carlos Salgado en [Mosaic/UOC, «Sketchs, mockups, wireframes y prototipos»](https://mosaic.uoc.edu/2015/09/15/proceso-de-desarrollo-de-un-proyecto-digital/). La solicitud precisa sketches sin anotaciones y veinte pantallas; no se copian los ejemplos del artículo.\n\nEl catálogo de [movil.py](../../fuente/movil.py) genera geometría, manifiesto, índice y los tres README de etapas; mantenerlo como fuente para conservar esta separación al regenerar. Los PNG no tienen copias SVG exportadas. La [identidad](../../identidad/README.md) define los recursos compartidos.\n\nDesde la raíz del repositorio, en el entorno de autoría Python/Pillow y Node/Playwright con Chrome:\n\n```powershell\npython docs/GUI/fuente/generar.py --mobile-only\n$env:QC_MOBILE_ONLY='1'\nnode docs/GUI/fuente/render.cjs\npython -m unittest discover -s docs/GUI/tests -p 'test_*.py' -v\n```\n\nNo definir `QC_IDENTITY_ONLY=1` en esa exportación. `QC_CHROME` permite configurar Chrome. El exportador comprueba Inter local y texto dentro del lienzo y de cada bloque.\n\nValidación del catálogo (28–29/10/2026): veinte conjuntos y ochenta archivos; correspondencia de bloques y destinos; sketches sin texto/imágenes/color, wireframes Arial y grises, mockups Inter y marcas en ambos temas. Se comprobaron el visor, los temas, la navegación por imágenes y su carga local. Esta evidencia de diseño no certifica una aplicación funcional ni accesibilidad global.\n"
+
+
 def write_readme(manifest, output):
-    """Una sola matriz documental, agrupada por función y sin cambiar el catálogo."""
-    readme="""# Móvil · Correspondencia de veinte pantallas
+    """Índice común y tres README visuales: sketch, wireframe y mockup."""
+    areas=[('Inicio y acceso',1,2),('Hábitos y registros',3,9),('Recordatorios y avisos',10,11),('Análisis y sugerencias',12,15),('Perfil, privacidad y dispositivos',16,20)]
+    names={'bienvenida':'Bienvenida','acceso':'Acceso','hoy':'Hoy','detalle':'Detalle de hábito','historial':'Historial de hábito','analisis':'Análisis','periodo':'Elegir periodo','sugerencias':'Sugerencias','personalizar':'Personalizar sugerencia','ajustes':'Perfil y preferencias','consentimiento':'Consentimiento','dispositivos':'Dispositivos','vincular':'Vincular una fuente','datos':'Datos personales'}
+    stages=[('sketches','Sketch','Sketches','20 PNG. Solo cuadros y líneas en blanco/gris; sin texto, logos, fotos, color ni temas. El número y el nombre se identifican fuera del dibujo.'),('wireframes','Wireframe','Wireframes','20 PNG. Misma estructura e intención del sketch, con grises, Arial y marcadores de imagen/logo; sin identidad visual final.'),('mockups','Mockup','Mockups','20 pantallas, 40 PNG: cada pantalla presenta claro y oscuro juntos. Inter, paleta, iconos y marcas existentes aplicados a la misma estructura.')]
+    def label(item):return names.get(item['id'],item['title'])
+    def heading(item,stage):return f'{stage} {item["number"]:02d} {label(item)}'
+    def anchor(title):return re.sub(r'[^\w\- ]','',title.lower()).replace(' ','-')
+    readme="""# Móvil · Índice y correspondencia
 
-20 sketches + 20 wireframes + 20 mockups con variante clara y oscura: **80 PNG**, todos a 390 × 844. Los temas no son pantallas adicionales. La intención y las posiciones de bloques se conservan entre etapas. Son imágenes estáticas de diseño; el visor no ejecuta operaciones de negocio.
+Las veinte pantallas se desarrollan en tres etapas: **20 sketches, 20 wireframes y 40 PNG de mockups** (claro/oscuro). Todos miden 390 × 844. Los temas no son pantallas adicionales. Este índice no incrusta imágenes: cada etapa tiene su propio README visual.
 
-[Índice GUI](../../README.md) · [Identidad visual](../../identidad/README.md) · [Galería](../../index.html#prototipos) · [Catálogo con geometría](catalogo.json) · [Fuente](../../fuente/movil.py)
+[Índice GUI](../../README.md) · [Identidad visual](../../identidad/README.md) · [Galería](../../index.html#prototipos) · [Catálogo con geometría](catalogo.json)
 
-**Ver imágenes:** [Sketches](#sketches) · [Wireframes](#wireframes) · [Mockups claros](#mockups-claros) · [Mockups oscuros](#mockups-oscuros). La matriz sirve de índice; cada enlace lleva a la imagen incrustada de esa pantalla.
-
-## Acceso, registro de cuenta y recuperación
-
-Auditoría del catálogo y de los PNG existentes (29/10/2026):
-
-| Flujo | Qué existe en estas veinte pantallas |
+| Etapa | Dónde revisar sus imágenes |
 |---|---|
-| Bienvenida | **01 Bienvenida**: presenta el producto y conduce a Acceso. |
-| Login / acceso | **02 Acceso**: entrada al proveedor con «Continuar con Keycloak». No muestra campos de usuario o contraseña ni el formulario del proveedor. |
-| Registro de cuenta | **No hay una pantalla de creación de cuenta** en el catálogo móvil ni entre sus PNG. |
-| Forgot password / recuperación | **No hay una pantalla de recuperación de contraseña** en el catálogo móvil ni entre sus PNG. |
-| Registrar avance | **08 Registrar avance**: check-in de un hábito; no es registro de cuenta. |
-
-La autenticación se delega a Keycloak. Faltan aquí las representaciones del formulario de login del proveedor, creación de cuenta y recuperación; la pantalla de acceso no acredita que esos flujos estén diseñados o implementados. Esta revisión documental conserva las veinte pantallas y no añade formularios nuevos.
-
-## Etapas
-
-| Etapa | Pantallas | PNG | Criterio |
-|---|---:|---:|---|
-| Sketch | 20 | 20 | Cuadros y líneas en blanco/gris; sin texto, logos, fotos, color ni temas. Número y nombre fuera del dibujo. |
-| Wireframe | 20 | 20 | Misma estructura, grises, Arial y marcadores de imagen/logo. |
-| Mockup | 20 | 40 | Misma función y organización con Inter, paleta, iconos y marcas existentes; claro y oscuro. |
-
-Se sigue la distinción de Carlos Salgado en [Mosaic/UOC, «Sketchs, mockups, wireframes y prototipos»](https://mosaic.uoc.edu/2015/09/15/proceso-de-desarrollo-de-un-proyecto-digital/). La solicitud de esta entrega precisa sketches sin anotaciones y veinte pantallas; no se copian los ejemplos del artículo.
+| Sketches · 20 PNG | [README de sketches](sketches/README.md) |
+| Wireframes · 20 PNG | [README de wireframes](wireframes/README.md) |
+| Mockups · 40 PNG | [README de mockups · Claro y oscuro juntos](mockups/README.md) |
 
 ## Matriz por áreas funcionales
 
-- [Inicio y acceso · 01–02](#inicio-y-acceso)
-- [Hábitos y registros · 03–09](#hábitos-y-registros)
-- [Recordatorios y avisos · 10–11](#recordatorios-y-avisos)
-- [Análisis y sugerencias · 12–15](#análisis-y-sugerencias)
-- [Perfil, privacidad y dispositivos · 16–20](#perfil-privacidad-y-dispositivos)
+La misma numeración e ID conserva la correspondencia. Cada enlace abre la pantalla dentro del README de su etapa.
 
-Cada fila identifica una pantalla y sus cuatro recursos correspondientes. Las etapas se indican en las columnas; los títulos de Detalle e Historial conservan el hábito de lectura usado como ejemplo.
+| Nº | Área | Pantalla e intención | Requisito | Sketch | Wireframe | Mockup claro/oscuro |
+|---|---|---|---|---|---|---|
 """
-    areas=[('Inicio y acceso',1,2),('Hábitos y registros',3,9),('Recordatorios y avisos',10,11),('Análisis y sugerencias',12,15),('Perfil, privacidad y dispositivos',16,20)]
-    names={'bienvenida':'Bienvenida','acceso':'Acceso','hoy':'Hoy','detalle':'Detalle de hábito','historial':'Historial de hábito','analisis':'Análisis','periodo':'Elegir periodo','sugerencias':'Sugerencias','personalizar':'Personalizar sugerencia','ajustes':'Perfil y preferencias','consentimiento':'Consentimiento','dispositivos':'Dispositivos','vincular':'Vincular una fuente','datos':'Datos personales'}
-    stages=[('sketch:none','Sketch','Sketches'),('wireframe:none','Wireframe','Wireframes'),('mockup:light','Mockup claro','Mockups claros'),('mockup:dark','Mockup oscuro','Mockups oscuros')]
-    def heading(item,stage):return f'{stage} {item["number"]:02d} {names.get(item["id"],item["title"])}'
-    def anchor(title):return re.sub(r'[^\w\- ]','',title.lower()).replace(' ','-')
-    for area,first,last in areas:
-        readme+=f'\n### {area}\n\n| Nº | Pantalla e intención | Requisito | Sketch | Wireframe | Mockup claro | Mockup oscuro |\n|---|---|---|---|---|---|---|\n'
-        for item in manifest:
-            if not first<=item['number']<=last:continue
-            links=[]
-            for key,stage,_ in stages:
-                links.append(f'[Ver](#{anchor(heading(item,stage))})')
-            label=names.get(item['id'],item['title'])
-            caption=f'**{label}**' if label==item['title'] else f'**{label}** · {item["title"]}'
-            readme+=f'| {item["number"]:02d} | {caption} — {item["intent"]} | {item["rf"]} | '+' | '.join(links)+' |\n'
-    for key,stage,title in stages:
-        readme+=f'\n## {title}\n\n[Volver a la matriz](#matriz-por-áreas-funcionales). Las imágenes conservan su número e ID entre etapas.\n'
+    for item in manifest:
+        area=next(title for title,first,last in areas if first<=item['number']<=last)
+        links=[f'[Ver]({folder}/README.md#{anchor(heading(item,stage))})' for folder,stage,_,_ in stages]
+        readme+=f'| {item["number"]:02d} | {area} | **{label(item)}** — {item["intent"]} | {item["rf"]} | '+' | '.join(links)+' |\n'
+    readme+='\n'+AUDIT_TEXT+'\n\n'+SHARED_NOTES
+    (output/'README.md').write_text(readme,encoding='utf-8')
+    for folder,stage,title,criterion in stages:
+        document=f'# Móvil · {title}\n\n{criterion} Todas las imágenes miden 390 × 844 y son documentación estática.\n\n[Índice y matriz móvil](../README.md) · [Condiciones por pantalla](../README.md#condiciones-por-pantalla) · [Identidad visual](../../../identidad/README.md) · [Galería](../../../index.html#prototipos)\n\n'
+        document+='\n'.join(f'- [{area} · {first:02d}–{last:02d}](#{anchor(area)})' for area,first,last in areas)+'\n'
         for area,first,last in areas:
-            readme+=f'\n### {stage} · {area}\n'
+            document+=f'\n## {area}\n'
             for item in manifest:
                 if not first<=item['number']<=last:continue
                 caption=heading(item,stage)
-                rel=item['assets'][key].removeprefix('prototipos/movil/')
-                readme+=f'\n#### {caption}\n\nID: `{item["id"]}`.\n\n![{caption}]({rel})\n'
-    readme+='\n## Condiciones por pantalla\n\n'
-    for item in manifest:readme+=f'{item["number"]:02d}. **{item["title"]}:** {item["note"]}\n'
-    readme+="""
-## Alcance y límites
-
-Las referencias RF y notas describen intención y restricciones, no capacidades implementadas. Los ejemplos son sintéticos: análisis del 19–25/10/2026 (5/7 = 71.4 %, racha al cierre 0) y día abierto 26/10, America/Mexico_City, RN-P17. Acceso delega credenciales a Keycloak; permisos, persistencia, errores, conflictos, accesibilidad y soporte offline requieren implementación y pruebas propias.
-
-Las seis referencias anteriores de escritorio permanecen fuera del conteo móvil. Solo sus dos mockups oscuros recibieron los derivados de color de los logos el 29/10/2026. No se añaden pantallas PWA ni funciones de producto. Los veinte mockups móviles oscuros cambiaron únicamente en la cabecera de marca; los demás píxeles, sketches, wireframes y mockups claros se conservaron.
-
-## Fuente, regeneración y verificación
-
-El catálogo de [movil.py](../../fuente/movil.py) genera geometría, manifiesto y este README; mantenerlo como fuente para no perder la agrupación al regenerar. Los PNG no tienen copias SVG exportadas. La [identidad](../../identidad/README.md) define los recursos compartidos.
-
-Desde la raíz del repositorio, en el entorno de autoría Python/Pillow y Node/Playwright con Chrome:
-
-```powershell
-python docs/GUI/fuente/generar.py --mobile-only
-$env:QC_MOBILE_ONLY='1'
-node docs/GUI/fuente/render.cjs
-python -m unittest discover -s docs/GUI/tests -p 'test_*.py' -v
-```
-
-No definir `QC_IDENTITY_ONLY=1` en esa exportación. `QC_CHROME` permite configurar Chrome. El exportador comprueba Inter local y texto dentro del lienzo y de cada bloque.
-
-Validación del catálogo (28–29/10/2026): veinte conjuntos y ochenta archivos; correspondencia de bloques y destinos; sketches sin texto/imágenes/color, wireframes Arial y grises, mockups Inter y marcas en ambos temas. Se comprobaron el visor, los temas, la navegación por imágenes y su carga local. Esta evidencia de diseño no certifica una aplicación funcional ni accesibilidad global.
-"""
-    (output/'README.md').write_text(readme,encoding='utf-8')
+                document+=f'\n### {caption}\n\nID: `{item["id"]}`.\n\n'
+                if folder=='mockups':
+                    light=item['assets']['mockup:light'].removeprefix('prototipos/movil/mockups/')
+                    dark=item['assets']['mockup:dark'].removeprefix('prototipos/movil/mockups/')
+                    document+=f'| Claro | Oscuro |\n|---|---|\n| ![{caption} claro]({light}) | ![{caption} oscuro]({dark}) |\n'
+                else:
+                    key='sketch:none' if folder=='sketches' else 'wireframe:none'
+                    rel=item['assets'][key].removeprefix(f'prototipos/movil/{folder}/')
+                    document+=f'![{caption}]({rel})\n'
+        destination=output/folder;destination.mkdir(exist_ok=True)
+        (destination/'README.md').write_text(document,encoding='utf-8')
 
 
 def build(Canvas, colors, icons, logos, photo, output):
